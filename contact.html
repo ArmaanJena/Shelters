@@ -114,88 +114,12 @@
                 <!-- Contact Form -->
                 <div class="contact-form-container">
                     <h2 class="form-title">Send us a Message</h2>
-                    <p class="form-subtitle">Fill out the form below to start a conversation on WhatsApp. We'll get back to you shortly.</p>
+                    <p class="form-subtitle">Type your message below and click the button to start a conversation on WhatsApp.</p>
                     
                     <form class="contact-form" id="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName" class="form-label">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName" class="form-label">Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" class="form-input" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email Address *</label>
-                                <input type="email" id="email" name="email" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone" class="form-label">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" class="form-input" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="propertyType" class="form-label">Property Type</label>
-                            <select id="propertyType" name="propertyType" class="form-select">
-                                <option value="">Select Property Type</option>
-                                <option value="apartment">Apartment</option>
-                                <option value="villa">Villa</option>
-                                <option value="plot">Plot</option>
-                                <option value="commercial">Commercial</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="budget" class="form-label">Budget Range</label>
-                                <select id="budget" name="budget" class="form-select">
-                                    <option value="">Select Budget Range</option>
-                                    <option value="under-50">Under ₹50 Lakhs</option>
-                                    <option value="50-75">₹50 Lakhs - ₹75 Lakhs</option>
-                                    <option value="75-100">₹75 Lakhs - ₹1 Crore</option>
-                                    <option value="100-150">₹1 Crore - ₹1.5 Crore</option>
-                                    <option value="150-200">₹1.5 Crore - ₹2 Crore</option>
-                                    <option value="above-200">Above ₹2 Crore</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="location" class="form-label">Preferred Location</label>
-                                <select id="location" name="location" class="form-select">
-                                    <option value="">Select Location</option>
-                                    <option value="viman-nagar">Viman Nagar</option>
-                                    <option value="kharadi">Kharadi</option>
-                                    <option value="koregaon-park">Koregaon Park</option>
-                                    <option value="wadgaon-sheri">Wadgaon Sheri</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-                        
                         <div class="form-group">
                             <label for="message" class="form-label">Message *</label>
                             <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your requirements, preferences, or any specific questions you have..." required></textarea>
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="newsletter" name="newsletter" class="form-checkbox">
-                                <span class="checkbox-custom"></span>
-                                I would like to receive updates about new properties and market insights
-                            </label>
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="terms" name="terms" class="form-checkbox" required>
-                                <span class="checkbox-custom"></span>
-                                I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a>
-                            </label>
                         </div>
                         
                         <button type="submit" class="submit-btn">
@@ -238,23 +162,6 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Get Latest East Pune Listings</h2>
-                <p>Subscribe to receive exclusive property updates and market insights</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email address" class="newsletter-input">
-                    <button type="submit" class="newsletter-button">
-                        <span>Subscribe</span>
-                        <div class="button-pulse"></div>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -273,10 +180,6 @@
                 <div class="footer-section">
                     <h4>Follow Us</h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="social-link">Facebook</a></li>
-                        <li><a href="#" class="social-link">Instagram</a></li>
-                        <li><a href="#" class="social-link">LinkedIn</a></li>
-                        <li><a href="#" class="social-link">YouTube</a></li>
                         <li><a href="https://wa.me/919860826918" class="social-link" target="_blank">WhatsApp</a></li>
                     </ul>
                 </div>
@@ -286,16 +189,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Success Modal -->
-    <div class="success-modal" id="success-modal">
-        <div class="modal-content">
-            <div class="modal-icon">✅</div>
-            <h3 class="modal-title">Message Sent Successfully!</h3>
-            <p class="modal-message">Thank you for contacting us. We'll get back to you within 24 hours.</p>
-            <button class="modal-close" id="modal-close">Close</button>
-        </div>
-    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>
