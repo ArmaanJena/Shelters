@@ -3,7 +3,7 @@
 // Insert your API key and Base ID below
 
 // IMPORTANT: API key removed for security. Create a local-only version for development.
-const AIRTABLE_API_KEY = 'YOUR_AIRTABLE_API_KEY_HERE'; // <-- Your Airtable token
+const AIRTABLE_API_KEY = 'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7'; // <-- Your Airtable token
 const AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5'; // <-- Your Airtable Base ID
 const AIRTABLE_TABLE_NAME = 'Properties';
 const AIRTABLE_ENDPOINT = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
