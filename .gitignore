@@ -1,0 +1,2 @@
+# Ignore local secrets and config
+js/airtable.js
