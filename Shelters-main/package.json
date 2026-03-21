@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "build": "node scripts/fetch-airtable-data.js"
-  }
-}
