@@ -1,2 +1,3 @@
-# Ignore local secrets and config
-js/airtable.js
+
+# Ignore environment variable files
+.env

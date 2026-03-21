@@ -2,8 +2,13 @@
 // Integrates Airtable as CMS for property listings
 // Insert your API key and Base ID below
 
-// IMPORTANT: API key removed for security. Create a local-only version for development.
-const AIRTABLE_API_KEY = 'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7'; // <-- Your Airtable token
+// IMPORTANT: API key removed for security. Use environment variable for development/production.
+// Load environment variables from .env if available (for local development)
+try { require('dotenv').config(); } catch (e) { /* dotenv not available in browser */ }
+const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
+if (!AIRTABLE_API_KEY) {
+  throw new Error('Missing Airtable API key. Set AIRTABLE_API_KEY in your environment or .env file.');
+}
 const AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5'; // <-- Your Airtable Base ID
 const AIRTABLE_TABLE_NAME = 'Properties';
 const AIRTABLE_ENDPOINT = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
