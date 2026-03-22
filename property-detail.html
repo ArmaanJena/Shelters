@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details | Shelters Realty</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .property-detail-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 2rem;
+        }
+        .property-detail-header {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .property-detail-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 1rem;
+            background: #f3f4f6;
+        }
+        .property-detail-info {
+            margin-top: 1.5rem;
+        }
+        .property-detail-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1E293B;
+        }
+        .property-detail-location {
+            font-size: 1.1rem;
+            color: #2563eb;
+            font-weight: 500;
+        }
+        .property-detail-price {
+            font-size: 1.3rem;
+            color: #059669;
+            font-weight: 600;
+        }
+        .property-detail-description {
+            font-size: 1.05rem;
+            color: #64748b;
+            margin-top: 1rem;
+        }
+        .whatsapp-cta {
+            display: inline-block;
+            margin-top: 2rem;
+            background: #25D366;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .whatsapp-cta:hover {
+            background: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Shelters</span>
+                <span class="logo-accent">Realty</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="listings.html" class="nav-link">Properties</a>
+                <a href="agreements.html" class="nav-link">Agreements</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="property-detail-container" id="property-detail-container">
+            <div class="loading">Loading property details...</div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Shelters Realty</h3>
+                    <p>Your trusted East Pune property experts with 30+ years of local experience and cutting-edge technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="listings.html">Properties</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="property-detail.js"></script>
+</body>
+</html>

@@ -77,11 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await fetchListings();
 
             if (data.records && data.records.length > 0) {
-                // For now, we'll feature the first 6 properties.
-                // This could be enhanced to look for a "Featured" flag from the API.
-                const featuredProperties = (data.records || data).slice(0, 6);
-                featuredContainer.innerHTML = featuredProperties.map(createListingCard).join('');
-
+                // Only show properties with 'Featured' field checked
+                const featuredProperties = (data.records || data).filter(
+                    rec => rec.fields && (rec.fields.Featured === true || rec.fields.Featured === 'true')
+                ).slice(0, 6);
+                if (featuredProperties.length > 0) {
+                    featuredContainer.innerHTML = featuredProperties.map(createListingCard).join('');
+                } else {
+                    featuredContainer.innerHTML = '<p>No featured properties available at the moment.</p>';
+                }
                 // Initialize favorites and lazy loading for the new cards
                 if (window.FavoritesManager) {
                     FavoritesManager.initFavoriteButtons();
