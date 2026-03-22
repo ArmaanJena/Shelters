@@ -45,9 +45,27 @@ async function fetchListings() {
     }
     const data = await response.json();
     allListings = data.records || [];
-    applyFiltersAndRender();
+    if (allListings.length === 0) {
+      showError('No properties found from Airtable.');
+    } else {
+      applyFiltersAndRender();
+    }
   } catch (error) {
-    showError(error.message);
+    showError('Airtable API error: ' + error.message + '<br><br><b>Showing a test property for UI debugging.</b>');
+    // Add a test property so UI can be tested
+    allListings = [{
+      id: 'test1',
+      fields: {
+        Title: 'Test Property',
+        Location: 'Viman Nagar',
+        Type: 'Flat',
+        ListingType: 'Buy',
+        Price: 12345678,
+        Description: 'This is a test property. If you see this, Airtable API is not working.',
+        Image: []
+      }
+    }];
+    applyFiltersAndRender();
   }
 }
 
@@ -90,66 +108,82 @@ function updateResultsSummary(count) {
   }
 }
 
-// Event listeners for filters and sort
+// Event listeners for filters and sort (with debug logging)
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('[airtable.js] DOMContentLoaded fired');
   // Only run on listings page
-  if (document.getElementById('property-listings')) {
-    fetchListings();
-    ['filter-location', 'filter-type', 'filter-listing-type', 'filter-min-price', 'filter-max-price', 'sort-price'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.addEventListener('change', applyFiltersAndRender);
+  const listingsDiv = document.getElementById('property-listings');
+  if (!listingsDiv) {
+    console.warn('[airtable.js] #property-listings not found. Script will not run.');
+    return;
+  }
+  fetchListings();
+  const filterIds = ['filter-location', 'filter-type', 'filter-listing-type', 'filter-min-price', 'filter-max-price', 'sort-price'];
+  filterIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('change', applyFiltersAndRender);
+      console.log(`[airtable.js] Attached change event to #${id}`);
+    } else {
+      console.warn(`[airtable.js] Filter element #${id} not found`);
+    }
+  });
+
+  // Price range slider sync logic
+  const priceSlider = document.getElementById('filter-price-range');
+  const minInput = document.getElementById('filter-min-price');
+  const maxInput = document.getElementById('filter-max-price');
+  const minLabel = document.getElementById('min-price-label');
+  const maxLabel = document.getElementById('max-price-label');
+  const SLIDER_MAX = 100000000;
+
+  // Set slider and input sync
+  if (priceSlider && minInput && maxInput) {
+    // When slider changes, update min/max inputs
+    priceSlider.addEventListener('input', () => {
+      const val = parseInt(priceSlider.value, 10);
+      minInput.value = 0;
+      maxInput.value = val > 0 ? val : '';
+      maxLabel.textContent = val >= SLIDER_MAX ? '₹10 Cr+' : `₹${val.toLocaleString()}`;
+      applyFiltersAndRender();
     });
-
-    // Price range slider sync logic
-    const priceSlider = document.getElementById('filter-price-range');
-    const minInput = document.getElementById('filter-min-price');
-    const maxInput = document.getElementById('filter-max-price');
-    const minLabel = document.getElementById('min-price-label');
-    const maxLabel = document.getElementById('max-price-label');
-    const SLIDER_MAX = 100000000;
-
-    // Set slider and input sync
-    if (priceSlider && minInput && maxInput) {
-      // When slider changes, update min/max inputs
-      priceSlider.addEventListener('input', () => {
-        const val = parseInt(priceSlider.value, 10);
-        minInput.value = 0;
-        maxInput.value = val > 0 ? val : '';
+    // When min/max inputs change, update slider and labels
+    minInput.addEventListener('input', () => {
+      applyFiltersAndRender();
+    });
+    maxInput.addEventListener('input', () => {
+      const val = parseInt(maxInput.value, 10);
+      if (!isNaN(val)) {
+        priceSlider.value = val;
         maxLabel.textContent = val >= SLIDER_MAX ? '₹10 Cr+' : `₹${val.toLocaleString()}`;
-        applyFiltersAndRender();
-      });
-      // When min/max inputs change, update slider and labels
-      minInput.addEventListener('input', () => {
-        applyFiltersAndRender();
-      });
-      maxInput.addEventListener('input', () => {
-        const val = parseInt(maxInput.value, 10);
-        if (!isNaN(val)) {
-          priceSlider.value = val;
-          maxLabel.textContent = val >= SLIDER_MAX ? '₹10 Cr+' : `₹${val.toLocaleString()}`;
-        } else {
-          priceSlider.value = 0;
-          maxLabel.textContent = '₹10 Cr+';
-        }
-        applyFiltersAndRender();
-      });
-    }
+      } else {
+        priceSlider.value = 0;
+        maxLabel.textContent = '₹10 Cr+';
+      }
+      applyFiltersAndRender();
+    });
+    console.log('[airtable.js] Price slider and min/max inputs event listeners attached');
+  } else {
+    console.warn('[airtable.js] Price slider or min/max input not found');
+  }
 
-    // Reset button
-    const resetBtn = document.getElementById('reset-filters');
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        document.getElementById('filter-location').value = '';
-        document.getElementById('filter-type').value = '';
-        document.getElementById('filter-listing-type').value = '';
-        minInput.value = '';
-        maxInput.value = '';
-        if (priceSlider) priceSlider.value = 0;
-        if (maxLabel) maxLabel.textContent = '₹10 Cr+';
-        document.getElementById('sort-price').value = 'default';
-        applyFiltersAndRender();
-      });
-    }
+  // Reset button
+  const resetBtn = document.getElementById('reset-filters');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      document.getElementById('filter-location').value = '';
+      document.getElementById('filter-type').value = '';
+      document.getElementById('filter-listing-type').value = '';
+      if (minInput) minInput.value = '';
+      if (maxInput) maxInput.value = '';
+      if (priceSlider) priceSlider.value = 0;
+      if (maxLabel) maxLabel.textContent = '₹10 Cr+';
+      document.getElementById('sort-price').value = 'default';
+      applyFiltersAndRender();
+    });
+    console.log('[airtable.js] Reset filters button event attached');
+  } else {
+    console.warn('[airtable.js] Reset filters button not found');
   }
 });
 

@@ -21,6 +21,7 @@
     min-width: 120px;
     max-width: 140px;
     align-items: flex-end;
+    margin-left: 3rem; /* Move Clear Filters button further right */
 }
 @media (max-width: 900px) {
     .filter-container {
