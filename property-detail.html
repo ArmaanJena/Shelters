@@ -50,19 +50,22 @@
             margin-top: 1rem;
         }
         .whatsapp-cta {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             margin-top: 2rem;
             background: #25D366;
             color: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            width: 58px;
+            height: 58px;
+            border-radius: 999px;
             text-decoration: none;
-            transition: background 0.2s;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 12px 24px rgba(37, 211, 102, 0.28);
         }
         .whatsapp-cta:hover {
             background: #128C7E;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -76,6 +79,7 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="listings.html" class="nav-link">Properties</a>
+                <a href="areas.html" class="nav-link">Areas</a>
                 <a href="agreements.html" class="nav-link">Agreements</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>

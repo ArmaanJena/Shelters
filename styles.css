@@ -482,8 +482,71 @@ html.dark-mode .toggle-thumb {
     align-items: end;
 }
 
+.filter-panel .filter-container {
+    grid-template-columns: minmax(220px, 1.15fr) repeat(3, minmax(160px, 0.95fr)) minmax(220px, 1.1fr) auto;
+    gap: 1rem;
+    align-items: end;
+}
+
 .filter-group {
     margin-bottom: 0;
+}
+
+.filter-panel .filter-group {
+    min-width: 0;
+}
+
+.filter-keyword-group .form-input {
+    width: 100%;
+}
+
+.filter-panel .price-group {
+    min-width: 0;
+}
+
+.listings-price-range {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100%;
+}
+
+.listings-price-display {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    width: 100%;
+}
+
+.listings-price-input {
+    width: 100%;
+    min-width: 0;
+}
+
+.listings-price-slider {
+    width: 100%;
+    margin-top: 0.35rem;
+}
+
+.listings-price-labels {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    font-size: 0.9rem;
+    color: var(--slate-gray);
+}
+
+.listings-filter-actions {
+    align-self: end;
+    min-width: 126px;
+}
+
+.listings-reset-btn {
+    width: 100%;
+    margin-top: 1.6rem;
 }
 
 .filter-label {
@@ -549,11 +612,13 @@ html.dark-mode .toggle-thumb {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
+    flex-wrap: nowrap;
 }
 
 .sort-label {
     font-weight: 500;
     color: var(--slate-gray);
+    white-space: nowrap;
 }
 
 /* Price Range Slider in Filter Panel */
@@ -716,6 +781,196 @@ html.dark-mode .toggle-thumb {
 .bento-actions {
     display: flex;
     gap: var(--space-sm);
+}
+
+.featured-listings {
+    background: linear-gradient(180deg, rgba(154, 42, 42, 0.03) 0%, rgba(154, 42, 42, 0.01) 100%);
+}
+
+.featured-listings .container {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0 var(--space-lg);
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.featured-listings .section-header {
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.featured-listings .section-title {
+    margin-bottom: 0.35rem;
+}
+
+.featured-section-subtitle {
+    max-width: 460px;
+    margin: 0 auto;
+    color: var(--slate-gray);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.featured-listings .bento-card {
+    border: 1px solid color-mix(in srgb, var(--light-gray) 55%, transparent);
+    background: var(--white);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.featured-listings .listing-image-container::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 32%;
+    background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.14) 100%);
+    pointer-events: none;
+}
+
+.featured-listings .bento-badge {
+    background: color-mix(in srgb, var(--primary-blue) 88%, #000 12%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
+}
+
+.featured-listings .bento-title {
+    font-size: 1.28rem;
+    line-height: 1.3;
+}
+
+.featured-listings .bento-location {
+    font-size: 0.95rem;
+    margin-bottom: 0.65rem;
+}
+
+.featured-listings .bento-description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--slate-gray);
+}
+
+.featured-listings .bento-price {
+    padding-top: 0.8rem;
+    border-top: 1px solid color-mix(in srgb, var(--light-gray) 60%, transparent);
+}
+
+.featured-carousel {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.featured-carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
+.featured-carousel-track {
+    display: flex;
+    transition: transform 0.35s ease;
+}
+
+.featured-carousel-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+}
+
+.featured-slide-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.featured-carousel-control {
+    width: 28px;
+    height: 28px;
+    border: 1px solid color-mix(in srgb, var(--light-gray) 58%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--white) 86%, transparent);
+    color: color-mix(in srgb, var(--dark-navy) 55%, transparent);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+}
+
+.featured-carousel:hover .featured-carousel-control {
+    opacity: 0.72;
+}
+
+.featured-carousel-control:hover {
+    transform: translateY(-1px);
+    color: var(--dark-navy);
+    background: color-mix(in srgb, var(--white) 96%, transparent);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+    opacity: 1;
+}
+
+.featured-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-top: 0.85rem;
+}
+
+.featured-carousel-dot {
+    width: 5px;
+    height: 5px;
+    border: none;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--slate-gray) 28%, transparent);
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.featured-carousel-dot.is-active {
+    background: color-mix(in srgb, var(--primary-blue) 82%, var(--accent-blue) 18%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transform: scale(1.15);
+}
+
+html.dark-mode .featured-listings {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.36) 0%, rgba(15, 23, 42, 0.12) 100%);
+}
+
+html.dark-mode .featured-listings .bento-card {
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.94) 0%, rgba(22, 30, 46, 0.98) 100%);
+    border-color: rgba(148, 163, 184, 0.14);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+html.dark-mode .featured-listings .bento-description {
+    color: #a8b6c9;
+}
+
+html.dark-mode .featured-listings .bento-price {
+    border-top-color: rgba(148, 163, 184, 0.12);
+}
+
+html.dark-mode .featured-carousel-control {
+    background: rgba(30, 41, 59, 0.74);
+    border-color: rgba(148, 163, 184, 0.14);
+    color: rgba(241, 245, 249, 0.56);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+}
+
+html.dark-mode .featured-carousel-control:hover {
+    background: rgba(30, 41, 59, 0.94);
+    color: rgba(241, 245, 249, 0.92);
+}
+
+html.dark-mode .featured-carousel-dot {
+    background: rgba(148, 163, 184, 0.28);
+}
+
+html.dark-mode .featured-carousel-dot.is-active {
+    background: var(--accent-blue);
 }
 
 .bento-btn {
@@ -1969,6 +2224,14 @@ html.dark-mode .toggle-thumb {
         padding: 0 var(--space-lg);
     }
 
+    .filter-panel .filter-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .listings-filter-actions {
+        min-width: 0;
+    }
+
     h1 { font-size: 2.25rem; }
     h2 { font-size: 1.75rem; }
     h3 { font-size: 1.3rem; }
@@ -1988,6 +2251,10 @@ html.dark-mode .toggle-thumb {
 
     .bento-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .featured-slide-grid {
+        grid-template-columns: 1fr;
     }
 
     .calculator-layout, .team-grid, .about-cta .cta-buttons, .agreements-page .agreement-cta .cta-buttons {
@@ -2019,6 +2286,32 @@ html.dark-mode .toggle-thumb {
 
     .container {
         padding: 0 var(--space-md);
+    }
+
+    .filter-panel .filter-container {
+        grid-template-columns: 1fr;
+    }
+
+    .listings-reset-btn {
+        margin-top: 0;
+    }
+
+    .featured-carousel {
+        gap: var(--space-sm);
+    }
+
+    .featured-carousel-control {
+        width: 26px;
+        height: 26px;
+        font-size: 0.72rem;
+    }
+
+    .featured-listings .container {
+        padding: 0 var(--space-md);
+    }
+
+    .featured-section-subtitle {
+        font-size: 0.95rem;
     }
 
     h1 { font-size: 2rem; }

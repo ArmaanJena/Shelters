@@ -10,8 +10,18 @@
         .property-grid {
             display: grid;
             gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             margin-top: 2rem;
+        }
+        @media (max-width: 1100px) {
+            .property-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (max-width: 700px) {
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
         }
         .property-card {
             background: #fff;
@@ -78,6 +88,7 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="listings.html" class="nav-link active">Properties</a>
+                <a href="areas.html" class="nav-link">Areas</a>
                 <a href="agreements.html" class="nav-link">Agreements</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
@@ -101,51 +112,44 @@
         <section class="filter-panel">
             <div class="container">
                 <form id="filters-form" class="filter-container" autocomplete="off">
+                    <div class="filter-group compact-group filter-keyword-group">
+                        <label for="filter-keyword" class="filter-label">Search</label>
+                        <input type="text" id="filter-keyword" class="form-input" placeholder="Search by area, project, or keyword...">
+                    </div>
                     <div class="filter-group compact-group">
                         <label for="filter-location" class="filter-label">Location</label>
                         <select id="filter-location" class="form-select filter-dropdown">
                             <option value="">All Locations</option>
-                            <option value="Viman Nagar">Viman Nagar</option>
-                            <option value="Kalyani Nagar">Kalyani Nagar</option>
-                            <option value="Koregaon Park">Koregaon Park</option>
-                            <option value="Kharadi">Kharadi</option>
                         </select>
                     </div>
                     <div class="filter-group compact-group">
                         <label for="filter-type" class="filter-label">Property Type</label>
                         <select id="filter-type" class="form-select filter-dropdown">
                             <option value="">All Types</option>
-                            <option value="Flat">Flat</option>
-                            <option value="Plot">Plot</option>
-                            <option value="Residential">Residential</option>
-                            <option value="Commercial">Commercial</option>
                         </select>
                     </div>
                     <div class="filter-group compact-group">
                         <label for="filter-listing-type" class="filter-label">Listing Type</label>
                         <select id="filter-listing-type" class="form-select filter-dropdown">
                             <option value="">All</option>
-                            <option value="Buy">Buy</option>
-                            <option value="Sell">Sell</option>
-                            <option value="Lease">Lease</option>
                         </select>
                     </div>
                     <div class="filter-group compact-group price-group">
                         <label class="filter-label">Price Range (₹)</label>
-                        <div class="price-range" style="display: flex; flex-direction: column; gap: 0.5rem; min-width: 180px; max-width: 240px; width: 100%;">
-                            <div class="price-display" style="display: flex; gap: 0.5rem; width: 100%;">
-                                <input type="number" id="filter-min-price" class="form-input" placeholder="Min" min="0" style="width: 50%; min-width: 60px;">
-                                <input type="number" id="filter-max-price" class="form-input" placeholder="Max" min="0" style="width: 50%; min-width: 60px;">
+                        <div class="price-range listings-price-range">
+                            <div class="price-display listings-price-display">
+                                <input type="number" id="filter-min-price" class="form-input listings-price-input" placeholder="Min" min="0">
+                                <input type="number" id="filter-max-price" class="form-input listings-price-input" placeholder="Max" min="0">
                             </div>
-                            <input type="range" id="filter-price-range" class="price-slider" min="0" max="100000000" step="100000" value="0" style="width: 100%; margin-top: 0.5rem;">
-                            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #64748b; width: 100%;">
+                            <input type="range" id="filter-price-range" class="price-slider listings-price-slider" min="0" max="100000000" step="100000" value="0">
+                            <div class="listings-price-labels">
                                 <span id="min-price-label">₹0</span>
                                 <span id="max-price-label">₹10 Cr+</span>
                             </div>
                         </div>
                     </div>
-                    <div class="filter-group compact-group" style="align-items: flex-end; min-width: 120px;">
-                        <button type="button" id="reset-filters" class="btn btn-secondary" style="margin-top: 1.7rem;">Clear Filters</button>
+                    <div class="filter-group compact-group listings-filter-actions">
+                        <button type="button" id="reset-filters" class="btn btn-secondary listings-reset-btn">Clear Filters</button>
                     </div>
                 </form>
             </div>
@@ -158,6 +162,7 @@
                     <label for="sort-price" class="sort-label">Sort by:</label>
                     <select id="sort-price" class="form-select filter-dropdown">
                         <option value="default">Default</option>
+                        <option value="recent">Recent</option>
                         <option value="price-asc">Price: Low to High</option>
                         <option value="price-desc">Price: High to Low</option>
                     </select>

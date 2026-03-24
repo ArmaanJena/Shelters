@@ -1,5 +1,12 @@
 // script.js
 
+const HERO_AIRTABLE_API_KEY = 'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7';
+const HERO_AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5';
+const HERO_AIRTABLE_TABLE_NAME = 'Properties';
+const HERO_AIRTABLE_ENDPOINT = `https://api.airtable.com/v0/${HERO_AIRTABLE_BASE_ID}/${HERO_AIRTABLE_TABLE_NAME}`;
+const HERO_FILTER_CACHE_KEY = 'hero_filter_options_v1';
+const HERO_FILTER_CACHE_TTL = 10 * 60 * 1000;
+
 // Function to fetch data from Google Sheets and display properties
 async function loadProperties() {
     const googleSheetUrl = 'YOUR_GOOGLE_SHEET_CSV_URL'; // Replace with your published Google Sheet URL
@@ -59,6 +66,86 @@ function csvToArray(csv) {
     });
 }
 
+async function fetchHeroFilterRecords() {
+    const cachedRaw = localStorage.getItem(HERO_FILTER_CACHE_KEY);
+    if (cachedRaw) {
+        try {
+            const cached = JSON.parse(cachedRaw);
+            if (Date.now() - cached.ts < HERO_FILTER_CACHE_TTL) {
+                return cached.records || [];
+            }
+        } catch (error) {
+            console.warn('Invalid hero filter cache', error);
+        }
+    }
+
+    const allRecords = [];
+    let offset = '';
+
+    do {
+        const url = new URL(HERO_AIRTABLE_ENDPOINT);
+        if (offset) url.searchParams.set('offset', offset);
+
+        const response = await fetch(url.toString(), {
+            headers: {
+                'Authorization': `Bearer ${HERO_AIRTABLE_API_KEY}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch hero filters (${response.status})`);
+        }
+
+        const data = await response.json();
+        allRecords.push(...(data.records || []));
+        offset = data.offset || '';
+    } while (offset);
+
+    localStorage.setItem(HERO_FILTER_CACHE_KEY, JSON.stringify({ ts: Date.now(), records: allRecords }));
+    return allRecords;
+}
+
+function populateSelectOptions(select, values, placeholder) {
+    if (!select) return;
+
+    select.innerHTML = '';
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = placeholder;
+    select.appendChild(defaultOption);
+
+    values.forEach(value => {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
+        select.appendChild(option);
+    });
+}
+
+async function hydrateHeroSearchFilters() {
+    const propertyTypeSelect = document.querySelector('select[name="propertyType"]');
+    const offerTypeSelect = document.querySelector('select[name="offerType"]');
+    const locationSelect = document.querySelector('select[name="location"]');
+
+    if (!propertyTypeSelect || !offerTypeSelect || !locationSelect) return;
+
+    try {
+        const records = await fetchHeroFilterRecords();
+        const uniqueValues = (fieldName) => [...new Set(
+            records
+                .map(record => record.fields?.[fieldName])
+                .filter(value => typeof value === 'string' && value.trim())
+        )].sort((a, b) => a.localeCompare(b));
+
+        populateSelectOptions(propertyTypeSelect, uniqueValues('Property Type'), 'Property Type');
+        populateSelectOptions(offerTypeSelect, uniqueValues('Offer Type'), 'Offer Type');
+        populateSelectOptions(locationSelect, uniqueValues('Location'), 'Location');
+    } catch (error) {
+        console.error('Failed to hydrate homepage filters from Airtable:', error);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Only load properties if we are on a page with the container
     if (document.getElementById('properties-container')) {
@@ -94,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle "Find a Property" form submission
     const findForm = document.getElementById('find-form');
     if (findForm) {
+        hydrateHeroSearchFilters();
         findForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(findForm);
