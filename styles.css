@@ -732,6 +732,12 @@ html.dark-mode .toggle-thumb {
     font-weight: 600;
 }
 
+.bento-badge-new {
+    left: auto;
+    right: var(--space-md);
+    background-color: #16a34a;
+}
+
 .bento-content {
     padding: var(--space-lg);
     display: flex;
@@ -781,6 +787,132 @@ html.dark-mode .toggle-thumb {
 .bento-actions {
     display: flex;
     gap: var(--space-sm);
+}
+
+.property-card-actions {
+    margin-top: var(--space-md);
+}
+
+.property-share-toggle {
+    width: 100%;
+    padding: 0.55rem 0.9rem;
+    border-radius: 10px;
+    border: 1px solid color-mix(in srgb, var(--primary-blue) 35%, var(--light-gray) 65%);
+    background: color-mix(in srgb, var(--primary-blue) 6%, var(--white) 94%);
+    color: var(--primary-blue);
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.property-share-toggle:hover {
+    border-color: var(--primary-blue);
+    background: color-mix(in srgb, var(--primary-blue) 10%, var(--white) 90%);
+}
+
+.property-share-panel {
+    margin-top: 0.7rem;
+    border: 1px dashed color-mix(in srgb, var(--primary-blue) 28%, var(--light-gray) 72%);
+    background: color-mix(in srgb, var(--background-light) 86%, var(--white) 14%);
+    border-radius: 12px;
+    padding: 0.7rem;
+}
+
+.property-share-summary {
+    font-size: 0.86rem;
+    color: var(--slate-gray);
+    margin: 0 0 0.45rem 0;
+    line-height: 1.45;
+}
+
+.property-share-link {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--primary-blue);
+    text-decoration: none;
+    word-break: break-all;
+    margin-bottom: 0.6rem;
+}
+
+.property-share-link:hover {
+    text-decoration: underline;
+}
+
+.property-share-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+}
+
+.property-share-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0.45rem 0.65rem;
+    border-radius: 10px;
+    border: 1px solid color-mix(in srgb, var(--light-gray) 72%, var(--primary-blue) 28%);
+    background: var(--white);
+    color: var(--dark-navy);
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.property-share-action:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-1px);
+}
+
+.property-share-action.whatsapp {
+    color: #128c7e;
+    border-color: color-mix(in srgb, #25d366 45%, var(--light-gray) 55%);
+    background: color-mix(in srgb, #25d366 8%, var(--white) 92%);
+}
+
+.property-share-action.copy-link {
+    cursor: pointer;
+}
+
+.bento-card-wrapper.share-open .bento-card {
+    box-shadow: 0 14px 26px rgba(15, 23, 42, 0.14);
+}
+
+html.dark-mode .property-share-toggle {
+    background: rgba(30, 41, 59, 0.76);
+    border-color: rgba(148, 163, 184, 0.22);
+    color: #e2e8f0;
+}
+
+html.dark-mode .property-share-toggle:hover {
+    border-color: rgba(148, 163, 184, 0.44);
+    background: rgba(30, 41, 59, 0.9);
+}
+
+html.dark-mode .property-share-panel {
+    background: rgba(15, 23, 42, 0.52);
+    border-color: rgba(148, 163, 184, 0.3);
+}
+
+html.dark-mode .property-share-summary {
+    color: #cbd5e1;
+}
+
+html.dark-mode .property-share-link {
+    color: #93c5fd;
+}
+
+html.dark-mode .property-share-action {
+    background: rgba(30, 41, 59, 0.78);
+    border-color: rgba(148, 163, 184, 0.28);
+    color: #e2e8f0;
+}
+
+html.dark-mode .property-share-action.whatsapp {
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.45);
+    background: rgba(21, 128, 61, 0.22);
 }
 
 .featured-listings {
@@ -1127,6 +1259,8 @@ html.dark-mode .featured-carousel-dot.is-active {
     border-radius: var(--radius-md);
     padding: var(--space-xl);
     text-align: center;
+    text-decoration: none;
+    color: inherit;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1207,6 +1341,104 @@ html.dark-mode .featured-carousel-dot.is-active {
     margin-bottom: var(--space-xs);
 }
 
+/* Suggested mini-cards (used in popup + property detail page) */
+.suggested-mini-section {
+    margin-top: 1.25rem;
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 14px;
+    padding: 0.95rem;
+}
+
+.suggested-mini-title {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-primary);
+    color: var(--dark-navy);
+    font-size: 1.1rem;
+    line-height: 1.25;
+}
+
+.suggested-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+}
+
+.suggested-mini-card {
+    display: block;
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.suggested-mini-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(2, 6, 23, 0.12);
+    border-color: rgba(148, 163, 184, 0.55);
+}
+
+.suggested-mini-card.suggested-mini-card-modal {
+    width: 100%;
+    padding: 0;
+    text-align: left;
+    font: inherit;
+}
+
+.suggested-mini-thumb {
+    width: 100%;
+    height: 92px;
+    object-fit: cover;
+    display: block;
+    background: #e2e8f0;
+}
+
+.suggested-mini-body {
+    padding: 0.55rem 0.6rem 0.65rem;
+}
+
+.suggested-mini-name {
+    margin: 0 0 0.25rem;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--dark-navy);
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.suggested-mini-meta {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--slate-gray);
+    line-height: 1.35;
+}
+
+.suggested-mini-price {
+    margin: 0.38rem 0 0;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #059669;
+}
+
+@media (max-width: 900px) {
+    .suggested-mini-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .suggested-mini-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Why Choose Us on index.html */
 .why-choose-us {
     background-color: var(--background-light);
@@ -1225,6 +1457,12 @@ html.dark-mode .featured-carousel-dot.is-active {
     border: 1px solid var(--light-gray);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-choose-us a.feature-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .why-choose-us .feature-card:hover {

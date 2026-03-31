@@ -1,91 +1,95 @@
-# Airtable Automation Setup Guide
+# GitHub-Only Airtable Sync (Event-Driven)
 
-This guide explains how to connect your website to Airtable for automatic data updates and lead notifications.
+This project uses **build-time sync**:
 
----
+1. Airtable record changes trigger GitHub `repository_dispatch`.
+2. GitHub Action runs `scripts/fetch-airtable-data.js`.
+3. The script writes `data/listings.json` only when data changed.
+4. GitHub Pages serves this static JSON to the frontend.
 
-## 1. Add Environment Variables
+No Airtable API token is required in browser code.
 
-Your website needs secret keys to talk to Airtable. You must add these in your website hosting provider's settings (like Vercel or Netlify), not directly in the code.
+## 1) Required GitHub Secrets
 
-1.  Go to your project's **Settings** page on Vercel or Netlify.
-2.  Find the **Environment Variables** section.
-3.  Add the following two variables:
-    *   `AIRTABLE_API_KEY`: Your Airtable API key. Find it in your [Airtable account settings](https://airtable.com/account).
-    *   `AIRTABLE_BASE_ID`: The ID of your Airtable base. Find it in the [API documentation](https://airtable.com/api) for your base.
+Set these repository secrets in **Settings -> Secrets and variables -> Actions**:
 
-**Optional Variables:**
-You might need these later for other features:
-*   `GAMMA_API_KEY`
-*   `RECAPTCHA_SECRET`
+- `AIRTABLE_API_KEY` (required)
+- `AIRTABLE_BASE_ID` (required)
+- `AIRTABLE_TABLE_NAME` (optional, default: `Properties`)
+- `AIRTABLE_VIEW_NAME` (optional)
+- `AIRTABLE_MAX_RECORDS` (optional)
 
----
+## 2) Workflow Triggers
 
-## 2. Create a Deploy Hook
+The workflow file is:
 
-A deploy hook is a special URL that tells your website to rebuild itself. We will trigger this from Airtable.
+- `.github/workflows/airtable-sync.yml`
 
-*   **On Vercel:** Go to **Settings > Git > Deploy Hooks**. Create a new hook, give it a name (e.g., "Airtable Update"), and copy the URL.
-*   **On Netlify:** Go to **Site settings > Build & deploy > Build hooks**. Create a new build hook, name it "Airtable Update", and copy the URL.
+It runs on:
 
-Keep this URL handy for the next step.
+- `repository_dispatch` with event type `airtable_changed`
+- `workflow_dispatch` (manual run)
+- daily safety schedule (`cron`)
 
----
+Near-real-time behavior:
 
-## 3. Set Up Airtable Automations
+- `repository_dispatch` runs are debounced by default (`20s`) to coalesce rapid edits.
+- Concurrency cancellation is enabled, so only the most recent burst run proceeds.
 
-### Automation 1: Daily Website Rebuild
+Optional repository variables:
 
-This automation will automatically rebuild your website every day or so to fetch the latest listings and blog posts from Airtable.
+- `AIRTABLE_SYNC_DEBOUNCE_SECONDS` (default `20`)
+- `AIRTABLE_FETCH_MAX_RETRIES` (default `4`)
+- `AIRTABLE_FETCH_TIMEOUT_MS` (default `20000`)
+- `AIRTABLE_FETCH_BASE_BACKOFF_MS` (default `1000`)
 
-1.  Open your Airtable base and click on **Automations** in the top bar.
-2.  Create a new automation.
-3.  Set the **Trigger**: Choose **"At a scheduled time"**. Set it to run once a day (or every 2-3 days).
-4.  Set the **Action**:
-    *   Choose the **"Send webhook"** action.
-    *   In the **URL** box, paste the Deploy Hook URL you copied from Vercel/Netlify.
-    *   Under **Body**, select the **JSON** format.
-    *   Copy and paste the following into the JSON text area:
+## 3) Airtable Automation Setup (Recommended)
 
-    ```json
-    {
-      "trigger": "airtable_scheduled"
-    }
-    ```
+Create an Airtable Automation:
 
-### Automation 2: New Lead Notification
+1. Trigger: **When record created/updated/deleted** on `Properties`.
+2. Action: **Send webhook** to GitHub REST API:
+   - URL: `https://api.github.com/repos/<OWNER>/<REPO>/dispatches`
+   - Method: `POST`
+   - Headers:
+     - `Accept: application/vnd.github+json`
+     - `Authorization: Bearer <GITHUB_DISPATCH_TOKEN>`
+     - `Content-Type: application/json`
+   - JSON body:
 
-This automation sends an email whenever a new lead is submitted through your website's form.
+```json
+{
+  "event_type": "airtable_changed",
+  "client_payload": {
+    "table": "Properties"
+  }
+}
+```
 
-1.  In the same Airtable **Automations** section, create another automation.
-2.  Set the **Trigger**: Choose **"When a record is created"**. Select your `Leads` table.
-3.  Set the **Action**: Choose **"Send an email"**.
-4.  Configure the email:
-    *   **To**: Enter your email address.
-    *   **Subject**: `New Lead: [Name]` (You can click the blue `+` button to insert the "Name" field from the record).
-    *   **Message**: Draft a message and use the `+` button to insert data from the new record. Example:
+`GITHUB_DISPATCH_TOKEN` should be a token that can call repository dispatch on the target repo.
 
-    ```
-    A new lead has been submitted.
+## 4) Local Test
 
-    Name: {Name}
-    Phone: {Phone}
-    Source: {Source}
-    Listing ID: {Listing ID}
-    ```
-5.  Turn on both automations.
+```bash
+AIRTABLE_API_KEY=... AIRTABLE_BASE_ID=... npm run sync:airtable
+```
 
----
+On Windows PowerShell:
 
-## 4. Testing
+```powershell
+$env:AIRTABLE_API_KEY="..."
+$env:AIRTABLE_BASE_ID="..."
+npm run sync:airtable
+```
 
-*   **Test the Rebuild Automation**: In the Airtable automation editor, click the "Run test" button for the scheduled automation. You should see a new deployment start immediately in your Vercel or Netlify project dashboard.
-*   **Test the Lead Form**: Go to your live website and submit a test lead through the contact or lead form. The new record should appear in your Airtable `Leads` table within a few moments, and you should receive the email notification you configured.
+Then confirm:
 
----
+- `data/listings.json` exists
+- shape is `{ updatedAt, records }`
 
-## 5. Safety & Troubleshooting
+## 5) Security Checklist
 
-*   **NEVER** expose your `AIRTABLE_API_KEY` or other secrets in your website's code.
-*   Only use official Airtable forms or secure serverless functions to handle lead submissions. Do not build custom forms that send data directly from the browser to Airtable without a secure backend process.
-*   If the website data seems outdated, check the **deployment logs** in Vercel or Netlify. Any errors during the `node scripts/fetch-airtable-data.js` step will be shown there.
+- Revoke any previously exposed Airtable token.
+- Create a new Airtable token with least privilege.
+- Keep Airtable secrets only in GitHub secrets.
+- Do not commit credentials in client-side JS.

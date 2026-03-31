@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Details | Shelters Realty</title>
+    <meta name="description" content="View verified property details, images, pricing, and location insights on Shelters Realty.">
+    <meta property="og:title" content="Property Details | Shelters Realty">
+    <meta property="og:description" content="View verified property details, images, pricing, and location insights on Shelters Realty.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.sheltersrealty.co.in/property-detail.html">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Shelters+Realty+Property">
+    <link rel="canonical" id="canonical-url" href="https://www.sheltersrealty.co.in/property-detail.html">
     <link rel="stylesheet" href="styles.css">
     <style>
         .property-detail-container {
@@ -25,6 +32,35 @@
             object-fit: cover;
             border-radius: 1rem;
             background: #f3f4f6;
+        }
+        .detail-gallery-thumbs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+            gap: 0.55rem;
+            margin-top: 0.8rem;
+        }
+        .detail-gallery-thumb {
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 0;
+            cursor: pointer;
+            background: var(--white);
+            opacity: 0.82;
+            transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+        .detail-gallery-thumb:hover,
+        .detail-gallery-thumb.is-active {
+            opacity: 1;
+            border-color: var(--accent-blue);
+            transform: translateY(-1px);
+        }
+        .detail-gallery-thumb img {
+            width: 100%;
+            height: 64px;
+            object-fit: cover;
+            display: block;
+            background: var(--light-gray);
         }
         .property-detail-info {
             margin-top: 1.5rem;
@@ -49,11 +85,17 @@
             color: #64748b;
             margin-top: 1rem;
         }
+        .property-detail-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+        .share-cta,
         .whatsapp-cta {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-top: 2rem;
             background: #25D366;
             color: #fff;
             width: 58px;
@@ -62,6 +104,17 @@
             text-decoration: none;
             transition: background 0.2s, transform 0.2s;
             box-shadow: 0 12px 24px rgba(37, 211, 102, 0.28);
+        }
+        .share-cta {
+            border: none;
+            cursor: pointer;
+            background: #e11d48;
+            box-shadow: 0 12px 24px rgba(225, 29, 72, 0.28);
+        }
+        .share-cta:hover {
+            background: #be123c;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(225, 29, 72, 0.34);
         }
         .whatsapp-cta:hover {
             background: #128C7E;
@@ -79,6 +132,7 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="listings.html" class="nav-link">Properties</a>
+                <a href="new-launches/" class="nav-link">New Launches</a>
                 <a href="areas.html" class="nav-link">Areas</a>
                 <a href="agreements.html" class="nav-link">Agreements</a>
                 <a href="about.html" class="nav-link">About</a>
@@ -111,6 +165,7 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
     <script src="property-detail.js"></script>
 </body>
 </html>

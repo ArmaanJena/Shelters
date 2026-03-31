@@ -1,0 +1,3218 @@
+{
+  "updatedAt": "2026-03-31T09:17:17.491Z",
+  "records": [
+    {
+      "id": "recfizcKc13lIodFe",
+      "createdTime": "2026-03-31T05:54:17.000Z",
+      "fields": {
+        "Title": "12000 Sq ft ( carpet) road touch showroom for rent in Kharadi ",
+        "Image": [
+          {
+            "id": "attwnpvhDuTY6fxWg",
+            "width": 5000,
+            "height": 3750,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/VFMgVLHBnh9CKlyHos0lCA/S61PPWqdXhn4hZCGIpBCkNrECX-fxrn5JU1iGQWoOCAgV33-sgF2rwchLQd-YRnbv6LzO5zA479QxjZYJ7dKIuEqDLbsSMShKA-dBXUyoFZBH0MsZrc7OsqZ2TyHMBjHaVx855gMUmMdVco0g8fLgCxPOiJdvKf38ohWfzsLHnA/xoTYFkahqzvhsknENXXIxZh-Qvy6JhjZiAIWZfsN1Io",
+            "filename": "2026-03-31 11.25.51.jpg",
+            "size": 6695045,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/_SWJbrJOn7cwnb5LZWFklA/6w5n3IaBrOw8zsudOA3BWZeL5-dZsub6TyKBzUC6NwZp--WHTo-o-3oM2NFBX8qQmhOkQvPGwaWt7JrbbqNIK4JL4TMPMD9An4gYkh93x2whkmzfIqu862DGvK3Tt3a8wESjw8-c06Vmv24ik2YSgA/W4AlBAxnqKpo6tL03V2fqlaG3Kw6b6Z-eUUu4h34PyY",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/qtI1ldXfcfgVvNbR9fqyOw/eYY2FehRlyV0lcvG8B2FAFslA3h1kbB65aGhDEX1Q7t-BQf7_gJB2eEBi-hygJ-AVHa7hYlu2DZKhnHRANC2Ly7cydLuz7WMh6Bk-7xCbne--etk-VF84-WYZhoR81PKKNFLRmsimgtPFzu-l18Ddw/6Cc7jtCInnjQwd2cH-tCs3_4VtaIkyw2sTc2bxInYXU",
+                "width": 683,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/JxMnaB1EwQYY5GE6V95UoQ/OJUQC9lVDXvXBtSoQzSYsY94M8bb9zL5abZqVDJ7nPmjXAeuTul9bo4EqK_oUnKqy0hekKRA7rA-fFV0m3iJpJhyPPG8OtLJ094qIBErCqqOypNO0AcaFawcVTHZN4kI9tIPU6lBM8TypwaOA7NQlw/S8a36QzyRfsw1cWeiA9Pd3uafKCdOXK0tFQ_F-ZLeVE",
+                "width": 3000,
+                "height": 2250
+              }
+            }
+          }
+        ],
+        "Price": 0,
+        "Location": "Kharadi",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Description": "Premium Showroom for Lease in Kharadi, Pune\n\nLocated in a prominent commercial development in Kharadi, this premium ground-floor showroom offers excellent visibility and a prestigious business address in one of Pune’s fastest-growing commercial hubs. Surrounded by IT parks, SEZs, hotels, and residential catchments, it ensures strong footfall and connectivity.\n\nThe building features a modern glass façade, grand entrance lobby, high-speed elevators, and 24/7 security, creating a professional and upscale environment.  ￼\n\n⸻\nShowroom Details\n\t•\tArea: ~12000 sq. ft. (including mezzanine)\n\n\t•\tHeight: ~20 ft (mezzanine provision)\n\t•\tWide frontage for branding\n\t•\tGround floor location\n\n⸻\n\nIdeal For\n\nRetail brands, flagship stores, boutiques, and corporate showrooms, large furniture brands.\n⸻\n\nRent\n\n₹225 per sq. ft.( carpet) \n\n⸻\n\n📞 CTA\n\nContact us for site visit and commercial details.\n",
+        "Short Description": "12000 Sq ft ( carpet) showroom for rent in Kharadi",
+        "Amenities": [
+          "Visitor Parking",
+          "Maintenance Staff",
+          "Parking Space",
+          "Power Backup",
+          "Lift / Elevator"
+        ],
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recqzQP2nyVCoTDin",
+      "createdTime": "2026-03-30T15:36:09.000Z",
+      "fields": {
+        "Title": "3200 Sq brand new office for rent in Kharadi in a Grade A building ",
+        "Image": [
+          {
+            "id": "attkHZIGz63VPDcZh",
+            "width": 581,
+            "height": 344,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/bEz59r_oZS5UHzNutd5PMQ/eaLAe6OYmlwq9dbtM6eXdt811r_A3gmEgubgZ7ZXQHsuVBeccLCDWNHSss_0mxNjaYMbWe3CMnKs8hRJb4RJ0Gadk_okQNO0-QaZjqaYbDKujkbfeXgnOSqmAxgbeJFUXX2GVNUxE6dC2257L4vuI4klNI1aIfxtYr_bBbsJdlk/vFrDmy3SRmVz557J02igMOx8auuHa6KpJaDqHVLN_iw",
+            "filename": "2026-03-30 21.07.50.jpg",
+            "size": 126428,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/6QBM87ocAPtt2ak3lxQRfA/Forojq1d3YRtRQYqmhXIOisjmE-DD68787OcEi739h6FQRACtYCputR-IYvsv7sAXBS_FBlvk1FMw3_4d78Ou4Wcs9phWrgp0Yz3Hna3zFR9EeW8-7q0OJaFRO940rLzXVfVyM_TVXxOr8ch8aOh8A/2BRY4lqxm8pny626zL2eByA72JYiJOyzX3tY8DKWmDY",
+                "width": 61,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/1lLx-RUjt7pxhJs57npMPg/fpSG9xyoGuG3eht48lU-2MQpOjUdq451_yqUGoAhkmH3on2414irgHi16VpnF-Smw0QL4uZRPMqiVBdQu97PhQN10oBAm3S6ZfNObGRELodqo_Sgi7FUPTFZVNTC4VVxLovuw2Nde6wqfkV6vuJJ4Q/C9X72lsnny0soe3DI1EGLjp7TnhpRaabv6szCPMXJtE",
+                "width": 581,
+                "height": 344
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Xw2GwE8Y-O0hFwNJnC51lQ/1ZAzyd9QoGNVANsqlnciET3YrbPMpez89Yo-fACxaN5OHcBD7hdGMLnFgaz3tfYqJqHbrNxlZOxp6prBEY6PNAbppshcyWkiOrKW9ka3sDxu8Q7NxURB6bqxXv1MtaCTFsCOlrtqozEvCmsdu6QOsQ/eg9ogF4zT7ih-nvmdr-9-s27FeEISfYlYfLu7Ctm588",
+                "width": 581,
+                "height": 344
+              }
+            }
+          }
+        ],
+        "Price": 380000,
+        "Location": "Kharadi",
+        "Property Type": "Office",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 3200,
+        "Description": "Premium office for Lease in Kharadi, Pune\n\nLocated in a prominent commercial development in Kharadi, this premium office  offers excellent visibility and a prestigious business address in one of Pune’s fastest-growing commercial hubs. Surrounded by IT parks, SEZs, hotels, and residential catchments, it ensures strong footfall and connectivity.\n\nThe building features a modern glass façade, grand entrance lobby, high-speed elevators, and 24/7 security, creating a professional and upscale environment.  ￼\n\n\nOffice Details\n\t•\tArea: ~1600sq. ft. (Carpet)\n\nRent\n\n₹120 per sq. ft.( carpet) \n\n⸻\n\n📞 CTAi\n\nContact us for site visit and commercial details.\n",
+        "Short Description": "Premium office for Lease in Kharadi, Pune in a grade A building ",
+        "Price per Sqft": 118.75,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "rec9HrkxH5FIqvpX6",
+      "createdTime": "2026-03-30T15:27:06.000Z",
+      "fields": {
+        "Title": "1600 ( carpet) Sq t brand new office in a Grade A building in Kharadi ",
+        "Image": [
+          {
+            "id": "attZ39wvfrw8PMNxi",
+            "width": 581,
+            "height": 344,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/IaL1a3Vrn6D-4QwaKKKhMg/-Mn3nHinmReayugMK9xa4x8Dy-MyegORAkTn0fPMgQ94Rbxu82cjkFfO5X8TM6FP-t4ZRidOd2DFQicVw8Rtn0diP0wsEs8DQgxklDhL-x0YkflAfkWsewrfEJxjC7ijp3IxkWbBDfyGHZa_1zPD1RvysBgQwL7DWTNHZb-GnJY/gLNJFzYLxmbjaqE1_1Nb3Zuke7176cHmqY-MPgE-G4w",
+            "filename": "2026-03-30 20.58.51.jpg",
+            "size": 126428,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/BotUo6kixe45_oU_hH-N1w/F6r0rBO-VFJkp2ytT3uUlmWPMwkUb2ZKiFP-KTAh6vAztgVvS2wA22lyFhZ9ts3TCAHtNmz17o8HP64FH23AbmRn_6eU3Frs-HCxDDfqRIv4H-VdrqI6z88CZTz8cylTMxj1nAB70jviEdmdj_YR6g/jKccTLkDGV2YlBaujLfc7x2X-_ZLiRJoyKi-cuigsos",
+                "width": 61,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/zgeAs4pcyc2GpXIwCismeQ/3IG4OTwXTzPYCC3pysK_E9YcSSGPn89w7xzNZZJ6AFNXdMxRcl9rgEsMY6ljmMnXGLwOS1_QcF_NhnCSIfiRerkp7JulUte0l5K2cy9KuwesyYghi91uvaH83aYuOn59IXAHopLjYvSDUlW-N6j84A/1OCMD_OjLSqg4LINWfgxWyQD09ujojb5uPsfAqsdAB0",
+                "width": 581,
+                "height": 344
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/mKcWW9a37jCUvYM6A9rADA/-HOee1AMGAIlctj04OXOslv7MHV1Iobjr888yilOQfRXAm-jX9FT4BNH1q2HgI819FxLMw2y8pi7Rz3Od7OH-KHxzRH30_IVuJiymy_ppaHGnXipuhLU8ChCMVKP3f13IzxXOEcPpk6TJ0tjzu2GlQ/xa8IaMuis_lkZw8_RqF1Tf9Dqbd_qoFsJ_WTo190TDc",
+                "width": 581,
+                "height": 344
+              }
+            }
+          }
+        ],
+        "Price": 190000,
+        "Location": "Kharadi",
+        "Property Type": "Office",
+        "Offer Type": "Rent",
+        "Size (sqft)": 1600,
+        "Description": "Premium office for Lease in Kharadi, Pune\n\nLocated in a prominent commercial development in Kharadi, this premium office  offers excellent visibility and a prestigious business address in one of Pune’s fastest-growing commercial hubs. Surrounded by IT parks, SEZs, hotels, and residential catchments, it ensures strong footfall and connectivity.\n\nThe building features a modern glass façade, grand entrance lobby, high-speed elevators, and 24/7 security, creating a professional and upscale environment.  ￼\n\n⸻\nOffice Details\n\t•\tArea: ~1600sq. ft. (Carpet) \n\nRent\n\n₹120 per sq. ft.( carpet) \n\n⸻\n\n📞 CTAi\n\nContact us for site visit and commercial details.\n",
+        "Short Description": "Premium office for Lease in Kharadi, Pune in a Grade A building. ",
+        "Amenities": [
+          "Visitor Parking",
+          "Maintenance Staff",
+          "Intercom Facility",
+          "Lift / Elevator",
+          "Power Backup",
+          "CCTV Surveillance",
+          "Parking Space",
+          "24/7 Security"
+        ],
+        "Price per Sqft": 118.75,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recGh8zx4xyNSIoBv",
+      "createdTime": "2026-03-30T15:23:29.000Z",
+      "fields": {
+        "Title": "6000 sqft ( carpet) premium showroom for in Kharadi ",
+        "Image": [
+          {
+            "id": "attwUowi0j7s7MSKa",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/BI3CTxs9uTDIM6WjW9dcyA/CsRh66yqrRSq9Ai0f7nNktvRD5Qc49kvIhWqHF2nUhFor1HaXX0N_KvXI7yyMew2XAdC2aYFPeJU3BqawQZtQDpl7fTGGVEhLWrDmBe9K6xBw_WPksOgA6CUW_iwW1yRThWp8m4G-xvenPkbVpDSTIplYsG358hdJClCMbpqPpA/ADErRL5GikLEH46a3k7Lmbz3QxY3OVmmOppRWmOvKVw",
+            "filename": "2026-03-30 20.54.46.jpg",
+            "size": 1286748,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/9YQ-iczR_MpvKNKZ-fZT0A/P3psrVpiJGMaDUivfG1lfksBpzLLRQJ7bSC508NKnow0R-vS-h1umTmDWv7W4lW9YfiPnF3Gzq87LAWvyhwUIm7PTnu2w2muJkmGwZqSA0F2wSooCyuizw4sdmyc5Fl90oybyf4X1j50ASY2HDVu8A/PL3a2FQJFHCYOrEfCVD_6dqODAlUmsP8000T6C_p7dk",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/m745DDBDUk1TacAWMJ3wag/N8n9v15pKj9UGT8yOawMK0h9u0Xpi2HicZzMhibhJzUc0XNUuvsV7mqsovXu5zN-MsmSJG_a18QGA7AV5zlEyqpI4IcPfMLDJg4_iAbTwC0N6Db77WLzdIQuiXIlA2DKHWkpshLJfojJu7jrrqQkxQ/gXTFpaswBYXJNEphOuyDuVSyAdpVRshkva7Dqlnm0FA",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/V_eWUz5vrlmonKBfb3lR3A/XjdfksdgQ6voRF2gpRJ-Gcnc3KTPM5CkBAVe-MUyvWQ44n1CHueHv6P9qvfa5vI1-ly4eSEt0Vb8kcNG2aIr2u43d8sIkx_jFDegQC51du6JUr9rCFDlRTPqU3K-vw7nyrOgVd2ddMgBGmRveM1FNA/ndwFm_guCAH0i-Ia8QMfwUgm8q4Q3xqzUyYdK54qudg",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 1350000,
+        "Location": "Kharadi",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Size (sqft)": 6000,
+        "Description": "Premium Showroom for Lease in Kharadi, Pune\n\nLocated in a prominent commercial development in Kharadi, this premium ground-floor showroom offers excellent visibility and a prestigious business address in one of Pune’s fastest-growing commercial hubs. Surrounded by IT parks, SEZs, hotels, and residential catchments, it ensures strong footfall and connectivity.\n\nThe building features a modern glass façade, grand entrance lobby, high-speed elevators, and 24/7 security, creating a professional and upscale environment.  ￼\n\n⸻\nShowroom Details\n\t•\tArea: ~6000 sq. ft. (including mezzanine)\n\n\t•\tHeight: ~20 ft (mezzanine provision)\n\t•\tWide frontage for branding\n\t•\tGround floor location\n\n⸻\n\nIdeal For\n\nRetail brands, flagship stores, boutiques, and corporate showrooms.\n⸻\n\nRent\n\n₹225 per sq. ft.( carpet) \n\n⸻\n\n📞 CTA\n\nContact us for site visit and commercial details.\n",
+        "Price per Sqft": 225,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recU1uiKAEQ3vUZzM",
+      "createdTime": "2026-03-30T15:11:14.000Z",
+      "fields": {
+        "Title": "3000 Sq ft (carpet) Premium showroom for rent in Kharadi ",
+        "Image": [
+          {
+            "id": "attk3efCCSb5k2gTv",
+            "width": 236,
+            "height": 236,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/PqTTtuRwWVudWbWSGho4ew/m0e9F5oSRgVo5N_Pk79P9pBC_QaD9LyEmDxkB5PgXSjTY2zG7fCz1cFUeuty5B_TpjXdDxMuzRPref7mDuHUerRKKnfyoqYxxVt-wr7FAaIYj586bT-6O0YGMw-IbV_lwoIRlrhaAlTnwr5fdMnpxhY3Ppd34NpBVUZr3UJEN9U/Fwk0Rcs_QucFMaUARPbrE6gvlJomj9Jb6wRh3ScSHzw",
+            "filename": "2026-03-30 20.43.11.jpg",
+            "size": 35989,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Le0Ao7Vt2TlYpJ6g_C2rgA/BGkxwfLnYWSN35jfgLIX7IC3HM6t6Ci5PYmHZ7UQBLdxssNgf3d7giBrRRsiJhnGMfB8Wd6pVdQ2sBQZe9QEhsLHyFhNzjJ-9AkERmS-9B0R1XaVsudwRUIzZPn0cNHqBj6work5V7huKO7hYbXNrA/JIhIPPFFCqSI7_l9WGmE_73CHYOhyN1gKE80MeAeVYQ",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/zLaK05at8RO-GcVVIWytaQ/Hi1TUVpBnfsnoOibuskFxydKW9N8UTBMVebJSEnHLfn0ASs8ig6tlxbuv6bXU6wa4r2QLWYpY6Gg9LwJfdcJGdKfNmp8Rp6iXEM-Ac6sXQUyjB4PRXvKN2UdqiSEX0ctdpA9cjTn8uAHokGB2IjHDQ/TMKLwFG4sIkWyfKPOw3R200RfA68bIQAAvyM4JvAUGM",
+                "width": 236,
+                "height": 236
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/PJlg6vt85xIFL40JlW1uPQ/dhq-BvaHhDLqw1WDDBXSNrEX32DbE6pcNRgYeSWm9Txj_Mp6s66X6nstEyHfgxRujNyqg5BP2fv_9BApUNF0HEpf0XyrYKOBhSvRwafVfEvOp3drEYX4v9Mw3x8a6fPnVJbtf7LSows0qlQHL5v0UA/N-Z5j8Z_nv6w0eILqqlQQl3A4GQSapTYJhqofjW_mPo",
+                "width": 236,
+                "height": 236
+              }
+            }
+          }
+        ],
+        "Price": 675000,
+        "Location": "Kharadi",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 3000,
+        "Description": "Premium Showroom for Lease in Kharadi, Pune\n\nLocated in a prominent commercial development in Kharadi, this premium ground-floor showroom offers excellent visibility and a prestigious business address in one of Pune’s fastest-growing commercial hubs. Surrounded by IT parks, SEZs, hotels, and residential catchments, it ensures strong footfall and connectivity.\n\nThe building features a modern glass façade, grand entrance lobby, high-speed elevators, and 24/7 security, creating a professional and upscale environment.  ￼\n\n⸻\nShowroom Details\n\t•\tArea: ~3000 sq. ft. (including mezzanine)\n\n\t•\tHeight: ~20 ft (mezzanine provision)\n\t•\tWide frontage for branding\n\t•\tGround floor location\n\n⸻\n\nIdeal For\n\nRetail brands, flagship stores, boutiques, and corporate showrooms.\n⸻\n\nRent\n\n₹225 per sq. ft.\n\n⸻\n\n📞 CTA\n\nContact us for site visit and commercial details.\n",
+        "Short Description": "3000 Sq ft ( carpet) Premium showroom for rent in Kharadi ",
+        "Price per Sqft": 225,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "rec0prCVYP2BSqTuE",
+      "createdTime": "2026-03-30T08:38:35.000Z",
+      "fields": {
+        "Title": "Premium 3000 Sq ft carpet for rent in the main Kharadi high street.",
+        "Image": [
+          {
+            "id": "attVDPS7twJkGqEho",
+            "width": 578,
+            "height": 346,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/0ZawxayvLzKKA_xazZqfgQ/td0zC9NCDPnbkvYLX6w0jINPLeh9AzuWAkacAVRM2Qahj-YegvkUYIMv69RUcfOVD6hZolNTRtVEd4N1lAOxv8P2WYXhbOSQoGIlManxro2LZeQ7kqhkbbfzGU-V3JPCkVKxbMlxhlaPSFdlSRnEyodj2SdVUPOq499r23xQ7RE/l1m9R0eX9SztTml4tyFy759WPfEDH6bCDxhho45-GK4",
+            "filename": "2026-03-30 14.17.41.jpg",
+            "size": 117473,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/FtIIxR2UgY8f1IkNlFU-5Q/UpbXsJ-DnjSz2Tgj42xDz9rrOC8EfgyFOAz8J1piostvUaaMjgomJEddg51np33tTpVTOmhtsLrjg1Gnucvm_IYmE3_abV5wSXfPVm909wCSl9sutaL5iey6J949Pa489-gy2XToAYYZNkVebrm-ug/5TZipdmznkjtheXD8CGkskQwfluJ5p6LIKpijgYbtC8",
+                "width": 60,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/BKZd_gScKTS-yqCFF0PBAA/eZ7DwWUHoDf7_vFo0WXld6WmXVum2eYA770_FzkqY6YwOJ89zfrEhHM5Xn-fQfC-swgCeh-CavaaztFI7ipOLSCflavbnQE0hOXEyEErdUr8PKlAYxDxVLSRodIZlaRVBPYHMVu1HAfF155g8EloTw/7y-bkNpByNPdcdlH3S8HUg7v4Rx4lw2UaACCKKm3YXI",
+                "width": 578,
+                "height": 346
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/V5jlojQ-a7TG6fvPp4Y7Ig/JLh0bSEWRONNcL0JWwq69AoCmszJCA2JCDZeNWy7Vd5rFz1K8s3N-0tS96k83nYNZaiX86FEuN1hCC5pDgcEtcmVpJ__Owiu6a8_108vOgtpaq1v7frciwyrzx3vxCgMGrGXPOY8d1Fm5at3QdzExA/nBw6wxhmwVJ5JzJ35UghqEo3XOYLgyOXaPyJhouepq0",
+                "width": 578,
+                "height": 346
+              }
+            }
+          }
+        ],
+        "Price": 650000,
+        "Location": "Kharadi",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 3000,
+        "Description": "Showroom for Lease in Kharadi \n\nLocated in the prime commercial hub of Kharadi, this premium space offers excellent visibility, accessibility, and business potential. Positioned in one of East Pune’s fastest-growing office corridors, this property is suited for retail brands, corporate offices, and service-based businesses.\n\nWith high ceiling height and wide frontage, the showroom spaces offer strong branding opportunities and efficient space. \nSituated in Kharadi’s prime commercial belt with excellent connectivity to EON IT Park, World Trade Center, and major residential catchments.\n\n⸻\n\n💡 Ideal For\n\t•\tRetail brands / flagship stores\n\t•\tCorporate offices\n\t•\tShowrooms\n\t•\tService-based businesses\n",
+        "Short Description": "3000 Sq ft Premium showroom space in main Kharadi ",
+        "Price per Sqft": 216.66666666666666,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recn6GrJngMAY7bhC",
+      "createdTime": "2026-03-30T04:49:24.000Z",
+      "fields": {
+        "Title": "Independent building for Sale in near the Pune Airport.",
+        "Image": [
+          {
+            "id": "attNRXnblHWtciFe9",
+            "width": 563,
+            "height": 609,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/bRmjhMUZ0SZ0TljaojqXqw/TYqN174mAzVW0TzmFszHRpXemKsSiO_DK5bLpaclY3Cq1SyTN4Q3z9vcNOMCPyKzOKuC6crSaMUNlR6zPxzgcj3LR0__S76y61h5n1Fsw5fz0v8hAjDsVHY8arGdtFCQ586hMEykrMML8fqRhTNXNrhyvxyRD3mHPEdKIIBJVFU/Z7vw8RKBSFjvkEgkcYpYT5TC7tvozZaix51AAg7j2gk",
+            "filename": "2026-03-31 11.24.07.jpg",
+            "size": 177431,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/y146306BidZp9kATdUZ2Tg/KBEBClx8YzXPFBonTdFDvdWf1EZdha_lUcZQqeoJZKeBek2MpAJmrnnKzUQaVXWNNI5EId7sC1TjDyeliCD_jexVqKttx1MGVyups1EpZztJWzR28I5dTFPXo-5E81gb98uTcBP5ntGAGPcq53h_IA/MTbqKf19EFXYH05x-iTlaJJadVchuqI7QZWrlg8dhxk",
+                "width": 33,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/4fGsYC13WppnJ7lD2Oqp0g/Yb5jcV1SL-G_DC27q6-ZZTcqLiXhL6Y1y8eUo7SoJV6HdwCcfUHX-P4wLFgZ-N-W3GU_chpEXIlaLhZbrE5-p_nfHws8cwSyW_LC4ePO5T8hUHzq0Cl2rBS8iuegtKQO1bQ2WaRKMa5m90dFZyRbtg/Kar9LxxlCJXjuX1oQZSiFBY6kQDlw8WAK9_bttqUpC8",
+                "width": 512,
+                "height": 554
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/oFKKbtj2nGOCRyLVF9AO5w/UGMkZ03cj6J3iCIPiIlh5St8dvoMK2dT_xkscJXwwdKosCJCaunf1I3qt7fpU5kjvHBMrpTnNIOEtgAnr4FJ4HmhnuYHHpNRHHvI2OOUbsTPL7DuKuFdAe5Q7blR0hJ3V4Z4i1ByyzTxtsqinZ5nQQ/_-rPlbl7bPl9Xy-3IjYCAQz6sx4i4eE0aPKubO9xZNs",
+                "width": 563,
+                "height": 609
+              }
+            }
+          }
+        ],
+        "Price": 48000000,
+        "Location": "Viman Nagar",
+        "Property Type": "Individual Buildings",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Size (sqft)": 0,
+        "Description": "Independent Building for Sale Near Pune Airport\n\nThis ready-to-move independent residential building near Pune Airport presents an excellent investment opportunity with immediate rental potential. Built on a 3,550 sq. ft. plot with a total built-up area of 7,000 sq. ft., the property consists of 4 floors with 8 well-designed 2BHK units (875 sq. ft. each), making it ideal for rental income or serviced living.\n\nStrategically located close to the airport and major commercial hubs, the building offers strong tenant demand and long-term appreciation.\n\nIdeal For\n\t•\tInvestors looking for rental yield\n\t•\tDevelopers / operators (co-living, serviced apartments)\n\t•\tEnd-users wanting a complete income-generating asset",
+        "Short Description": "Independent building for Sale near Pune airport .",
+        "Amenities": [
+          "Lift / Elevator",
+          "24/7 Security",
+          "Visitor Parking"
+        ],
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recXb4lTsq68cnlzM",
+      "createdTime": "2026-03-28T12:27:11.000Z",
+      "fields": {
+        "Title": "Commercial bungalow for rent in Koregaon park.",
+        "Image": [
+          {
+            "id": "att2IzRnArJ7EtFrM",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/OmNtWXvNDhczj798u1QWlw/sHxEIuJayO6ovRD4SdsTd5ECM9xNmqnQois0gLmsbHsfZ157040LJikYgeYaD1JLlHrY_9Q2OsEkWxqMHNTTvOOrf_Fi8Q5LXoPJSOSlh-BdJTOxCA9opM94xxk-0KbJQTuYmHA0Fr2ZbmzYYsdrtvVp8xSQfLozRdHITnEa1Ug/4rAKvZ6_ghZULapa6s8zHVqBcav9G_M7GT2KWGBeHks",
+            "filename": "2026-03-30 14.00.28.jpg",
+            "size": 1311949,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/VLbjGqiH8IFk4m1ccGFVFw/TlT9VsWoFzNj5r9bDD6-6ch9Ru4UgCDA-9iUmHyEY04DfG-FB_XGaCtCGTvHXYObdUl-9SlX0GVyODdTWy-PI_NanQgRs6vXUKLp_kH1BLY1csD2L08MgMMpMI_HIUGqtUvJf91Qaby_ET_d8umI5Q/ucA-vFVs4MXISD_yC0GHXhLfS290qsFfpwI4EeY_nHI",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/jFMczlRtbdmJeq4LQMPnQA/YlJVQ4askjTc7207ULl9CTsIYA99nuPVV2zZuy92Gn89vlMjNlpL1rprcQAB-gtV8JlMSYr1AzgfGuhQLUkTjmA9iWDoWZpv5-Puje0w79lg4VGkipZkDWACHT8KR4QjIvx5OSLqDJb6uZmDsDVaHw/YHs_Swrc21XISdKnCodaHSnKNnc9WMiLkIJVAkcaZ_g",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/tWcnQg1VzWgZeFpFDy6zbA/MH5Gc063FlkvxLd6VZtuiYjIdkaRWc6rA7HuBvSmCOI3VdA6vlSlkHH3t-Tek_f3r1ZJ0WaPh_J2vPCKToU8nUtcbv_mJzvBZQMRq5yN_xM-Vn3aKwnyYaCUqkf04OMEu0LTrAeboNJtzB62x3bQDA/yPMWLu2S5iyO1dti5_lZqu9DA85UdS5Dr0BNAX81G6A",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 240000,
+        "Location": "Koregaon Park",
+        "Property Type": "Bungalow",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 2900,
+        "Description": "Bungalow for Rent in Koregaon Park, Pune (Commercial Use Allowed)\n\nLocated in the prime lanes of Koregaon Park, this independent bungalow offers a rare opportunity for businesses seeking a premium address with high visibility and flexibility. With a built-up area of 2,100 sq. ft. and an additional 800 sq. ft. open-to-air space, the property is suited for restaurants, cafés, boutiques, or corporate offices.\n\nOne of the key highlights is that all business entities are permitted, including establishments requiring a liquor license — making it a highly valuable option in this micro-market.\n\nSurrounded by premium residences, popular dining destinations, and a vibrant social ecosystem, this property ensures strong footfall and brand positioning.\n\nIdeal For\n\t•\tRestaurant / Café\n\t•\tBar / Lounge (liquor permitted)\n\t•\tDesigner boutique\n\t•\tArt studio\n\t•\tCorporate office\n\n\nContact us for site visit, licensing guidance, and deal negotiation.\n",
+        "Short Description": "Commercial bungalow for rent in Koregaon Park.",
+        "Price per Sqft": 82.75862068965517,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recgSjz3QeWQ0LCPN",
+      "createdTime": "2026-03-28T12:18:47.000Z",
+      "fields": {
+        "Title": "3000 Sq ft plot on Boat Club rd ",
+        "Image": [
+          {
+            "id": "attRsDGiwMIVd0skh",
+            "width": 588,
+            "height": 330,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Yn652uNvHIQXSHO9GHK3LQ/RPdYiK7uFuz8EndtP8IeHumV_il4q0KlOLar5WHDN_gmsu2GGtXizTO8HiY9XAz9iyYsG67VKPq62zz4v6la0h3cnETIFjpDTmxvXHZgCgo1xxyok6jECFKHVjaOLzqEeVxmOq7rb9sV99FzVKmIy5EuzhZMKePkDCgyyvrTynE/QjPMmhvIJuWw5gQmQBoHWtDa-WChLJ3VRaqHWIxFLZ8",
+            "filename": "2026-03-28 17.49.27.jpg",
+            "size": 198416,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/30CJ4Zwou6D5UTOLEpCB5w/lf0zxxRXGMpyRMQeAainhYxPdG-k6os5JDFGyLIWtBmwVHjNNLVMlbdLTBh7w0XzVglQmrRynXBNX3bntmy4NtVdI4NEHlll3I0oyA4UZC2yTh3QtLsvhkFrLjUpfjnDet9ufDGQqnhvBr8n36lBZg/Uun_rDcbPABUFlr1d2kuOUK6d2DSBtgp3NmCi8YjGNg",
+                "width": 64,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/PtZfqRaHa3EcIe1KgIVZ6A/d-OqHfxoLPSmg1p0DKen1Bq4iNVOdzunVEqROXuZmSyxBqKOQxW_senQr0NIv1ezCxfQzSU7e5bev9A3cVrpOntOWA9SecoVzQjTOwGkm1bby8djD5RaMy4Yvb4PciZd1mmH_n6HF2dNh_mEauwywg/0E4LjGU4AETxs10khcf75LJGs8iekw8La9m0bfAQGPk",
+                "width": 588,
+                "height": 330
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/ZkFCmGyRIM-mxbg1P1L6Jg/dZHLlV29LUK_ezJ1Zmo_hTBHE8OnjPqlYqeLlUkDHDvkvNsc4pGIe5YiaN8wPnGxjhFi9-c0H8awRHIKBTbyeg8afrrvKEi7usn563O8kdNM-iWDq-Mw_Wn57AnvJXgHWQPIDzh4u3wYX12cDRgrfQ/pYGSvje4eq049radXQXKNKd1LLCAIjNbAX_8zzSMqTk",
+                "width": 588,
+                "height": 330
+              }
+            }
+          }
+        ],
+        "Price": 65000000,
+        "Location": "Boat Club Road",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Size (sqft)": 3000,
+        "Description": "3000 Sq Ft Commercial Plot for Sale on Boat Club Road, Pune\n\nLocated on the prestigious Boat Club Road, this 3,000 sq. ft. commercial plot presents a rare opportunity in one of Pune’s most premium and high-visibility locations. Surrounded by elite residences, boutique commercial spaces, and established business hubs, this property is suited for a high-end commercial venture.\n\nIdeal for an art studio, flagship retail store, designer boutique, or a corporate office, the plot offers excellent frontage, accessibility, and strong brand positioning.\n\nWith limited availability of commercial plots in this micro-market, this is a high-value investment with strong long-term appreciation potential.\n\nClear title and premium address make this a standout opportunity in Pune’s luxury commercial real estate segment.\n\nContact us for site visit, pricing details, and exclusive deal access.",
+        "Short Description": "3000 Sq ft plot on Boat Club rd, Bund garden ",
+        "Price per Sqft": 21666.666666666668,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recbJliz9nz25Q6v3",
+      "createdTime": "2026-03-27T11:06:47.000Z",
+      "fields": {
+        "Title": "40000 sqft land for sale in Kharadi ",
+        "Image": [
+          {
+            "id": "attjUUQ0lURqkyM2m",
+            "width": 480,
+            "height": 360,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/BswuIqXCJxY-OHWK6v87pw/73mTezfaJ-OUwO2KbI1CevYZor8HAhIBSXwwhauKN1fv7ZUg2cQb6p5XqEabBJlzKAzxrgNaV2pi13BlXWlTNTqNd2SefvWBOtb_imPpJQh04fSVIrpll1o4YgUCYMMsezgZTfkH-1ixVGsufR01Nre2onl6keMqGs_z6vj7TQ8/FpWHnqV86RRrYmuBuOJ7_XrBxc9F5TbsdaUdPPAFBmM",
+            "filename": "2026-03-27 16.41.20.jpg",
+            "size": 67656,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/2FLrK6Yytfx0pXK3Ke-UNg/wUJ4FRP-jOlK11axmtGQcw7qOr2k21T4SIOKp5v_91G0MFb4gXw_MU9ew8RaWawWQEIMQfcqHAFLz0rPqA5FJ6KOipd2q1-1CjrByhUQuM4Ih4GlgKRaVw9WyPGWxf74Tlm-2ZphQ3FuryMFIUW4Qw/ssZm11xhbf7EmrqHEA9vtY4PTadNZTgEHglpPz74GFM",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/kSAp_EpG4GSqPkvbQJXLXA/2P6W0oT8dwFMZ8sKt_w4EL3oupJZo0cAIDfuamvzwG4bkY-GDWA6TD1OPvegnZIRJG0OcVZsSGPrrFbEompx4zmBjMB978v6rmMrV5BJgWM2w9s9NOVKd3BQTCicziSLHQyAPiNPFgccl92oNRY3vQ/G5KM4W47YB8Cmw0MZrg6xM97GdbiHm9hknDosAibZN8",
+                "width": 480,
+                "height": 360
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/y42p_St32bDkxNuvzS_v1g/NcLZdSMEBOyyLPX5jj40wDCnKN8qWuK9C1FnMLUVgHmnD4R96yIZ1RF3obD9pzF8rS3sFNbvw63Utu-zifMj7JKQU65kRZDHAfD3YOkYshK9xArJoztsMdZ68-SkK9UQLxyS1XobfvuyqXyDti_K7A/1kVw8g3lpoKwDJ6Xa6ACO8MATlcnIff4ZozMWSQPQX0",
+                "width": 480,
+                "height": 360
+              }
+            }
+          }
+        ],
+        "Price": 250000000,
+        "Location": "Kharadi",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Size (sqft)": 46000,
+        "Description": "A rare opportunity to acquire a ~1 acre land parcel in the rapidly growing micro-market of Kharadi, Pune, strategically positioned right behind the upcoming Panchshil commercial development and adjoining Panchshil Towers. This prime plot benefits from a highly sought-after location with strong surrounding infrastructure, making it ideal for future appreciation and development.\n\nThe land holds a clear title with single ownership and well-documented registration (2023), ensuring a smooth and secure transaction. With excellent connectivity to key commercial hubs, IT parks, and lifestyle destinations, the property offers immense potential for residential development, plotting, or long-term investment.\n\nSet in one of Pune’s fastest-evolving corridors, this is a high-value asset with strong growth prospects, perfectly suited for serious investors and developers looking to capitalize on Kharadi’s expanding real estate landscape.\n",
+        "Short Description": "1 acre land parcel in Kharadi",
+        "Price per Sqft": 5434.782608695652,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recrFuQetsbEnUxvN",
+      "createdTime": "2026-03-27T02:00:36.000Z",
+      "fields": {
+        "Title": "Fully furnished and managed  5 BHK Rowhouse in Viman nagar for working lady professionals ",
+        "Image": [
+          {
+            "id": "att5JeKDaFuXZ6qoc",
+            "width": 542,
+            "height": 369,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/08LT5mGDb8GSwQsaH8FjHA/TMZbt0mDVSxDDYeaLLvbUux0lWEyP9WpMiLtjhJtjPD_5P0sY0C-1bxXGAfx04o_QvivLM8gFNCi55lztfJYwi6DSeOu2roLTmZWAIyG2aK_KKklEEoxbZ63FsCm4xO3GaEsO8Hed01IS3TkRRrVr08n3B2p7f45TlpGge4ujFk/kEDj9-bRG4SMVVlqQDMfQISMj6YLBa7LvBZZ1j6KQuI",
+            "filename": "2026-03-27 07.34.30.jpg",
+            "size": 98127,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/M1BOyd_oeZJYcKQPwN2y4g/bKDPPHSBLac1Z1CSs1jvC3vmN8-oMS5noPb15xlhAAxO38OY7K-1VEVoxoboHpIW_A_Rj-BEDvZEI8tHdVCEF3fj6yrZpHsKEIhJtKF7CNIi_oA15Dy8dLJJ5V6PVoJLVtgkxqbK2DGcj8pnnPnMng/VsHfY-hLBzuAlY5x-WLQP_uOqOEdV9BiQjs2Mc5wljk",
+                "width": 53,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/AY0pNL39CzjKun659iaJlg/0ZcsBfbX2rO-STOOiiz0w6yEm5VM0OnMze7jlmoq9cCum_vP9dTWR5KWwZD8CJHIfJxoxtM9KvdLLDz0Z-4UMg9xknt19KsWWzVVWcPGKN0e67h7TSQi5JMj3KzZKLfSDEp561ulikknQpgir9PuCA/kLF18FYA-B9m-4pfaejJvWR1jVmCgxZkEzlJGpzP1Ig",
+                "width": 542,
+                "height": 369
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/BJVtutByO06F6UK9IIhXQA/RbcAn983ovZX6gcJ6TIk2yNoEcCCdN6cTh5DDu79X0ZXxsrTcpwuQq4_0VcMpCFcX6N6Iw9zT1FmixbNvISg5iK1FQwBv6_PrUBnhClaj_3PCDJ37MGm17JNRP2lM1Vx72jml1N_z0RUvtYFvdEvsw/F31y4XK7QKzUY8lkMXRuayQ3SHqk40AgbgJGnvIYTcY",
+                "width": 542,
+                "height": 369
+              }
+            }
+          }
+        ],
+        "Location": "Viman Nagar",
+        "Property Type": "Bungalow",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 5,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recUx5nOGzoCoyLKN",
+      "createdTime": "2026-03-27T01:42:37.000Z",
+      "fields": {
+        "Title": "Luxurious 3 bhk for Sale ",
+        "Image": [
+          {
+            "id": "atthBjVJlbUAbdoWO",
+            "width": 1790,
+            "height": 1500,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/RPrOSjivBNpo4D-0oxBnBg/d-U1x63Xa-r1PWvfTLvMv9hPTZI9JiQQZ4vr9Vf-LBNttKNs09curKtGoeQAocubZlp4RT3GGOWo_mwgzuxbLUOYKhAS7jYKUr_vQeE8wDE8E2oDIEtox9vrVI8HYUT9eI4jzM_CXkMeheaPgtoK58aI_ZLBHNG_39tu5bW96Cc/qDtFcIJwNUdV9RPkqZCqKzWfLeBMnk2GOZMXoLRa3_U",
+            "filename": "2026-03-27 07.16.23.jpg",
+            "size": 1516161,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/6oRm8h546iSUSIowghyasw/DkrJmZxAgejIfWfdj7Qgxdu_kKw-fiSGWVAvsH0TV7ty8CLvrObNilO71f9tYLVwW6Y2pxnKMXkokBkPior7_upZUD7X6CPOzYMXEBs49iJkBWrCNAcYXO2cdAHhDQv3s2LkfK6UDNQ_CU3SaljYJQ/TL3V-TrPguHrHTKIrSCy9mIuk29ARX9ID2TeEXCxjsg",
+                "width": 43,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/FwMqDlXImsac81rSapCLcA/-1jZm6pHV9TlCwAXQVtPZz1mrOppdIX_CVky9UgRCgdpSc0CVRUaENK2RswTps9FQKx255TxC72TbOzbfigrhvalB9SsTlyxmbZncIGCCExdl-c13EaaR5orzkwT2amRwGcg3hpQk5G0nw_68NZuLw/BIXf_yWR-vBT2f7zBkbMAr9d996571RW3kMf2tDEeK0",
+                "width": 611,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/dsIfoUy-iKYPP7EV7mptZQ/FsKrC7Ls1BAcCaIElAF6AcajHn26hAzhmh_D7O0pbjtXW2oPVtcqR_skufaSTJIUVqxH1M-zoHYSW2YObk1QjJwsBwStZ7eNqSwRC1BY1IOPt4Gb6og7mRaTypLE_fw6XUgWr7srTyUcz9s0447NKw/8nTvpMV0M3lwuei1awHBTIy6nCu1AmIJTCokZdLplaY",
+                "width": 1790,
+                "height": 1500
+              }
+            }
+          }
+        ],
+        "Price": 71000000,
+        "Location": "Koregaon Park",
+        "Property Type": "Apartment",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 3,
+        "Bathrooms": 3,
+        "Size (sqft)": 3000,
+        "Description": "A plush and spacious 3 BHK at Windermere, offering an exclusive living experience with breathtaking views. Thoughtfully designed with elegant interiors and expansive layouts, this residence is the perfect blend of comfort, sophistication, and serenity.\n With 2 car parks ",
+        "Short Description": "A plush and spacious 3 Bhk at Windermere.",
+        "Price per Sqft": 23666.666666666668,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Area Description": "Koregaon Park stands as one of Pune’s most distinguished social and cultural enclaves. Renowned for its tree-lined avenues and cosmopolitan charm, it is home to some of the city’s finest cafés, award-winning restaurants, boutique retail experiences, and vibrant nightlife—making it a preferred destination for both residents and visitors alike.\n\nThe presence of iconic landmarks such as the Osho International Meditation Resort enhances its global appeal, drawing a diverse and international community to the neighbourhood.\n\nStrategically positioned, Koregaon Park offers seamless connectivity to key hubs including Viman Nagar, Kalyani Nagar, Camp, and Pune International Airport, making it especially attractive for professionals, expatriates, and discerning investors.\n\nIn essence, Koregaon Park embodies luxury living with a vibrant soul—a rare blend of exclusivity, lifestyle, and enduring real estate value.\n\n"
+      }
+    },
+    {
+      "id": "recAsZsGHM3G3uyJi",
+      "createdTime": "2026-03-27T01:42:31.000Z",
+      "fields": {
+        "Title": "1000 Sq ft Commercial space for rent in Koregaon Park ",
+        "Image": [
+          {
+            "id": "attL0nht1zQAwLTQF",
+            "width": 1080,
+            "height": 810,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/jR_QbhMjdLML_bwpYw5Srg/b5DyUWWER5GqmG2CuhSFK83MedXxmzY_aTctEKUrCQ7n06vztq8CLmPCiBd4xrqTUf7COgyTBFOWCCuPuPqwpwnYNM6BQU-3RW2QTkriWKr1D-5FZuadn1_txGn-tdJLSxKCW-PYVtDbc1UIX3c1FuU8LU5zXbjsY-Lr-pzqxak/_TOs3w4pTMT6Ir2fdtbOjwiXesj5-0G2U0cS5dwY9Uc",
+            "filename": "2026-03-27 07.24.16.jpg",
+            "size": 359531,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/dAYHs6xsUbv4JWBrziwMGg/voIc0hk4UKBfqwzaLHGLuXWmh4y3foG9tgtCNxpQznE_oLqlrWfPBFtey_AcBo1bEBy9UDgSyeNZ4gu_J_EnhqcXk-wnkenal7yqhIPyTYu-hTVkSxxyYKx_xhAh5OHXTGp6Rd_YcCVCg1GPbBdPjQ/UScZiQMhcMw9UBll09r5TIX_2DDar_F1kzZUxFSyigY",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/aD4D5joWJeemJKk4_5va8A/HgtykKYLhLy3gaReUxUnELcWouUM4P9TQg9gRUIP009ElipTuwJx00bbDYykmEkWEFm4vs3D0aPzaANsyD72ooOjCE8bJz4wtxi0_8aFEcEGZgo71SnT69k7w2DYrZIufkzvWCEhlhe2QZ0K742BMQ/vh7jHl06sNlpxgoMzCscdA4AaJI6zk9dJspM8FXpCy4",
+                "width": 683,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/iMd2qE-x1OoKvU0pFv452w/suEJEX8EYVJSkiSv16tXEQocbjJPVvphIP3yxp-rWHc8RWx20N7KjnuVXmwnHFbEDjPSfRkUNVpcGpQ42TnMJqFf9tS9uhtknnxYBJutPTB4jn-_NvbLigi2HZoppyN3BD7bdpacWHGyowwefIPWIw/HzAy_jrB4IuuWj8RgeFspCsBwvsRr3yc6vyyF9BX7lE",
+                "width": 1080,
+                "height": 810
+              }
+            }
+          }
+        ],
+        "Price": 110000,
+        "Location": "Koregaon Park",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Description": "A premium 1,000 sq. ft. road-facing commercial space on the 2nd floor in central Koregaon Park offering excellent visibility and a prestigious address. Set within a Grade A building with a grand entrance, posh lobby, and lift access, the space ensures both convenience and a refined business environment. With immediate possession and genset backup for common areas, it is ideally suited for high-end salons, wellness and aesthetic clinics, designer boutiques, studios, and boutique corporate offices looking to establish themselves in one of Pune’s most sought-after commercial locations.",
+        "Short Description": "Premium 1000 Sq ft of commercial space for rent with excellent visibility",
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recywZvwEPVEOiHoZ",
+      "createdTime": "2026-03-26T16:43:31.000Z",
+      "fields": {
+        "Title": "2500 Sq ft of commercial space for rent in Koregaon Park ",
+        "Image": [
+          {
+            "id": "attv9WatVEixKwkGa",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/CZPMPxcpUXKjvPBzz-TrFg/SLmzbU51Saa_cFG8vc4vgDyQjj0Kt9vw8C5juiBQz41Fj2k99lIyzlcmN-wUN-yg47Ez4nhqkDM-ZcazjpX8L09V2apikvDgJUvWZ2yi85-Ci1ITedLRlt5GbIbRTWz6VdL-VLCsoQhX3VrUxR-JpjRe0MIjbqDkEnlxnI1k1fE/-leqwyJjFTfnfnD_hDRbdfKxykbhfYp7QwWKiWgjibU",
+            "filename": "2026-03-26 22.15.52.jpg",
+            "size": 1286748,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/t4l11K8Bn3q7Su5kUHWkYw/krGJ7DEfU3cNCtcKitTWarkAp5c-bllfrDg9CTjJdLvZKiMB-7HVFLaYly81nMUBQkFvHVB_XQhaFuq4OG97GXgRCqeFSBgpNn_-16xYJ2ABshql2MNlUT-GF2TmLQ7VyqcZfSTAHVXBlWSDcquROw/v6Zyx6ePa4bdyVD4xZBpNAlXObGPh_duZV0Q87u0xug",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/96Y9bNqq8sk3JpQ6C3fS3A/NIHZbqgCNT5sj58ImhIKvKL4Xl_-2aOgWhGnRRB_9TDCff9LcN52Y1yiJqPFP1eFR-P64m0w5GXcr6TrvsWYkMxKy6flF8uAmKMKrayNfbe4WFqiyfZdavGvRx3RQOQCwHU52_AiUbe-Bopse6ZwcA/QxnUDsQ2UqgnmDMBNc9TWA3Vj9o3SIVEVyuQwlFrbVI",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/REwsyVp-8R9x8EqfkZ0MJQ/VI_BArmUcrPyssb9DMt3L2ymoRcDI3JcRKRdieE9MVLYEf1Am9WIYhwD-tNgjrEhER1UJ_XMv4GMTOdIzxSaTHDKvRcBfj7qflvTc8IMt-OIDy0ETfqszRxqQXiNXJXGH4Tdiw2AOxx0GTv9n36JCA/DpQ0tZb8tMR7xsYD6dZZSgcTve8vkPp46mdnBjLMRcs",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 400000,
+        "Location": "Koregaon Park",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 2500,
+        "Description": "Prime 2,500 sq. ft. commercial space available for lease on North Main Road, Koregaon Park—one of Pune’s most sought-after business locations. This road-facing, first-floor property offers excellent visibility and accessibility, along with 2 washrooms.\n\nIdeal for a range of premium businesses including clinics, salons, gyms, Pilates studios, cafés, or restaurants. Offered at ₹4 lakhs per month with a 6-month deposit, this space is perfect for brands looking to establish themselves in a high-footfall, upscale neighborhood.",
+        "Short Description": "Prime 2500 Sq ft of commercial space for rent in Koregaon Park",
+        "Amenities": [
+          "Visitor Parking",
+          "Maintenance Staff",
+          "Intercom Facility",
+          "Lift / Elevator",
+          "Power Backup",
+          "24/7 Security",
+          "CCTV Surveillance"
+        ],
+        "Price per Sqft": 160,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recGqu9EJQQka1ApF",
+      "createdTime": "2026-03-26T16:22:22.000Z",
+      "fields": {
+        "Title": "5 bhk ultra luxury apartment for sale in Koregaon Park ",
+        "Image": [
+          {
+            "id": "attlaEHqmEZ3Ew3yJ",
+            "width": 1120,
+            "height": 550,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/lXqPHQX12VRWk_ro8N8mYw/o2WeRTXFbktUjjmHswUF74JyavK_UnjHReSsQKNrIO0MFye1wnJNQacDJSPYIstD8fW3XUJ4M2xTOYb7XZ4MGQkvAknHxdFvKmiS6Yom159VRAcg1PGiHj3XANofGKjI9yis0FUGlCjWFLJlyKtl0a4NZ-3GEKvvxgSJ1vFPCQ0/HjwGYDJfDqYTxU09WOlcAyAApcl_QFP4ENdHIvFU1ig",
+            "filename": "2026-03-26 21.54.48.jpg",
+            "size": 467222,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/e_ZdoX6P5kfBhxS72KqlJQ/pa6D2Z9r8mOUo_Ps6x7DkP9RvZi1nt2cJ0vMQtIK1SalCrhkCDlnsy8Otew3tE4hFWVM3k5-1fHdy-j8W2eBd9aPMrNnIHwbEbWgFIw0dXrCNBc0wMw92d8YFkF8iFu-dAqShxz3R6895EWyEITr-A/7R-0oJ3nGaZyiwAhJ7GWnai3UG7u_4ZrLD5Cu6445wM",
+                "width": 73,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/QP-HUOOPNMLT56TQSatRwQ/u2UIaCVT6UOMSnvdDKbS6_P6DJrnuUHJSP-j_X4V901VloyiOB2vxe1BDUfbfMg0EuKatbZEj2RAC-wSfyXJfJExdL1BinQEW297zFtu7oNrGNRXDWnjiihTT43RqvZVvCuSR_zxZPvj4KtBSe_yPg/3OXXE0CJ0prYmtlk7ORfQZJB7uOUcLC6YyoQ-gK_cdI",
+                "width": 1043,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/-_BrxRRAZzqKoMB5J-dPtQ/cV94VmK_fIqmZJrf7SeDcVljJ5-DvjgsrZbFo5zVHMoDJfgciKEDsQzWIbUPfYLHH76WojUsPyoS_UgP7cj_UuOG0Vsw6fu_hSNO8ECUKdb9vb_wa-pPoWVUyIwImaCQhC922Ave8sfz8kqO2Nvx5g/fkyDcwKEGf3BZPFDsh1kwG3eXLzmI8LRet38ePKJJ8g",
+                "width": 1120,
+                "height": 550
+              }
+            }
+          },
+          {
+            "id": "attXJXroPaFM5oVE6",
+            "width": 1120,
+            "height": 550,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/6OMRXhGEzvLwYnD0QDdbbQ/aYoN3HXuIGv3djsqe2rNWztg-l7sFxDVc_e151TlbFQkUWNo4Ese8H1_WvQVd0nrNdcjN9zUqytzn5l04fqVOrXGt2y8SqlH0MBNoNjqt25SGqfEqY601XVvkAJt5DTRZP2MGfy5xymeff8D-D7APzZGxOE1a80WMjohc4FEWnk/-llRBynAniJJ73k1FneEvvzB4ioiXbMzvYEMuNxaKw4",
+            "filename": "2026-03-26 21.54.53.jpg",
+            "size": 467222,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/bgxL4sP9u728fAoHYwaAEg/RqNucsZHwL7Js4iXPMU_GNohb_9wZQm0cW_mNM43G-7ovTyGa2LL3bAsh7bM1NbEf3Ni_nqi3jTFzmwdn2iSlZSnXcKIXxSYrK1NfGR5YuFRrUUHXVGZ7dZYWeIWF_i1vSDUE0K20Rwpfn1JCSsbmw/NWzztXXGZvd3v2dKj-rjEPFgoH7_jm57xSXiY9Gv6yQ",
+                "width": 73,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/YTeYyJk_swED8m2K_URIig/4sqp4RCnRuI6KkKTzy3RMiR0ysA6VoFkZlYHEiJjusRm_E2K8cSgiBGKxVWt9KTTtxapTnSx9jHefnb3zCgU1jQZkr8Ix7RZ3hN3UbwRFodAxeCQWGqod19HLPVEAx-Qd30XxaBUW0VgWuJT6kwLng/Y4w4D5geVMxDhOu5pomF3iBD5VTOJR3nk0hKyeHeiSo",
+                "width": 1043,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/UVVBRiZy93vDoYjVMZXJkA/BtqAhaFC5Ovoiwmisf7wStiqdTtRRKDijz9FQMkEzXG8ntQaZrAFU08-YZlWIGd9iGsapl_UHlIVjNT_f1XClIx1coh6zqmAApLPrP14okIZ5y8yTa1NhzyNZutznMaeafHqQlsBzTnQEyDyKn6zJA/9rh7MVIIQhDd7w7K8u9iV3wBwlAbz_VoSdhKb9gMzXM",
+                "width": 1120,
+                "height": 550
+              }
+            }
+          }
+        ],
+        "Price": 0,
+        "Location": "Koregaon Park",
+        "Property Type": "Apartment",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 5,
+        "Bathrooms": 5,
+        "Size (sqft)": 7100,
+        "Description": "An expansive 5 BHK luxury apartment spanning 7,100 sq. ft. in the prestigious Koregaon Park. Located on a higher floor, it offers breathtaking panoramic views, elegant interiors, and a refined living experience. With 4 dedicated car parks and premium specifications, this residence is designed for those who seek space, exclusivity, and sophistication in one of Pune’s most elite neighborhoods.",
+        "Price per Sqft": 0,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recT3MmkSH39onwIX",
+      "createdTime": "2026-03-26T16:11:30.000Z",
+      "fields": {
+        "Title": "Showroom for lease in Viman nagar ",
+        "Image": [
+          {
+            "id": "attHvBbUKzEUVCPnV",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/R2Mleh6B_ykTedHVlEsj2Q/axK0ZW49OMDvL836GGlIP0mMP_UZCz3GU5TMx7IynqCbJGfKmunvFD3_yeYa5actlKcFbkte2PQtcu0QU7Qd75_kMvy60g3DDR7c8xjgLS8mZsYd1s0Ukdh5wgQj2j1Byt41zRiEBBbwLLr-fPGrq-sNIXeU4otpsEvxP6_GZZ0/91w4GQ0EpC6HEV2FUzhboXcTZq-aYpVyV4uRUY7C_tw",
+            "filename": "2026-03-26 21.43.24.jpg",
+            "size": 1311949,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/htA9Q1lo7GzxhJ8-6tgyVw/4oqbzMGjLFSf_PspD2Pg9tO1RTkKKdk8IFalp5wnlr8LOqHSfq-GGbhd1XO7zYne5hZ6E0Fz0ly6XvxzDYPrvv9l1ERXO0blMzF2OnHLQdwSGvGlYxxwYZTbF_DxW26p9HUlB85-nerb0tQJIgxzSA/XSDVywUixRyDQAahexPpl9q8xbBWKEqZ7YZTWSMlqgY",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/qL80FEoCi7j9w7VRvHUfXw/WnH3rCNKkk0w6M-z_E2kGWdAG6jTbEuK7zB5w1_dFJpRoP8yrX92AFa6ObMcN9hxbgopv6dSe2qI_a5kCTeeE2q04PFgLYp56XKrTcoCruOjWNhv3ktTWBmA1ev61oVN3AaYDGRpn65SanHKMKpKAg/0283-ACBlp2ZQFeOBOGW6jqzU7Z_rBc6aWxfpnyt7RY",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/yOX49eu0_Ahyi6BIuFaX2Q/u5B3sWbNLhJfQHeOwstQygpljPjb6SmqoL4qjgc-e8DgsQxuVlG1wvm5VRLsR24iM9Y5VRldE21yzHurcIAjfA42dqu7lDGCjI82yQpC7n-HlTdPy5zLDxLuyBgA9seBD1zyUkhRYtYOqwqST-mFvg/64IverHnNUCEajSIDpamkQ435WS7Skil9LtfSogxUqs",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 500000,
+        "Location": "Viman Nagar",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 3000,
+        "Description": "A 3,000 sq. ft. plush and exclusive showroom in one of Viman Nagar’s most premium Grade A commercial developments. Designed to impress, this expansive space offers a striking frontage, high visibility, and a refined, modern aesthetic—ideal for luxury retail or high-end brand experiences.\nThis  showroom provides the perfect address for brands looking to make a powerful statement.",
+        "Short Description": "300 Sq ft plush and exclusive showroom for rent in Viman Nagar ",
+        "Price per Sqft": 166.66666666666666,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "rec4H56p5g0gfRlK9",
+      "createdTime": "2026-03-26T16:05:07.000Z",
+      "fields": {
+        "Title": "Plot for sale in upper Koregaon Park ",
+        "Image": [
+          {
+            "id": "att8fp2M6TIdSo4XO",
+            "width": 334,
+            "height": 150,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/77W-hvWsR9ybh3dC2_oSlA/GmFot32_RfxIkhfUcMNICbrDEHviqJy96wfLRuq8LaR63W1M2aLs1oi7Wam1vVi_FTz5l_c01A24WnpHLH1jkhpG9YwwW6MDLTWJce9yD-ojqcf-FMJTuwaHZdBxT8v4gKPCWHf5m7iHJpycNhAt08iFzob1nDidMt7aAKkGDR8/U1b8i1T0gV5VYQ3c1J6I98nRfcDQHYiuIZXIIcHP2-Q",
+            "filename": "2026-03-26 21.36.03.jpg",
+            "size": 47084,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/U-Nvh70OQOaCDxY4WDFuog/NMH3Z-19Kf02I3PO2I-Obqa4ONTyHBZPGFhmgcfNLc50--e-nKHQ05PUFgCsDXAXI1jcbWNJq0X_DuTodmkHDkPTJGDsSTxp1JNOx7-twiE0X8ScuqjztPxAOIIF-ndVqZKjL8g1Q4mSHgD9Fhkwag/fH91ZWehDa1K303qF3q6DdeCyt-2uffYP_9mVXywDfE",
+                "width": 80,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/TtX8SH7dbTp4LrGqytXemQ/EbS1k1N5Gm3uOAP-Y8Ch5acH3InJXWgZxUn_Yk7-s_DWKO-EWbT3IY0dWLrn9XGLG_fSijIj8ZW7wR5N1LltA2q_UqACWI00r0JPtUr2VinE_2qv2CeJIgpkT6etxfjT3ADPylA_L7N5kw_8RbHtxQ/KuODmY_LIv-e5u0ipcLpHAGR6Pd9NknPQbp7_zjzvsM",
+                "width": 334,
+                "height": 150
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/K5uTFOu9VcJ3GRLCLqmEKw/QxPwKI-LImsdp5RNwa_gjDinwCQYi1h94T0Ch5Aoh9s1tmPP-Qap6Xb97YhcUVhKxCZ1HYlHmMekEi6kpiWpT8B7It912ya-jepUzz7DJVYnOGsdQcWCx9pry165siXBCJDGslpDKHfQ25VouQunUw/d27thNozfhvTaOpnMwHm4Gje8kAVUEaJyf1Ixx4uGrY",
+                "width": 334,
+                "height": 150
+              }
+            }
+          }
+        ],
+        "Price": 52500000,
+        "Location": "Koregaon Park",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Size (sqft)": 4900,
+        "Description": "4900 Sq ft plot in Mundhwa for sale \nClean and clear title. \nThis plot presents a rare opportunity for discerning investors and developers. ",
+        "Short Description": "4900 sqft plot for sale in Koregaon park ",
+        "Price per Sqft": 10714.285714285714,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "rec4WXbkem393HATB",
+      "createdTime": "2026-03-26T08:29:29.000Z",
+      "fields": {
+        "Title": "Plot for sale in upper Koregaon park ",
+        "Image": [
+          {
+            "id": "attX8T4qlZxe8G2Md",
+            "width": 588,
+            "height": 330,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/KNDWIB1d7GfbAtb24Jw6AA/LcuqupyYnPeOU3fSI1MUojNKV6UgnLh0eYAFA6p6qbYWia23SLJkD5IpdEPKfinW4B2LyhbX2Nas5Y2l67gv4b22jBbW5zCsYDfddLdm7QeEqFwRBDbI9VviM0R3OTHuWrWC9ntjir2R0yHyzgndxgnL-wXqw11VYDP2v2LG2hA/iheZpOT-KTb6UQJzW26aEiawObJ-HxFjAgm16qEHAbI",
+            "filename": "2026-03-26 14.00.26.jpg",
+            "size": 198416,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/FlpYSth3nozKOPp1h6bK3w/eptD4GRQ0MAspCWjD8Uui7jwvLLXCQGE5DW4z-tV0CsYluCO5CXQNrXxBYL41jDgxFnxUgCqzg1byqaSLuIax_1mJ7UrzbWBybWe9BBglC5W7h_JVKP6IYZZGNGopWrfxP3CjfMngWqcU2ceQEWDjA/SrUGjqaLrxXiMH-dm7FCkE_3MN9QMed-8J3oFS6y9wM",
+                "width": 64,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/zHmEFfj3Wjy8Of8y2sVaZA/b0xwUwXYYzTySQQCvqas80x99wRSMLzMCfbyo0jRoVM3M-3dnG8KU-7NHXvuhoDTRZ1yjVTkXs4bI3vBxUbxTAKObAQtT7nLkNg25dabNC577I_BmNJCLFgfFDkhu7CTIkb8WXmQgGpuMHgeL0HBGQ/EEomtlzzr4a-cgMkGSTX7Zw2_ufmDWRnSEkJDa0qmw8",
+                "width": 588,
+                "height": 330
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/ZxyZXT32CWIRG-icg_lgyA/zfMo3edvcZWYxkXQjuGXZQy6VJF1-MU1oWvsbeEvh_yaJu4XVHv8snv_BgIbQzjF0nWtgJ8hrJdyf2fc1aQXwNcJbSubqXOLfqtzYkgmf_xUtGWInk8HXoI4dzGhdmchwoeR7xj4mE56JTHsBet-Dw/mrrxwcddqFIwQTyIeuhNJwJvU4W4DUNYez_CF1LnQ70",
+                "width": 588,
+                "height": 330
+              }
+            }
+          }
+        ],
+        "Price": 130000000,
+        "Location": "Mundhwa",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Description": "Set in one of Pune’s most elite and sought-after neighbourhoods, this expansive 10000 sq. ft. land parcel in upper Koregaon Park presents a rare opportunity for discerning investors and developers. Surrounded by upscale residences, malls, boutique commercial spaces, and premium lifestyle destinations, the location offers an unmatched blend of prestige, connectivity, and long-term value.",
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Area Description": "Koregaon Park stands as one of Pune’s most distinguished social and cultural enclaves. Renowned for its tree-lined avenues and cosmopolitan charm, it is home to some of the city’s finest cafés, award-winning restaurants, boutique retail experiences, and vibrant nightlife—making it a preferred destination for both residents and visitors alike.\n\nThe presence of iconic landmarks such as the Osho International Meditation Resort enhances its global appeal, drawing a diverse and international community to the neighbourhood.\n\nStrategically positioned, Koregaon Park offers seamless connectivity to key hubs including Viman Nagar, Kalyani Nagar, Camp, and Pune International Airport, making it especially attractive for professionals, expatriates, and discerning investors.\n\n"
+      }
+    },
+    {
+      "id": "recVdOgHAfVeL3CuZ",
+      "createdTime": "2026-03-26T08:29:13.000Z",
+      "fields": {
+        "Title": "Showroom in Koregaon Park for rent ",
+        "Image": [
+          {
+            "id": "attBXFbHMxR0phdD6",
+            "width": 516,
+            "height": 387,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/zWoU227-Mw6b-EjGGGPmVA/9P_KvVpoI-_bcVdXqfv5h86vu4O8429uVVgsyocU5haIqGbGotbhfP8p1ghOZ60aU1fG9wRqjjAmEVba-LYVwhMfmCO5R9DYqrrusHh6qy9Lwy1pk8EDlQVSgePt2iA-ilZIfVGqyK6EDkfDj54-KXJPTb-PIi2PxT84TwXLsaE/4BP6-s2ryVMoP17Dsiaqe4QYL71Dh2_LD3nOUNvAF4c",
+            "filename": "2026-03-26 14.23.41.jpg",
+            "size": 97149,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/aeZZN01t7foHJtqM8MmyvQ/bEf-f_3V4xNGKrGs_3tti97WdKpNsV1E8Jplg0mBU9axrgz8y6hrRvd3Dr7tiLhoA6l993y27LZuvPi6ursS6xepjvmK1F7kMIWeKLX9btj7wLApoV8SgggVY62_ldupf1iSf0i6AVmxhYvxUZ3H3Q/WzecIyMOkxy6gKZyIke0VlTZoqiW_MB1cW0U9nJ_lII",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/7vn0eiQYmltYdBmYR_jg8g/baPH0T446tEf2J10MKmpP401JmjpBGIvtqjLbFEwlHEyQ0U0RHWppT3prZqZFkxMWXvasvZMrSLMwO73r-S0MGaNfI-JDfPe8iQq_pQ4cdZflaidzGNMOdKCFZsbjN0YEO3WqUNcnS6BdEd2UHAZYA/bJHTT3RSep4axcnyhSp_jhZ7Pq9Mp6Szh3-D7hj9NAE",
+                "width": 516,
+                "height": 387
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Q9b-IQ0bdR6NW7-4n2wUlQ/XE4z7_mDveDsDt9FA0r9BjAQ7FBDPjfdi5J_34fHc8W-Noguz2J-f-2q48B8_z7M01H_cD8wHGKWP33wBTytdclAgyTEZjYbPIIyGroTp8yFkfCPJRG_UeBQ-gWNyGZyEXc15C19ocJfqYt0Mdrn9Q/m8gap4Osncj7c8n_LYKHDd-4onkK6yk0CypDB0hsZCY",
+                "width": 516,
+                "height": 387
+              }
+            }
+          },
+          {
+            "id": "attxMYjMkgDS8lAE5",
+            "width": 5000,
+            "height": 3750,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/2ztcLTJ2hML5XlWuVKF7ig/maq93mWXf60f64JMPgmBKYoqp2GnE14asfvVSek2CeBbGNDqLekdasVzGPw4HQ-d04g5IXrPIXD_0AHyVuC4GlD82M5M01WkwuSM3qcN11IalCLFHFARh5hkDStduK41Jli5RqqzsT5k5O0Sh29JOzym0eqVksqLg2TFhExMwrs/4WHp-NdMp-cfb0MahJJS12O2OCTvMEvSyutZFvHF9MI",
+            "filename": "2026-03-26 14.23.46.jpg",
+            "size": 6695045,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/1GT4Ue5yAqfHJUuKMKBNBA/cs7nhm4nII-AG7H4UAAg8MylWoeD27jicHnQGhP2EJdlaLat-Sqaj8kMkciSWm0S-5_5iNXNU9X8EHBY9yTUMqIC9HDTG_JABT8NsW8fbHiPcY6xpxlQfi0WBVA2tthv46pWtkL4bWsN82CLenCfcg/iwCcZT39wIRq-Z--GovxizgPwfTCeQA_3ld0mHcSr_8",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/d-_3K9fBDGzS6XCAd_-6mw/otldbpxWzJZMx5omr3TP61g6UuxwfOTSojF1QpJMzyWP8MiOpyBoo30b3r6evf6agHhmVARn_APaN1IdQ2wlwVMYZwVAFmd4HQjmqr87rEk1kp0Bc6LNDRbfeyaocl4X6ZjYwdufGDVwecA3NP3leg/SOPiS9-2KPScz4CjLteWafOVt2sk6OOG3Y5cbH9NVG4",
+                "width": 683,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/KjRRRpWINs6fYFuaILzrig/9YLmgcI1kr5jv5Nyv9GKxPFZux6gxIaxs4gfLwbZ7ONuUBOudMSdUJ2sDvLLbuwS_WBVet-BuzedKrkZv9R1epTBf-UF7ovH4E6BX-45ap3ktXj2dboPnW6hadd5sK_z4jBFL9olkqqc15umEMUwEw/L6mDjwn5P82eGkjm7GEeG2-C7xoFBzPhy_wjh93CsHM",
+                "width": 3000,
+                "height": 2250
+              }
+            }
+          }
+        ],
+        "Price": 750000,
+        "Location": "Koregaon Park",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 5000,
+        "Description": "Set in the heart of Koregaon Park, this spacious 5,000 sq. ft. 1st-floor showroom in a Grade A building offers outstanding frontage and visibility. With seamless lift access and a prestigious address, it presents an exceptional opportunity for luxury retail brands and flagship outlets.\n",
+        "Short Description": "Luxury retail showroom for lease in Koregaon Park ",
+        "Price per Sqft": 150,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Area Description": "Koregaon Park is one of Pune’s most iconic and premium neighbourhoods—known for its leafy avenues, cosmopolitan culture, and a perfect balance of calm and vibrancy.\n\nOriginally developed as a serene residential enclave, it has evolved into a high-end lifestyle district without losing its old-world charm. Wide, tree-lined roads, elegant bungalows, and lush greenery give the area a distinctive, almost European character.\n\nAt the same time, Koregaon Park is a social and cultural hotspot. It is home to some of the city’s finest cafés, fine-dining restaurants, boutique stores, and nightlife venues, making it a preferred destination for both residents and visitors. The presence of landmarks like the Osho International Meditation Resort adds to its global appeal, attracting an international community.\n\nStrategically located, it offers excellent connectivity to key hubs such as Viman Nagar, Kalyani Nagar, Camp, and the Pune Airport, making it highly desirable for professionals and expatriates.\n\nIn essence, Koregaon Park represents luxury living with a vibrant soul—a rare combination of exclusivity, lifestyle, and enduring real estate value.\n\n"
+      }
+    },
+    {
+      "id": "rec9fv4ChaRAEoe9c",
+      "createdTime": "2026-03-26T08:10:58.000Z",
+      "fields": {
+        "Title": "Clear title plot in the middle of Koregaon park ",
+        "Image": [
+          {
+            "id": "attZ5u89B3Ph8vNrq",
+            "width": 588,
+            "height": 330,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/dd2SiSab9vC--oHIjyULNQ/KcM0fP1ff80WM9ULVvBh4mu9Ub6NSYPyjXE6wtXMeP3_4fU6A2jzsgrjAN9v8pCP1slbqt57ZSRECZ2tkGBR0lsg9LDdr8TyD3Wv5hRGAe0iiDsksfGF5YvnlI-3bmAGxHDoKjECH60pS_4wzj3OK1tYtwOyz7p_DvCiCMc3YWU/AGGk8L1ZOjW5xxc7OMGijBculmPrPt5nxzowqcOiczY",
+            "filename": "2026-03-26 13.58.37.jpg",
+            "size": 198416,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/FWT-btR3TtTvY_vTzoE-Pw/v5wKmAk9EZjdTrspR6LngibprZOCCo46C6wzK7Uvi0QIpPCeYbFiPET-4fWaBAl5roy-sdZYORWC-psfaLPZLROLe2KQ5Xeui31iVFdic8kAMJQxmop0-yJZ7eSH7MyQiPh_m1Qs_O7yV_nq3rmqdw/bdTubV15RSm5zQcNNvA1Wqphy9HEYB0ME4yB5QhMxBU",
+                "width": 64,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/GOY_iZ4jD8V7SGUDdiTGfg/ozCDiIx_-NQUx3aEtrTWYe3Ri5Yt0q3BNyyAzAVspDFBhyUzJpqWOYaYfP4UblWzb7AZOi2gjg1DvbNMo1CqBHAk27A9tV-4gy7xF7_sNOtsNFdSlMx2rxCx1NI7d-SX4ojk-MgYuSrJ14kAAc0YHA/deTucDrIDzfjNdYRwJxXgnQ31gMBtfsi5AC9DE3XaW0",
+                "width": 588,
+                "height": 330
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/pgEOTMkIUGDXnfMZJNCOLA/oKGrUz-Z5EbQsyrrr6VWtnAT0qB1rX1-Qty_g5LspheAD9caizGwWz2JfLVQyJROzLfzilungG2e0h1eTUeJ4wiLy_VHNW9OMAlJuIsnkz0dwIXh29QUFIuFf6ERDO9xNQhR3-pj1WMmOXnB_Lhyhw/3DKa1qtYpJwqsepwbYH6V5Lkt5gfnh5EWXhuOuUA6Rk",
+                "width": 588,
+                "height": 330
+              }
+            }
+          }
+        ],
+        "Price": 1000000000,
+        "Location": "Koregaon Park",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Size (sqft)": 30000,
+        "Description": "Set in one of Pune’s most elite and sought-after neighbourhoods, this expansive 30,000 sq. ft. land parcel in Koregaon Park presents a rare opportunity for discerning investors and developers. Surrounded by upscale residences, boutique commercial spaces, and premium lifestyle destinations, the location offers an unmatched blend of prestige, connectivity, and long-term value.\n\nThe property boasts a clean and clear title, ensuring a seamless and secure transaction. With its generous size and prime positioning, it is ideally suited for the development of a luxury residential project, exclusive villas, or a high-end boutique commercial space.\n\nOpportunities of this scale and calibre in Koregaon Park are increasingly scarce, making this a truly exceptional offering in one of Pune’s most established and desirable addresses.",
+        "Short Description": "Sale -3000 sqft of a clean and clear title plot in Koregaon park ",
+        "Price per Sqft": 33333.333333333336,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Area Description": "\n**Koregaon Park, Pune**\n\n\nKoregaon Park is one of Pune’s most iconic and premium neighbourhoods—known for its leafy avenues, cosmopolitan culture, and a perfect balance of calm and vibrancy.\n\nOriginally developed as a serene residential enclave, it has evolved into a high-end lifestyle district without losing its old-world charm. Wide, tree-lined roads, elegant bungalows, and lush greenery give the area a distinctive, almost European character.\n\nAt the same time, Koregaon Park is a social and cultural hotspot. It is home to some of the city’s finest cafés, fine-dining restaurants, boutique stores, and nightlife venues, making it a preferred destination for both residents and visitors. The presence of landmarks like the Osho International Meditation Resort adds to its global appeal, attracting an international community.\n\nStrategically located, it offers excellent connectivity to key hubs such as Viman Nagar, Kalyani Nagar, Camp, and the Pune Airport, making it highly desirable for professionals and expatriates.\n\nIn essence, Koregaon Park represents luxury living with a vibrant soul—a rare combination of exclusivity, lifestyle, and enduring real estate value.\n\n"
+      }
+    },
+    {
+      "id": "recqcSFyOqZ3EoKKC",
+      "createdTime": "2026-03-25T11:39:23.000Z",
+      "fields": {
+        "Title": "Plot for sale in Viman nagar ",
+        "Image": [
+          {
+            "id": "attCkPNRFUZJxHkM2",
+            "width": 545,
+            "height": 300,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/go0tRL_2X_nRibDuc6WFCA/Ckr2P4TrBHXaPgY8-nRgTklpCiou9dtJL9tqeNLCMki_LzwKiMZIOg8Ff543YE21GM2a-LuYHzY-5ZgzMZcpCbhgJbhtEOGcPlf22IixvKHWV1Kue4mfrdmgfaCKaRARtYrCm9U7EXqBvks-d8PKz18mwR3mgFj2NmJLcIuagh4/DhYnHREAXMBpGCw7RSkmXHb51rYvs3FLAMuCosJiaCQ",
+            "filename": "2026-03-26 13.58.17.jpg",
+            "size": 221439,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/KOv0hAc0cwNO2YYy-JzjZA/EYuJPJGIsJGTrIJZjhnTs5AmNulClCpLeGrLLZAyhkHy5YIJHmE6b0KRATIg3RnLsyRwvLCblpKOkzN82Z1xtJY01RlskLeqUz6CxWfGodYW5Hp3bnLdBWKjznW6QpSrqpoJD_6-DCOnjIbKtLtTbg/8SxRB7GCEO6bC6e5PLUBWC-oFcX1iahkPA30QDtDxEc",
+                "width": 65,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/3TV1UGNRBd5Ijtwqdq7krg/M5yzKgUiHzI9VyyVO7hcb4EqQYf0JwhYWhLRX4pd8WTd3u0C7lyftuiXJQ4sbzpkQbfsyQgwl6696Rb1mhQhm45wru2cApJc4z0nYXwx3MDeZPD98SOmDmHeqzUosBOJsKO_M5dv7u-2whvBF1bT_A/IrT8RRFzGJGJy_xzyTFH-dUuhZRjeitKkYfRWzXDkGY",
+                "width": 545,
+                "height": 300
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/2M03w5l6Eapp7T3UucECaQ/yBMNJmAmBrhcIUonIN-zZBjgeYuGVbbMrKAJx2ZGibK6FeXPyR3rTyAKzuMqAONZ2XzdDtIt6WOsNYvXPiZKwAXgW12-HJORU55kp4KXYMmWS7oCd3zmLU7ZDNe4CsWkDOCMLd1_0ZzQxoHeGUDHCw/jk8E9JK-kIo1Yv9M__rU7fZvNS3j2s9ROmaOxK18y2E",
+                "width": 545,
+                "height": 300
+              }
+            }
+          }
+        ],
+        "Price": 200000000,
+        "Location": "Viman Nagar",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Description": "High value plot for sale in the commercial  area of Viman nagar.\nPotential of the plot is 34000.\nClear title independent plot. ",
+        "Short Description": "High value commercial plot for sale in Viman Nagar ",
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Area Description": "Viman Nagar stands as one of Pune’s most valued and vibrant urban hubs—where connectivity, lifestyle, and opportunity converge seamlessly. Strategically located near the airport and key business districts, it offers a perfect blend of premium residences, upscale retail, fine dining, and top educational institutions. With its cosmopolitan vibe, excellent infrastructure, and strong rental demand, Viman Nagar continues to be a preferred destination for homeowners, investors, and professionals alike.\n\n"
+      }
+    },
+    {
+      "id": "recLOpnYfkxM6zGi7",
+      "createdTime": "2026-03-25T11:39:20.000Z",
+      "fields": {
+        "Title": "Office for rent in a grade A building in Viman nagar ",
+        "Image": [
+          {
+            "id": "attBcXKSYTAOIyhrt",
+            "width": 960,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/xkphOTKGcs6T5jCNXrSBcA/PIwtkauXNby7HVFGXwk8iZ6i5iPSpQ9uhfv3pkd38Vhzs5gnsyjxP6kvoSUcf8n2FEpsx0hNPO-Q1NDz8eW0zryplQf3lt8brtwgdDp4WtlDltkGUoZW1AFDykeV0qiNWuFyV-CGV4m7Kbugj40kw52WPZtelUyZ3ZkuGFOzImQ/P2zr4meB7DdEUoY0LkvqEwtU4zodhEihcw_kh-okRoA",
+            "filename": "2026-03-25 17.25.38.jpg",
+            "size": 240734,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/eT4zdSLIDEzkzjaajCuwZw/NOHqXrqMNuS0fqPSaXrEvV_gxHAc_BRWaF_CIwdFmdPXXOjTU2xEnJm-ZBEPi6kFwa169TsWnVEbJW5RfBVgVwXRuKxcUcJwNTbvefM-R_b7g_TqqfN2AZYfYXeMAEqJaAI3xnO8P5vCJqifkirGmg/xcQ6z0ST3xaGAs2LoO2Q9WQjZFA1jDRiFmRC733LfxE",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/3VrphUGqmdZ-_MGjF7NmKA/04kn7EbpxrxcwPLnPG0u7bpKMVBg0MYJ250TNLKWhTtI_U5S59ePEy5bCF35F7JnykErWAY5FK3eE1F5uB8PpVKwGVkZgcfSkA4iKRQLMfrJet92YNzcH3xbBA58QSXAJiTuVuzw2UBsd7TS_LtjIg/4nUk7nhKTKpYIbm6lr48cLkweFaYXTSMGoIeNwWHdR4",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/HllCpsNlgQH86pUhnhU5Lg/vUT71T3v_PgJiTE1xquJtgPValCZ2rW1DWDf2qmZC1W_2ypaJ3xBbV9OiLOvvq6LYQgJ4z7CKe_Esl4C2_lplcJSrZHaaDnj-BEpWDiwgViLBNQMZnYLH9nB-sAKd8W-aopv0MI45GtENsGbqE1wOg/gdtZkR7x0Mus8BABMHxBeJ3yFv7yUTMDBsWcCEsVrVQ",
+                "width": 960,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attUiyx8MgjJAxo5t",
+            "width": 960,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/GE2FAKJdxnWs26ZEqHP4Lw/JQeujcMDxSUOgv_G_OiMKRuiadCAlyIqB0PdBUslX6YTYtN4Sb8trxQBBnkr7pKEG43aMI87eK2gu_WbflYk5ziWHR03nXDNQnyJdiBA0PtccF_tkXXdT2_9kIarP_6DudThHnVx2wSpFnkLaO4bzHXKpdeDK7VQIYTbbhNkIoY/txUQPHvEvRi0RreQ5vA-eVmPWGEX3PGj4zE7v4ARlSs",
+            "filename": "2026-03-25 17.25.39.jpg",
+            "size": 286610,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/XTr2R3I4ccDTjzFid0P0yw/S8m_hXg8P4valq_0jO5Tt6w6VbQ2GpVwHBkNT3xaVSwjsRNlpcZNkKaHOEKG6rNu1OLhe_5oDZ4OvXzqbDeWI_lgVnzJYJLs-iKDkLkmof-Fj9veTfXwDNbosQqiDVMGZwT92i8m3XpNEQoptzSkJw/kbJJe413_E4XK7ZfQx8C0FwMWypcJVAEIlrCGBWpmis",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/wTZjs28ROSceqiMD3cPo5w/CgYhIPZGwxdBvmOOr15YJocmvLmcJmIcedpy7eO8IPlw38849Apge7pwbwSUNyE4nAFRYjuGDVcVtgcYET42DNiL_brwlPFSakGBFlkzWSxmnnnE6dd7Q5n732qoiHCVtR7tKXAkrqCR5hFxDtN7TQ/y5gdQjNEGWhWKTctP4hBNVA7dNo_LIbprfWMU-nf8ps",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/wmp9xd1mtjbpkQS92z_fDg/6xiOFJ_MdQ5ZqjnqXOcf9EeOdVhMYvgBDGm_HpGaEV1c7XNn-Cv1_Yc_gCKP3e5sa1uf-FxWYOKYa-y6VUizX0dYzqCqJxqNsUwJFFKWm5eVbE6puwJQeCBkut5Llu3SxnU4Ts08nPM6YoDoUK008g/BDUt_T0TWm3qmKPCDtx0rhvVQhfdSXjSAQW8-akaqfA",
+                "width": 960,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attE5YcKdpljXP3p2",
+            "width": 960,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/cKmuhnDC0YIrf7DWlkMU3w/QLqGnLO31sddG8B9kLa07ANdcdmOh8tc5jKcFUcPWCzwBkMkZbOYucllnSodxkc9qVtILZJjVAKoa2ZQYxDib6tKV_kf6l8gWC7McwURVCSQhOiEhoduAUQBqGYZhjSneAMAKASN7aU9qjDkej5bjQ55emnwQmG45Cz9njmt6Ms/2FlPwDlSdHMJdOi0gYKg07gQ9tR3ZFJJ7LSlBJaYVEM",
+            "filename": "2026-03-25 17.25.40.jpg",
+            "size": 359241,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/sRapFt4lccwIiB6BVp3TtA/nVwtV_W19egxTaR_RTpZC3hLLTHHKV2BeMMVtmM8KI0djY3MGsoxrPHrbKi4Vcg7YpOGd0UvtaIBbTCz6Off-3oVRPCVADSXm8WUt0K5-qAdpb8-GzQd4PiqGk3uOc0FyQ8XEX8ikHyjJ4qot2jZfQ/1xSoGq_0GTZQ2uBKdebG-_yv5JrqctRVa8JQI74Fx8Y",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/wnnFQgIoCmv8NxEh4sAu1w/Y7EyCGih-p7g-6ACIUCcDWgBjz1hgn-zj75CRK8QNh35BQR6QBcQIhbzpXwTzg0GHFElMX25D5Uvh7UXTkTbQ2_4GiYBkOcUASkwa2PoqF0LpxapGXqTnZIqj97dFhKiuYNxdwy9rq6L1lzQqjnOiQ/HCjtVyMGwy4_wcke9P1xE1OgDqTVC2fqOxanK-BDoow",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/orFSDi8s3fVSIuWXD-NebA/kde86xcVeADZJYdkIQZmyIJcY1ERFC8MS2jtPbRcqPgl-vGOQJ-E_ERB6jWZzyT5cGLsFf_D8jF6BfunjlyrRYi3VOmRkHYi6tr5nwe4DR2wE1FMJKEbnCVBYSpZJsn1s07q0CXHBdpULKBQs2A2EA/sGtPCX7fmpVBM2902Wimm-jREVv5ShS0FeEKLZkK9hk",
+                "width": 960,
+                "height": 1280
+              }
+            }
+          }
+        ],
+        "Price": 50000,
+        "Location": "Viman Nagar",
+        "Property Type": "Office",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 650,
+        "Description": "A newly furnished 650 sq. ft. office available for rent in a premium Grade A commercial building in Viman Nagar. Designed with a modern aesthetic, the space offers a professional and efficient layout, ideal for startups, consultants, or established businesses.\n\nLocated within a contemporary glass-façade business complex, the building features high-speed elevators, 24/7 security, power backup, and well-maintained common areas, ensuring a seamless work environment. With excellent connectivity to the airport, major roads, and surrounding commercial hubs, this office provides both convenience and a prestigious business address.",
+        "Short Description": "A newly furnished office in a Grade A commercial building in Viman Nagar for rent ",
+        "Amenities": [
+          "Maintenance Staff",
+          "Visitor Parking",
+          "Intercom Facility",
+          "Lift / Elevator",
+          "24/7 Security",
+          "Parking Space",
+          "Power Backup",
+          "CCTV Surveillance"
+        ],
+        "Price per Sqft": 76.92307692307692,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "Area Description": "Viman Nagar stands as one of Pune’s most valued and vibrant urban hubs—where connectivity, lifestyle, and opportunity converge seamlessly. Strategically located near the airport and key business districts, it offers a perfect blend of premium residences, upscale retail, fine dining, and top educational institutions. With its cosmopolitan vibe, excellent infrastructure, and strong rental demand, Viman Nagar continues to be a preferred destination for homeowners, investors, and professionals alike.\n\n"
+      }
+    },
+    {
+      "id": "rec9uAGq4oCIxHvul",
+      "createdTime": "2026-03-25T11:18:43.000Z",
+      "fields": {
+        "Title": "Amenity plot for sale in Wagholi",
+        "Image": [
+          {
+            "id": "attYrPjlOBWMFbVlD",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/3d9_pgsaHlaHahvq5JU9sQ/gCgV9lnmqwE7ZTVQCvwTr_20fXF18OjoQqm2K8GaeUQzA7evNmCWxW_aAUJwtwrFvksnQ6EFPxdI4X9ybtkYjPSwmADqf01QnuvDjkIQJc0rqKyzQsHxh20VvdOLnAP9wgCYS-Y65jQmf34Pdqe_bhPze9hZl_DlIKfQRXLI6wQ/NWKOmCDixMhG-5mQ-VXPgQgPaMiLW7Dwx9hXTsaF25k",
+            "filename": "2026-03-25 16.58.14.jpg",
+            "size": 1242660,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/8qiL5e5z_qIMDJpC-GKFzQ/uOIeHSz9VP5ilZrIW5HW0xB1Ip6MdWmCpQM_aXqwMTl2EZOgfNjAM2MkQeXnCZgiO0xlrjkZZenCaRsWo7JsNjsP-sNI_pjou-a7A2MZzmgpkAaGk3qKyAQSXlOp2KzzsPiQ2RE3cJTiQ1hiKupf4Q/lR507uYljfJ9uQd3tdClRB1csqZ7sUpmnyfZteP7dCI",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/KN9QCYNSmuefQYwedPVEtw/7BTt92mBT3DdsbsE36ZeTTqwfd_MzK0FTweDA9MiULCuz7wleQ_-umby1yOi5FMrbUyRPEZpYiP9XxNxmdBAuZ4QWEt2oyYemruA1-1pvgLv-_JGhVL88PVuCsh6lO1xx_KdjcpGM5V8_LK-Me4-Bw/sZ-hI5UUyQthvCfJqgtmsce3MhMEOXGI7OACsGXIRcw",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/L4m0D_JzKJ-Pvg8orvdYtg/q66JJUVhbs8B8uYEEKG4ulPVll3k2B1tRzkFiR06J0EHS053hDzuyfxfA0c8IEfe_x9bZKYvSR_J_c4CE9Q7OwIZobRGqJpA-kh66BbmMcbbuDjtgZ-Bu2o8ub2EtJil-h08Y3lNPsGX3YhjJnj4yw/ukLmQvzBLA4GOZIINirdPlO7lWJ-1_Gl1eaW0oF3cBg",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 800000000,
+        "Location": "Wagholi",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Size (sqft)": 160000,
+        "Description": "4 acres of amenity plot for sale in Prime Wagholi ( Ubale Nagar).  It’s not main road facing.\nSo excellent for a hospital, hostels and college , international schools. ",
+        "Short Description": "4 acres of Amenity plot for sale in Wagholi.",
+        "Price per Sqft": 5000,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": "",
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recHOU7yq5SzoSGkJ",
+      "createdTime": "2026-03-24T05:27:23.000Z",
+      "fields": {
+        "Title": "Plush furnished flat for sale in a gated society in Viman nagar",
+        "Image": [
+          {
+            "id": "atta4wDqSkkmbhDLI",
+            "width": 720,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/SFW3LVdHO8ghsSYkRiVTxQ/p0OZ123YTRAOkxyaPj5AkssjslqsCq5Q7-6JzIzS3BSeI2K9IKmNDN03nbaelQCpOwHp6idkf481_MKOxjJ9pIu5NAj9Ypt0icqTmoC-y4Z2NgmYDxF5aHPorTblWeXYdCaQFytzzSoiu6szqvscK5aJMpEDzGpdpx_gBzQVF_c/dRd9PFlICcVc-OUCr3wumbObCWwfnF5XlREANvuQn94",
+            "filename": "2026-03-24 11.08.34.jpg",
+            "size": 310024,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/h1LH-ImBAkL7qMBuz_okWA/RuQBzbgjwwU6TYAx7Sbh5CmbNrAfp_vKoPS_mDouSX1lcRMUhviWgnKjxLTdJitl1zIuh67bM55DyFAhMs_RdyOpvE-oEc1L54Fw7pXsborkmXdBQ-9o3f4evOLGfm4qRim2EpIwN9z0CA96icL7lA/ncsiBNoGdkpWp3YdNIe5-5ExmcakVZKpH3f4Col_JsU",
+                "width": 20,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/vwOGOvamOiVlcIBK60MuZA/DTHbH6J9EV8ponwxU4WqC18hA9ekiQEecZUCFkB3VFw3sPBD2jjHd_9X1fp0Edc11lKmP6sKlFbntS298ffesWPn47wUmdwNbJPfri-JykqUdhvyHUA0NaV1Dy-QYuZ8flcIjGaVE2QEpWPb2Xgfrw/YHAaA5CXbFQx32Tuvei3VkCh81TULQknv0QjRKuET3M",
+                "width": 512,
+                "height": 910
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/5eetdqw1070GvVwt9Eqq3A/yxGPSDtth09nbyoWCFhJhft32026N8C3Id11qtYyz8_Q22vawhhqhsRW4j4oLmj7ZcYdmMLX9r5iZC2d8BfRC6lX_G1mjuCvpFkQ9xKkFtfBfnlCjOH9sP9gqMS6N1wLrv5z1yc8h1IfHuF1hhKjuA/tzD7-verSZiUQ6FGjiNBoJdFUJp4cuQRLfC-NgHocrw",
+                "width": 720,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attxlokN3LThHZS1O",
+            "width": 652,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/0q3LBTSzo-Jgnj4dU1mwvQ/8rp2eXlUmxF-BLkIpPuG1Lz6zxxduXQhH7Ox2wtpRuDgODPdPhjIzxBbHYTVpuiBA-HLLCkWXjAEueoziRFc0MKov8RhYr5NHiN_MyQqh5DMDIC6vOt3NYedKysAU3pPDl0iDGwL93cbtu9KIvX1E_pN6nuvTjH_BDp_uYiCqlE/ZbVRjGiMTs9tqhM0xlzfT5mz7bIMtssVWsou2-h5fbs",
+            "filename": "2026-03-24 11.08.35.jpg",
+            "size": 348858,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/RlP7EVGoEixNpkuOY8QXXA/6_xyTETQ0KuYUh_QP3ZuB27h5zz75SJP6BIqb7mojZVGKv5R1VqVV4TbVtnYgATrelG4zPiQJfHwljVUrdQbJLiUqfLAdY2SGSTLEm6P11ahvUIVmUz4ONGNhc6N94JKLMDeh9xzTWrOXLeaoIETkg/hU7txXi7h8MiU2Po7Werafwllw67Bi_SAu7ahrVCRzo",
+                "width": 18,
+                "height": 35
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/l2Y-R-JzmuxjGZ6A526JwA/Jx0yCTTwp19NyWchKiJ_bxwdt45yZEM__DJ5LWX8YZNAmI_Z5fj8z-5rycxvaFj0V4_SDUaOZDgkcQ6k76CDn1DPVl4gCTpnMioOsnwvyVagKK0JYzVjpIn5BnfkHQmTWha3uHEScNeyw5TrOXUTPQ/OF1oF0HydwAcQ7C7lxQmVChbtz9gzZU2iUxOco0kGIE",
+                "width": 512,
+                "height": 1005
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/i34xfgQWli2Pu6HWx7ccjw/DBDVGl0xxs8N955osnMPd1wZjV6xj0GkWi9RJIBiXPa1ixP9ZsqOGYWnLo_T8dh4rJ7SB9KmgOTHVKZurZku30ZPipVoVIaitJ118bo1ZYNc7K6gJQTP3gMTAFbspesmijdqMeqUyochS7m-AF8MAw/ZofmaACtw7lv0GXpuVu-pwpl5IOLCZtOJvjadqBpPEA",
+                "width": 652,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attXWIG9PEw2rhNUH",
+            "width": 720,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/XdAK2Gdh3Yzcjs-9V941tA/JyNDWzYkEimWbu538NxafhX8ZnMxfF1He9LMUQpB2qMTpluTlTk4XscKLQpqXeR0zgkL1KLfQf1yHcRTH17CRsbl3y8K7aVPm16-phTbw1gL8qrBByBGS-iJ0LutFhHD4_BFCGUGbBf_DsudAAVk5aY-73Go8fExUeeqyZRIFn0/dScqXjTYfxhTEF4f04KGjFdn7Mtsjdw3lUe_MsGScsU",
+            "filename": "2026-03-24 11.08.39.jpg",
+            "size": 368817,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/vNX99LjaAaa0D5KomUVz7g/f-VIH-RUn50frE0cSJaWGdYhiXB_HhtBa59-QZSKDlt9AquAmcXmrd_ASLZnEHwBTuIURFO3BoHF-JdIWSjsxBE1akZKsdREyIdknePg1CA_81aAZjsCmkdqpBRN57ixinQYp_iOTjStkvxtX2LfZQ/4sqUNE6umILkbVnlQun4DadvBMD89cubEVJpsKHbIXc",
+                "width": 20,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/HFlnl_XT8b8M0QlEVoy7eA/B2OmEHnsGaOeQfZ7viVgHxaiyFDMEMrKQk2OtzBryNKnhb_cuGgUvOjT0XNYL1lJjo7VIgP4ZSEf69SFwi8QKvf-FFGh7bTR48n-DcHUcEP8MOR8A-DmeTmtIrA8hbbgbhoUEBLk-E24xs4C6klRXw/rbxeJyZOQioyjsBpm6XFPUFWRO3jso6C4Rg1ZZVidKE",
+                "width": 512,
+                "height": 910
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Ei1VtU6xfQJPVP_4BWol6g/dujeDjUehohbVWUU_6CV9jrolRPa_xPMGIJ8eIpcR7Dl9HS9oxqF1y3-kz7kzHiCTCdsZ86oS5xs8TjapPVbV_UNrZyGyQURVTeTN2OmeCMvj6Abl5lOhHfVO72yDeGTDn0g8tBfNAZe6_g_li3ixg/l3BEjWPqGMSTMJLJazlvCDnqt0eCJtTPJklgjhPJXDY",
+                "width": 720,
+                "height": 1280
+              }
+            }
+          }
+        ],
+        "Price": 16500000,
+        "Location": "Viman Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 2,
+        "Bathrooms": 2,
+        "Size (sqft)": 1065,
+        "Description": "Elegant 2 bhk 1065 sqft fully furnished in Vimanagar with covered car park . Price 1.65 Cr negotiable . Right now generating revenue on Airbnb rentals - 70 k - 1 lac per month . ",
+        "Short Description": "Gently furnished 2 Bhk apartment in Viman Nagar.",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Balcony",
+          "Jogging Track",
+          "Maintenance Staff",
+          "Visitor Parking"
+        ],
+        "Price per Sqft": 15492.957746478873,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recnoj7dgm2Llvt7k",
+      "createdTime": "2026-03-23T11:57:00.000Z",
+      "fields": {
+        "Title": "Plot for Sale in Mundhwa",
+        "Image": [
+          {
+            "id": "attYsvmfqP9f3w0qx",
+            "width": 334,
+            "height": 150,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/WTJp2GaQ37QTzx6JeiIYSA/nRDtY2dpoPJR8_F_eTWEW9Yr5hSIbiwd812djdAywDvl_hPMJMwUOcMxZAsP8g8SJbLG2QhCpzyM9VwLqB172yqa-VOUBugHgYWz37UFWisGX0Io2uokFPHmA4FLD44_tLD0ps63UD9G16sHvZYPr6F7KKOkTr21kjEtk4Ual18/wuUknHpYcAJPZc4m6OYsc_iaNRm73J5yaVf4b9oWN1s",
+            "filename": "2026-03-25 12.50.56.jpg",
+            "size": 47084,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/_X80pml86bK3tnLKZlbHsQ/R3W9wZSz6OyT4CW87wlRTiXZel7sh0qd7g8payxlVgLJZmwMjzpvLzaEcK2kq9XYjoMWK87B2HD-KDTeaMmTI0lAoTvWRakzSLHLKCBAawvMq-6s9-RPSehTVIihmhq9Snnwv_DReFJL_nmyz_Hyvg/gOXg8qx0jPCw6bnsMPvVBAouc_ysXq0bP2TScbgbQRY",
+                "width": 80,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/d7wE3wVHgZNvZl2221lE_w/1_mBkcarqioAHrv5acYxdqXrMUI6KClnbBwJm9mjAmPlRF42kJyLIVC6kRfwRC3WBaiUsB65Y_BA4-W_zyGWhN7K7X9EhWNftJvZNLZW-DKcjKSa898HxxEh1QMiTN1hAVymbUi2wsr429Mlnp_zdw/zjXhz9iI0lCJkI5c0ndZK--mp71NN9ymKW9134tlOJs",
+                "width": 334,
+                "height": 150
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/ZTNuqhMqyQsf0kbuo8UXRA/J1XmSBl5wOWi57lUL6GEJ8pOB0BWEFbFpKLF3DrSC7LU0E6ybME4bgUPO8Jb_mN_uYDn4vl7cFqXW3ivY-RivLUe7snt0j2QJBzG8KGh0ho9NgfhHq_AtqO4ji9e3OcEsvGM3lI5mRfLhhPAvjWEyA/ww_09FRi7D2CmBfWARQMRnf5gvsx0Gd28XibcKGZf04",
+                "width": 334,
+                "height": 150
+              }
+            }
+          }
+        ],
+        "Price": 65000000,
+        "Location": "Mundhwa",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Size (sqft)": 5500,
+        "Description": "Excellent R zone plot for sale in Mundhwa  Road access 12 metres . Clear title plot. \n",
+        "Short Description": "Plot for Sale in Mundhwa",
+        "Price per Sqft": 11818.181818181818,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": "Sale plots#Plots in Mundhwa# clear title plots# ",
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recnLnSKcd2ttTOTP",
+      "createdTime": "2026-03-23T11:34:56.000Z",
+      "fields": {
+        "Title": "Hotel for lease in Viman nagar ",
+        "Image": [
+          {
+            "id": "att5DYHVpPm2twgDK",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/y6amLlfUs6bHFYho4-_ehA/lP23nd6pyGyiiaBd3vyJqqv3AB-Y3DeFQElnCqr_dYtnWJa6w6LA6nhxFj6izKifKqtZXn38wyaKvgO3TJWmSZsivs9uq63qMhAulol34ZJdk3m2AC9IW2SJaNydN_ufgPzMq-zMTyIXNMuD-Y6D45yMJIXxc7ncd4B66rID9u0/zj07b5Qs2CVcZQJmGGmAdgXNWcJIET0GdJDmD_i7-Rc",
+            "filename": "2026-03-25 11.05.36.jpg",
+            "size": 1207382,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/waYVwq-kerpmtPjANcD4MQ/WjASz7ONUbVNDsrMvPukJKXRkwprvbh8ur1_xRzhEfu1LYMv5hD_A0OE0eecAvzOHIisu2lpaEYAyJRRxpS0o80wiomRI3clBPXrs1Kr_5mMlfeO4YYeM7Piy5BmiTHKKZimRd90XPE2NFeZ5LJ6Aw/dCtM-V-fe95lQaCXguK_K9a4Pv9-4koDN5mxR5ZhWhU",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/AtyD_F10bGnDUK2hFL0O6Q/TQG5z_Z547ORjD4RYfL31-4wT7TQvzRnn0mVAjMxDac134Ed9VX1bv9aZA_y5D7a4OiAjAbOJvR7xisLcpn3kp6vWLNJLL98pmw2LHV3mY6JJG8Lwr1C8A_2DA3d89ynAn1M6S4E4Q_sKRPtX1ED5g/SbRYe0TmvbAfR10-3pV_nfg3yroe-qOD0UyUkMENOuI",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/t8-_vVJUb9NCRpB6PfQ0Qw/MA0rHEo2OuS7IvhlafBKaT2u7us6kh5FtsZKiFff5IQ3wg_ta0S6tYNs2gq8U43hqx_n_9t5PBZChouNu0j7koDMnosPIuPgSymfhDqT81WKQJPL4-wSh2b3NsPzK7x7cHTjHSIqSfr2o4fdYftEZg/zNcSoc-nUvV14P7KClZ6xEfc3LbpWpWFtEoedScln88",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 900000,
+        "Location": "Viman Nagar",
+        "Property Type": "Individual Buildings",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 27,
+        "Bathrooms": 27,
+        "Size (sqft)": 13000,
+        "Description": "Independent building/ Hotel in High street Viman Nagar. Close proximity to the IT corridor and the Pune international airport. \nIt has 54 rooms with attached bathroom, dining and utility areas. ",
+        "Short Description": "Hotel for lease in Viman Nagar ",
+        "Price per Sqft": 69.23076923076923,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": "Hotel for lease in Viman Nagar#\nIndependent buildings for rent in Viman Nagar.",
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Managed ": true,
+        "Area Description": "A bustling hub known for its proximity to the airport, IT parks, and vibrant social infrastructure.\n"
+      }
+    },
+    {
+      "id": "recTHQRyRZJxvWQJc",
+      "createdTime": "2026-03-23T11:22:32.000Z",
+      "fields": {
+        "Title": "8000 Sq ft premium retail space/ showroom for rent.",
+        "Image": [
+          {
+            "id": "attUrF1z14w4pf2ze",
+            "width": 588,
+            "height": 330,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/bSbnYaA66iDdSgVCittSFw/1WTDlwgJR3OZ8jytp2veVD8eRU8a0znlgUntylhzSaEdDOiuqJr0HioPLisyeUrzbkZNmwbSI7k9CaDuJsus6JO4eV4KrAAk_TeA6clVrpAwDFPciFychg6S299wQsiJ9QkQ4Q1IwY8Ufi1ddgpWcKvJ6jV5g0PmOCYnVUCF4Zs/RgN32OKOvYKer2Eq8ktrcShg-Im6iY9vxza5IsmbomI",
+            "filename": "2026-03-25 12.03.55.jpg",
+            "size": 106017,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/6a1oTn9Xx3uZuI_NjejnLg/Ba9_eeOJgzIMyWJMhNXuIqZbrpXkhuma3X1ehNWCppYR3cJr5KEbkhF1CwFnkZiSkp55idREkK2DDx3XYcqY9G1THQPWfDfxDjsrNf7JIXq6gAKcSwqaY4p289hIiWHNhGBQa5qQ-TWXj4mo7rBgvQ/QGvGjzRcnMx93oh9H3Jr_5BrnMNKSA_GagMar-765bI",
+                "width": 64,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/wd4qcL_EdliaDToXVsmTjw/JAEoKhXy97R_7dd3o7NGFb_Q0-CTJN0ZdGi3b_t7_Gt5HQMq8fFw2X530D7fFLbHulC0q11Mei1NLjetfArfi5wz1BNVQKZyIfmQuplKCNl2b5Vbxd1R963AH68cjg5NgIoN_kLXkiSWUhYgtDW5pw/kdjSY5En5KCjsPy5-xZVYN3f2_MDLyHzrSaSdGggJro",
+                "width": 588,
+                "height": 330
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/nT7O0uUutHaOMbCf7VfeCA/lHZc6kqvgmMkC4XoLZ2qWGZqX_J66aEuKJ9A-VE_4qGpcLPeHH8GISgG_qZUUBs_rfQUqhl228OC9iQAt_LCg0pBgQjkl_HosAdZM4K_o_HyuBLlYF829H60axWFJiAcKiNZ9dkldDSvWm5i2uXYtg/taJUzV8Yh09aZjM1Xvj7U403pHoJHrTj9aFtrDceB80",
+                "width": 588,
+                "height": 330
+              }
+            }
+          }
+        ],
+        "Price": 1200000,
+        "Location": "Viman Nagar",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 8000,
+        "Description": "Premium location with excellent visibility and frontage .Heavy footfall area.\nExcellent for luxury brands/ flagship stores/ premium health care clinics. ",
+        "Short Description": "High end Retail spaces/showroom for rent in Viman nagar ",
+        "Price per Sqft": 150,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Managed ": true,
+        "Area Description": "A bustling hub known for its proximity to the airport, IT parks, and vibrant social infrastructure.\n"
+      }
+    },
+    {
+      "id": "recnTy6izVSpjXd6n",
+      "createdTime": "2026-03-23T11:01:38.000Z",
+      "fields": {
+        "Title": "Premium retail space/ showroom for rent in Viman nagar.",
+        "Image": [
+          {
+            "id": "att9a174wLjKVRmVY",
+            "width": 578,
+            "height": 346,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/A2djjZf-3Q55o88flo6U2w/9CuAVylbfj0mZyI0MKsoOlBxkZ06-IGQTVHDqAUdypu4D_Uf-6icvjuNOYK8WK6B5mUFvm713vJqRASUu9E7dFThUuMbYPpe0Rk-XuohB5daqQnfXrVL8bXOdswrxOeN17jeICx1nDRRy0CbnyRWELsq3JDRNrMgaUciltzapwM/pSOEyB9FGK0r0ezuLIueBLgbZRDPQ4MbrW7ypnBOkTc",
+            "filename": "2026-03-25 13.15.54.jpg",
+            "size": 117473,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/uthCjlniURXj-W-3VRQ0Aw/BeFIjQvSHVZSnqFYTpGspZRCPaa_V57je_i0wDEieI4d_1pwuHtCdGq6U0QkMO1zD44_W4z4VJh9HH0ZruMifcZnDJZiUwfgf0AA6Z1cH8W17wQmSARDPdATxjtrCmw6pfzN_5vDbS0bs0DAme4ALA/Y7G3yFjb7IUMY_5Jml5j9nv6gxwv8_19oZMn8HOh0ZE",
+                "width": 60,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/CuhhEbFBEifo_oIoAKqRKA/lP9BTC1NYdct5IkzkMS3NMf3b7a3OVWuDKeXNZfEetR_KS2MovvP0qmEWHz_1twColVjvAJz9Zs7sSdSKklIVpkECu4-rcARE11HsTIO4qYaX9m-v9KvMfc-yQptlencDGiju1bKjoE_Y0l2xj8sdw/NxMQQgj-kO3tMN3q-8aLdYxrSBmyW3S7hYtGVC33npk",
+                "width": 578,
+                "height": 346
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/lqVZxWbB7uYZQZCOZulP4g/wyjLGpEmwuxKcq3EhELSv9ywYAl8fx-dvVpKRkB4EywWMoMv5GLA7SgvFsi5fSEQeGfRqbuYXZlt5fg9IGAkfEWUIIfhjDxIytVXZLIHAFNYrGOr01THBKud8JK070fgiP3wg0Jnes_pgU1HQs_90Q/82LZGKg-J9u5m8no_PWmXqfZDQW-BQhbeTR66YsFiKU",
+                "width": 578,
+                "height": 346
+              }
+            }
+          }
+        ],
+        "Price": 200000,
+        "Location": "Viman Nagar",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 1650,
+        "Description": "Premium road facing road touch showroom having excellent visibility and frontage.\nExcellent for Flagship stores, branded designer stores, lifestyle cafés etc ",
+        "Short Description": "Premium retail space/ showroom for rent in Viman Nagar",
+        "Amenities": [
+          "Visitor Parking",
+          "Intercom Facility",
+          "Maintenance Staff",
+          "24/7 Security",
+          "Parking Space",
+          "Power Backup",
+          "Lift / Elevator",
+          "CCTV Surveillance",
+          "Vaastu Compliant"
+        ],
+        "Price per Sqft": 121.21212121212122,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": "# premium showrooms for rent#Viman nagar rentals# Pune high street rentals ",
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "Managed ": true,
+        "Area Description": "A bustling hub known for its proximity to the airport, IT parks, and vibrant social infrastructure.\n"
+      }
+    },
+    {
+      "id": "recVrPfOaO7Ls1kcw",
+      "createdTime": "2026-03-23T10:54:27.000Z",
+      "fields": {
+        "Title": "Pre leased showroom/ restaurant for sale in Kharadi ",
+        "Image": [
+          {
+            "id": "attOHljNUeX3I7yai",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/SKyMUvo8lhc0u0PrliJAwA/LuSpsrFGGsHVI7A3V46aWbjOCUvCRUVZRO09ZqggSKH5bvRcpU_DxqzR2llpdcdWskx0UYOFiHvFXjZ9ABkSypQ3wx0ByHxVR6vNMFLgocPQXB4KRcgc3RVH24Q296AZU3NGP_9aMbvuXwwFtZkV57n901YSG6ONVSSRaLVxop0/UYE7sXI3t2O_idcOXRJF-_L4vb4jfOJgmYz4TxCnT0Y",
+            "filename": "2026-03-25 10.41.08.jpg",
+            "size": 1311949,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/r1w_Hv-QEEJDn2FIwmmI0g/1vaQBKvZ-NlcrX0WBpdWgy0TmeCHILLUHbqX7ya6QBWoRrDgcOFcav-i4-P0UgtjyXW_8YjovzLRlmY0vuXPpbfYK6AYhmll5J9XlyL8akvV3Gmx5UW4ZOTnipWgoAK2_B-9Xc-O5ItVKhWf6YVVAA/6myq6BUbI3CzN-DD_gfrd-D7764EvLBomZc_mrZKXOI",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/NGdUlj_4sGSfpmPmb_clpw/p-Mg37UOwKMxZnEoeMJNC6ZraaqbbnI0S7VQMKvM8XEH9pru95sZmrJ5LRMQNtYBgx86nWsgjSfOKlERi4N9YGiEvlLVm_chA3n0on1R2b_DEGYf33_Q5aH9xUdQo8eaR_roSiD19RcmHdOLOeV-lA/mLpARNS0xujpXSeuPX6UGy1NVNOC0IgSyoM_mJa8k0E",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/kOdO8gmJOZOGWSjA243djA/pNnaCJM0tdSXdK5U6eMTPQcTpPZ2MPdlZg0NX4Ii_HiulF8w95DLO_aKvQZnzNmmHR_rY6Zjiiz_fkE4eMDcRXfc5AWbxKGPehp8frsRaL5DLrAlcn-NlD4Eh8JkUvXwzoYSretXvabl-mFk5KjK8g/jYOnxFLMIMfC4PKH3vmc6YxfxKBs-MTcIk_ziQGnqxc",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          },
+          {
+            "id": "att041Idc0yL5BVQH",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/7FkKGlAGUNNibpJdOT-SMA/WX4_gPMtOhmJkSI2EaYSCwKgg2JqDlGNoVyFpDv14ZdulP7r8b8U8lqZw9Foqhb5AMbC411QGu7UntYjpp8tEH4o1tVv-3tKYkcHe87TsNgm6qmy0ZVNf0Tg6urrQYbw0EHGSxHW_32WDXWQiIQCh4M8hRZIhcXmKOGl-fxqK3s/wpN2-5BnyOeF9rn9aq8pDEg1FhbTW6R0em3KozRISt0",
+            "filename": "2026-03-25 10.41.10.jpg",
+            "size": 1008652,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/kQEPNTS2a8eWxLATVzt3HQ/Sdl0n67nGYF0t4xsTDqh0xW9GeSI9XcN9-0Fu8-dz6PECFfjfaHKKy8M7FfiIORC5TSBciAV3mSLsmTuIHw1VR8ymNqYjZi9dayfuuJFVC9mEieGPmyDGry2c4aZ8YkaPxrDa0yzYs6ibjcojmzqfw/gikK6-czdnagUKu8-m6sXEfiKVMU21BH2j0-9n4m4EU",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/NcOlvcNDAOSynUyr0lGb-A/faMyt9ZGyQ-YknL_306u_vjXMiJtCqLnaXOTWruxAn5kJpGIgWPQdNPI2elB4a9U5_vB-6_slAVmXP0bAzVDEUlZRvl_iymFvHLf6W_y6XurCfrDBwPqU9WE1G7zupwq95pp0YL2r8U38gVWKGp8zg/U-UgfgsUBxsWpUOQCJwfedQr-zXErtQnMQa6aMToXgw",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/XQ3u9EoLGLnFBJvKpsDMVA/GNoo-rwKM5QfDXkj_sYJ6BZIH9xkKffPKs2LZ7AyzPfBtWkU8aOCP4qYo7H6pi81wc2Nvi2yP2NeqWhJLFidhka-32mQM-eIc-KPIBpJ54t7bMP_bRs0qNUFytPADup_OCvjqSwjJMoh7QDP-fmGAw/XMK8zcv_P8AI0_QcUuRcN0fg9vQVGn-hEloC7RlxKqA",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 0,
+        "Location": "Kharadi",
+        "Property Type": "Showroom",
+        "Offer Type": "Pre-Leased",
+        "Status": "Ready to Move",
+        "Description": "Strategically located in Kharadi, this pre-leased commercial ground floor restaurant offers strong rental income, excellent frontage, and long-term value.\n\nRoad touch property with a heavy footfall and premium frontage and visibility.",
+        "Short Description": "Preleased prime location road touch showroom for Sale ",
+        "Amenities": [
+          "Parking Space",
+          "Lift / Elevator",
+          "Power Backup",
+          "CCTV Surveillance",
+          "Visitor Parking"
+        ],
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "generated",
+          "value": "Pre leased Showrooms# Kharadi prime real estate# Pune Preleased property#",
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recRqBG0hT6tFj2xb",
+      "createdTime": "2026-03-23T09:07:33.000Z",
+      "fields": {
+        "Title": "River front Ultra luxury apartment for sale in Kharadi",
+        "Image": [
+          {
+            "id": "attjBDeDw5Y60rJvV",
+            "width": 485,
+            "height": 337,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/0Rxu7U8Z2GLaGy6QthS_aw/fQADmxARyiIFI4IFZX4gzOrjNTYINTY440Ck1zWT1CEKTnMHSei9v6wODpZEZMT7xYBuzpAJlVzeoGXSfCmvYWWgjWoomtx5aLM-N_UM-JRa_kBQfJLe7_y55eNgXmoXplOk9VvUawvsDPNEfCHUOdpibgdGp8knFzVdbWjVpPQ/ZuvrUQMJLK1R_N3Xx-y4PG0daxkYbeXHYUsScPvI58A",
+            "filename": "2026-03-25 12.58.33.jpg",
+            "size": 96588,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/wGfur1mT23ReA1Bd18YQ_g/eXfVa0ABtO_yl_aLEEQGt7ATHusdJ7O8WKtblhFp9XzL83Zn7mDF1YTSgSnlUywsUAvm5lNiLre2J_R4cUiKsJjAWtBZuUiNrkF2dkQATchBMUp0W9c66WXP2To75b5xLbhxYsvwRSXQBnKgWP-QRw/tneVD-OGlvvrd-GGTOedBj_RMgm_V-0wTMmW1-sEu6A",
+                "width": 52,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/W3Ewn_LwQxmsl94vY0UWBQ/tZCDIZ7b6Jo8v7iCZyY33gyILCP6lY1C8S8tIdFxu8G2NJtjL4GceONLaPrmfOP-Wx-WfK-45FGdYa91WI9u2NgRpYbtQ4tl-FNiQkM6jjQVL9XDSE7bzg6qzQHJLJTUTBV0e-4C63iHLHTXYTZRhQ/uYEn0AcN31_vP-w7KVgBubqAoUb2yESAi9tdGf5mU5M",
+                "width": 485,
+                "height": 337
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/2qZHetJfRrOVgSojEqKcHA/-xdaX7p8bddDux0ClyX0PeJ_SV5SVRtt3IEGiIKsNc-LCVJpWVlDbWyCf-NWyElop0QtkX8yf3BtWA787TLZ860wO9XbsnM9qDHmVnYAHSjKyn5HZP1le9YDO3fcfAPmLR9BXwiN74ftiS3xc0z6wA/skyaT01syxrzaNOXFRTACFvkkI3tLyg91X-LPZLkCAE",
+                "width": 485,
+                "height": 337
+              }
+            }
+          },
+          {
+            "id": "attCmLEQQCAGBL812",
+            "width": 516,
+            "height": 387,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/VCIaQ8SSu-C-pFDjTUAHFg/ZslKp_g7SUc5nlMja3031Mx4G1VAP7EeHMlXRi8FpkpFYsvzdamtcr4o7mLHzy7X7_al0rBSDuJiWfCtDkAwTDIULs6R-TspJeGW_KEIzU2EhIaJDxdnZntpID73rdj9bbbKFlNdF9VAp4cQnfQGM2cBK1lokgtybcwwpYGafu4/yp4FdxY2JpKmR6in8T9grcdEp2LTQVJwz47QAh4Di0o",
+            "filename": "2026-03-25 12.58.34.jpg",
+            "size": 112624,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/TaxXyF70yOz4-XHbP4xXKw/70lwO1PMhofDzdiFJkNkpg9rWBc_hWga5PIWIifRPo3d66DFNjRbs4feDvSsHZUwxlCnv7WzK-tZCUlTFQu7xoFg1uYDtuocQzM_S7fFnIk_nJ6bdgG84t6joJtYNIFatgl-bJiWM5ZDVHwLtJOlbQ/UhOlrCUi7aCGlCemmjIbH6g9hQ-ZIRHdTPRxGPaPafY",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/bAkgF5LVo1N7MI2M-bY_8Q/R_LLA76Uq2X2AjY7c3aHCTYg4g72qGk54pf0jqHY2IFC3QwOgWq3Oz092zbojz43cIeo2sRw46XJlikM2-lqYDqRw96FlzgMxsvZDgyphKZrJoybQJwGnpMsJm1FbkCUU1FZebnFhWVQFP1IczPfUg/S0YIbi4CRqRUIhuOFWAKp77WoySAnAtLCstcmGkjc3k",
+                "width": 516,
+                "height": 387
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/-AY_Ks9wA8JIpvnaxQ4fKg/L6-3U7zDBZatpSboRqY9xRpY_oGhiWCyLEiC5rhh0iwVqo3f2no3DU4A8QOiXq9l8GetASelAwitEDjM7ONlZm6WlE62uYAnkY2vb0HzTtPzF7tT_r7-P79freAH3BxsG5j2_6Aqi7Vm8QW1mmj9iA/BL-phe3_VuOZ4eSHjjLeZIKqgHDc5nhFpxzOoLFxc8I",
+                "width": 516,
+                "height": 387
+              }
+            }
+          },
+          {
+            "id": "attIQIoGpW6A9fySt",
+            "width": 2000,
+            "height": 1100,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/4fRUCwYCq1kQFVwW2RIXMg/PFF-Nq844b9CfH3RlVw3bnWbdYPWp1l5XfOA_hZFWYK2g0NKmLLEyfs4jrW9BvbltPcUNYeHLeeymuCyetUGRV0mcoIFE2Upmv9yJOk2z_cvUoZE28_IxqgYp0zAPwfQgW85S1HV-WHi4-oOcHhxFrWSyRAiO7wDYLvoYxR9xHI/KhL9wrjQ7JLTH4Wv2KyvORv0GRQZhs-YW-datUWwwT8",
+            "filename": "2026-03-25 12.58.35.jpg",
+            "size": 536715,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/xRAdLxU94WTqiitvs2fj-A/ib9AyqznaPwbQH5hsboFGrXnkB0AZcSqtC_CEzOP8uEvohOQOC82CyOOFmxtZFjX-RCTRKtGqfoO4wRyUGFT5SNKNNDFmHc0x8P8WMKLJokdFTVTU9vD1lTAXMs89DkGSKKFxQMRxTSYLngjqxlf8g/GoETiUGZpDRKEOYNJcaaXe_Z2_DgcPFP-Ixqc-WVrCw",
+                "width": 65,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/LfDBQDai0NxQnXYAhxebHg/6pCZjPxvWn2Bs7nPG_K3YsoHXBY6tMpKP7X5tPstj96oZbw_cc5ZpDwCVA-h6YrtHCVnz566zIIoIfg4gZT-T1VCSCFXNa8qIwBOq7I1qjAEqVQpO4v2vZrOM4z4is6jlCbamNhvovTlV0Ll-VnlDA/2l7GJeODUBIIgQdtNWwwQx3pui1U-D5QQTjrb42X3W8",
+                "width": 931,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/iBjb1LKwp2uC8PunRNl9_g/BYs9nJbUOI5I1Jgvfv8udi-sxTh7QcCZQfwQcVJ7AX2ireDSZTDZL1HAzKdLNPMV3ozu4I_kzpB_ItWR5PvyeXcqeS3CD13fQYt0amSgEwvAXG70SNCxIdV4ZeGO_FshhJB4t7R6SEh7vSu2oc5p-Q/bj1BhWZcBKt8AXe1qfvn1tWeaMpqmeenc20iwNFMFg8",
+                "width": 2000,
+                "height": 1100
+              }
+            }
+          }
+        ],
+        "Price": 55000000,
+        "Location": "Kharadi",
+        "Property Type": "Apartment",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 5,
+        "Bathrooms": 6,
+        "Size (sqft)": 5500,
+        "Description": " 5 Bhk ultra luxurious apartment having a fantastic river view for sale. It has 4 car parks and is on a high rise floor. \nExtremely attractive as the going rate is much higher. \n",
+        "Short Description": "5 Bhk ultra-luxurious apartment for sale in Kharadi with a magnificent river view.",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "24/7 Security",
+          "Lift / Elevator",
+          "Power Backup",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Air Conditioned",
+          "Modular Kitchen",
+          "Piped Gas",
+          "Balcony",
+          "Private Terrace/Garden",
+          "Servant Quarters",
+          "Vaastu Compliant",
+          "Yoga/Meditation Area",
+          "Jogging Track",
+          "Indoor Games Room",
+          "Badminton Court",
+          "Tennis Court",
+          "Basketball Court",
+          "Amphitheatre",
+          "Rainwater Harvesting",
+          "Solar Water Heater",
+          "Visitor Parking",
+          "Intercom Facility"
+        ],
+        "Price per Sqft": 10000,
+        "Bedrooms to Bathrooms Ratio": 0.8333333333333334,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "generated",
+          "value": "River view high rise ultra -luxurious apartments# 5 bhk Kharadi prime real estate# Pune real estate# ",
+          "isStale": true
+        },
+        "Managed ": true
+      }
+    },
+    {
+      "id": "recKqVzTrd9MvcWZB",
+      "createdTime": "2026-03-23T06:42:32.000Z",
+      "fields": {
+        "Title": "2 bedroom rowhouse with garden for rent on Boat Club rd.",
+        "Image": [
+          {
+            "id": "att2iyZMLjBcqfawD",
+            "width": 720,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/GWHzmkSFxJ90PYP8mP_TIg/G5yXt5Gkcw5fr81BdAV5_bTr_-i1y1z5oG644y5taaJaNplCcPqzzTpDnPZPe44wj8p4X5C9KwXiU_C7ie3H6R-blzJpzHoNa6g1ehdxa0xLBQgCBh08c5VcSsVfwGV6G9DeLP4C2AbkcWhpwHT-kD33szO_9W7Zp_eP4PgPY3s/fZgkf8pFMNfzp1-tTvJwW5rK00TOqvMEMm4eHuKQDLc",
+            "filename": "2026-03-25 10.42.00.jpg",
+            "size": 310024,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/iGtK-B2_iYHrlRbdSWSUmw/1jD_Ev2tTlTj3BiE7zxdXAE_s83-ApUKL-ZLT4f_74SNdv83qevmAu_bj5gSYQt7zwg9um42khvSWhal11bkYaY9z5SvKFR_qZvbfFsLgZq6wgdzf6OfykKnl7hTeW6KZwY0xIcLP3Yft6BcbH1XvQ/NyyrGmiQdeVLEE3CcPSMx3QDn32NLYkbCc5YMYze38Q",
+                "width": 20,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/AIKa-3WLAYW4pqK1H-yVIQ/oNTpAV1S_JGkGcxHCU19-ha9oKUgqk351f66IWGKemVN1g1HymWSkVmjl_YiZKdCrhgGaXjPs1VZjHBlx20L3io2P-DZU-yKJcUAhtEcXC0_Z8bmx45grmTnKYarJCWp152nNeqf6PZd5HWx13ZNDQ/JgUgdbBEFui52cnpGXVc9f2WFjprKc2bAZ2P7g9Uqn8",
+                "width": 512,
+                "height": 910
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/TExJ2vkBLtVumHBd1gDOHg/M0mEBDHEgvp_ORbWcvOU_iaGcOez4LHEnEvPpDHiKUoBMwlw0v7aRkzeRQL8vi8USIrPdi7YXkpYSqtGzjw0-UhF0N02nsAw0uawcQK9frULv-bsISBou3aonnKOtYg4jVO7NGDv0Wh20CCYRTtXLA/l1e4vaSqGWIMQ-XnjxlPb6AbKy6bc4WGP6r59Jc0JWk",
+                "width": 720,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attP6soI2YC4usvhm",
+            "width": 652,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/4qg5QmrgbcG_jHVCUBzCQA/SkTdZxMCQalzSJJ8mS_3ItKsyEAAFIZwAYd3WQ3-lxK8og0VfSOFlsrEf5ZdnzyEZ5fLbPEkOanBXK-o6AFZem59qjQaVGJCEyv7qkM7E0-JmnLGuzyg3FD49UiMKTjwvSUVWgdFG5tORfFKkhuzS9U06h0Tvim7sHwXpUFJAxY/0_VKwSR8qQ3maDNNZX4zojt1lWhWuseNju-JFbBhPe4",
+            "filename": "2026-03-25 10.42.02.jpg",
+            "size": 348858,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Hc_L1oEKd09W5M89p9HH7A/eyx4tUx3kbmnzS1NHaeBFZFtDaSrIXz_qoC_0PiFt7boRKvUkeXf9uKLRGQkEmw7EbW6R1mnssqqENmNVnAqkBbnmtUt-KD2SifU_wG--RGJklxLaddooK6YJq2-4WUDOFv7dPqL2F7PBCuKIKvo0w/_ZQ5FavhpLjVHIj6_bqCirDIJH6SBT8Om2DdUJSWGDs",
+                "width": 18,
+                "height": 35
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/hbJAFnVBmhBOvu9e3YUI1Q/yNtlDAHh1OfrHo9nDmzRLXCZ24VvffuZRBONSspn65urjejf3ndiYR8-8d4_psicD-OAfakhvDN3dIn1vJMhluH4g02J4YyMiYwb-urkR6_4tqQwdhMDD8vMdRlJcmVFH02HdVVkHPDVPt00jdQ6vw/wQdV2zjHBvyINu_vN4rNyAIzh8VhcN3MPKfd7W_upH0",
+                "width": 512,
+                "height": 1005
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/w2j0EllM-5NeO8jxfvdOyA/7-HaKqXev1eUKVielWFQfrc405ZsrcUAc8UYyZnbKl1VRgh70aRA-D6Di2H18wzHJ5ApgkfppUui85Xm84POox2YfjAQHmSKtLaOVPFfU4kJ6xN8gHDLeiUmLZFz6rnZO-RBqAIOWVE77Co06IrH0Q/CMDBdUkwJkVy9Zh7w0BY-Plnecs57PfSba2W_xqW8mA",
+                "width": 652,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "att40s44Q4x7cZxa9",
+            "width": 720,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/cC8H9F9YGagtvjnfewgNxg/HOG-3MJl61R4MZQ133NI22yu-ea-HExYOw1zaPvYgC8fhdfxE2xJUme8F3ZMgzRIr4mUtd5njOy6IWTSBnXtXxX-rlwrdKS8qKWxEIYUp1vYUV-3Ic7MF0Ap3t_YRRRhSfp2_uxYnVpQiG27ykhXSmJjQFT_U5psZYDRWgQXs20/trWMLF1SpjpGdhjuRYqaoY_V3yKJc1Kzjhuxhrn-0Yk",
+            "filename": "2026-03-25 10.42.02.jpg",
+            "size": 368817,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/rAcb0f-Ps6bD1mUKeNwkTA/BXQn8Z3VoKHZGWIRJY2QEHHJbtO_W-wBDbW7jCi1j7RRUvf7A_W1BlgENl-MkS0Z6bMqeSPlbokjcuxIlCNwThf7aWRGmPciP2TgDrvDTlYMBnLEEZPrfQ7CBFqRlYhLbEq-1vX3A6fdovsOBHsDnw/doe1A0KzyF6IcwFYZP0t6WwQe2wW2l442gsiy_woQgs",
+                "width": 20,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/cLndqhJy3Fnu2_3bs97Bxg/bjOLDvoiKQiRsjpbQ0dzpX1WN7LcfEut0ocnduNV4pDD3zaTzGhTuxvSvAAJa4zd0C5AuiX3pnUloxX2U9M6g_BSsJFcoLkKHs6T9JvMA3wRrIXKZp1eSLjpyikXz56XOSvXDFqlAmwGO4iSMxURPQ/oHoyJc3Hf9xqmn8qoQNLwMpVGRBdzzx9JQIC-EmtG2s",
+                "width": 512,
+                "height": 910
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/RNlQ4PxIl6J5IHt0HZVM2A/nkQw50wt8jtFYyX5fA4mMUxoiFQlfhM0vHwjdu5_rXs_ULrm7FLqi47G7eCRGKuechfyyQY_SNmhwhaOSPCp0oLgiL30IyU3i_sBZZRmExAkgWpZsAY5ve9R6qWCt06SWLM4wfX0p8m2l7IABkEttQ/cBQLrY3t_p3kUGq9wrM27neb43GIdEwrwjxohfigj88",
+                "width": 720,
+                "height": 1280
+              }
+            }
+          }
+        ],
+        "Price": 60000,
+        "Location": "Boat Club Road",
+        "Property Type": "Bungalow",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 2,
+        "Bathrooms": 2,
+        "Size (sqft)": 1300,
+        "Description": "Well furnished rowhouse in a green and gated society on Boat Club rd, Bund garden.\nIt has spacious 2 bedrooms fully furnished with acs wardrobes and beds.\nFully equipped modular kitchen. \n",
+        "Short Description": "Rowhouse for rent on Boat Club Rd. ",
+        "Amenities": [
+          "Children’s Play Area",
+          "Parking Space",
+          "Modular Kitchen",
+          "Balcony",
+          "Private Terrace/Garden"
+        ],
+        "Price per Sqft": 46.15384615384615,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "generated",
+          "value": "# Rowhouse for rent# Boat Club Rd 2 Bhk rental# Bund garden rentals. ",
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recNl6iL8sJHNSCt1",
+      "createdTime": "2026-03-23T06:18:09.000Z",
+      "fields": {
+        "Title": "2 bhk for rent in gated society Boat Club rd",
+        "Image": [
+          {
+            "id": "att3rsjEUflUILELC",
+            "width": 960,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/uuQY6HbFonqCN-uPhNAM2Q/1EW1pGMOvyxRoJ9ydI9Ueqqcl3VTZsZt8jtcOQlELbeC3-UEc6GJ3AvaDK8Ap2zaM-1S7S6cTZOw_KS4pvr1lvXL_sOYQlKyzypg6JHbBMuwVRDw3n4xml9tW4XwQz4tJeinOrwkzd4v2YQmXwTiyVZdFSxCzz54rw806iEQHEg/VTD-MKZvtB4RQYo1FmxKMkHFovbvTVnyKYI-daYAGmc",
+            "filename": "2026-03-25 10.31.39.jpg",
+            "size": 349283,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/y3PZ95i7IVhl47ApgoBP2Q/sbTBlwPwq-I2AoiOquysG0Grj-ZYLWpoKA_cY35uEfScV5ZjIT-bx7Hk5gHcQoidVDVruVcDL0oPABhTL9eCTx-7WrOTYvrSwFId6ezuiwtVrY-4CIywqpzagFt5RReHnVmC2Inn9nn78rsUw2cigg/MMVB_5I_uwE6D7jb8k2JRBFEanPI6JGJpXhXlaJX790",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/r9rtMpD9m_JIrH8__20OtA/mj8Y2kNQ0jwO9862ML8EqYOYwwY8hZAkeLCqJsLzMFBhi1EQVKCkgDx2plpro8QGdUGCyI67T6ulDreIZ8u-SA6QpJKqg3QTPgHa7LuGsujpX5U9cAnDiBkd6YGGU36D1S9XptYSQM9HGWfTWMmOZg/4FdRKcIJ_EVgZSbxJ_zWb68H_n8rJ-eBlDO9q0-nMhA",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/GAOe5VnV-ShIOL5L8oS6WA/GSaDS4WKM7Ect1Kf056avDuMWrHDa9rkLhxLj0j3Qj-sbQ77tpX9huTccc759lKMxL6SyeXQhYRFpnAMpi4rriOwDE14Q0Z4czA8OZ9HLm8DuUJ0AG2W1BgFCKU8eieTcdLQJMaCe6EhfymFtvKzdA/YQhCEu0bo4WDb9Vuk-bDXHOJzTttT9VOOX_Tl_iFylk",
+                "width": 960,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attj5xsei0rS0EVgX",
+            "width": 960,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/ww9X0hL6Q1Vxaeu_3IJQ3g/nG4iC8RdLuvYAyrTPM4TtGwlQsm_HUjD0ihmyWXYLLrcHDvgANT7PFEzdtVOTvyMeixDYtoIMA93JQkn83OugZftZSjRuGd_f6D9TU-Yctj2-2twFy1N2K5ZjOMnBkuD2Qe-nCOYk8N7lauHyAk95M4O-FzUybFCgQfvoVP3uxY/wzgbMC3qeqOCGmeEsSh1wlyBrwYZBVljcjJDiy0SDtU",
+            "filename": "2026-03-25 10.31.39.jpg",
+            "size": 466344,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/wHRYXow2cpgorZ4R1RIwOQ/voMkO2I8tqqBqbSGhcQBj1okhcM7cBt4snGnoWZe30Rkeb39d1VnaRebppenfktL6fPORqAZpdCk3go4vE4JxnOamgA2TLEBb_0FtqP9mPbCeHxA6Kb-0jOagpWDqhJsFfJZZFtomZlEyRvMSvG_Hw/fG2A61e8tQdAJm3g7PWZiKIQULn45pUJ3p1EuNEtZ8U",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/cRRbxKtalnQfDFIFxHqaWw/vp1g-05QTioYRxfGABGDmHVif3-XgSwfAKZOUmHb0HmyzTg9U4Jgh10XFnlT8E_y4ZymL6ZWOltUzMiKl9WC3Oq0I_Y_vnDjph6ey2Lv6PrhjnqIithtDq-og_dfQWWDEJDE5sScV7TdKpnjG_O51Q/44IYNFxzPYNxw4ijoZVWP0uuWItmv3OQXNYhp-x88n4",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/AbtTfxPvAQFfdgm7lYkALA/U_XRuDgWr3-ujgsR1AFqQ1fzXutHokqgBk3oYIuHnyKawdwlXtGktV87KWfhgdFuP5XKHHJa69AYgjr-fWv2wIEi6Z9R-YoEEUv7bomuFLs7uy8jfJmPG5U5QtdzR4SP4VD-sPUqoNudT2HtlBwp-Q/Xb6omVZUcIY466HUCrG2ljAgvnxumyqbOEs6HRi8b20",
+                "width": 960,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attnuMQmYVFB6zxDg",
+            "width": 960,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/75t4T7Io-H4lOmhR8MuedA/RhPtGU-iU0QOwjhZC2geDEJfcG6PP8pV8149IIpv3pOyiMTxh43VRb5dH1S8kuINdJdynO3XWktyesc0jriembBQeM2m67wZsu3mDOSOaOAD0AIgu1Pvb2BkIGaT1ZlOsEjwn9UOhRWjRSZI5OHXZkLEro3OhvRTvpPK52uhJvw/zz25O0mppB99_Nl7YOP38l8S-mJIUpTmgjWkuDX19Vs",
+            "filename": "2026-03-25 10.31.40.jpg",
+            "size": 350794,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/id1c9C_wQ5gd_4p127_aSQ/nPYbOkO826Xy0vqyeQBC1739iAbK0KPpB4EaE_A0vCZ2FXWUyNWHnbxVdYHaBM21QUROBboqvqbNuAhIO5AsQubUWWGhWBEP_Yor-9b8xsJTcn1QQLxEvB7eRDc4iglu-By7uSHc7yIEc-VJDI9uAA/xgD48Umx-qcbnnHeFZgzz5-gg5jFy6X-7jEyDlp8BxY",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/8AIWjB7I17gdWKxoPQlXrw/NvDa0UUzTyZRwXEuNNyExRZD_cJ3c8-hUqBt8arxavRu4_UtNUteSlIKLzvoJfaTmqj9m1vzo9_KkTtLzq81jGCUSrgYMfgaj8_ps0GBkfEJSBI4IZEO6LwLNeK15ILKkvDO7vcceEEeVxfY6Y0Tfg/udNrf5jTRPC3HmFADjAdrZ2kPb1rrj1ry0a1nnI8qec",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/26BoWC8i5FFSlD_rXd4UrQ/wUBqUwFHfB5TegESNa3DDwox6_1Byo3h2pknyY3Snvt6Tm4DvPznKhjoShxXH-c4UG2DgzMXxfpz9n__S3veLehNeTFizWdEBZwZ98OuVYIh2FiHYCXTAKHSkm8FYQpbquVBDeHwWKyI9fwZUnYrNg/nZXV6DT80MZM0Ijtv7D1gdXr8rOYQbBqGvt2Zc8PIP8",
+                "width": 960,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attJQpXoI1MAqrLqy",
+            "width": 960,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/xJplXxlZo5cSxqLaz2mpXA/IjHekNARPFUB8O3-ipY2JWEmfVt-ZQnnE2b-62glriUdAkrxf-SaLYfD6-aPNqhu_4lddt8FJlyJ0d4vbXGnLEABWJU42lxpbu7YKE_qaGvA9aIU23H72FGJmyY00ebjxrIF0Cqb2seGqiOFVna1H5IXzpEdwXiLfy07jbIAV_s/iJGPEGqc1UKgZLnL-n9AMsw6fCRoLTzgT6FBnHTI0q4",
+            "filename": "2026-03-25 10.31.41.jpg",
+            "size": 411697,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Q2oLoVYI8MFGXPp8OS7l9Q/nfjsJEIfo5cJvRaBlWhYytWXniAA7_eqJpVdO2C6j4STbi3tcnU9M6f8zt2cqjN_JpeX5YCZQqhTYPJj9_CY6QwwdeElboPDLAB1Ndz-dL3vTjU6NABvpffIgMRGF6ODYBJJb1AWM5ADz9jyW5MdbA/uSy7fYg4QwbHDh7C50EFoJHSVq0nyh5HeuuiJ6cxMVo",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/9captBNrUX9HbhejlqRpdg/5J7lLmJBgkPjswbbx-ZiOo4lifOjNtGsTBdeUTgm2hv6W7oPfYq4PKypoSY6dLGJLAaSbAQa53ZoSc7aC8NvRFi_-VdRn54d4PaJbI6E6cQ8BpOUSdbcc55c_O-FIibGjqG6rtZrqCc4rK0q8SZf5Q/l0zh-2UDgjBvLXRRaZFpdabe1SMlFoKeeESUd4xlsh4",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/UyThA5gV7qxkn0Z2crbGlQ/x_FU3kOWlJhY4jStGKqJyFn8O_V3S_AQK2eiDwI30_dgQr6LbpubCBHDMCdxUmxrZ32rrDH1AKlRNXGgic_IUbP_xYQlHOJMeuoZIShoUsUNtaD5O_eaeDunkqZs2zi07hv2N17Bu3SsTi8QzkX6XQ/6b3VgBMYw3hiWUctS0TUd2py98rd7RUy7MRI3obsOOY",
+                "width": 960,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attmysmNiimWXvdDs",
+            "width": 960,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/YLgBzT8orw1iqdohQgrwgA/aJRoLtU13bBUJKHpaJB3xciRPRktyFPjwJG5KtvrtmCp990sVSOV-1RnFJaHxG0Lnh531T1VppKTs-Gtju8e2NSqeXnhcFrax-kAKQx_oagc4uF4LiO-fO_AOEt6FKsfk2jClojEUL-xj2pfNVfS2QrGbaYRe1hEEdFdDKsLWek/n5rMUdctbEYC9C-auQkWxyrFLcWtVuSrsH79YIQsd3Q",
+            "filename": "2026-03-25 10.31.43.jpg",
+            "size": 313813,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/MR-sclLQDoVdlT3bUOhObw/iAOpPx7W9cAhI9fXg2T2I1v-T7ONmSwzDu45oG50oVN00P15RoUSACR0Ec6WJYdWE1e14syJNU0PcdbwRvoSlQCaDgkAAh4y-Quw5YGzJQfNRujkujt5j0RtIz_Z36RW3VdRfVymvDRVRj-0oxwiHg/39c0XRPJxwS9nWWfR1wUgrxhCqH7sZ_RpNUW49ivuCQ",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/TqF-KI__zEs5xDcPW0FiBQ/xEGwZyljND6AzvjR0w_qfBVkFjVl1VXyhRJcjCOCnBk6kSwX2A8wj4xjg6Uja8KtlW3TTI85EE2xoekz2-N_zQnDhY6RR00BgiG0jBcMMBTu2_UBDBYbIng5-mU7hFaglWiFgvsbCcMiZdEM9Sq-CA/qzVVbcNZtpP6xAH6CjnGyWyywUxghJwGwRT_fFF73Y8",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/z5-P6RSIeNHIfa-jV8oc6Q/2QmSCKNMioQnElAj_2yNsSeeexHtsLgtYrNGv4ZeSW69K6pQFbslFlSDo9_xOkYnkOZ9AOt9y7wcffYGaNoVOS-8pmMa_EAn53RJ94nAoscv_8MxnT6mEjPOj7nW7OeqdasjtIJAWVJ0ByxPj8UZCA/bXR1ZRLbWyk4yM0BvN_4_hWY2aFOaCltKKVGpZaxyyc",
+                "width": 960,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attL4fk6wrDsgVE3U",
+            "width": 960,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/oz-ZfYz0x0QTNSiSozTPFQ/nU4cz3fox1ic3QMqmhwwFzX-TpW_TUSZOcZgJK6IW04b3uW52DdnPtINgQgizsf34JRUhP-hwnEzoHa0h1uVTHWmVgoOJA_ZoZyvSBLF4254_pQeTGND3kORTl6W3-50z6e2XXdkClEWTvNcCSyv9r6kGdiQgO_Lbitg6XUDyj8/cuc27_0pp_Os9zkSEFtVLFFifowuv1ie9FxWSQLBFQ4",
+            "filename": "2026-03-25 10.31.44.jpg",
+            "size": 363746,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/-xBqNa57_kPzEU_TWWnEMQ/bWh6Pk5mnUT-FGGxZSCYRUF3NeUB3x7wdi41Qvgk3HgeKrMROHR2Aet7p0E4MVqIXHMa1o4so3PriDaPPlq70pumweaoVxHdndJJfnaDMdlGOmscP992P4JoJ239rfOaRvNvUJEdY9wC-mXGAi-mBg/tOdok4bv_CDbZ6uvxjx3BYQKi3thEPIAroPS-cFJstA",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/xUQXRAHTue2KHrkpUMkalg/MXp12LPrQ1kD6ia3_A-dzZ9yR_7HQ21erHr-LykuaRozjii50NnPYfFqzrv9Hs6YoN78mjJacYrafStELTcHhJcUboRYSkcXxWM_SBzDDsACXOhU0PLqt0hg3o1VGzVCSDWWeWgNk9_AmM899o0SEQ/hKtgUxsm9b02I_neaLSlKrZMOo8KsllU-ABiA_6KOXw",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/UxJ3f_LmYosYl-T8d2EKJw/jGxt1hzbz-4faGliPegWnMR3glxIKGOqdz28Pnc9fB3NGyhP1m2Ff7XqdHdhf1cMdD0c-SAKETLBSqY0-lEd4t_V4f9yCyGOAK18tcdBPqtdOJOwuYX8IcR9XoZM2wQ7E9P5Nv9IjSGQY0zEmqMFLA/VGTlNQJdeEOL7Bw42B7r6P2pwdqXXsXw9C6w42h7SGk",
+                "width": 960,
+                "height": 1280
+              }
+            }
+          },
+          {
+            "id": "attXNcqI2Cer0mq5T",
+            "width": 960,
+            "height": 1280,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/EshdRUUE3WZYOHBaNTsdhw/FwSiXzo9hrscvheQfHutWt6klGeWnvd8hoy2X4CnLTfprvh_db6561fPsNJuzwF6P88gMc2rN6Z7Xi0LjHYuAbf8B6UWbAQM-KXc0aZlXSOlIAQPpuUOmpBOGGRlBh9GXYJE6JRKfY_AQ3hLIFbzN9Rb2REak7mTSfDCX6CXtnY/9NLaJQbS0f2967eSuy7Lp3Q4CkyjuH92wiyy5x7N_jQ",
+            "filename": "2026-03-25 10.31.46.jpg",
+            "size": 854883,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/k4iZUW5Zv6xWuim71vW5tQ/v476fdcXdGB2XLsnB7fnUKUKiCjW-TqaBUynOD3kz0cviWIkkONx191o-zEteGNpuj7eH1j_4Un1NFqhte4qJ8LuzaevD1ufSs0TdlFLNGEWg3CQs6ZXNidXRMICJAYWZ5Q_pnjrdYnFEx9hIyfbzw/aXQQA4DA4MOSGur2Cu4Rzs8TayFnkUW45OV9b30Ohws",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/6HirLWfzBOF93nyKpDxKOQ/6ONR4gsK2aMnQShekXyd55DE_m5JDRbzPYH2mxumSjS9LTnODebICTlUeqGEm3KzW_7LLDIyN0XKqXTcN7yZ-StutBZ7LrdBFmw4KBw3dCWHywa63UWoF8P1ZMZYArLKGmv_npi7TRiyZKTX7Y97QQ/wZwX_V5zCKZF2uiL2YzDozmU2p82Uq47JpTUcdLA90Q",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/YSFLHym6sH1Y3_h46JRkSA/JmlEWq0_4XhFUdYE1hBYDVzVR2lsSCBtWs9BDaSN-dEmCBSXX2pCntn-SBxDbtrqZjyxykbpcQ0vTqdTkbXglmrLu8O3FRK7H5hjsW8aFZx9v-PYSzAPYHVGjo8uHkLx1Rr7LWcpEXbe34_VJIBlOw/QTR84Wkg0TW7yiXk9w4XkZ3TazpRyKzEJfOVvckSC94",
+                "width": 960,
+                "height": 1280
+              }
+            }
+          }
+        ],
+        "Price": 60000,
+        "Location": "Boat Club Road",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 2,
+        "Bathrooms": 2,
+        "Size (sqft)": 1100,
+        "Description": "Spacious and furnished 2 bhk in a gated society in Boat Club Rd.\nNo white goods \nPeaceful green surroundings.",
+        "Short Description": "Newly furnished 2 bhk for rent on Boat Club Rd,Bund garden, Pune",
+        "Amenities": [
+          "Children’s Play Area",
+          "24/7 Security",
+          "Lift / Elevator",
+          "Power Backup",
+          "Gated Community",
+          "Modular Kitchen",
+          "Balcony",
+          "Maintenance Staff",
+          "Vaastu Compliant"
+        ],
+        "Price per Sqft": 54.54545454545455,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "rec527zvUn7488Bp0",
+      "createdTime": "2026-03-22T15:57:14.000Z",
+      "fields": {
+        "Title": "500 Sqft shop for rent in Viman nagar High street ",
+        "Image": [
+          {
+            "id": "attnXGpDDryWTv8OG",
+            "width": 588,
+            "height": 342,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/OR0eAX40SAP9ADDoxAKg9A/DJfPNTkO8MIGFc6sTDgpmZJ7jjs9zTQtzjsayWPTYcCcd9tmD6tUUEp4CMPwlajE6iNDHX48CXF0eOyfILuUwDe27kjMj6ptVE8mUvvStPt0-yKrT0Gov_df_AlibATh0_D1Z0qNcUNdCcguDrJd0KbZgOdzjvPm5TfZHlZYv5I/SmboKwnXP-I_K2AEDQv2C-CfpfvZ_IE4p3J9qzWgFm4",
+            "filename": "2026-03-25 13.15.34.jpg",
+            "size": 118715,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/fwjXOgC_YHPhSf63-5NJ-g/m3L7lW2gDsnuKeOq_B91uMQ8nR2rVA46NhaLQQCm1hPWlwgzmt9WwMeGdI48YowmHevhw3h6XLNj6i0BOYLq3ajK6U7XEGKtjrhuaece6uFdia1aJCtUlkrPuvUJxrqFDMg-EfZ6jbti7blNPT1BoQ/oUB6688JZl9-dp9QLpEqu4rir6A3uHds900Rp2qyygA",
+                "width": 62,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/ziZV3CQonuPnaGaobaGPbw/dcBdfCvxN0mJDRGQIwwNfnEeQHxMZffd3nyPzwnY4izaumvZO4MPYSaumzWFaYzAfjTxTlFwDBPHfGwg7bc_m58-aWbdUCsyOG6DK_sJzUf4u4GOoqbTS__h2dr-Jpdmn3MAauJdFA9OH7cpMORksw/yrLp_Xv2rKoQ4KMEg1osLU4A1-K4pRkHwq2FZ94VHAI",
+                "width": 588,
+                "height": 342
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/girBq836I5wN9Pa68PraqA/4HaSrfM8c4DtYceUs7mj0bW5iDzPrN9J_KVrnhPJuB-sBGnGbzo2VTih-r8DSLuQMvJMqh7m8vdhZWRSKYr7hWcCOiFhwC9JzmEwzk7u98YLT5GxtOirlYrI1lG_XjG55KF73frRDRDZS0fEFkqTKQ/UQX-3DLrHRaLjdE5thKaeaw8aN9YsjriiM3bX3Lj-J4",
+                "width": 588,
+                "height": 342
+              }
+            }
+          }
+        ],
+        "Price": 120000,
+        "Location": "Viman Nagar",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Description": "High street Retail available for lease in Viman nagar \nHigh footfall location\nGreat visibility. ",
+        "Short Description": "500 sqft shop for rent in Viman Nagar ",
+        "Amenities": [
+          "Parking Space"
+        ],
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "Managed ": true,
+        "Area Description": "A bustling hub known for its proximity to the airport, IT parks, and vibrant social infrastructure.\n"
+      }
+    },
+    {
+      "id": "recfpUIQtW3ypa0ab",
+      "createdTime": "2026-03-22T07:03:30.000Z",
+      "fields": {
+        "Title": "3.5 bhk for Sale in Windermere Koregaon Park",
+        "Image": [
+          {
+            "id": "attZ5wlDaxyn49VRu",
+            "width": 369,
+            "height": 542,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/VRxNS-fOtyJcmcq1qL8WBw/4mE3rG4jVa_j86xotpqW5fXIzeHMRQdUV5EFlhSwz78alTPbEbICN5ftWA8-vTNMN8oYdi6yDUIzzZU1xEKIMGrDYUoCYLRGxPH54XApq1KUEI7gX8XWhzvJdSZhBQEnyVQVA7OKWVISfHhjsIO62eFOu2oKR9LxHY35bExaGm8/Q6d8cHn9wHkwfKkSAApbMAwxTjV8VKSnjtDDgrocz5Y",
+            "filename": "2026-03-25 13.10.01.jpg",
+            "size": 117161,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/uCgC4AzQPpHSoJjHv_HvoQ/nqZBxv01L7Nnt9V5yxEceXNGMg3HOjjac6dors3JAkVBzBHZoE8YWltx-jeZ9MvlIkm_f4l4-mZHGEvELz06Bz7Dh1Y2v1V-ZzIgUcXo3gMRbWBVFh3j39YdpYEVMItpTxmMKzZwm6CV9a_PYc1Qsg/m3fmVFK8BT8qkA_cO_aRpiwqNXoQiMpjwIHtQ6yYvEM",
+                "width": 25,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/TB7Vnm3IEGBJ1mNN1sqF7A/z1gjdnyv9OokK_Vm0UyxErG-eV-VaNBioTNNjZvk7hnH2qxNZph3A5m8uZIA9qkyMJW2IboWmAb0WhcDY6D_Ga_Txgh5Hmlcbt5J8KSzrx-6KVr_rOETXQxvqWhXxpsVc69No2TPlJc6yDQytn6mbA/iTKDi2tZG1G_2P2pdnat9Bm5zO-lxKcova43HUa7kXg",
+                "width": 369,
+                "height": 542
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/BIf5z5Fxc72dLfV8ev0h2Q/h-n3u3A2L3dmhSwND21wbFLkwoXXur2r1u8QUL_11kGoiHBdqj4QCkSAxW0VX1GVV_5bneoegT8VJ7ths3-FGJX4H6OmJ-Bm_DU-DKitS0k0mbFqTJRrVui5zrEnaKNkxgSZFSlCxcbrxTvRfpHHSw/qlD90G_EhXJKOHG-qgM7WDAbzHv5-M39VXd1pRW8LQo",
+                "width": 369,
+                "height": 542
+              }
+            }
+          },
+          {
+            "id": "attCypn6gDeH4rkYR",
+            "width": 357,
+            "height": 560,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/imMqmSaDSVnoVV33c9EHrg/LLZT0gd_3_oN354yket5s4jAVyEE_lykuHNUoUALBPaxxrxqGeiZP_x2-MUPWqyA0erUMINp2XHHApH9TLvq8PfQ12uP11pX5CgIku2FI7FoB62CvQEIetJH47FCSxgCGSHMs3hPc-kSnCENcxwGKujCFpbsaT50MK49fs0JemY/EVVyBbWNd_mlYuhQQQ-WLPVoymPYXcVsu0jQG4rglNA",
+            "filename": "2026-03-25 13.10.02.jpg",
+            "size": 135082,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/1Cj9Arx3Zq4vqmmXL8rlZA/_DDpq4QYvADuR6vJOamhEA1Hr4FggytDY0DZxW5Hay-s910lpgf7n-dGTqk8R402n4dlCRsYvPR6jJdvdLKof_1Q90SewCG7jfN_y9ls9d306xmfeRVQgmNs3BhLGQ4sYoQxGXWrJXnhtBuoqzuE_A/3K0oT-F4tgKugWzwG67mkHrcXHAkCxqZ44iM5Zs5EvQ",
+                "width": 23,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/kh3N3lee3pDLM39a6tssqA/wTiS_rRMRtM5ojIKYruSoZWQ_06jX8_JGolqyCpBkmrRQ7RAf-cOj7y4xWQmvMVODUgGoxi_SkQSnwcFOFdZeZVOb0Gz8KsLfO_1LAstK-AWFqfqDwKiOTDMKAt1TZ8cD0xm44eJEcuLerzqnys-PQ/scT9NpvQ2EdpMjvXKwXOAafLlNTXB8q1uIWicPoPLRA",
+                "width": 357,
+                "height": 560
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/a1XaKH6EBsy2yHgx-ck59g/QsTq28yqtjScmHG53xKu1qhZ7mXR-BTmba2LoX1SiXZdxicOqe6g9_j6oEPrKufICBh2dnIZ5kotK8SFgKSmZjl2qAtYN_5mzUL0Yxrb-rOmxvoOuoj9OPlgjkhNcCBFmNxfRTFMHTULRVy37tt86A/1PkikpX-zhtrHBVSNiPyHsiixD6lfbl4j7T7_GbCoRc",
+                "width": 357,
+                "height": 560
+              }
+            }
+          },
+          {
+            "id": "attyiYO66VPCJOtYJ",
+            "width": 588,
+            "height": 294,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/x-vqipRq70r5DBiAtNFjjw/LPYbkaijvZ4w0PijByuiYqFbm62uAgkKMlBGO3zGCNVOgiTaxJe5HiDlHhZiT5VufRRvfIUoFJBqvfg8kebovWLkwKabx8FuTr8phik4_TANLVPszd69wmdz_1jsVWcdNBHK1SajE6szw6rHnOFqp8ut5f5mz5jJfIruKW1NRAU/83w7GT_CYj05mzm1OBLtXRIlCq4hQ0x2SLY4lIIPyZo",
+            "filename": "2026-03-25 13.10.03.jpg",
+            "size": 101748,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/isVSY-dG-RL6qqcpdUaVKQ/VurN7fYqqufGT1ae8Pe27yuTLU-4IBZ32qWGDpyxAprZk3vOfmg8PvblSGDHCTIEUqQeJBqboRCgdJRaPb_9H_ulXv_Zg0Rd3hNp_FuXFIQGhE7flrdfixBoaYrGgOGkbEQ0DcY71l03qsTtJRpp4g/z_ba8wjUmZfGd4hvOugqlmwr1SyGajMomEuZOcya6wo",
+                "width": 72,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/xHndHo8QeVsi2JhGkrTzjA/Ht4FpK75-9ptBDioOWVdGIBuFEV_UGMavdPjF4Dh-gbLBTr2-14xt1lWhO-v8hNIDIjO0jHadoXu-s4iHH9zZg1d5h6YGoV3qYpQJbAw3KzKUdZLlFpYp4H8-4nVtVkJweX5u6WtIzaEFEYyi0xKeA/hgcYA4B6k3xYzWaHTK6RxGYk5FzbWMIxh-7poxNa6NE",
+                "width": 588,
+                "height": 294
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/SWuEkqLSIJMNO2STpDKCjw/o4wbmELjMEayuofTVXG3tKPuzAVNvuDVHNOItL3mP7GsO_URoJP2xzfbBfQSav0qsK8KlLTa4j8AbVcOkB6vYeK_0fdrU2MvJhKGRR458kxsYkg7EerIQF0lWaic0AOKqK9v6m5_azj8Ludg-X6_8Q/cO2RrUZgzxBDtTSIUKQ-S_bOza-AWrQ4BTY61UUawJQ",
+                "width": 588,
+                "height": 294
+              }
+            }
+          }
+        ],
+        "Price": 70000000,
+        "Location": "Koregaon Park",
+        "Property Type": "Apartment",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 4,
+        "Bathrooms": 4,
+        "Size (sqft)": 3000,
+        "Description": "Posh exclusive apartment in Windermere, koregoan Park,Pune. \nSpacious airy and bright rooms with vintage view.\nGreat connectivity and an upscale vibe. \n\n\n\n",
+        "Short Description": "Large 3.5 Bhk in Koregoan park ",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Balcony",
+          "Private Terrace/Garden",
+          "Servant Quarters",
+          "Vaastu Compliant",
+          "Yoga/Meditation Area",
+          "Jogging Track",
+          "Indoor Games Room",
+          "Badminton Court",
+          "Basketball Court",
+          "Amphitheatre",
+          "Intercom Facility",
+          "Visitor Parking",
+          "Maintenance Staff",
+          "Solar Water Heater"
+        ],
+        "Price per Sqft": 23333.333333333332,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "generated",
+          "value": "# Koregoan park# large spacious apartment for sale# Upscale location Pune# Real estate pune#",
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "Managed ": true
+      }
+    },
+    {
+      "id": "recNUpTmFveMLtyds",
+      "createdTime": "2026-03-21T13:45:38.000Z",
+      "fields": {
+        "Title": "Preleased showroom for Sale next to Rameshwaram Cafe,Viman Nagar.  ",
+        "Image": [
+          {
+            "id": "att3Ko1rqhUdJwSrf",
+            "width": 236,
+            "height": 236,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/nzZ_qOVQKXgR4eqXua3GUw/c9dN1MBGWTvG_RQbbJEMhq2IGyImGUxuiBvyD6aLMKQx4_0Rt2DhIcjAnLjCBJrGkAqjD-9PvtFdxKgY-1cUdW3WfadfYYoJorOhxZR9o7JuodStCeDnFiINQcd7t2TFvsMXujdPAUs0Ptj3S3KtBFp6FJ0aGMFLY5TPIInYFDg/V3Uei3M4HDtW610O4p10WGsDsPdrqgiCL0-kRqRldSQ",
+            "filename": "2026-03-25 13.15.02.jpg",
+            "size": 35989,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Crm0IaqWf_71sv5c0XJmpg/pyCR-eKrUNtlJelhDhIQt3Iq9uB7fDRe9p402NeuuEmq0FKcJClciwSfdZrLl25Ic7QJ3P1rWdmsQvYGPIlgMnUUUfXse53gqq8cxc6_pcA54BCnMOOY7NnqSJuOdzer-UWEEqZqFD63ujjAjvwKmA/OeO-2T9wc7bE4N8Y3mYREqv6EgcY93uSBhdUP_1lSVw",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/1gXOR_IT7bpunCz_rrL2rg/lYYmw5XA8BfWskvLl2OzxG1EGOUV3qUFqkbNrW2m-JDXCOKlremk08mFrAf0GQCxKmwbsNtNDOnxkNnc0bIQxBQDGejObc7_4xpBg1fEgY_Zwmgn14fj95ICAmnUcQAquj6xrNafQoGFZwlXBOLypw/zL7DGfi4K_e8kQ5Oo6jgFw33H0MtrWU60kOgFV6gfII",
+                "width": 236,
+                "height": 236
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/6wr-Q6K-H75m5vjVxqU6xw/0B7D9s7aEiozPXrJhnaiZEJPzRBN7UKtVvNaS_XvxFW6Pk85kmHW2rbV8uSdANOIKY4W5nfAc2shfNsKtBl0BgSAa06ZElHY3vubAYILZKx5S2Hr3akgpjDeMonOh2pAHVq8EhB2R_sMxK3Bq27pDw/xcWfgSzpJcbabvR_y1DH4nTIjIvtgbFtsNAcb1tUf04",
+                "width": 236,
+                "height": 236
+              }
+            }
+          }
+        ],
+        "Price": 105000000,
+        "Location": "Viman Nagar",
+        "Property Type": "Showroom",
+        "Offer Type": "Pre-Leased",
+        "Status": "Ready to Move",
+        "Size (sqft)": 2800,
+        "Description": "Pre leased showroom for sale in Viman Nagar \nFresh Lease and given to a very strong client. \nUpscale high street location in Viman Nagar  with great Visibility and heavy footfall. ",
+        "Short Description": "Preleased showroom in Viman nagar for Sale.",
+        "Amenities": [
+          "24/7 Security",
+          "Parking Space",
+          "Power Backup",
+          "Lift / Elevator",
+          "Maintenance Staff",
+          "Visitor Parking"
+        ],
+        "Price per Sqft": 37500,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": "Preleased Showroom# Viman Nagar# High street Viman nagar# Pune#Real Estate Pune# Pune investment #",
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "Area Description": "A bustling hub known for its proximity to the airport, IT parks, and vibrant social infrastructure.\n"
+      }
+    },
+    {
+      "id": "recOwcRzee1H2BbmO",
+      "createdTime": "2026-03-20T15:28:09.000Z",
+      "fields": {
+        "Title": "Independent plot for Sale in Kalyani Nagar ",
+        "Image": [
+          {
+            "id": "attr6kOtF9y6pVJGg",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/NbW4OjbDRcspuy-FN1lYoA/tFBLZgrLm7VJAHKU8988rwYT5Em9cQiSS1XEdqhDLRHUuD-cQGZkAgwoWOvQVecNNGQqCG5MTJZQe-_LCx9dmf0NCekpXYiSC9mg6I191-rsZzJ-uvYv08sGD-rfmYS8R2LjU3oqLB140RXG_84vr8l2PnSDWd6-f2ubmig0R6M/QjmUoOUQphffcGHpx9gsEzbS1otODgeqOsW1I5ypGlQ",
+            "filename": "2026-03-25 10.47.36.jpg",
+            "size": 1286748,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/yDAvz9GtXS5PxjQRCo9shA/oUB7ix2MikX1J3MApAiHzPMjwSSH8PRaqQuBZ-bP-CKfM3JF60I6sxmc3BewUQY0p7FsEHLeNvqdu9O2PLHctVI3g4Z2UgM52YLT2GVn_gW2iST14DHhPcQ7Ei108bCRfLQ-vwGlhbVefiy_zSZylQ/KoC5pkw_p40zTa9Kk0GeGIF6ilUs27DRKusz3ofQnMI",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/oY5hoJoN0gmTtKZxIJ_bAw/Uq6EQrRaEhzRdHmGjlcFBfPiitySAyRyKkIrZ00COzmmikqolaP3dvrZ5mdkSkoeRKPb9JFAJQldcYtx3dU_HIBT6sN3r2ky_INit9ifjjpUDiZcmJdqb091RLmpR4CZ_8rFKaI3hjECQgsFJgbT1g/_Wmwjv6-OHzeE4XOPDm2ojsmUnCiFc_bhnYxb7-COwc",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/wlYeID_Gtg-ZQBfkQfj1Bg/nuvBWs0ratNRcoOqvV9YiTqyI1hqqB1LNrd6Im2pTnhKLhxAhAhyySRLMqdxvrunOCrF905VY7oB4DSacGRvD3CxGRn2D-ENJA3wMPZPzoJ6CFjuaum0kdsosTO6jof6C528f9S_KuWIRZzVAbIcNA/hpg16DhXjmU_H2VegvPunp6NxBzMdlVyetFHIxbCyAI",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 180000000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Bedrooms": 0,
+        "Bathrooms": 0,
+        "Size (sqft)": 7000,
+        "Description": "Exclusive independent plot in the heart of Kalyani Nagar\nSpanning 7000 sq ft, located in a quiet, upscale lane.\nDevelopment potential of 28,000 sq ft — ideal for a landmark luxury home or upscale project.",
+        "Short Description": "Exclusive independent plot in Kalyani Nagar. ",
+        "Price per Sqft": 25714.285714285714,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": "Independent plots for sale# Kalyani nagar# investment in Kalyani Nagar# upscale plots in Pune# ",
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "rec18U45Zt7XzlAw7",
+      "createdTime": "2025-09-27T10:58:21.000Z",
+      "fields": {
+        "Title": "Pre leased Bank for sale in Kharadi",
+        "Image": [
+          {
+            "id": "attjM33t19YC9IBeP",
+            "width": 387,
+            "height": 516,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/J5muFSbzZxm0NsH6hL6EXA/SknAtJAD5zhxMvm2GuUkbLBRVojNDPn_dzLUCvx-7K6UCntIUd0QQCP5kPdQKdQRbcAPk5nrudIUyl8ettU-FpniJZ58xTcGnFIWjlN5AALuITSa2OPhfwLwClgBPHMuT1pawXVEj9ZO9i7D6Emi5EkWNH054BFG2UgQvWKi5qw/aItSqh06wFjHWhO0-86uC90LzDIuY_yVe1G-3QjVcek",
+            "filename": "2026-03-25 11.57.46.jpg",
+            "size": 79077,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/mrXUgB_DOmEH894pxktLRQ/YA1kYqg1q5XbCcyvZBX1UmslKY6gdZjIE9qjUVIWiM7um1UfWR_I-6C8DAZhppoV1JS34lyF0jEJlg7MNycwyTarcD5UAq9eziGfvWYYMQ_e2V4Y4t_fKAOk-7GVuN2OazmSO3SoSkjBfCuj8SsUjw/_Vqqf6ahzTgPgLy64VC0z4jn1EAne68bR8kfQHcaOGs",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/AtKQzJOI3rwuCYRXxBE3fA/cDT4tnpBf80nz3jTn6RN8fsnXrIgEH2kgYP1Pe6tJnXPNU-wCoiURncqdNZE4zlNDrsQEAD9ASkC-Lz7U2Oz3UoE5vI5UxqhRxWXoSjaTRXA8mn9i5HhEa8Kojwx0v-1mDiMl9mEtOKIKNjMg7uhLA/OVgSCqnu7ShAmATr_ja4CzmxyjDeIla92JjNmW_F1kU",
+                "width": 387,
+                "height": 516
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/bj4S-QyDCAIX_cwPs2t1vg/QHZx72m0ZXlMq-UmbBqnmIXb6MX78ZQvoQSPawhy36Xvy-wI5_AFwMbL-5vdzoA7Y2cC-GDCpIMRrM-63m7oSlUu8IfnKhgxFsRyRV_JmnLVWlfU6LuXLOjE6xGC46veXBao0ENNCNgjKWJEtIy9aQ/8W0Agy3fEe9Xw9GrnjD1ZsOGL27dx91Ur3I33s1V3AU",
+                "width": 387,
+                "height": 516
+              }
+            }
+          },
+          {
+            "id": "attNYXq3Z2EucPC8k",
+            "width": 1080,
+            "height": 1920,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/tI161OWc6JC31vFPDvpeDQ/pPB9s2QrmiLFamgAwX8DGJp7_Smw4HW1FJhyl3uOkno7g7Mi_2ZsrOBR1c6OtO1O_3gWkVCMagcCGE6QE33pQUjUGCMlFa9iCgsgkF5iLllGR6X8Wb25OKJbMMsCvFmPUBMcC1LcwtzSQbD2ICfVCYoKnQ4ZxQGJxXMt5FvdIpM/YAFESYCIYbR1HEQMZzjWsubGAcfO0oxjQT2m5fu-8xU",
+            "filename": "2026-03-25 11.59.14.jpg",
+            "size": 694062,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/hymGzxbmTu8be4hty7NrcA/1pMtVdEdI5u1H1pxvj_U9AlMFp3dkTy8AQCehuZLutplwyMcmXoyJ9oaTrZwN7LxJ4TQ4trVviuZHZ-S-sn61uXQ1VGSJJgh41awH3ILKt3zR6mnsdRieKIC55E_GJgAOcljQBjB100l2Q6b0H19yA/xroMHzWb-PSKFvIkXDMrwbg-FhfI5xALp06C8JH95yM",
+                "width": 20,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/NRLV9yzKge9f3uWhQb-jkw/S_r6yCKwiPHoi_VYbx1WkArhG3aDb2JJ8-S0QqMPSSNaYn7cpOloG_pPlcqESNwQYBL_x0qzERZ2ZayXlTlbAuqrep4Zub-HNnHmsgsdXRiR1NHyyXW1stAnmSbFgNprcuVwhpJyrquEqFl5nE4EuA/wv2jJpe3vOeMmKlDegg2c6F-HCuYwAk8riCf0hEpO6o",
+                "width": 512,
+                "height": 910
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/d6unR498I299MZug94TnLA/mRAWPTHRV9V0y4LbUhu12kc1L79BS8oeSk5jyaEM2juCOWujpnBPB4_SRaJzQq9SKz_IIcJf2p7rrFG1bZ-wKE7KXNrDLMRlN9GKF87Ug_ujZIMEEvtQsOnkpMX_Il23iA5hnicTszWHssVLdlIwwg/1xPlZNHL_NEJj1uOISu--doHsXnKft0HgE1kr0zpF2A",
+                "width": 1080,
+                "height": 1920
+              }
+            }
+          }
+        ],
+        "Price": 160000000,
+        "Location": "Kharadi",
+        "Property Type": "Showroom",
+        "Offer Type": "Pre-Leased",
+        "Status": "Ready to Move",
+        "Bedrooms": 0,
+        "Bathrooms": 2,
+        "Size (sqft)": 5550,
+        "Description": "Pre leased nationalised Bank in Kharadi.\nRoad access on the main Kharadi Road.\nPrime location with high footfall and high visibility. \nVery strong tenant.\n",
+        "Short Description": "Nationalised Preleased bank for Sale in Kharadi.",
+        "Amenities": [
+          "Power Backup",
+          "Parking Space",
+          "24/7 Security",
+          "Lift / Elevator",
+          "Visitor Parking",
+          "Maintenance Staff",
+          "CCTV Surveillance",
+          "Air Conditioned"
+        ],
+        "Price per Sqft": 28828.828828828828,
+        "Bedrooms to Bathrooms Ratio": 0,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "generated",
+          "value": "Preleased bank for Sale# Showroom for Sale# Commercial property in Kharadi # Road Facing showroom# ",
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "generated",
+          "value": "",
+          "isStale": true
+        },
+        "Managed ": true
+      }
+    },
+    {
+      "id": "rec4KERvJBVBoY2Pt",
+      "createdTime": "2025-09-27T10:58:21.000Z",
+      "fields": {
+        "Title": "2 BHK in Konark campus,  Viman Nagar ",
+        "Image": [
+          {
+            "id": "att6yhS5sfvqJJnjd",
+            "width": 416,
+            "height": 738,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/GdS9EveHTe1uYVVBHRRdUA/9m15l2FP46ZPMXn_KM69BSN2RC_br71eJcCHempRVT8C7yypYmEvccTEHKmDuCkdTbAgHniay1ZgWCuuphky3JSe0wHbtyZcU_rrHPIoLiM5HaBKivsxLm8ysg6WavK0MOXE2lagthfqnkJhtBmif_gozHTiBTMmIg-Semx0fN4/DE353gnRCFSrpZdalS8Tps2z8NChf6i1Ae1yV9rr44E",
+            "filename": "2026-03-25 13.07.18.jpg",
+            "size": 63796,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/UothNkhZIgMW1fNiuxdOpA/XQ0GGwkq7YoQ9MVAGFbaGuqozFBWIiB_dkW1NY26QyXW_KLJfBj8WGYj4B9MX45wDpZXhJanriSwLJP0bAyYEe_RTfH4jGNrHBMSP8PR2UX7kLE_B4sGOOhLnNNqXH-VdIV8W70sTCD6a16m1eLxpw/8HsXZmcAyouMkpJoVhdwkKMbIflCBTOhbG8JwynAs2k",
+                "width": 20,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Jk_nybBkAwQkwqCNWGleJQ/JPpWM8Q02r7PuEWHBYBGmWK_-PsG8pGbG-MefdTqiOZq8Yi7qTxgbOL2MFI0A89rHjCEpcgjOPkZCPmKgmZVjC02U7DhJgIMN27v14-g-a-X_I1Pp77dU1g0owCM59mJ8-E4BMFCZmNtSiglzFB39w/YEvi1occcnsSMsIDup7gEpfpMXB6HjcKH3_Dj5AyNfE",
+                "width": 416,
+                "height": 738
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/REpMDsdMbnZ3KFP3v1kJ3w/tZQjsP_xu4KlQ37IQJtaCCE0aoiSrKUByAHQ8rB9_JOUsDeYGpT69cNF6zeeVE4GZ8m0NxxxDogPO28ELNVZvwZnIUr4hTpSVdiZd5oYe98LZs4CRD3za-EkddwJX5TyqyJ2wA1wZThyMFgm5jiBbg/Z9acCNRoUeZiF_CBvo7ko69a06nObUkuLsHXByulOU4",
+                "width": 416,
+                "height": 738
+              }
+            }
+          }
+        ],
+        "Price": 15000000,
+        "Location": "Viman Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 2,
+        "Bathrooms": 2,
+        "Size (sqft)": 1180,
+        "Description": "2 Bhk in Konark Campus, Viman nagar with balcony, modular kitchen, and piped gas. Amenities include gym, children’s play area, and CCTV surveillance. Easy access to the Pune Airport,the metro, and public transport.",
+        "Short Description": "Spacious 2 bhk in Konark Campus, Viman Nagar, for Sale. ",
+        "Amenities": [
+          "Gymnasium",
+          "Children’s Play Area",
+          "Parking Space",
+          "Lift / Elevator",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Piped Gas",
+          "Balcony",
+          "Maintenance Staff",
+          "Swimming Pool",
+          "Clubhouse",
+          "24/7 Security",
+          "Power Backup",
+          "Gated Community",
+          "Private Terrace/Garden",
+          "Vaastu Compliant",
+          "Yoga/Meditation Area",
+          "Jogging Track",
+          "Indoor Games Room",
+          "Badminton Court",
+          "Basketball Court",
+          "Visitor Parking",
+          "Intercom Facility"
+        ],
+        "Price per Sqft": 12711.864406779661,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "generated",
+          "value": "Highlights: Balcony, modular kitchen, piped gas, CCTV surveillance.",
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "generated",
+          "value": "",
+          "isStale": false
+        },
+        "Managed ": true,
+        "Area Description": "A bustling hub known for its proximity to the airport, IT parks, and vibrant social infrastructure.\n"
+      }
+    },
+    {
+      "id": "recb6IEXjc1y2tuBf",
+      "createdTime": "2025-09-27T10:58:21.000Z",
+      "fields": {
+        "Title": "Ideal cloud kitchen space in Viman nagar ",
+        "Image": [
+          {
+            "id": "attHYAVYCqCHQZqxV",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/xi8G_8D186dDwkzHlR7nEQ/WXSlk61g0n7HRbACAtEiB2zHfYCO4yvn_N5lqa4R1FKSf4bPSEpjXFwgNab82NrSZ9KiIRmWdkjtwEHII3155vYIR5CRJEEzYKivrncMqxV5WOElAMWuJqgZ0deP2HXvSJabVPYQeOaPJNCUWwNwCsJBInmdC9NiJgT5b4HUdoY/02VePz6KEBHRpU6RvFVW-tIxHQA6IrDdGmOsa7-UM1U",
+            "filename": "2026-03-22 21.42.46.jpg",
+            "size": 1013692,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/S7TtAudGBymVdnAENSodKw/Ar7hNlYjqsbYoBH0XzFucop3KVBHceuOHtSuOV3WFmxLsvfES2NiMAMrQcsWRE_T1erQ0MlulFcoQMQ595U9K2b8ZhnYmUCASIfM0lHy-S5l6x3YPg8Ctm9IQFoZQ2iV-eFiVKg1yUg3oYaoFrItfg/AKMOuyuMlX5yYVe35bWeadpKvCxvHdeJLYHS5mSmxRU",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/NXHM94yEmD5oKRmmMcQ2BA/2U8p7HLxkxaRhRxByGDRELP5uksEBXP259iljrMeK0tMAjIJiXBaQkhSzUsSuy5xBM3zIQyGx2iZQcz9T3PTfdO39qV-Y-84LD-UiEbWe388FKr891bVKmGGFYQe8xEjCWRFpbAb6V-pzBbcuHU_aw/L66gbMJ5sf18z7p8G48c8PxeJ_C3wQS3k6BDyq7-OlI",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/WuQO2WK0Jfk8nMDIjo2Zng/Y2cw3O6U6VtQ9d8A6uJfzIZU4oKV_NC-zx6cr8VfTuFzInblrpskr327unvAiP492UmgZIjuViBxf1PrXcUvBFcNo63PdroYCf-W1cJOHDLN1pQ1T9Ls8K6MTBAzBznGsOYc5musfT_2cnqll_fEOQ/XRyVduz5fEGJGW9Yj_qs1HG5bldUvSSRwC-UiEKGAj0",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 75000,
+        "Location": "Viman Nagar",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 0,
+        "Bathrooms": 2,
+        "Size (sqft)": 1000,
+        "Description": "Ground floor road access  and outside space which comes along with the property.Plenty of parking space. Ideal for restaurants and caterers.  Easy access to Pune airport , metro and bus stops and public transport.",
+        "Short Description": "Cloud kitchen space in Viman nagar. ",
+        "Amenities": [
+          "Parking Space",
+          "Vaastu Compliant"
+        ],
+        "Price per Sqft": 75,
+        "Bedrooms to Bathrooms Ratio": 0,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "generated",
+          "value": "Cloud kitchens# ground floor showroom# Viman nagar# for ",
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "generated",
+          "value": "",
+          "isStale": true
+        },
+        "Area Description": "A bustling hub known for its proximity to the airport, IT parks, and vibrant social infrastructure.\n"
+      }
+    },
+    {
+      "id": "recIO094eDNiHL1i6",
+      "createdTime": "2025-09-27T10:58:21.000Z",
+      "fields": {
+        "Title": "Large luxurious flat in Verde Kalyani Nagar ",
+        "Image": [
+          {
+            "id": "att4lWe7DJos60W00",
+            "width": 382,
+            "height": 425,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/ZztYDPXKMeGvyNaIBLtFJQ/O2UmkrtsomQTsJnITRIn-xRqLt9iw4Fyj-0XcaMXbT-NnBDNkJnTArF_2aeIiabxIfqdcAagzwdEUX3FojNaZ7dNDtU-X66BQ8_5-hSMH4qhl3vTixyhh2VJygYc4RpWm9nncFQprZ-KOcJX0CWHx2-7ASeBer78kMB45EKw92o/K9zVt5aGkaYGWvdXakGcgCyi84g6Ff41dOmIya1ShcY",
+            "filename": "2026-03-25 11.15.20.jpg",
+            "size": 95508,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/ctEDlCpSUWHMggy8Wld_Eg/Czfl5N1uEcR8nvQJeMGCrRAs11v-6LnVCEK4A06nB8WvSsF26Wqi0AEQ0VENcwW9WkK5rfHRyIJOsgWG3-91J693NSZdH1mGKXLvlmuGdDJBn_3Ybr5jH2fSRHz7YSw6QkQ8y8Y0N2HHhcjXqEI1UA/SRefXxXkmD6Xcq8a_m6SNfn2Iil7w-Zh5vWFvWZ3yAk",
+                "width": 32,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/kFcSH7Q7ak9fGDDTsU--og/UIM5Akzvd8m-yTpqtaSZj-sCOcJSOvF3dGya7sYEA6jbAJTdxmV8RFXaYc_lHNqSw5OxwjwwUMJllpTDC8OJ-nQDMzqZYAtH_RE3Fd7DNMUN7KA6g3i5SXGulfqE0J8M89B_JOyJi02AJzh7TEfhxg/1EAxWo_WK8aZ3xVXuxJ4M8zIpLeg9BkKcjPbTaey4j4",
+                "width": 382,
+                "height": 425
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/DBl91iixWveMos5c1_lZIg/YNr9VY0sk_MObLTj9uqBGQnWTyErJ6RpTYyaoQ5uDkExOSZSnkadWyqPTQzJMyyQeVGPDYPwx0PAhEYCu7YgXKVbLF0UWqIXn6WK3SxuIhmJtkbhM8zz924csHXlaCIs-fszIsAjCCkgsLv4tb3x3Q/EDpB8usEle4ZUyLkCsOoppwYa6fxkaVTBXnS-1Fruyk",
+                "width": 382,
+                "height": 425
+              }
+            }
+          },
+          {
+            "id": "attGkjtvG6SsCc2NG",
+            "width": 642,
+            "height": 366,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/XsHv1LEb8RsdsNQVo3DcAg/P-tyeTZQaXYYMZ3eM7O1gelLiduRJ2u-I_fxCWes5o41K4qSMeHRacH9NIRJg-qOEIY_qX2ySzaKjvE5GL7-cnTVPP16UN3OvnrwsPS3NYkUtuWKUffDTVEkJOYUaGe2_AJMY8AtpnMwa0rbeHuBm8cU57xma62GUcdSBGQCdtQ/gbYSihyrL0sJgHjUFfcUSEJ7WjUiW9hUdXyf1y-JcDM",
+            "filename": "2026-03-25 11.18.54.jpg",
+            "size": 101403,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/N-vlK2FeoAHv7FGTWdkZow/0OFTlri8Pdb02LMkdX7pVAy8a78WuR4ZkLwKdE4mgg7UdJECYht_GfiN_hpzBfV1YBjPF92PLuKfvclg-7kH5zqKKvYLSWXSNX2qBC0DAccuCAS5coaS1AX0QeGPx65iiIcpSdmQC24jpfbV5O-Duw/53hSEXsxpLs8YKV_STxF-llhIRXTdjkJ3lNcqJoyCfE",
+                "width": 63,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/GhFb420MSI0V7WESnOQmTQ/fIu87AjYDQ20SMjgxmeI8tvuhrT2CJ-_2e-Oi6zO_Q7DLRk6C0GXsee3_qYmvSyNlgbr7sLl4I6YlkXK0CW4WJKwd4YvwRHbITTLAO-70LqPaC5qMdLtgMfFHrhTUesqmQJMj3TZSFuO7yFDNUeALA/8OGbiAlXaGQ-KWhE46jJ30Mdvng_k2KzpYD7GE40exg",
+                "width": 642,
+                "height": 366
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/NpJtHtGTsX5h7DfxisgK2A/f3wNiyf-udUaHzCqRYzrCsTh30r1g3tqCtIoDDkBxv9pzgbbWecH-c6MV2YoimAJSs0WsC8hds79qsxrj4QCZidkI_pgGvqkU5fSVWvM12eP9xxR4ObELwZEQyXlT-2UVRakPCKxbMo2oEk6Pf4l6w/xEHo0LeMPcsAd372sfCEygj4tKQF8KV5f_tay02clpI",
+                "width": 642,
+                "height": 366
+              }
+            }
+          },
+          {
+            "id": "attA81yd7Vz9NarWl",
+            "width": 554,
+            "height": 554,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/2X-9mZK0XyV8063WMKNNhg/ROFDdiiYoZYiO-aPkjq55YFvh8UUHnBl14cSPB_xgvp326OAwWwgeWj8q3luEsqYaa6cIvFnENxtP6INysXxIGTeZFiq3UNcVDJsiAksFTtTcStMeNtRq5Ck_iXp72l_MMigzSiTfyS1PnnSVSkT3OmWOy_gb_Xe0KljwJtoMf4/5YTIKPd1PkFPxDWnpMGo0hL7c-cmGNN93cdyGYD-qF0",
+            "filename": "2026-03-25 11.18.55.jpg",
+            "size": 145813,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Hlr12Edl-pR8yOHF38Gzyw/DPQhApSVYKMuXeQxdodjEKnu-qf0_GLMjDfjNUXx76ukYEnWfiCqVTv1Xbik3ZGNfZ0UumD1g0VpFVD9Q_B0-tnHswkY7cHmMKQRuzmIUiqLM8H2MgFJS7GYj7E_RiNVA-i5YGTE3hq4ZRnQ67I4aQ/z1dOGBqA0SCBAtD7m8q_mZJg1q_wrW6F4WO1INugOAI",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/bJi2PDY9_iyPavXbnoFheg/W65dhbTyOIkSIyes3go4RbRRRwmNFJMY2PbQj2Sara4-VGP6lg0zd8Ufne3sPVPY2sSp_qhFFNfMiGf8MHZwasKxY487Fs9t1ij1PUZDPuWyNoOK18RHkka_LMnCe0p_BHvxnz4uqIRVGXO6j3JvCA/9w1Js1qEbuZZTj5kPiNfuC_G0tjiwNlZo_vbWQca5Fs",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/Bb8tQqHvkRFCQN-pcKIB2A/84B4t9ZuZ3K1MZFd1Z8ntafIhhdJ1JOVIkvFnJ1X5VMTduSS5uA6pkOPIy3YnLHbqwMv60KNbZg39iNpboTp_CsEWlW7BXCse1Taf98q4RGKPoshSKVDC70r14laZyISQEamx4d3eLUUkyHay1l11Q/6PAlYEzWpkqpVh9OCaSBaE8uXrr2VqUrj4_FFkj_9kk",
+                "width": 554,
+                "height": 554
+              }
+            }
+          }
+        ],
+        "Price": 110000000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 5,
+        "Bathrooms": 5,
+        "Size (sqft)": 5050,
+        "Description": "Stunning luxurious flat in Kalyani Nagar Verde.\nLarge spacious living areas beautifully done up kitchen and a  wonderful view. \n",
+        "Short Description": "Luxurious flat for Sale in Verde ",
+        "Amenities": [
+          "Parking Space",
+          "Power Backup",
+          "Lift / Elevator",
+          "Visitor Parking",
+          "Maintenance Staff",
+          "Intercom Facility",
+          "Gymnasium",
+          "Swimming Pool",
+          "Clubhouse",
+          "Children’s Play Area",
+          "24/7 Security",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Balcony",
+          "Private Terrace/Garden",
+          "Servant Quarters",
+          "Vaastu Compliant",
+          "Yoga/Meditation Area",
+          "Jogging Track",
+          "Indoor Games Room",
+          "Badminton Court"
+        ],
+        "Price per Sqft": 21782.178217821784,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "generated",
+          "value": "Luxurious flat for Sale in Kalyani nagar #\nLarge luxurious flats# verde# ",
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "generated",
+          "value": "",
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recVw4Mx7LzFQMEhz",
+      "createdTime": "2025-09-27T10:58:21.000Z",
+      "fields": {
+        "Title": "Upscale Showroom",
+        "Image": [
+          {
+            "id": "attfLHeBzvSsSY8bv",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/xRIGaT98yS3o8Omlywobnw/lg1UQfYQcdHE70EH_lefIZT2kbAoWZK8j23j2mFyIppqM8J8KOEUcmI5LGC427amMEgXJ6oUBjP2WRrYf-u_AGBb3EHg5rGxQnb0pM1LQ0OyB5U_WQYPTn5TMVjZuAzf6ZmzewtSZYbPOzFSoznr1JXBO_8POgxIfWxLdw5YAbM/6j46tdUcnjv4ksaB97SUSU85IgCBNtmUUUYjGtYUnXY",
+            "filename": "2026-03-22 13.48.32.jpg",
+            "size": 834209,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/gnmg1mF7OWOoCP8XWtURSw/PxmfH6T8i0dniZS2L9pWyCtduJQcTKLqalZidGeKVY5voS5oU7_UC8nq4cckyCWmlumdnUSOLk8UsMjA2AZ_n60dyQpub-FnOXUKv2DD_xTORK042WSHsA_obRQqX4VquO0xw9e-LLl-Pde9KvJf9A/iK-0HSRmdbD05J7TehjA_UYwai64dLIEC4cF6XGia88",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/fVGNkZHnBFvOOkNFK_0-Bw/iSLqB6ivrEeHhdAXPVZT_dK8VFwzajo6jFmKYB7U8BBiq420xcyejgfPNELGBwWIrXDnszPQoqF5xYv181RG5KcubZJ2dTyxDu8N4RY-tiaUSzKQVhsONykH3XKIS2pv7ndTomQcGaR1wLASEgFdqw/cdGGkNDt36wzb4DhwiNc9641Hl1iqcrndRlITOvbkww",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/7Nb3ENhALqSManVEnlmmsw/aLwmYM7XmgDB_wfYBrhfTEeskmubpKYJgSA4D9dWqTcVcpeXSRsxH5xyIz1Inx7Zjf2LB0bIWtvfi3xp9GQCECCuHNYGRKQhLWI2ICfu5lrq8O9ITPEmjXGbRAuFdIswO2Ov621K7ta-ghdVA_xqrQ/ObVLRMs3lEQRjQQt7nnhkB3vYCROZEHlBb61bVdsNDs",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 900000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "New Launch",
+        "Bedrooms": 0,
+        "Bathrooms": 0,
+        "Size (sqft)": 6000,
+        "Description": "Ideal for premium luxury jewellery brands, home interiors, luxury designer boutiques and lifestyle stores .\nExcellent frontage and visibility on one of the most exclusive roads in East Pune. \n",
+        "Short Description": "Upscale Showroom in Kalyani Nagar ",
+        "Amenities": [
+          "Parking Space",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Vaastu Compliant",
+          "Visitor Parking",
+          "Maintenance Staff",
+          "Intercom Facility"
+        ],
+        "Price per Sqft": 150,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "generated",
+          "value": "Highlights: Swimming pool, gym, clubhouse, 24/7 security, modular kitchen.",
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "generated",
+          "value": "",
+          "isStale": true
+        },
+        "Managed ": true
+      }
+    },
+    {
+      "id": "recwPXJcbg4wJiNK1",
+      "createdTime": "2025-09-27T10:58:21.000Z",
+      "fields": {
+        "Title": "Plot for sale in Upper Kharadi",
+        "Image": [
+          {
+            "id": "attAQIerYB49KEdBb",
+            "width": 1080,
+            "height": 1080,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/rYhtArX_lgEQ8wbW8RlPPg/88zatH9vaoAw7wqpy4kAUQokLZ6pOQFB1XZfnSi_vU92l0vCGeVPW8TYfy42tUuEWr1W4t2NB51WOrFnC-6xAmu46rJfGrrdz4s6E-fPNHwqT1woQlS5K3bXMXk7DbK6dC00WZ-eM44swGeWhlnyiblMa-7xHX1qCwbcm-pJ4x0/n2KS9ccGlm9ZJ2cKkyAn1C1qsq6fX6dKdWrj7Kk9AFg",
+            "filename": "2026-03-22 21.45.09.jpg",
+            "size": 1517285,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/KMmtAgUJhJz5caKwG_G9qg/KZ3X13krsCdAEKGCnPRGZYZa9Qf96w-gXrqYtM49VV9bSy_a_sGuz4GXQIU15rFb9DPgwEqFJyANYwcc8hTDqQbEHDUFlIHFmsPNBLZG_49BNdTHpbouy6VBZ61a3zly0fmFxljWSikXUTtz9E8Q9w/TP2Y16p8lE5DmD3qNRB6oy3Apw55zpHW-fMbehboo24",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/ngtQ36v14GV_sx2-pXUrMA/n47Df1hPHSGJ6wu8gNFJjkyvKf9Nc1KIMxv90-7fhi61bcR2490yaXmjVxmg2kQu_ZAujPkFeNf_fkHZ09vaqsfTEsRAdScfWlJg0_y2Z6uLtmO5DOYB1Fiy31SRoDYQfNX_fL-fJrdqdA36ObkEoA/Ay4Il3mclT44ppzF49kQmi6TftHLYF1rYWguk98VkiA",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1774958400000/c8ewrSP5_EQme6il-iHCxg/dHz7Hpu29dQb2ew0Cp-wu4luDmRni1dE2-5h6Qa0oB27T9GIhPHtO3yjwCg--YKWcFCi7tja732ia1rF8_ZiK5pFkj_Nm-_kUJHNI-jPq8_HTwmONIoy4DdULrVN1TTR-t8sl9w1eZ6gCZ4Xxyv_tQ/lJLXTXTjrTcActdCVkdss0-lRk33zn0odwJfe0NloAk",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 160000000,
+        "Location": "Kharadi",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 0,
+        "Bathrooms": 0,
+        "Size (sqft)": 46000,
+        "Description": "Strategically located 46,000 sq ft parcel in Upper Kharadi, a hotspot for upcoming residential projects. With proposed R-Zone and strong developer interest in the vicinity, this plot offers high appreciation and development potential. Competitive pricing at ₹16 Cr makes it a standout deal.",
+        "Short Description": "46,000 sq ft plot in Upper Kharadi for Sale.",
+        "Price per Sqft": 3478.2608695652175,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": "Upper Kharadi 46,000 sq ft | Hot Builder Zone | proposed R zone!",
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": "",
+          "isStale": false
+        },
+        "Managed ": true
+      }
+    }
+  ]
+}

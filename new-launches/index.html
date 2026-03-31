@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Listings | Shelters Realty</title>
-    <meta name="description" content="Browse verified property listings across East Pune. Filter by location, type, listing type, and budget on Shelters Realty.">
-    <meta property="og:title" content="Property Listings | Shelters Realty">
-    <meta property="og:description" content="Browse verified property listings across East Pune with smart filters and sorting.">
+    <title>New Launches | Shelters Realty</title>
+    <meta name="description" content="Explore newly added and new launch properties from Shelters Realty in East Pune.">
+    <meta property="og:title" content="New Launches | Shelters Realty">
+    <meta property="og:description" content="Explore newly added and new launch properties from Shelters Realty in East Pune.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.sheltersrealty.co.in/listings.html">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Shelters+Realty+Properties">
-    <link rel="canonical" href="https://www.sheltersrealty.co.in/listings.html">
-    <link rel="stylesheet" href="styles.css">
+    <meta property="og:url" content="https://www.sheltersrealty.co.in/new-launches/">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Shelters+Realty+New+Launches">
+    <link rel="canonical" href="https://www.sheltersrealty.co.in/new-launches/">
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        /* Airtable Property Listings Grid (if not in styles.css) */
         .property-grid {
             display: grid;
             gap: 2rem;
@@ -85,8 +84,7 @@
         }
     </style>
 </head>
-<body>
-    <!-- Navigation -->
+<body data-page="new-launches" data-new-launch-limit="12">
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -94,13 +92,13 @@
                 <span class="logo-accent">Realty</span>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="listings.html" class="nav-link active">Properties</a>
-                <a href="new-launches/" class="nav-link">New Launches</a>
-                <a href="areas.html" class="nav-link">Areas</a>
-                <a href="agreements.html" class="nav-link">Agreements</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../listings.html" class="nav-link">Properties</a>
+                <a href="./" class="nav-link active">New Launches</a>
+                <a href="../areas.html" class="nav-link">Areas</a>
+                <a href="../agreements.html" class="nav-link">Agreements</a>
+                <a href="../about.html" class="nav-link">About</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
             </div>
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                 <span class="theme-text light-text">Light</span>
@@ -117,7 +115,6 @@
         </div>
     </nav>
     <main>
-        <!-- Filter & Sort Panel -->
         <section class="filter-panel">
             <div class="container">
                 <form id="filters-form" class="filter-container" autocomplete="off">
@@ -163,10 +160,10 @@
                 </form>
             </div>
         </section>
-        <!-- Results Summary & Sort Bar -->
+
         <section class="results-summary-bar">
             <div class="container summary-content">
-                <div class="results-text" id="results-summary">Showing <strong>all</strong> properties</div>
+                <div class="results-text" id="results-summary">Showing <strong>new launches</strong></div>
                 <div class="sort-container">
                     <label for="sort-price" class="sort-label">Sort by:</label>
                     <select id="sort-price" class="form-select filter-dropdown">
@@ -179,18 +176,19 @@
                 </div>
             </div>
         </section>
+
         <section class="property-listings-section">
             <div class="container">
-                <h2 class="section-title">Latest Properties</h2>
+                <h2 class="section-title">New Launches</h2>
                 <div id="property-listings"></div>
-                                <!-- Property Detail Modal -->
-                    <div id="property-modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(30,41,59,0.18); z-index:1000; align-items:center; justify-content:center; overflow-y:auto;">
-                        <button id="modal-close" style="position:absolute; top:18px; right:24px; background:none; border:none; font-size:2.5rem; color:#e11d48; cursor:pointer; z-index:1010; font-weight:900; line-height:1;">&times;</button>
-                        <div id="modal-body"></div>
-                    </div>
+                <div id="property-modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(30,41,59,0.18); z-index:1000; align-items:center; justify-content:center; overflow-y:auto;">
+                    <button id="modal-close" style="position:absolute; top:18px; right:24px; background:none; border:none; font-size:2.5rem; color:#e11d48; cursor:pointer; z-index:1010; font-weight:900; line-height:1;">&times;</button>
+                    <div id="modal-body"></div>
+                </div>
             </div>
         </section>
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -201,8 +199,9 @@
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="listings.html">Properties</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="../listings.html">Properties</a></li>
+                        <li><a href="./">New Launches</a></li>
+                        <li><a href="../about.html">About Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -211,8 +210,8 @@
             </div>
         </div>
     </footer>
-    <!-- Airtable CMS Integration -->
-    <script src="script.js"></script>
-    <script src="js/airtable.js"></script>
+
+    <script src="../script.js"></script>
+    <script src="../js/airtable.js"></script>
 </body>
 </html>

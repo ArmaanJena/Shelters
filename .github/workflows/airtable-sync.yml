@@ -1,0 +1,71 @@
+name: Airtable Listings Sync
+
+on:
+  repository_dispatch:
+    types: [airtable_changed]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: airtable-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      DEBOUNCE_SECONDS: ${{ vars.AIRTABLE_SYNC_DEBOUNCE_SECONDS || '20' }}
+    steps:
+      - name: Debounce burst updates
+        if: github.event_name == 'repository_dispatch'
+        run: |
+          echo "Debouncing for ${DEBOUNCE_SECONDS}s to coalesce rapid Airtable changes..."
+          sleep "$DEBOUNCE_SECONDS"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch Airtable data
+        run: node scripts/fetch-airtable-data.js
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+          AIRTABLE_TABLE_NAME: ${{ secrets.AIRTABLE_TABLE_NAME }}
+          AIRTABLE_VIEW_NAME: ${{ secrets.AIRTABLE_VIEW_NAME }}
+          AIRTABLE_MAX_RECORDS: ${{ secrets.AIRTABLE_MAX_RECORDS }}
+          AIRTABLE_FETCH_MAX_RETRIES: ${{ vars.AIRTABLE_FETCH_MAX_RETRIES || '4' }}
+          AIRTABLE_FETCH_TIMEOUT_MS: ${{ vars.AIRTABLE_FETCH_TIMEOUT_MS || '20000' }}
+          AIRTABLE_FETCH_BASE_BACKOFF_MS: ${{ vars.AIRTABLE_FETCH_BASE_BACKOFF_MS || '1000' }}
+
+      - name: Detect JSON change
+        id: detect_change
+        run: |
+          if git diff --quiet -- data/listings.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.detect_change.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/listings.json
+          git commit -m "chore: sync listings from Airtable"
+          git push
+
+      - name: No-op summary
+        if: steps.detect_change.outputs.changed != 'true'
+        run: echo "No listings.json changes detected."
