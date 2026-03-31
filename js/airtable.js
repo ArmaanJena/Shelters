@@ -829,7 +829,7 @@ function getSiteBaseUrl() {
 }
 
 function buildPropertyShareUrl(recordId) {
-  return new URL(`/property-detail.html?id=${encodeURIComponent(recordId)}`, getSiteBaseUrl()).toString();
+  return new URL(`/property-detail?id=${encodeURIComponent(recordId)}`, getSiteBaseUrl()).toString();
 }
 
 function buildPropertyShareText({ title, location, price, listingType, url }) {
