@@ -1,7 +1,7 @@
 // airtable.js
 // Listings and area UI powered by static JSON generated at build-time.
 const LISTINGS_STATIC_ENDPOINT = '/data/listings.json';
-const LISTINGS_CACHE_KEY = 'listings_cache_v4';
+const LISTINGS_CACHE_KEY = 'listings_cache_v5';
 const LISTINGS_CACHE_TTL = 15 * 60 * 1000;
 const AREA_QUESTIONS_CACHE_KEY = 'area_questions_cache_v2';
 const AREA_QUESTIONS_CACHE_TTL = 10 * 60 * 1000;

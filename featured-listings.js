@@ -1,5 +1,5 @@
 const FEATURED_LISTINGS_ENDPOINT = '/data/listings.json';
-const FEATURED_CACHE_KEY = 'managed_listings_cache_v4';
+const FEATURED_CACHE_KEY = 'managed_listings_cache_v5';
 const FEATURED_CACHE_TTL = 10 * 60 * 1000;
 const CARD_IMAGE_FALLBACK =
   'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%23cbd5e1%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23334155%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2232%22%3EImage%20Unavailable%3C/text%3E%3C/svg%3E';
