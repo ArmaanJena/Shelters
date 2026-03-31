@@ -14,7 +14,9 @@ function getSiteRootUrl() {
   const url = new URL(window.location.href);
   const path = url.pathname || '/';
 
-  if (path.includes('/areas.html/')) {
+  if (path.includes('/areas/')) {
+    url.pathname = `${path.split('/areas/')[0]}/`;
+  } else if (path.includes('/areas.html/')) {
     url.pathname = `${path.split('/areas.html/')[0]}/`;
   } else if (path.includes('/new-launches/')) {
     url.pathname = `${path.split('/new-launches/')[0]}/`;
@@ -132,7 +134,7 @@ function createManagedListingCard(listing) {
 
   return `
     <div class="bento-card-wrapper">
-      <a href="property-detail.html?id=${listing.id}" class="bento-card">
+      <a href="/property-detail.html?id=${listing.id}" class="bento-card">
         <div class="listing-image-container">
           <img src="${listing.image}" ${imageSrcSet ? `srcset="${imageSrcSet}" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"` : ''} alt="${listing.title}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';">
           <div class="bento-badge">${listing.listingType}</div>

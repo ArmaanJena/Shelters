@@ -79,7 +79,9 @@ function getSiteBaseUrl() {
   const url = new URL(window.location.href);
   const path = url.pathname || '/';
 
-  if (path.includes('/areas.html/')) {
+  if (path.includes('/areas/')) {
+    url.pathname = `${path.split('/areas/')[0]}/`;
+  } else if (path.includes('/areas.html/')) {
     url.pathname = `${path.split('/areas.html/')[0]}/`;
   } else if (path.includes('/new-launches/')) {
     url.pathname = `${path.split('/new-launches/')[0]}/`;
@@ -106,7 +108,7 @@ function resolveImageUrl(url) {
 }
 
 function buildPropertyShareUrl(recordId) {
-  return new URL(`property-detail.html?id=${encodeURIComponent(recordId)}`, getSiteBaseUrl()).toString();
+  return new URL(`/property-detail.html?id=${encodeURIComponent(recordId)}`, getSiteBaseUrl()).toString();
 }
 
 function buildPropertyShareText({ title, location, price, listingType, url }) {

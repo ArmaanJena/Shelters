@@ -39,7 +39,9 @@ function getSiteRootUrl() {
   const url = new URL(window.location.href);
   const path = url.pathname || '/';
 
-  if (path.includes('/areas.html/')) {
+  if (path.includes('/areas/')) {
+    url.pathname = `${path.split('/areas/')[0]}/`;
+  } else if (path.includes('/areas.html/')) {
     url.pathname = `${path.split('/areas.html/')[0]}/`;
   } else if (path.includes('/new-launches/')) {
     url.pathname = `${path.split('/new-launches/')[0]}/`;
@@ -113,11 +115,8 @@ function normalizeAreaValue(value) {
 
 function getAreaFromPath() {
   const path = window.location.pathname || '';
-  const marker = 'areas.html/';
-  const markerIndex = path.toLowerCase().indexOf(marker);
-  if (markerIndex === -1) return '';
-  const afterMarker = path.slice(markerIndex + marker.length);
-  const areaSegment = afterMarker.split('/')[0] || '';
+  const match = path.match(/\/areas(?:\.html)?\/([^/?#]+)/i);
+  const areaSegment = match?.[1] || '';
   if (!areaSegment) return '';
   return normalizeAreaValue(areaSegment);
 }
@@ -135,7 +134,7 @@ function updateAreaUrl(location) {
   if (!slug) return;
 
   const url = new URL(window.location.href);
-  url.pathname = url.pathname.replace(/areas\.html(?:\/[^/?#]*)?$/i, `areas.html/${slug}`);
+  url.pathname = url.pathname.replace(/areas(?:\.html)?(?:\/[^/?#]*)?\/?$/i, `areas/${slug}`);
   url.searchParams.delete('area');
   url.searchParams.delete('location');
   window.history.replaceState({}, '', url.toString());
@@ -830,7 +829,7 @@ function getSiteBaseUrl() {
 }
 
 function buildPropertyShareUrl(recordId) {
-  return new URL(`property-detail.html?id=${encodeURIComponent(recordId)}`, getSiteBaseUrl()).toString();
+  return new URL(`/property-detail.html?id=${encodeURIComponent(recordId)}`, getSiteBaseUrl()).toString();
 }
 
 function buildPropertyShareText({ title, location, price, listingType, url }) {

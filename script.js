@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (value) params.append(key, value);
       }
 
-      window.location.href = `listings.html?${params.toString()}`;
+      window.location.href = `/listings?${params.toString()}`;
     });
   }
 
