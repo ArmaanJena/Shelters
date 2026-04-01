@@ -724,7 +724,7 @@ html.dark-mode .toggle-thumb {
     position: absolute;
     top: var(--space-md);
     left: var(--space-md);
-    background-color: var(--accent-blue);
+    background-color: var(--primary-blue);
     color: var(--white);
     padding: var(--space-xs) var(--space-sm);
     border-radius: var(--radius-sm);
@@ -735,7 +735,7 @@ html.dark-mode .toggle-thumb {
 .bento-badge-new {
     left: auto;
     right: var(--space-md);
-    background-color: var(--accent-blue);
+    background-color: var(--primary-blue);
 }
 
 .bento-content {
@@ -968,7 +968,7 @@ html.dark-mode .property-share-action.whatsapp {
 }
 
 .featured-listings .bento-badge {
-    background: color-mix(in srgb, var(--primary-blue) 88%, #000 12%);
+    background: var(--primary-blue);
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
 }
@@ -1070,6 +1070,7 @@ html.dark-mode .property-share-action.whatsapp {
 .featured-carousel-dots {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 0.3rem;
     margin-top: 0.85rem;
 }

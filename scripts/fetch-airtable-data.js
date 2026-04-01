@@ -184,6 +184,12 @@ async function main() {
   assertEnv(AIRTABLE_API_KEY, 'AIRTABLE_API_KEY');
   assertEnv(AIRTABLE_BASE_ID, 'AIRTABLE_BASE_ID');
 
+  console.log(
+    `Sync config -> table: ${AIRTABLE_TABLE_NAME}, view: ${
+      AIRTABLE_VIEW_NAME || '(all records)'
+    }, maxRecords: ${AIRTABLE_MAX_RECORDS > 0 ? AIRTABLE_MAX_RECORDS : 'unlimited'}`
+  );
+
   const rawRecords = await fetchAirtableRecords();
   const records = stableSortRecords(rawRecords.map(normalizeRecord));
 

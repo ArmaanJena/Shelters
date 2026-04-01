@@ -466,6 +466,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     let activeIndex = 0;
     const track = featuredContainer.querySelector('.featured-carousel-track');
     const dots = [...featuredContainer.querySelectorAll('.featured-carousel-dot')];
+    const AUTO_ROTATE_MS = 6000;
+    let autoRotateTimer = null;
 
     const updateSlide = (index) => {
       activeIndex = (index + slides.length) % slides.length;
@@ -478,6 +480,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     dots.forEach((dot) => {
       dot.addEventListener('click', () => updateSlide(Number(dot.dataset.index)));
     });
+
+    const stopAutoRotate = () => {
+      if (autoRotateTimer) {
+        window.clearInterval(autoRotateTimer);
+        autoRotateTimer = null;
+      }
+    };
+
+    const startAutoRotate = () => {
+      stopAutoRotate();
+      if (slides.length <= 1) return;
+      autoRotateTimer = window.setInterval(() => {
+        updateSlide(activeIndex + 1);
+      }, AUTO_ROTATE_MS);
+    };
+
+    startAutoRotate();
   } catch (error) {
     console.error('Failed to render managed listings carousel:', error);
     featuredContainer.innerHTML = '<p>Unable to load managed properties right now.</p>';

@@ -1,7 +1,7 @@
 // airtable.js
 // Listings and area UI powered by static JSON generated at build-time.
 const LISTINGS_STATIC_ENDPOINT = '/data/listings.json';
-const LISTINGS_CACHE_KEY = 'listings_cache_v5';
+const LISTINGS_CACHE_KEY = 'listings_cache_v6';
 const LISTINGS_CACHE_TTL = 15 * 60 * 1000;
 const AREA_QUESTIONS_CACHE_KEY = 'area_questions_cache_v2';
 const AREA_QUESTIONS_CACHE_TTL = 10 * 60 * 1000;
@@ -381,8 +381,8 @@ function updateAreaUrl(location) {
   if (!slug) return;
 
   const url = new URL(window.location.href);
-  url.pathname = url.pathname.replace(/areas(?:\.html)?(?:\/[^/?#]*)?\/?$/i, `areas/${slug}`);
-  url.searchParams.delete('area');
+  url.pathname = url.pathname.replace(/areas(?:\.html)?(?:\/[^/?#]*)?\/?$/i, 'areas/');
+  url.searchParams.set('area', slug);
   url.searchParams.delete('location');
   window.history.replaceState({}, '', url.toString());
 }

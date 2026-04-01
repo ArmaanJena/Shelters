@@ -190,8 +190,7 @@ async function fetchAreasFromListings() {
 }
 
 function buildHomeAreaCard(item) {
-  const slug = toAreaSlug(item.name);
-  const link = slug ? `/areas/${slug}` : '/areas';
+  const link = `/areas/?area=${encodeURIComponent(item.name)}`;
   const fallbackDescription = `Explore properties, trends, and neighbourhood insights in ${item.name}.`;
   const description = (item.description || fallbackDescription).slice(0, 190);
 
