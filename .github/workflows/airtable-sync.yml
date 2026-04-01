@@ -5,7 +5,7 @@ on:
     types: [airtable_changed]
   workflow_dispatch:
   schedule:
-    - cron: "17 */3 * * *"
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
@@ -18,7 +18,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     env:
-      DEBOUNCE_SECONDS: ${{ vars.AIRTABLE_SYNC_DEBOUNCE_SECONDS || '20' }}
+      DEBOUNCE_SECONDS: ${{ vars.AIRTABLE_SYNC_DEBOUNCE_SECONDS || '5' }}
     steps:
       - name: Debounce burst updates
         if: github.event_name == 'repository_dispatch'
@@ -51,7 +51,7 @@ jobs:
       - name: Detect JSON change
         id: detect_change
         run: |
-          if git diff --quiet -- data/listings.json; then
+          if git diff --quiet -- data/listings.json property-share; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -62,8 +62,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/listings.json
-          git commit -m "chore: sync listings from Airtable"
+          git add data/listings.json property-share
+          git commit -m "chore: sync listings and share pages from Airtable"
           git push
 
       - name: No-op summary

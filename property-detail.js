@@ -295,7 +295,7 @@ function getAttachmentImageSources(attachment) {
 }
 
 function buildPropertyShareUrl(recordId) {
-  return new URL(`/property-detail?id=${encodeURIComponent(recordId)}`, getSiteBaseUrl()).toString();
+  return new URL(`property-share/${encodeURIComponent(recordId)}.html`, getSiteBaseUrl()).toString();
 }
 
 function buildPropertyShareText({ title, location, price, listingType, url }) {

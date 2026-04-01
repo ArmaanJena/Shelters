@@ -1,31 +1,6 @@
 {
-  "updatedAt": "2026-04-01T16:13:46.413Z",
+  "updatedAt": "2026-04-01T17:10:58.736Z",
   "records": [
-    {
-      "id": "reck9TPmNW8b2elzp",
-      "createdTime": "2026-04-01T14:54:02.000Z",
-      "fields": {
-        "Title": "Test",
-        "Price": 200,
-        "Location": "Wagholi",
-        "Property Type": "Plot",
-        "Offer Type": "Pre-Leased",
-        "Status": "New Launch",
-        "Amenities Count": 0,
-        "AI: Listing Summary": {
-          "state": "error",
-          "errorType": "emptyDependency",
-          "value": null,
-          "isStale": false
-        },
-        "AI: Amenity Highlights": {
-          "state": "error",
-          "errorType": "emptyDependency",
-          "value": null,
-          "isStale": false
-        }
-      }
-    },
     {
       "id": "rec7fKDUZC18PwdEA",
       "createdTime": "2026-04-01T14:18:11.000Z",

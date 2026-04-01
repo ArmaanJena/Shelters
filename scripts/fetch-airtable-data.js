@@ -23,6 +23,8 @@ const AIRTABLE_FETCH_BASE_BACKOFF_MS = Number.parseInt(
 );
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'data', 'listings.json');
+const SHARE_PAGES_DIR = path.resolve(process.cwd(), 'property-share');
+const SITE_URL = (process.env.SITE_URL || 'https://www.sheltersrealty.co.in').replace(/\/+$/, '');
 
 function assertEnv(value, name) {
   if (!value || !value.trim()) {
@@ -149,6 +151,89 @@ function buildRecordHash(records) {
   return crypto.createHash('sha256').update(normalized).digest('hex');
 }
 
+function escapeHtml(value) {
+  return (value || '')
+    .toString()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function getShareImageUrl(fields) {
+  const firstImage = Array.isArray(fields?.Image) ? fields.Image[0] : null;
+  return (
+    firstImage?.thumbnails?.large?.url ||
+    firstImage?.thumbnails?.full?.url ||
+    firstImage?.url ||
+    'https://via.placeholder.com/1200x630.png?text=Shelters+Realty+Property'
+  );
+}
+
+function buildSharePageHtml(record) {
+  const fields = record?.fields || {};
+  const id = record?.id || '';
+  const title = (fields.Title || 'Property Listing').toString().trim();
+  const location = (fields.Location || '').toString().trim();
+  const shortDescription = (fields['Short Description'] || fields.Description || '').toString().trim();
+  const description =
+    shortDescription ||
+    `Explore this property${location ? ` in ${location}` : ''} with Shelters Realty.`;
+  const imageUrl = getShareImageUrl(fields);
+  const detailPath = `../property-detail/?id=${encodeURIComponent(id)}`;
+  const shareUrl = `${SITE_URL}/property-share/${encodeURIComponent(id)}.html`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(title)} | Shelters Realty</title>
+  <meta name="description" content="${escapeHtml(description)}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:image" content="${escapeHtml(imageUrl)}">
+  <meta property="og:url" content="${escapeHtml(shareUrl)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(title)}">
+  <meta name="twitter:description" content="${escapeHtml(description)}">
+  <meta name="twitter:image" content="${escapeHtml(imageUrl)}">
+  <meta http-equiv="refresh" content="0;url=${escapeHtml(detailPath)}">
+  <link rel="canonical" href="${escapeHtml(shareUrl)}">
+</head>
+<body>
+  <p>Redirecting to property details...</p>
+  <script>window.location.replace(${JSON.stringify(detailPath)});</script>
+</body>
+</html>
+`;
+}
+
+async function syncPropertySharePages(records) {
+  await fs.mkdir(SHARE_PAGES_DIR, { recursive: true });
+  const validIds = new Set();
+
+  for (const record of records) {
+    const id = (record?.id || '').toString().trim();
+    if (!id) continue;
+    validIds.add(id);
+    const html = buildSharePageHtml(record);
+    const pagePath = path.join(SHARE_PAGES_DIR, `${id}.html`);
+    await fs.writeFile(pagePath, html, 'utf8');
+  }
+
+  const existing = await fs.readdir(SHARE_PAGES_DIR, { withFileTypes: true });
+  for (const entry of existing) {
+    if (!entry.isFile() || !entry.name.endsWith('.html')) continue;
+    const id = entry.name.replace(/\.html$/i, '');
+    if (!validIds.has(id)) {
+      await fs.unlink(path.join(SHARE_PAGES_DIR, entry.name));
+    }
+  }
+}
+
 async function readExistingPayload() {
   try {
     const raw = await fs.readFile(OUTPUT_PATH, 'utf8');
@@ -192,6 +277,7 @@ async function main() {
 
   const rawRecords = await fetchAirtableRecords();
   const records = stableSortRecords(rawRecords.map(normalizeRecord));
+  await syncPropertySharePages(records);
 
   const payload = {
     updatedAt: new Date().toISOString(),
