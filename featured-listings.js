@@ -1,6 +1,13 @@
 const FEATURED_LISTINGS_ENDPOINT = '/data/listings.json';
 const FEATURED_CACHE_KEY = 'managed_listings_cache_v5';
 const FEATURED_CACHE_TTL = 10 * 60 * 1000;
+const FEATURED_IMAGE_REFRESH_CACHE_KEY = 'featured_image_refresh_v1';
+const FEATURED_IMAGE_REFRESH_TTL = 6 * 60 * 60 * 1000;
+const AIRTABLE_API_KEY =
+  'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7';
+const AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5';
+const AIRTABLE_PROPERTIES_TABLE_NAME = 'Properties';
+const AIRTABLE_PROPERTIES_ENDPOINT = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_PROPERTIES_TABLE_NAME)}`;
 const CARD_IMAGE_FALLBACK =
   'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%23cbd5e1%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23334155%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2232%22%3EImage%20Unavailable%3C/text%3E%3C/svg%3E';
 
@@ -63,6 +70,247 @@ function normalizePayloadRecords(payload) {
   return [];
 }
 
+function normalizeImageAttachments(images) {
+  if (!Array.isArray(images)) return [];
+  return images
+    .filter((image) => image && typeof image === 'object')
+    .map((image) => ({
+      id: image.id || '',
+      width: image.width || null,
+      height: image.height || null,
+      url: image.url || '',
+      filename: image.filename || '',
+      size: image.size || null,
+      type: image.type || '',
+      thumbnails: image.thumbnails || {}
+    }))
+    .filter((image) => typeof image.url === 'string' && image.url.trim());
+}
+
+function extractAirtableUrlExpiryMs(url) {
+  const value = (url || '').toString();
+  if (!value) return null;
+  const match =
+    value.match(/\/v\d+\/u\/\d+\/\d+\/(\d{10,13})\//i) || value.match(/\/(\d{13})\//);
+  if (!match) return null;
+  const raw = Number(match[1]);
+  if (!Number.isFinite(raw) || raw <= 0) return null;
+  return raw < 1e12 ? raw * 1000 : raw;
+}
+
+function isLikelyExpiredAirtableImageUrl(url) {
+  const value = (url || '').toString().trim();
+  if (!value || !/airtableusercontent\.com/i.test(value)) return false;
+  const expiryMs = extractAirtableUrlExpiryMs(value);
+  if (!Number.isFinite(expiryMs)) return false;
+  return Date.now() >= expiryMs - 5 * 60 * 1000;
+}
+
+function shouldRefreshRecordImages(record) {
+  const images = record?.fields?.Image;
+  if (!Array.isArray(images) || images.length === 0) return false;
+  return images.some((image) => {
+    const candidateUrl =
+      image?.thumbnails?.large?.url || image?.thumbnails?.full?.url || image?.url || '';
+    return isLikelyExpiredAirtableImageUrl(candidateUrl);
+  });
+}
+
+function hasAirtableHostedImages(record) {
+  const images = record?.fields?.Image;
+  if (!Array.isArray(images) || images.length === 0) return false;
+  return images.some((image) => {
+    const candidateUrl =
+      image?.thumbnails?.large?.url || image?.thumbnails?.full?.url || image?.url || '';
+    return /airtableusercontent\.com/i.test(candidateUrl);
+  });
+}
+
+function getImageRefreshCache() {
+  const cachedRaw = localStorage.getItem(FEATURED_IMAGE_REFRESH_CACHE_KEY);
+  if (!cachedRaw) return {};
+  try {
+    const parsed = JSON.parse(cachedRaw);
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) return parsed;
+  } catch (error) {
+    console.warn('Invalid featured image refresh cache', error);
+  }
+  return {};
+}
+
+function setImageRefreshCache(cache) {
+  if (!cache || typeof cache !== 'object' || Array.isArray(cache)) {
+    localStorage.removeItem(FEATURED_IMAGE_REFRESH_CACHE_KEY);
+    return;
+  }
+  localStorage.setItem(FEATURED_IMAGE_REFRESH_CACHE_KEY, JSON.stringify(cache));
+}
+
+function getCachedRefreshedImages(recordId) {
+  if (!recordId) return [];
+  const cache = getImageRefreshCache();
+  const entry = cache[recordId];
+  if (!entry || !Array.isArray(entry.images)) return [];
+  if (Date.now() - Number(entry.ts || 0) > FEATURED_IMAGE_REFRESH_TTL) return [];
+  const normalized = normalizeImageAttachments(entry.images);
+  if (
+    normalized.some((image) => {
+      const candidateUrl =
+        image?.thumbnails?.large?.url || image?.thumbnails?.full?.url || image?.url || '';
+      return isLikelyExpiredAirtableImageUrl(candidateUrl);
+    })
+  ) {
+    return [];
+  }
+  return normalized;
+}
+
+function cacheRefreshedImages(recordId, images) {
+  if (!recordId) return;
+  const normalized = normalizeImageAttachments(images);
+  if (normalized.length === 0) return;
+  const cache = getImageRefreshCache();
+  cache[recordId] = { ts: Date.now(), images: normalized };
+  setImageRefreshCache(cache);
+}
+
+function cloneRecordWithImages(record, images) {
+  const normalizedImages = normalizeImageAttachments(images);
+  if (!record || normalizedImages.length === 0) return record;
+  return {
+    ...record,
+    fields: {
+      ...(record.fields || {}),
+      Image: normalizedImages
+    }
+  };
+}
+
+async function fetchFreshRecordFromAirtable(recordId) {
+  if (!recordId || !AIRTABLE_API_KEY) return null;
+  const endpoint = `${AIRTABLE_PROPERTIES_ENDPOINT}/${encodeURIComponent(recordId)}`;
+  const response = await fetch(endpoint, {
+    cache: 'no-store',
+    headers: {
+      Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+      'Content-Type': 'application/json'
+    }
+  });
+  if (!response.ok) return null;
+  const payload = await response.json();
+  return payload && typeof payload === 'object' ? payload : null;
+}
+
+async function fetchFreshImageMapFromAirtable() {
+  if (!AIRTABLE_API_KEY) return new Map();
+  const imageMap = new Map();
+  let offset = '';
+
+  do {
+    const params = new URLSearchParams();
+    params.set('pageSize', '100');
+    if (offset) params.set('offset', offset);
+
+    const response = await fetch(`${AIRTABLE_PROPERTIES_ENDPOINT}?${params.toString()}`, {
+      cache: 'no-store',
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) break;
+
+    const payload = await response.json();
+    const records = Array.isArray(payload?.records) ? payload.records : [];
+    records.forEach((record) => {
+      const managedValue = record?.fields?.Managed ?? record?.fields?.['Managed '];
+      const managed = managedValue === true || managedValue === 'true';
+      if (!managed) return;
+      const images = normalizeImageAttachments(record?.fields?.Image);
+      if (record?.id && images.length > 0) {
+        imageMap.set(record.id, images);
+      }
+    });
+
+    offset = payload?.offset || '';
+  } while (offset);
+
+  return imageMap;
+}
+
+async function ensureRecordHasFreshImages(record) {
+  if (!record || !shouldRefreshRecordImages(record)) return record;
+
+  const cachedImages = getCachedRefreshedImages(record.id);
+  if (cachedImages.length > 0) {
+    return cloneRecordWithImages(record, cachedImages);
+  }
+
+  try {
+    const freshRecord = await fetchFreshRecordFromAirtable(record.id);
+    const freshImages = normalizeImageAttachments(freshRecord?.fields?.Image);
+    if (freshImages.length > 0) {
+      cacheRefreshedImages(record.id, freshImages);
+      return cloneRecordWithImages(record, freshImages);
+    }
+  } catch (error) {
+    console.warn('Unable to refresh featured listing images from Airtable', error);
+  }
+
+  return record;
+}
+
+async function hydrateManagedRecordImages(records) {
+  if (!Array.isArray(records) || records.length === 0) return [];
+  const hydrated = [...records];
+  const pendingIndexes = [];
+
+  for (let index = 0; index < hydrated.length; index += 1) {
+    const record = hydrated[index];
+    const fields = record?.fields || {};
+    const managedValue = fields.Managed ?? fields['Managed '];
+    const managed = managedValue === true || managedValue === 'true';
+    const shouldRefresh = shouldRefreshRecordImages(record);
+    const shouldWarmAirtable = hasAirtableHostedImages(record);
+    if (!managed || (!shouldRefresh && !shouldWarmAirtable)) continue;
+
+    const cachedImages = getCachedRefreshedImages(record.id);
+    if (cachedImages.length > 0) {
+      hydrated[index] = cloneRecordWithImages(record, cachedImages);
+      continue;
+    }
+
+    pendingIndexes.push(index);
+  }
+
+  if (pendingIndexes.length === 0) return hydrated;
+
+  try {
+    const freshImageMap = await fetchFreshImageMapFromAirtable();
+    pendingIndexes.forEach((index) => {
+      const record = hydrated[index];
+      const freshImages = freshImageMap.get(record?.id);
+      if (!freshImages || freshImages.length === 0) return;
+      cacheRefreshedImages(record.id, freshImages);
+      hydrated[index] = cloneRecordWithImages(record, freshImages);
+    });
+    return hydrated;
+  } catch (error) {
+    console.warn('Failed to hydrate featured record images', error);
+    return Promise.all(
+      hydrated.map(async (record) => {
+        try {
+          return await ensureRecordHasFreshImages(record);
+        } catch (innerError) {
+          console.warn('Fallback featured image hydration failed', innerError);
+          return record;
+        }
+      })
+    );
+  }
+}
+
 async function fetchManagedListingsFromStatic() {
   const cachedRaw = localStorage.getItem(FEATURED_CACHE_KEY);
   if (cachedRaw) {
@@ -73,6 +321,11 @@ async function fetchManagedListingsFromStatic() {
         Array.isArray(cached.records) &&
         cached.records.length > 0
       ) {
+        const hydratedCached = await hydrateManagedRecordImages(cached.records || []);
+        if (Array.isArray(hydratedCached) && hydratedCached.length > 0) {
+          localStorage.setItem(FEATURED_CACHE_KEY, JSON.stringify({ ts: Date.now(), records: hydratedCached }));
+          return hydratedCached;
+        }
         return cached.records || [];
       }
     } catch (error) {
@@ -86,7 +339,7 @@ async function fetchManagedListingsFromStatic() {
   }
 
   const payload = await response.json();
-  const records = normalizePayloadRecords(payload);
+  const records = await hydrateManagedRecordImages(normalizePayloadRecords(payload));
   if (records.length > 0) {
     localStorage.setItem(FEATURED_CACHE_KEY, JSON.stringify({ ts: Date.now(), records }));
   } else {
@@ -176,7 +429,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     featuredContainer.innerHTML = `
       <div class="featured-carousel">
-        <button type="button" class="featured-carousel-control prev" aria-label="Previous slide">‹</button>
         <div class="featured-carousel-viewport">
           <div class="featured-carousel-track">
             ${slides
@@ -192,7 +444,6 @@ document.addEventListener('DOMContentLoaded', async () => {
               .join('')}
           </div>
         </div>
-        <button type="button" class="featured-carousel-control next" aria-label="Next slide">›</button>
       </div>
       <div class="featured-carousel-dots">
         ${slides
@@ -207,11 +458,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     `;
 
     if (slides.length === 1) {
-      const prev = featuredContainer.querySelector('.featured-carousel-control.prev');
-      const next = featuredContainer.querySelector('.featured-carousel-control.next');
       const dots = featuredContainer.querySelector('.featured-carousel-dots');
-      if (prev) prev.style.display = 'none';
-      if (next) next.style.display = 'none';
       if (dots) dots.style.display = 'none';
       return;
     }
@@ -219,8 +466,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     let activeIndex = 0;
     const track = featuredContainer.querySelector('.featured-carousel-track');
     const dots = [...featuredContainer.querySelectorAll('.featured-carousel-dot')];
-    const prevButton = featuredContainer.querySelector('.featured-carousel-control.prev');
-    const nextButton = featuredContainer.querySelector('.featured-carousel-control.next');
 
     const updateSlide = (index) => {
       activeIndex = (index + slides.length) % slides.length;
@@ -230,8 +475,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     };
 
-    prevButton.addEventListener('click', () => updateSlide(activeIndex - 1));
-    nextButton.addEventListener('click', () => updateSlide(activeIndex + 1));
     dots.forEach((dot) => {
       dot.addEventListener('click', () => updateSlide(Number(dot.dataset.index)));
     });

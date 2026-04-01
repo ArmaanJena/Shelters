@@ -8,8 +8,13 @@ const AREA_QUESTIONS_CACHE_TTL = 10 * 60 * 1000;
 const AIRTABLE_API_KEY =
   'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7';
 const AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5';
-const AREA_QUESTIONS_TABLE_NAME = 'Area Questions';
+const AREA_QUESTIONS_TABLE_NAME = 'Areas Questions';
 const AREA_QUESTIONS_ENDPOINT = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AREA_QUESTIONS_TABLE_NAME)}`;
+const AIRTABLE_PROPERTIES_TABLE_NAME = 'Properties';
+const AIRTABLE_PROPERTIES_ENDPOINT = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_PROPERTIES_TABLE_NAME)}`;
+const LAST_VIEWED_STORAGE_KEY = 'listings_last_viewed_v1';
+const LISTING_IMAGE_REFRESH_CACHE_KEY = 'listings_image_refresh_v1';
+const LISTING_IMAGE_REFRESH_TTL = 6 * 60 * 60 * 1000;
 const CARD_IMAGE_FALLBACK =
   'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%23cbd5e1%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23334155%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2232%22%3EImage%20Unavailable%3C/text%3E%3C/svg%3E';
 
@@ -24,6 +29,248 @@ let areaSelectHandlerAttached = false;
 let newLaunchRecordIds = new Set();
 let areaQuestionsRecords = [];
 let currentListingsPage = 1;
+
+function getLastViewedMap() {
+  const cachedRaw = localStorage.getItem(LAST_VIEWED_STORAGE_KEY);
+  if (!cachedRaw) return {};
+  try {
+    const parsed = JSON.parse(cachedRaw);
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) return parsed;
+  } catch (error) {
+    console.warn('Invalid last viewed cache payload', error);
+  }
+  return {};
+}
+
+function setLastViewedMap(map) {
+  if (!map || typeof map !== 'object' || Array.isArray(map)) {
+    localStorage.removeItem(LAST_VIEWED_STORAGE_KEY);
+    return;
+  }
+  localStorage.setItem(LAST_VIEWED_STORAGE_KEY, JSON.stringify(map));
+}
+
+function markListingAsViewed(recordId) {
+  if (!recordId) return;
+  const map = getLastViewedMap();
+  map[recordId] = Date.now();
+  setLastViewedMap(map);
+}
+
+function getListingImageRefreshCache() {
+  const cachedRaw = localStorage.getItem(LISTING_IMAGE_REFRESH_CACHE_KEY);
+  if (!cachedRaw) return {};
+  try {
+    const parsed = JSON.parse(cachedRaw);
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) return parsed;
+  } catch (error) {
+    console.warn('Invalid listing image refresh cache payload', error);
+  }
+  return {};
+}
+
+function setListingImageRefreshCache(cache) {
+  if (!cache || typeof cache !== 'object' || Array.isArray(cache)) {
+    localStorage.removeItem(LISTING_IMAGE_REFRESH_CACHE_KEY);
+    return;
+  }
+  localStorage.setItem(LISTING_IMAGE_REFRESH_CACHE_KEY, JSON.stringify(cache));
+}
+
+function normalizeImageAttachments(images) {
+  if (!Array.isArray(images)) return [];
+  return images
+    .filter((image) => image && typeof image === 'object')
+    .map((image) => ({
+      id: image.id || '',
+      width: image.width || null,
+      height: image.height || null,
+      url: image.url || '',
+      filename: image.filename || '',
+      size: image.size || null,
+      type: image.type || '',
+      thumbnails: image.thumbnails || {}
+    }))
+    .filter((image) => typeof image.url === 'string' && image.url.trim());
+}
+
+function extractAirtableUrlExpiryMs(url) {
+  const value = (url || '').toString();
+  if (!value) return null;
+  const match =
+    value.match(/\/v\d+\/u\/\d+\/\d+\/(\d{10,13})\//i) || value.match(/\/(\d{13})\//);
+  if (!match) return null;
+  const raw = Number(match[1]);
+  if (!Number.isFinite(raw) || raw <= 0) return null;
+  return raw < 1e12 ? raw * 1000 : raw;
+}
+
+function isLikelyExpiredAirtableImageUrl(url) {
+  const value = (url || '').toString().trim();
+  if (!value || !/airtableusercontent\.com/i.test(value)) return false;
+  const expiryMs = extractAirtableUrlExpiryMs(value);
+  if (!Number.isFinite(expiryMs)) return false;
+  return Date.now() >= expiryMs - 5 * 60 * 1000;
+}
+
+function shouldRefreshRecordImages(record) {
+  const images = record?.fields?.Image;
+  if (!Array.isArray(images) || images.length === 0) return false;
+  return images.some((image) => {
+    const candidateUrl =
+      image?.thumbnails?.large?.url || image?.thumbnails?.full?.url || image?.url || '';
+    return isLikelyExpiredAirtableImageUrl(candidateUrl);
+  });
+}
+
+function hasAirtableHostedImages(record) {
+  const images = record?.fields?.Image;
+  if (!Array.isArray(images) || images.length === 0) return false;
+  return images.some((image) => {
+    const candidateUrl =
+      image?.thumbnails?.large?.url || image?.thumbnails?.full?.url || image?.url || '';
+    return /airtableusercontent\.com/i.test(candidateUrl);
+  });
+}
+
+function getCachedRefreshedImages(recordId) {
+  if (!recordId) return [];
+  const cache = getListingImageRefreshCache();
+  const entry = cache[recordId];
+  if (!entry || !Array.isArray(entry.images)) return [];
+  if (Date.now() - Number(entry.ts || 0) > LISTING_IMAGE_REFRESH_TTL) return [];
+  const normalized = normalizeImageAttachments(entry.images);
+  if (
+    normalized.some((image) => {
+      const candidateUrl =
+        image?.thumbnails?.large?.url || image?.thumbnails?.full?.url || image?.url || '';
+      return isLikelyExpiredAirtableImageUrl(candidateUrl);
+    })
+  ) {
+    return [];
+  }
+  return normalized;
+}
+
+function cacheRefreshedImages(recordId, images) {
+  if (!recordId) return;
+  const normalized = normalizeImageAttachments(images);
+  if (normalized.length === 0) return;
+  const cache = getListingImageRefreshCache();
+  cache[recordId] = { ts: Date.now(), images: normalized };
+  setListingImageRefreshCache(cache);
+}
+
+function cloneRecordWithImages(record, images) {
+  const normalizedImages = normalizeImageAttachments(images);
+  if (!record || normalizedImages.length === 0) return record;
+  return {
+    ...record,
+    fields: {
+      ...(record.fields || {}),
+      Image: normalizedImages
+    }
+  };
+}
+
+async function fetchFreshRecordFromAirtable(recordId) {
+  if (!recordId || !AIRTABLE_API_KEY) return null;
+  const endpoint = `${AIRTABLE_PROPERTIES_ENDPOINT}/${encodeURIComponent(recordId)}`;
+  const response = await fetch(endpoint, {
+    cache: 'no-store',
+    headers: {
+      Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+      'Content-Type': 'application/json'
+    }
+  });
+  if (!response.ok) return null;
+  const payload = await response.json();
+  return payload && typeof payload === 'object' ? payload : null;
+}
+
+async function fetchFreshRecordFromStatic(recordId) {
+  if (!recordId) return null;
+  const response = await fetch(`${LISTINGS_STATIC_ENDPOINT}?ts=${Date.now()}`, {
+    cache: 'no-store'
+  });
+  if (!response.ok) return null;
+  const payload = await response.json();
+  const records = Array.isArray(payload?.records) ? payload.records : Array.isArray(payload) ? payload : [];
+  return records.find((item) => item.id === recordId) || null;
+}
+
+async function ensureRecordHasFreshImages(record) {
+  if (!record || !shouldRefreshRecordImages(record)) return record;
+
+  const cachedImages = getCachedRefreshedImages(record.id);
+  if (cachedImages.length > 0) {
+    return cloneRecordWithImages(record, cachedImages);
+  }
+
+  try {
+    const freshRecord = await fetchFreshRecordFromAirtable(record.id);
+    const freshImages = normalizeImageAttachments(freshRecord?.fields?.Image);
+    if (freshImages.length > 0) {
+      cacheRefreshedImages(record.id, freshImages);
+      return cloneRecordWithImages(record, freshImages);
+    }
+  } catch (error) {
+    console.warn('Unable to refresh listing images from Airtable', error);
+  }
+
+  try {
+    const staticRecord = await fetchFreshRecordFromStatic(record.id);
+    const staticImages = normalizeImageAttachments(staticRecord?.fields?.Image);
+    if (staticImages.length > 0) {
+      cacheRefreshedImages(record.id, staticImages);
+      return cloneRecordWithImages(record, staticImages);
+    }
+  } catch (error) {
+    console.warn('Unable to refresh listing images from static listings', error);
+  }
+
+  return record;
+}
+
+async function fetchFreshImageMapFromAirtable(recordIds = []) {
+  if (!AIRTABLE_API_KEY) return new Map();
+
+  const requested = new Set((recordIds || []).filter(Boolean));
+  const imageMap = new Map();
+  let offset = '';
+
+  do {
+    const params = new URLSearchParams();
+    params.set('pageSize', '100');
+    if (offset) params.set('offset', offset);
+
+    const response = await fetch(`${AIRTABLE_PROPERTIES_ENDPOINT}?${params.toString()}`, {
+      cache: 'no-store',
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) break;
+
+    const payload = await response.json();
+    const records = Array.isArray(payload?.records) ? payload.records : [];
+    records.forEach((record) => {
+      if (!record?.id) return;
+      if (requested.size > 0 && !requested.has(record.id)) return;
+      const images = normalizeImageAttachments(record?.fields?.Image);
+      if (images.length > 0) {
+        imageMap.set(record.id, images);
+      }
+    });
+
+    if (requested.size > 0 && imageMap.size >= requested.size) break;
+    offset = payload?.offset || '';
+  } while (offset);
+
+  return imageMap;
+}
 
 function isRecentlyAdded(createdTime, days = 7) {
   const createdAt = new Date(createdTime || 0).getTime();
@@ -400,7 +647,7 @@ function ensureNewLaunchFilterOption() {
   if (!existingOption) {
     const option = document.createElement('option');
     option.value = '__new_launch__';
-    option.textContent = 'New Launch';
+    option.textContent = 'New';
     listingTypeFilter.insertBefore(option, listingTypeFilter.firstChild);
   }
 
@@ -585,7 +832,7 @@ async function fetchListings() {
 
 // Filtering and sorting logic
 
-function applyFiltersAndRender(input) {
+async function applyFiltersAndRender(input) {
   const requestedPage = typeof input === 'number' && Number.isFinite(input) ? Math.max(1, Math.floor(input)) : 1;
   let filtered = [...allListings];
 
@@ -597,8 +844,8 @@ function applyFiltersAndRender(input) {
   const isNewLaunchFilter = listingType === '__new_launch__';
   const minPrice = parseInt(document.getElementById('filter-min-price')?.value, 10);
   const maxPrice = parseInt(document.getElementById('filter-max-price')?.value, 10);
-  const sort = document.getElementById('sort-price')?.value || 'default';
-  const effectiveSort = isNewLaunchesPage && sort === 'default' ? 'newest' : sort;
+  const sort = document.getElementById('sort-price')?.value || 'newest';
+  const effectiveSort = sort === 'default' ? 'newest' : sort;
   const keywordQuery = getKeywordQuery();
 
   if (isNewLaunchesPage && newLaunchRecordIds.size > 0) {
@@ -627,15 +874,23 @@ function applyFiltersAndRender(input) {
     return pass;
   });
 
-  if (effectiveSort === 'newest' || effectiveSort === 'recent') {
+  if (effectiveSort === 'newest') {
     filtered.sort((a, b) => new Date(b.createdTime || 0) - new Date(a.createdTime || 0));
+  } else if (effectiveSort === 'last-viewed' || effectiveSort === 'recent') {
+    const lastViewedMap = getLastViewedMap();
+    filtered.sort((a, b) => {
+      const aLastViewed = Number(lastViewedMap[a.id]) || 0;
+      const bLastViewed = Number(lastViewedMap[b.id]) || 0;
+      if (bLastViewed !== aLastViewed) return bLastViewed - aLastViewed;
+      return new Date(b.createdTime || 0) - new Date(a.createdTime || 0);
+    });
   } else if (effectiveSort === 'price-asc') {
     filtered.sort((a, b) => (Number(a.fields?.['Price']) || 0) - (Number(b.fields?.['Price']) || 0));
   } else if (effectiveSort === 'price-desc') {
     filtered.sort((a, b) => (Number(b.fields?.['Price']) || 0) - (Number(a.fields?.['Price']) || 0));
   }
 
-  renderPaginatedListings(filtered, requestedPage);
+  await renderPaginatedListings(filtered, requestedPage);
   updateResultsSummary(filtered.length, currentListingsPage, Math.max(1, Math.ceil(filtered.length / LISTINGS_PER_PAGE)));
 }
 
@@ -643,11 +898,11 @@ function updateResultsSummary(count, page = 1, totalPages = 1) {
   const summary = document.getElementById('results-summary');
   if (summary) {
     if (count === 0) {
-      summary.innerHTML = isNewLaunchesPage ? 'No new launches found' : 'No properties found';
+      summary.innerHTML = isNewLaunchesPage ? 'No new listings found' : 'No properties found';
     } else {
       const pageText = totalPages > 1 ? ` (Page ${page} of ${totalPages})` : '';
       if (isNewLaunchesPage) {
-        summary.innerHTML = `Showing <strong>${count}</strong> new launch${count === 1 ? '' : 'es'}${pageText}`;
+        summary.innerHTML = `Showing <strong>${count}</strong> new listing${count === 1 ? '' : 's'}${pageText}`;
       } else {
         summary.innerHTML = `Showing <strong>${count}</strong> propert${count === 1 ? 'y' : 'ies'}${pageText}`;
       }
@@ -733,7 +988,7 @@ function initListingsPage() {
       if (maxInput) maxInput.value = '';
       if (priceSlider) priceSlider.value = 0;
       if (maxLabel) maxLabel.textContent = '₹10 Cr+';
-      document.getElementById('sort-price').value = 'default';
+      document.getElementById('sort-price').value = 'newest';
       applyFiltersAndRender();
     });
     console.log('[airtable.js] Reset filters button event attached');
@@ -766,7 +1021,70 @@ function renderListings(records) {
   listingsContainer.appendChild(grid);
 }
 
-function renderPaginatedListings(records, requestedPage) {
+async function hydrateRecordsForCardImages(records) {
+  if (!Array.isArray(records) || records.length === 0) return [];
+  const hydrated = [...records];
+  const pendingIndexes = [];
+  const pendingIds = [];
+
+  for (let index = 0; index < hydrated.length; index += 1) {
+    const record = hydrated[index];
+    if (!record?.id) continue;
+
+    const shouldRefresh = shouldRefreshRecordImages(record);
+    const shouldWarmAirtable = hasAirtableHostedImages(record);
+    if (!shouldRefresh && !shouldWarmAirtable) continue;
+
+    const cachedImages = getCachedRefreshedImages(record.id);
+    if (cachedImages.length > 0) {
+      hydrated[index] = cloneRecordWithImages(record, cachedImages);
+      continue;
+    }
+
+    pendingIndexes.push(index);
+    pendingIds.push(record.id);
+  }
+
+  if (pendingIndexes.length > 0) {
+    try {
+      const freshImageMap = await fetchFreshImageMapFromAirtable(pendingIds);
+      pendingIndexes.forEach((index) => {
+        const record = hydrated[index];
+        const freshImages = freshImageMap.get(record.id);
+        if (!freshImages || freshImages.length === 0) return;
+        cacheRefreshedImages(record.id, freshImages);
+        hydrated[index] = cloneRecordWithImages(record, freshImages);
+      });
+    } catch (error) {
+      console.warn('Bulk image hydration failed for listing cards', error);
+      await Promise.all(
+        pendingIndexes.map(async (index) => {
+          const record = hydrated[index];
+          try {
+            hydrated[index] = await ensureRecordHasFreshImages(record);
+          } catch (innerError) {
+            console.warn('Failed to hydrate listing card images', innerError);
+          }
+        })
+      );
+    }
+  }
+
+  let changed = false;
+  hydrated.forEach((record, index) => {
+    if (record !== records[index]) changed = true;
+  });
+
+  if (changed && Array.isArray(allListings) && allListings.length > 0) {
+    const hydratedById = new Map(hydrated.map((record) => [record.id, record]));
+    allListings = allListings.map((record) => hydratedById.get(record.id) || record);
+    setListingsCache(allListings);
+  }
+
+  return hydrated;
+}
+
+async function renderPaginatedListings(records, requestedPage) {
   const total = Array.isArray(records) ? records.length : 0;
   const totalPages = Math.max(1, Math.ceil(total / LISTINGS_PER_PAGE));
   currentListingsPage = Math.min(Math.max(1, requestedPage), totalPages);
@@ -774,8 +1092,9 @@ function renderPaginatedListings(records, requestedPage) {
   const startIndex = (currentListingsPage - 1) * LISTINGS_PER_PAGE;
   const endIndex = startIndex + LISTINGS_PER_PAGE;
   const pageRecords = records.slice(startIndex, endIndex);
+  const hydratedPageRecords = await hydrateRecordsForCardImages(pageRecords);
 
-  renderListings(pageRecords);
+  renderListings(hydratedPageRecords);
   renderPaginationControls(totalPages, currentListingsPage);
 }
 
@@ -1277,6 +1596,7 @@ async function openPropertyModal(recordId) {
   const modal = document.getElementById('property-modal');
   const modalBody = document.getElementById('modal-body');
   if (!modal || !modalBody) return;
+  markListingAsViewed(recordId);
   // Show loading spinner
   modalBody.innerHTML = `<div class="loading" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; min-height: 120px; justify-content: center;"><div class="spinner" style="border: 4px solid #e2e8f0; border-top: 4px solid #2563eb; border-radius: 50%; width: 36px; height: 36px; animation: spin 1s linear infinite;"></div><span>Loading property...</span></div><style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style>`;
   modal.style.display = 'flex';
@@ -1309,8 +1629,16 @@ function closePropertyModal() {
 
 // Fetch property detail from cached/static listings data
 async function fetchPropertyDetail(recordId) {
-  const localRecord = allListings.find((record) => record.id === recordId);
-  if (localRecord) return localRecord;
+  const recordIndex = allListings.findIndex((record) => record.id === recordId);
+  if (recordIndex >= 0) {
+    const localRecord = allListings[recordIndex];
+    const hydratedRecord = await ensureRecordHasFreshImages(localRecord);
+    if (hydratedRecord !== localRecord) {
+      allListings[recordIndex] = hydratedRecord;
+      setListingsCache(allListings);
+    }
+    return hydratedRecord;
+  }
   throw new Error('Property not found in static listings data.');
 }
 

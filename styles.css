@@ -735,7 +735,7 @@ html.dark-mode .toggle-thumb {
 .bento-badge-new {
     left: auto;
     right: var(--space-md);
-    background-color: #16a34a;
+    background-color: var(--accent-blue);
 }
 
 .bento-content {
@@ -779,9 +779,15 @@ html.dark-mode .toggle-thumb {
 .bento-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--accent-blue);
     margin-top: auto;
     margin-bottom: 0;
+}
+
+.property-price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-blue);
 }
 
 .bento-actions {
@@ -1014,31 +1020,51 @@ html.dark-mode .property-share-action.whatsapp {
 }
 
 .featured-carousel-control {
-    width: 28px;
-    height: 28px;
-    border: 1px solid color-mix(in srgb, var(--light-gray) 58%, transparent);
+    width: 40px;
+    height: 40px;
+    border: 1px solid color-mix(in srgb, var(--primary-blue) 22%, var(--light-gray) 78%);
     border-radius: 999px;
-    background: color-mix(in srgb, var(--white) 86%, transparent);
-    color: color-mix(in srgb, var(--dark-navy) 55%, transparent);
-    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
-    font-size: 0.78rem;
-    font-weight: 700;
+    background: color-mix(in srgb, var(--white) 96%, var(--background-light) 4%);
+    color: color-mix(in srgb, var(--dark-navy) 82%, var(--slate-gray) 18%);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     line-height: 1;
     cursor: pointer;
-    opacity: 0.5;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+    opacity: 0.96;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.featured-carousel:hover .featured-carousel-control {
-    opacity: 0.72;
+.featured-carousel-control-icon {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    pointer-events: none;
 }
 
 .featured-carousel-control:hover {
     transform: translateY(-1px);
-    color: var(--dark-navy);
-    background: color-mix(in srgb, var(--white) 96%, transparent);
-    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+    color: var(--primary-blue);
+    border-color: color-mix(in srgb, var(--primary-blue) 50%, var(--light-gray) 50%);
+    background: var(--white);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
     opacity: 1;
+}
+
+.featured-carousel-control:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+}
+
+.featured-carousel-control:focus-visible {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-blue) 24%, transparent), 0 10px 22px rgba(15, 23, 42, 0.12);
 }
 
 .featured-carousel-dots {
@@ -1086,15 +1112,21 @@ html.dark-mode .featured-listings .bento-price {
 }
 
 html.dark-mode .featured-carousel-control {
-    background: rgba(30, 41, 59, 0.74);
-    border-color: rgba(148, 163, 184, 0.14);
-    color: rgba(241, 245, 249, 0.56);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+    background: rgba(30, 41, 59, 0.86);
+    border-color: rgba(148, 163, 184, 0.28);
+    color: rgba(241, 245, 249, 0.88);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
 }
 
 html.dark-mode .featured-carousel-control:hover {
-    background: rgba(30, 41, 59, 0.94);
-    color: rgba(241, 245, 249, 0.92);
+    background: rgba(15, 23, 42, 0.98);
+    border-color: rgba(248, 250, 252, 0.42);
+    color: #ffffff;
+}
+
+html.dark-mode .featured-carousel-control:focus-visible {
+    border-color: #fca5a5;
+    box-shadow: 0 0 0 3px rgba(252, 165, 165, 0.3), 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 html.dark-mode .featured-carousel-dot {
@@ -2539,9 +2571,13 @@ html.dark-mode .featured-carousel-dot.is-active {
     }
 
     .featured-carousel-control {
-        width: 26px;
-        height: 26px;
-        font-size: 0.72rem;
+        width: 36px;
+        height: 36px;
+    }
+
+    .featured-carousel-control-icon {
+        width: 16px;
+        height: 16px;
     }
 
     .featured-listings .container {
@@ -3406,3 +3442,7 @@ html.dark-mode .featured-carousel-dot.is-active {
     margin-top: var(--space-md);
 }
 }
+
+/* Hide legacy side controls in featured carousel */
+.featured-carousel-control { display: none !important; }
+
