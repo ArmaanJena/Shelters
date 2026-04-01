@@ -1,4 +1,4 @@
-const FEATURED_LISTINGS_ENDPOINT = '/data/listings.json';
+const FEATURED_LISTINGS_ENDPOINT = 'data/listings.json';
 const FEATURED_CACHE_KEY = 'managed_listings_cache_v5';
 const FEATURED_CACHE_TTL = 10 * 60 * 1000;
 const FEATURED_IMAGE_REFRESH_CACHE_KEY = 'featured_image_refresh_v1';
@@ -46,6 +46,16 @@ function resolveImageUrl(url) {
     return new URL(normalized, getSiteRootUrl()).toString();
   } catch (error) {
     return value;
+  }
+}
+
+function buildPropertyDetailUrl(recordId) {
+  const id = (recordId || '').toString().trim();
+  if (!id) return '#';
+  try {
+    return new URL(`property-detail/?id=${encodeURIComponent(id)}`, getSiteRootUrl()).toString();
+  } catch (error) {
+    return `property-detail/?id=${encodeURIComponent(id)}`;
   }
 }
 
@@ -387,7 +397,7 @@ function createManagedListingCard(listing) {
 
   return `
     <div class="bento-card-wrapper">
-      <a href="/property-detail?id=${listing.id}" class="bento-card">
+      <a href="${buildPropertyDetailUrl(listing.id)}" class="bento-card">
         <div class="listing-image-container">
           <img src="${listing.image}" ${imageSrcSet ? `srcset="${imageSrcSet}" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"` : ''} alt="${listing.title}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';">
           <div class="bento-badge">${listing.listingType}</div>

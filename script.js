@@ -1,4 +1,4 @@
-const STATIC_LISTINGS_ENDPOINT = '/data/listings.json';
+const STATIC_LISTINGS_ENDPOINT = 'data/listings.json';
 const HERO_FILTER_CACHE_KEY = 'hero_filter_options_v2';
 const HERO_FILTER_CACHE_TTL = 10 * 60 * 1000;
 const IMAGE_FALLBACK_DATA_URI =
@@ -28,6 +28,25 @@ function normalizeStaticRecords(payload) {
   if (Array.isArray(payload?.records)) return payload.records;
   if (Array.isArray(payload)) return payload;
   return [];
+}
+
+function getSiteRootUrl() {
+  const url = new URL(window.location.href);
+  const path = url.pathname || '/';
+
+  if (path.includes('/areas/')) {
+    url.pathname = `${path.split('/areas/')[0]}/`;
+  } else if (path.includes('/areas.html/')) {
+    url.pathname = `${path.split('/areas.html/')[0]}/`;
+  } else if (path.includes('/new-launches/')) {
+    url.pathname = `${path.split('/new-launches/')[0]}/`;
+  } else {
+    url.pathname = path.replace(/[^/]*$/, '');
+  }
+
+  url.search = '';
+  url.hash = '';
+  return url.toString();
 }
 
 async function fetchHeroFilterRecords() {
@@ -375,7 +394,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (value) params.append(key, value);
       }
 
-      window.location.href = `/listings?${params.toString()}`;
+      const listingsPath = `listings/?${params.toString()}`;
+      try {
+        window.location.href = new URL(listingsPath, getSiteRootUrl()).toString();
+      } catch (error) {
+        window.location.href = listingsPath;
+      }
     });
   }
 

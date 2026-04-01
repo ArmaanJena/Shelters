@@ -2,7 +2,7 @@ const HOME_FEATURED_AREAS_GRID_ID = 'featured-areas-grid';
 const HOME_AREAS_CACHE_KEY = 'home_featured_areas_cache_v1';
 const HOME_AREAS_CACHE_TTL = 10 * 60 * 1000;
 const HOME_AREAS_DEFAULT_LIMIT = 3;
-const HOME_LISTINGS_ENDPOINT = '/data/listings.json';
+const HOME_LISTINGS_ENDPOINT = 'data/listings.json';
 const HOME_AIRTABLE_API_KEY =
   'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7';
 const HOME_AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5';
@@ -190,7 +190,7 @@ async function fetchAreasFromListings() {
 }
 
 function buildHomeAreaCard(item) {
-  const link = `/areas/?area=${encodeURIComponent(item.name)}`;
+  const link = `./areas/?area=${encodeURIComponent(item.name)}`;
   const fallbackDescription = `Explore properties, trends, and neighbourhood insights in ${item.name}.`;
   const description = (item.description || fallbackDescription).slice(0, 190);
 
@@ -209,7 +209,7 @@ function renderHomeAreas(items) {
 
   if (!Array.isArray(items) || items.length === 0) {
     grid.innerHTML = `
-      <a href="/areas" class="collection-card" aria-label="Explore all areas">
+      <a href="./areas/" class="collection-card" aria-label="Explore all areas">
         <h3>Explore Areas</h3>
         <p>Area information is being updated. Visit the areas page to view available locations.</p>
         <div class="collection-glow"></div>
