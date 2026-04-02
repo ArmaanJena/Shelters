@@ -174,14 +174,35 @@ async function main() {
   assertEnv(AIRTABLE_API_KEY, 'AIRTABLE_API_KEY');
   assertEnv(AIRTABLE_BASE_ID, 'AIRTABLE_BASE_ID');
 
+  let successCount = 0;
+  const failures = [];
+
   for (const output of OUTPUTS) {
-    console.log(`Syncing table: ${output.tableName}`);
-    const records = await fetchTableRecords(output.tableName);
-    await writePayloadIfChanged(output.outputPath, {
-      updatedAt: new Date().toISOString(),
-      table: output.tableName,
-      records
-    });
+    try {
+      console.log(`Syncing table: ${output.tableName}`);
+      const records = await fetchTableRecords(output.tableName);
+      await writePayloadIfChanged(output.outputPath, {
+        updatedAt: new Date().toISOString(),
+        table: output.tableName,
+        records
+      });
+      successCount += 1;
+    } catch (error) {
+      failures.push({ table: output.tableName, message: error.message || String(error) });
+      console.error(`Failed syncing ${output.tableName}: ${error.message || error}`);
+    }
+  }
+
+  if (successCount === 0) {
+    throw new Error('Support-data sync failed for all configured tables.');
+  }
+
+  if (failures.length > 0) {
+    console.warn(
+      `Support-data sync partially completed. Failed tables: ${failures
+        .map((item) => `${item.table}`)
+        .join(', ')}`
+    );
   }
 }
 
