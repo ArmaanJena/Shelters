@@ -1,17 +1,11 @@
 // airtable.js
 // Listings and area UI powered by static JSON generated at build-time.
 const LISTINGS_STATIC_ENDPOINT = '/data/listings.json';
+const AREA_QUESTIONS_STATIC_ENDPOINT = '/data/area-questions.json';
 const LISTINGS_CACHE_KEY = 'listings_cache_v6';
 const LISTINGS_CACHE_TTL = 15 * 60 * 1000;
 const AREA_QUESTIONS_CACHE_KEY = 'area_questions_cache_v2';
 const AREA_QUESTIONS_CACHE_TTL = 10 * 60 * 1000;
-const AIRTABLE_API_KEY =
-  'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7';
-const AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5';
-const AREA_QUESTIONS_TABLE_NAME = 'Areas Questions';
-const AREA_QUESTIONS_ENDPOINT = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AREA_QUESTIONS_TABLE_NAME)}`;
-const AIRTABLE_PROPERTIES_TABLE_NAME = 'Properties';
-const AIRTABLE_PROPERTIES_ENDPOINT = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_PROPERTIES_TABLE_NAME)}`;
 const LAST_VIEWED_STORAGE_KEY = 'listings_last_viewed_v1';
 const LISTING_IMAGE_REFRESH_CACHE_KEY = 'listings_image_refresh_v1';
 const LISTING_IMAGE_REFRESH_TTL = 6 * 60 * 60 * 1000;
@@ -25,7 +19,6 @@ const isNewLaunchesPage = document.body?.dataset?.page === 'new-launches';
 const DEFAULT_NEW_LAUNCH_LIMIT = Number.parseInt(document.body?.dataset?.newLaunchLimit || '12', 10) || 12;
 const LISTINGS_PER_PAGE = 48;
 let fixedAreaLocation = getInitialAreaFromContext();
-let areaSelectHandlerAttached = false;
 let newLaunchRecordIds = new Set();
 let areaQuestionsRecords = [];
 let currentListingsPage = 1;
@@ -173,21 +166,6 @@ function cloneRecordWithImages(record, images) {
   };
 }
 
-async function fetchFreshRecordFromAirtable(recordId) {
-  if (!recordId || !AIRTABLE_API_KEY) return null;
-  const endpoint = `${AIRTABLE_PROPERTIES_ENDPOINT}/${encodeURIComponent(recordId)}`;
-  const response = await fetch(endpoint, {
-    cache: 'no-store',
-    headers: {
-      Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-      'Content-Type': 'application/json'
-    }
-  });
-  if (!response.ok) return null;
-  const payload = await response.json();
-  return payload && typeof payload === 'object' ? payload : null;
-}
-
 async function fetchFreshRecordFromStatic(recordId) {
   if (!recordId) return null;
   const response = await fetch(`${LISTINGS_STATIC_ENDPOINT}?ts=${Date.now()}`, {
@@ -208,17 +186,6 @@ async function ensureRecordHasFreshImages(record) {
   }
 
   try {
-    const freshRecord = await fetchFreshRecordFromAirtable(record.id);
-    const freshImages = normalizeImageAttachments(freshRecord?.fields?.Image);
-    if (freshImages.length > 0) {
-      cacheRefreshedImages(record.id, freshImages);
-      return cloneRecordWithImages(record, freshImages);
-    }
-  } catch (error) {
-    console.warn('Unable to refresh listing images from Airtable', error);
-  }
-
-  try {
     const staticRecord = await fetchFreshRecordFromStatic(record.id);
     const staticImages = normalizeImageAttachments(staticRecord?.fields?.Image);
     if (staticImages.length > 0) {
@@ -230,46 +197,6 @@ async function ensureRecordHasFreshImages(record) {
   }
 
   return record;
-}
-
-async function fetchFreshImageMapFromAirtable(recordIds = []) {
-  if (!AIRTABLE_API_KEY) return new Map();
-
-  const requested = new Set((recordIds || []).filter(Boolean));
-  const imageMap = new Map();
-  let offset = '';
-
-  do {
-    const params = new URLSearchParams();
-    params.set('pageSize', '100');
-    if (offset) params.set('offset', offset);
-
-    const response = await fetch(`${AIRTABLE_PROPERTIES_ENDPOINT}?${params.toString()}`, {
-      cache: 'no-store',
-      headers: {
-        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-        'Content-Type': 'application/json'
-      }
-    });
-
-    if (!response.ok) break;
-
-    const payload = await response.json();
-    const records = Array.isArray(payload?.records) ? payload.records : [];
-    records.forEach((record) => {
-      if (!record?.id) return;
-      if (requested.size > 0 && !requested.has(record.id)) return;
-      const images = normalizeImageAttachments(record?.fields?.Image);
-      if (images.length > 0) {
-        imageMap.set(record.id, images);
-      }
-    });
-
-    if (requested.size > 0 && imageMap.size >= requested.size) break;
-    offset = payload?.offset || '';
-  } while (offset);
-
-  return imageMap;
 }
 
 function isRecentlyAdded(createdTime, days = 7) {
@@ -292,6 +219,10 @@ function getSiteRootUrl() {
     url.pathname = `${path.split('/areas.html/')[0]}/`;
   } else if (path.includes('/new-launches/')) {
     url.pathname = `${path.split('/new-launches/')[0]}/`;
+  } else if (path.includes('/listings/')) {
+    url.pathname = `${path.split('/listings/')[0]}/`;
+  } else if (path.includes('/property-detail/')) {
+    url.pathname = `${path.split('/property-detail/')[0]}/`;
   } else {
     url.pathname = path.replace(/[^/]*$/, '');
   }
@@ -422,28 +353,15 @@ async function fetchAreaQuestionsRecords() {
     return areaQuestionsRecords;
   }
 
-  const records = [];
-  let offset = '';
+  const response = await fetch(`${AREA_QUESTIONS_STATIC_ENDPOINT}?ts=${Date.now()}`, {
+    cache: 'no-store'
+  });
+  if (!response.ok) {
+    throw new Error(`Failed to fetch static area questions (${response.status})`);
+  }
 
-  do {
-    const url = new URL(AREA_QUESTIONS_ENDPOINT);
-    if (offset) url.searchParams.set('offset', offset);
-
-    const response = await fetch(url.toString(), {
-      headers: {
-        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-        'Content-Type': 'application/json'
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch area questions (${response.status})`);
-    }
-
-    const data = await response.json();
-    records.push(...(data.records || []));
-    offset = data.offset || '';
-  } while (offset);
+  const data = await response.json();
+  const records = Array.isArray(data?.records) ? data.records : Array.isArray(data) ? data : [];
 
   areaQuestionsRecords = records;
   setAreaQuestionsCache(records);
@@ -555,7 +473,7 @@ function applyAreaPageContext(records) {
   if (!isAreasPage) return;
 
   const locationFilter = document.getElementById('filter-location');
-  const areaLocationSelect = document.getElementById('area-location-select');
+  const areaLocationGrid = document.getElementById('area-location-grid');
   const heading = document.getElementById('area-heading');
   const listingsHeading = document.getElementById('area-listings-heading');
   const description = document.getElementById('area-description');
@@ -563,7 +481,7 @@ function applyAreaPageContext(records) {
     records
       .map(record => (record.fields?.['Location'] || '').trim())
       .filter(Boolean)
-  )];
+  )].sort((a, b) => a.localeCompare(b));
 
   if (!fixedAreaLocation && availableLocations.length > 0) {
     fixedAreaLocation = availableLocations[0];
@@ -576,28 +494,28 @@ function applyAreaPageContext(records) {
     if (matchedLocation) fixedAreaLocation = matchedLocation;
   }
 
-  if (areaLocationSelect) {
-    areaLocationSelect.innerHTML = '';
-    availableLocations.forEach(location => {
-      const option = document.createElement('option');
-      option.value = location;
-      option.textContent = location;
-      areaLocationSelect.appendChild(option);
-    });
-    if (fixedAreaLocation) {
-      areaLocationSelect.value = fixedAreaLocation;
-    }
-
-    if (!areaSelectHandlerAttached) {
-      areaLocationSelect.addEventListener('change', () => {
-        fixedAreaLocation = areaLocationSelect.value || '';
+  if (areaLocationGrid) {
+    areaLocationGrid.innerHTML = '';
+    availableLocations.forEach((location) => {
+      const card = document.createElement('a');
+      card.className = `area-location-card${location === fixedAreaLocation ? ' is-active' : ''}`;
+      card.href = `./?area=${encodeURIComponent(toAreaSlug(location))}`;
+      card.setAttribute('aria-label', `View properties in ${location}`);
+      card.dataset.area = location;
+      card.innerHTML = `
+        <h3>${escapeHtml(location)}</h3>
+        <p>Open ${escapeHtml(location)} listings</p>
+      `;
+      card.addEventListener('click', (event) => {
+        event.preventDefault();
+        fixedAreaLocation = location;
         updateAreaUrl(fixedAreaLocation);
         if (locationFilter) locationFilter.value = fixedAreaLocation;
         applyAreaPageContext(allListings);
         applyFiltersAndRender();
       });
-      areaSelectHandlerAttached = true;
-    }
+      areaLocationGrid.appendChild(card);
+    });
   }
 
   if (locationFilter && fixedAreaLocation) {
@@ -1025,7 +943,6 @@ async function hydrateRecordsForCardImages(records) {
   if (!Array.isArray(records) || records.length === 0) return [];
   const hydrated = [...records];
   const pendingIndexes = [];
-  const pendingIds = [];
 
   for (let index = 0; index < hydrated.length; index += 1) {
     const record = hydrated[index];
@@ -1042,32 +959,19 @@ async function hydrateRecordsForCardImages(records) {
     }
 
     pendingIndexes.push(index);
-    pendingIds.push(record.id);
   }
 
   if (pendingIndexes.length > 0) {
-    try {
-      const freshImageMap = await fetchFreshImageMapFromAirtable(pendingIds);
-      pendingIndexes.forEach((index) => {
+    await Promise.all(
+      pendingIndexes.map(async (index) => {
         const record = hydrated[index];
-        const freshImages = freshImageMap.get(record.id);
-        if (!freshImages || freshImages.length === 0) return;
-        cacheRefreshedImages(record.id, freshImages);
-        hydrated[index] = cloneRecordWithImages(record, freshImages);
-      });
-    } catch (error) {
-      console.warn('Bulk image hydration failed for listing cards', error);
-      await Promise.all(
-        pendingIndexes.map(async (index) => {
-          const record = hydrated[index];
-          try {
-            hydrated[index] = await ensureRecordHasFreshImages(record);
-          } catch (innerError) {
-            console.warn('Failed to hydrate listing card images', innerError);
-          }
-        })
-      );
-    }
+        try {
+          hydrated[index] = await ensureRecordHasFreshImages(record);
+        } catch (innerError) {
+          console.warn('Failed to hydrate listing card images', innerError);
+        }
+      })
+    );
   }
 
   let changed = false;
@@ -1566,6 +1470,13 @@ function createPropertyCard(record) {
   const showNewBadge = isRecentlyAdded(record.createdTime, 7);
   const shortDescription = fields['Short Description'] || fields['Description'] || '';
   const description = shortDescription ? truncateText(shortDescription, 110) : '';
+  const escapedImageUrl = escapeHtml(imageUrl);
+  const escapedImageSrcSet = escapeHtml(imageSrcSet);
+  const escapedTitle = escapeHtml(title);
+  const escapedLocation = escapeHtml(location);
+  const escapedDescription = escapeHtml(description);
+  const escapedPrice = escapeHtml(price);
+  const escapedListingType = escapeHtml(listingType);
 
   const wrapper = document.createElement('div');
   wrapper.className = 'bento-card-wrapper';
@@ -1574,15 +1485,15 @@ function createPropertyCard(record) {
   card.style.cursor = 'pointer';
   card.innerHTML = `
     <div class="listing-image-container">
-      <img class="property-image" src="${imageUrl}" ${imageSrcSet ? `srcset="${imageSrcSet}" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"` : ''} alt="${title}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';" />
-      <div class="bento-badge">${listingType}</div>
+      <img class="property-image" src="${escapedImageUrl}" ${imageSrcSet ? `srcset="${escapedImageSrcSet}" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"` : ''} alt="${escapedTitle}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';" />
+      <div class="bento-badge">${escapedListingType}</div>
       ${showNewBadge ? '<div class="bento-badge bento-badge-new">New</div>' : ''}
     </div>
     <div class="bento-content" style="padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-      <h3 class="property-title">${title}</h3>
-      <div class="property-location">${location}</div>
-      <div class="property-description">${description}</div>
-      <div class="property-price">${price}</div>
+      <h3 class="property-title">${escapedTitle}</h3>
+      <div class="property-location">${escapedLocation}</div>
+      <div class="property-description">${escapedDescription}</div>
+      <div class="property-price">${escapedPrice}</div>
     </div>
   `;
   card.addEventListener('click', () => openPropertyModal(record.id));

@@ -1,11 +1,9 @@
 name: Airtable Listings Sync
 
 on:
-  repository_dispatch:
-    types: [airtable_changed]
   workflow_dispatch:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "0 */4 * * *"
 
 permissions:
   contents: write
@@ -17,15 +15,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    env:
-      DEBOUNCE_SECONDS: ${{ vars.AIRTABLE_SYNC_DEBOUNCE_SECONDS || '5' }}
     steps:
-      - name: Debounce burst updates
-        if: github.event_name == 'repository_dispatch'
-        run: |
-          echo "Debouncing for ${DEBOUNCE_SECONDS}s to coalesce rapid Airtable changes..."
-          sleep "$DEBOUNCE_SECONDS"
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -48,10 +38,28 @@ jobs:
           AIRTABLE_FETCH_TIMEOUT_MS: ${{ vars.AIRTABLE_FETCH_TIMEOUT_MS || '20000' }}
           AIRTABLE_FETCH_BASE_BACKOFF_MS: ${{ vars.AIRTABLE_FETCH_BASE_BACKOFF_MS || '1000' }}
 
+      - name: Fetch Airtable support data
+        run: node scripts/fetch-airtable-support-data.js
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+          AIRTABLE_AREAS_TABLE_NAME: ${{ vars.AIRTABLE_AREAS_TABLE_NAME || 'Areas' }}
+          AIRTABLE_AREA_QUESTIONS_TABLE_NAME: ${{ vars.AIRTABLE_AREA_QUESTIONS_TABLE_NAME || 'Area Questions' }}
+          AIRTABLE_FETCH_MAX_RETRIES: ${{ vars.AIRTABLE_FETCH_MAX_RETRIES || '4' }}
+          AIRTABLE_FETCH_TIMEOUT_MS: ${{ vars.AIRTABLE_FETCH_TIMEOUT_MS || '20000' }}
+          AIRTABLE_FETCH_BASE_BACKOFF_MS: ${{ vars.AIRTABLE_FETCH_BASE_BACKOFF_MS || '1000' }}
+
+      - name: Push queued WhatsApp leads to Airtable
+        run: node scripts/push-whatsapp-leads.js
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+          AIRTABLE_LEADS_TABLE_NAME: ${{ vars.AIRTABLE_LEADS_TABLE_NAME || 'Leads' }}
+
       - name: Detect JSON change
         id: detect_change
         run: |
-          if git diff --quiet -- data/listings.json property-share; then
+          if [ -z "$(git status --porcelain -- data/listings.json data/areas.json data/area-questions.json data/whatsapp-leads.json data/loan-leads.json data/insurance-leads.json data/listing-images property-share)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -62,10 +70,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/listings.json property-share
-          git commit -m "chore: sync listings and share pages from Airtable"
+          git add data/listings.json data/areas.json data/area-questions.json data/whatsapp-leads.json data/loan-leads.json data/insurance-leads.json data/listing-images property-share
+          git commit -m "chore: sync Airtable data and queued leads"
           git push
 
       - name: No-op summary
         if: steps.detect_change.outputs.changed != 'true'
-        run: echo "No listings.json changes detected."
+        run: echo "No sync file changes detected."

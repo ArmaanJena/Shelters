@@ -1,70 +1,75 @@
 // netlify/functions/submit-lead.js
 
-exports.handler = async (event, context) => {
-    // Only allow POST requests
-    if (event.httpMethod !== 'POST') {
-        return { statusCode: 405, body: 'Method Not Allowed' };
-    }
+const fs = require('node:fs/promises');
+const path = require('node:path');
 
-    const { AIRTABLE_API_KEY, AIRTABLE_BASE_ID } = process.env;
-    const tableName = 'Leads'; // Assuming you have a 'Leads' table in Airtable
-    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(tableName)}`;
+const QUEUE_FILE_PATH = path.resolve(process.cwd(), 'data', 'loan-leads.json');
 
-    try {
-        const leadData = JSON.parse(event.body);
+async function readQueuedLeads() {
+  try {
+    const raw = await fs.readFile(QUEUE_FILE_PATH, 'utf8');
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    if (error.code === 'ENOENT') return [];
+    throw error;
+  }
+}
 
-        // --- Generate a simplified, unique Referral ID ---
-        const timestamp = Date.now(); // Milliseconds since epoch, ensures uniqueness and sort order
-        const randomPart = Math.random().toString(36).substring(2, 7).toUpperCase(); // 5-character random string
-        const referralId = `SR-${timestamp}-${randomPart}`;
+async function appendLeadToQueue(lead) {
+  await fs.mkdir(path.dirname(QUEUE_FILE_PATH), { recursive: true });
+  const queued = await readQueuedLeads();
+  queued.push(lead);
+  await fs.writeFile(QUEUE_FILE_PATH, `${JSON.stringify(queued, null, 2)}\n`, 'utf8');
+}
 
-        // Map incoming data to Airtable field names
-        // Note: Ensure these field names match your Airtable columns exactly.
-        const airtableRecord = {
-            fields: {
-                "Name": leadData.applicantName,
-                "Phone": leadData.applicantPhone,
-                "Email": leadData.applicantEmail,
-                "Loan Amount": leadData.loanAmount,
-                "Tenure (Years)": leadData.loanTenure,
-                "Application": leadData.loanType,
-                "Applicant Age": leadData.applicantAge,
-                "Credit Score": leadData.creditScore,
-                "Monthly Income": leadData.monthlyIncome,
-                "Existing EMIs": leadData.existingEMIs,
-                "Co-Applicant Name": leadData.coApplicantName || null,
-                "Co-Applicant Income": leadData.coApplicantIncome || null,
-                "Status": "New Lead", // Default status
-                "Referral ID": referralId,
-                "Submission Date": new Date().toISOString(),
-            }
-        };
+exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: 'Method Not Allowed' };
+  }
 
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ records: [airtableRecord] }),
-        });
+  try {
+    const leadData = JSON.parse(event.body || '{}');
+    const timestamp = Date.now();
+    const randomPart = Math.random().toString(36).substring(2, 7).toUpperCase();
+    const referralId = `SR-${timestamp}-${randomPart}`;
 
-        if (!response.ok) {
-            const errorBody = await response.text();
-            console.error(`Airtable API Error: ${response.status}`, errorBody);
-            throw new Error('Failed to save lead to Airtable.');
-        }
+    await appendLeadToQueue({
+      referralId,
+      leadCategory: 'loan',
+      submittedAt: new Date().toISOString(),
+      synced: false,
+      fields: {
+        Name: leadData.applicantName || '',
+        Phone: leadData.applicantPhone || '',
+        Email: leadData.applicantEmail || '',
+        'Loan Amount': leadData.loanAmount || null,
+        'Tenure (Years)': leadData.loanTenure || null,
+        Application: leadData.loanType || '',
+        'Applicant Age': leadData.applicantAge || null,
+        'Credit Score': leadData.creditScore || null,
+        'Monthly Income': leadData.monthlyIncome || null,
+        'Existing EMIs': leadData.existingEMIs || null,
+        'Co-Applicant Name': leadData.coApplicantName || null,
+        'Co-Applicant Income': leadData.coApplicantIncome || null,
+        Status: 'New Lead',
+        'Referral ID': referralId,
+        'Submission Date': new Date().toISOString()
+      }
+    });
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ message: 'Lead captured successfully.', referralId: referralId }),
-        };
-
-    } catch (error) {
-        console.error('Error in submit-lead function:', error);
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: 'Failed to process lead.' }),
-        };
-    }
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        message: 'Lead captured and queued for Airtable sync.',
+        referralId
+      })
+    };
+  } catch (error) {
+    console.error('Error in submit-lead function:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Failed to process lead.' })
+    };
+  }
 };

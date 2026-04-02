@@ -4,10 +4,9 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 const crypto = require('node:crypto');
 
-const DEFAULT_AIRTABLE_API_KEY =
-  'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7';
-const DEFAULT_AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5';
-const DEFAULT_AIRTABLE_TABLE_NAME = 'Properties';
+const DEFAULT_AIRTABLE_API_KEY = '';
+const DEFAULT_AIRTABLE_BASE_ID = '';
+const DEFAULT_AIRTABLE_TABLE_NAME = 'Listings';
 
 const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY || DEFAULT_AIRTABLE_API_KEY;
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || DEFAULT_AIRTABLE_BASE_ID;
@@ -23,6 +22,7 @@ const AIRTABLE_FETCH_BASE_BACKOFF_MS = Number.parseInt(
 );
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'data', 'listings.json');
+const LISTING_IMAGES_DIR = path.resolve(process.cwd(), 'data', 'listing-images');
 const SHARE_PAGES_DIR = path.resolve(process.cwd(), 'property-share');
 const SITE_URL = (process.env.SITE_URL || 'https://www.sheltersrealty.co.in').replace(/\/+$/, '');
 
@@ -84,12 +84,15 @@ async function fetchPageWithRetry(url) {
           continue;
         }
 
-        throw new Error(`Airtable API request failed (${status}): ${body}`);
+        const error = new Error(`Airtable API request failed (${status}): ${body}`);
+        error.nonRetryable = !isRetryableStatus(status);
+        throw error;
       }
 
       return response.json();
     } catch (error) {
       lastError = error;
+      if (error?.nonRetryable) break;
       if (attempt >= AIRTABLE_FETCH_MAX_RETRIES) break;
 
       const backoffMs = computeBackoffMs(attempt);
@@ -111,6 +114,131 @@ function normalizeRecord(record) {
     createdTime: record.createdTime || null,
     fields: record.fields || {}
   };
+}
+
+function sanitizePathSegment(value) {
+  return (value || '')
+    .toString()
+    .trim()
+    .replace(/[^a-zA-Z0-9._-]/g, '_')
+    .replace(/^_+|_+$/g, '') || 'item';
+}
+
+function inferImageExtension(attachment) {
+  const fromFilename = path.extname((attachment?.filename || '').toString().trim());
+  if (fromFilename && fromFilename.length <= 10) return fromFilename.toLowerCase();
+
+  const mimeType = (attachment?.type || '').toString().toLowerCase();
+  if (mimeType === 'image/jpeg' || mimeType === 'image/jpg') return '.jpg';
+  if (mimeType === 'image/png') return '.png';
+  if (mimeType === 'image/webp') return '.webp';
+  if (mimeType === 'image/gif') return '.gif';
+  if (mimeType === 'image/avif') return '.avif';
+  if (mimeType === 'image/svg+xml') return '.svg';
+  return '.jpg';
+}
+
+function toSiteRelativePath(filePath) {
+  const relative = path.relative(process.cwd(), filePath).split(path.sep).join('/');
+  return `/${relative}`;
+}
+
+async function ensureImageDownloaded(sourceUrl, targetPath) {
+  if (!sourceUrl) return false;
+
+  try {
+    await fs.access(targetPath);
+    return true;
+  } catch (error) {
+    // File does not exist yet; continue with download.
+  }
+
+  const response = await fetch(sourceUrl, {
+    signal: AbortSignal.timeout(AIRTABLE_FETCH_TIMEOUT_MS)
+  });
+
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`Image download failed (${response.status}): ${body}`);
+  }
+
+  const arrayBuffer = await response.arrayBuffer();
+  await fs.mkdir(path.dirname(targetPath), { recursive: true });
+  await fs.writeFile(targetPath, Buffer.from(arrayBuffer));
+  return true;
+}
+
+async function localizeImageAttachment(recordId, attachment, index) {
+  if (!attachment || typeof attachment !== 'object') return attachment;
+
+  const sourceUrl =
+    attachment?.url ||
+    attachment?.thumbnails?.large?.url ||
+    attachment?.thumbnails?.full?.url ||
+    attachment?.thumbnails?.small?.url ||
+    '';
+
+  if (!sourceUrl) return attachment;
+
+  const safeRecordId = sanitizePathSegment(recordId || 'unknown-record');
+  const safeAttachmentId = sanitizePathSegment(attachment.id || `image-${index + 1}`);
+  const extension = inferImageExtension(attachment);
+  const outputPath = path.join(LISTING_IMAGES_DIR, safeRecordId, `${safeAttachmentId}${extension}`);
+
+  try {
+    await ensureImageDownloaded(sourceUrl, outputPath);
+  } catch (error) {
+    console.warn(`Failed to localize image for ${recordId}: ${error.message}`);
+    return attachment;
+  }
+
+  const localUrl = toSiteRelativePath(outputPath);
+
+  return {
+    ...attachment,
+    url: localUrl,
+    thumbnails: {
+      ...(attachment.thumbnails || {}),
+      small: {
+        ...(attachment?.thumbnails?.small || {}),
+        url: localUrl
+      },
+      large: {
+        ...(attachment?.thumbnails?.large || {}),
+        url: localUrl
+      },
+      full: {
+        ...(attachment?.thumbnails?.full || {}),
+        url: localUrl
+      }
+    }
+  };
+}
+
+async function localizeRecordImages(record) {
+  const images = Array.isArray(record?.fields?.Image) ? record.fields.Image : null;
+  if (!images || images.length === 0) return record;
+
+  const localizedImages = [];
+  for (let index = 0; index < images.length; index += 1) {
+    localizedImages.push(await localizeImageAttachment(record.id, images[index], index));
+  }
+
+  return {
+    ...record,
+    fields: {
+      ...(record.fields || {}),
+      Image: localizedImages
+    }
+  };
+}
+
+async function localizeRecordsImages(records) {
+  const localized = [];
+  for (const record of records) {
+    localized.push(await localizeRecordImages(record));
+  }
+  return localized;
 }
 
 function stableSortRecords(records) {
@@ -163,12 +291,17 @@ function escapeHtml(value) {
 
 function getShareImageUrl(fields) {
   const firstImage = Array.isArray(fields?.Image) ? fields.Image[0] : null;
-  return (
+  const imageUrl =
     firstImage?.thumbnails?.large?.url ||
     firstImage?.thumbnails?.full?.url ||
     firstImage?.url ||
-    'https://via.placeholder.com/1200x630.png?text=Shelters+Realty+Property'
-  );
+    '';
+
+  if (!imageUrl) return 'https://via.placeholder.com/1200x630.png?text=Shelters+Realty+Property';
+  if (/^https?:\/\//i.test(imageUrl)) return imageUrl;
+
+  const normalized = imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`;
+  return `${SITE_URL}${normalized}`;
 }
 
 function buildSharePageHtml(record) {
@@ -276,7 +409,8 @@ async function main() {
   );
 
   const rawRecords = await fetchAirtableRecords();
-  const records = stableSortRecords(rawRecords.map(normalizeRecord));
+  const normalizedRecords = stableSortRecords(rawRecords.map(normalizeRecord));
+  const records = await localizeRecordsImages(normalizedRecords);
   await syncPropertySharePages(records);
 
   const payload = {

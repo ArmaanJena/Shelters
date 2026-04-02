@@ -126,11 +126,6 @@ function getWhatsAppLeadEndpointCandidates() {
   return ['/.netlify/functions/submit-whatsapp-lead', '/submit-whatsapp-lead'];
 }
 
-const DIRECT_AIRTABLE_API_KEY =
-  'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7';
-const DIRECT_AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5';
-const DIRECT_AIRTABLE_LEADS_TABLE = 'Leads';
-
 function decodeLeadTypeValue(value) {
   if (!value) return '';
   const stringValue = value.toString().trim();
@@ -174,40 +169,6 @@ function resolveWhatsAppLeadType(anchor, whatsappUrl) {
   return 'General Enquiry';
 }
 
-async function submitWhatsAppLeadDirectToAirtable(payload) {
-  const istTimestamp = `${new Intl.DateTimeFormat('en-IN', {
-    timeZone: 'Asia/Kolkata',
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true
-  }).format(new Date())} IST`;
-  const url = `https://api.airtable.com/v0/${DIRECT_AIRTABLE_BASE_ID}/${encodeURIComponent(DIRECT_AIRTABLE_LEADS_TABLE)}`;
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${DIRECT_AIRTABLE_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      records: [
-        {
-          fields: {
-            Name: payload.name,
-            Phone: payload.phone,
-            Message: [payload.message || '', `Timestamp: ${istTimestamp}`].filter(Boolean).join('\n'),
-            'Lead Property': payload.leadType || 'General Enquiry'
-          }
-        }
-      ]
-    })
-  });
-  return response.ok;
-}
-
 async function submitWhatsAppLead(payload) {
   const endpoints = getWhatsAppLeadEndpointCandidates();
   for (const endpoint of endpoints) {
@@ -222,12 +183,7 @@ async function submitWhatsAppLead(payload) {
       // Try next endpoint.
     }
   }
-
-  try {
-    return await submitWhatsAppLeadDirectToAirtable(payload);
-  } catch (error) {
-    return false;
-  }
+  return false;
 }
 
 function buildWhatsAppLeadModal() {

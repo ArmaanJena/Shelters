@@ -4,11 +4,6 @@ const DETAIL_CACHE_KEY = 'property_detail_records_v4';
 const DETAIL_CACHE_TTL = 10 * 60 * 1000;
 const DETAIL_IMAGE_REFRESH_CACHE_KEY = 'property_detail_image_refresh_v1';
 const DETAIL_IMAGE_REFRESH_TTL = 6 * 60 * 60 * 1000;
-const AIRTABLE_API_KEY =
-  'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7';
-const AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5';
-const AIRTABLE_PROPERTIES_TABLE_NAME = 'Properties';
-const AIRTABLE_PROPERTIES_ENDPOINT = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_PROPERTIES_TABLE_NAME)}`;
 const IMAGE_FALLBACK_DATA_URI =
   'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%23cbd5e1%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23334155%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2232%22%3EImage%20Unavailable%3C/text%3E%3C/svg%3E';
 
@@ -129,21 +124,6 @@ function cacheRefreshedImages(recordId, images) {
   setImageRefreshCache(cache);
 }
 
-async function fetchFreshRecordFromAirtable(recordId) {
-  if (!recordId || !AIRTABLE_API_KEY) return null;
-  const endpoint = `${AIRTABLE_PROPERTIES_ENDPOINT}/${encodeURIComponent(recordId)}`;
-  const response = await fetch(endpoint, {
-    cache: 'no-store',
-    headers: {
-      Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-      'Content-Type': 'application/json'
-    }
-  });
-  if (!response.ok) return null;
-  const payload = await response.json();
-  return payload && typeof payload === 'object' ? payload : null;
-}
-
 async function fetchFreshRecordFromStatic(recordId) {
   if (!recordId) return null;
   const response = await fetch(`${PROPERTY_DETAIL_LISTINGS_ENDPOINT}?ts=${Date.now()}`, {
@@ -173,17 +153,6 @@ async function ensureRecordHasFreshImages(record) {
   const cachedImages = getCachedRefreshedImages(record.id);
   if (cachedImages.length > 0) {
     return cloneRecordWithImages(record, cachedImages);
-  }
-
-  try {
-    const freshRecord = await fetchFreshRecordFromAirtable(record.id);
-    const freshImages = normalizeImageAttachments(freshRecord?.fields?.Image);
-    if (freshImages.length > 0) {
-      cacheRefreshedImages(record.id, freshImages);
-      return cloneRecordWithImages(record, freshImages);
-    }
-  } catch (error) {
-    console.warn('Unable to refresh property images from Airtable', error);
   }
 
   try {
@@ -257,6 +226,10 @@ function getSiteBaseUrl() {
     url.pathname = `${path.split('/areas.html/')[0]}/`;
   } else if (path.includes('/new-launches/')) {
     url.pathname = `${path.split('/new-launches/')[0]}/`;
+  } else if (path.includes('/listings/')) {
+    url.pathname = `${path.split('/listings/')[0]}/`;
+  } else if (path.includes('/property-detail/')) {
+    url.pathname = `${path.split('/property-detail/')[0]}/`;
   } else {
     url.pathname = path.replace(/[^/]*$/, '');
   }

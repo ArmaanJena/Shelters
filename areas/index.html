@@ -24,9 +24,10 @@
             box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
         }
         .area-intro-meta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.55rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.7rem;
             margin-bottom: 0.65rem;
         }
         .area-intro-label {
@@ -44,21 +45,40 @@
             border-radius: 999px;
             padding: 0.32rem 0.7rem;
         }
-        .area-location-select {
-            appearance: none;
-            -webkit-appearance: none;
+        .area-location-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.7rem;
+        }
+        .area-location-card {
+            display: block;
+            text-decoration: none;
             border: 1px solid var(--light-gray, #e2e8f0);
-            background-color: var(--white, #ffffff);
-            color: var(--dark-navy, #1e293b);
-            font-size: 0.92rem;
-            font-weight: 700;
-            border-radius: 999px;
-            padding: 0.36rem 2rem 0.36rem 0.8rem;
-            line-height: 1.2;
-            background-image: linear-gradient(45deg, transparent 50%, #475569 50%), linear-gradient(135deg, #475569 50%, transparent 50%);
-            background-position: calc(100% - 14px) 48%, calc(100% - 9px) 48%;
-            background-size: 5px 5px, 5px 5px;
-            background-repeat: no-repeat;
+            border-radius: 12px;
+            padding: 0.75rem 0.8rem;
+            background: #ffffff;
+            transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+        }
+        .area-location-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+        }
+        .area-location-card.is-active {
+            border-color: #7f1d1d;
+            box-shadow: 0 10px 22px rgba(127, 29, 29, 0.16);
+            background: #fff8f8;
+        }
+        .area-location-card h3 {
+            margin: 0;
+            font-size: 1.03rem;
+            color: #4b1d1f;
+            line-height: 1.3;
+        }
+        .area-location-card p {
+            margin: 0.32rem 0 0;
+            font-size: 0.86rem;
+            color: var(--slate-gray, #64748b);
         }
         .area-intro-title {
             font-size: clamp(1.5rem, 2.8vw, 2.2rem);
@@ -154,9 +174,12 @@
                 <div class="area-intro-card">
                     <div class="area-intro-meta">
                         <span class="area-intro-label">Area</span>
-                        <select id="area-location-select" class="area-location-select" aria-label="Select area location">
-                            <option value="">Loading...</option>
-                        </select>
+                        <div id="area-location-grid" class="area-location-grid" aria-label="Select area location">
+                            <a href="/areas" class="area-location-card">
+                                <h3>Loading areas...</h3>
+                                <p>Please wait</p>
+                            </a>
+                        </div>
                     </div>
                     <h1 id="area-heading" class="area-intro-title">Flats in Pune</h1>
                     <p id="area-description" class="area-intro-description">Loading area details...</p>

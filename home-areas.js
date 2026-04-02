@@ -1,13 +1,9 @@
 const HOME_FEATURED_AREAS_GRID_ID = 'featured-areas-grid';
-const HOME_AREAS_CACHE_KEY = 'home_featured_areas_cache_v1';
+const HOME_AREAS_CACHE_KEY = 'home_featured_areas_cache_v2';
 const HOME_AREAS_CACHE_TTL = 10 * 60 * 1000;
-const HOME_AREAS_DEFAULT_LIMIT = 3;
 const HOME_LISTINGS_ENDPOINT = 'data/listings.json';
-const HOME_AIRTABLE_API_KEY =
-  'patMgiMllqq4gqdW3.67ee2063e096e9e99e1c74a5a8ff3fdab29c8ef3eee7c197f6fc666bedc401d7';
-const HOME_AIRTABLE_BASE_ID = 'appXSnhjcUrnuvaS5';
-const HOME_AREAS_TABLE_NAME = 'Areas';
-const HOME_AREA_QUESTIONS_TABLE_NAME = 'Areas Questions';
+const HOME_AREAS_ENDPOINT = 'data/areas.json';
+const HOME_AREA_QUESTIONS_ENDPOINT = 'data/area-questions.json';
 
 function homeAreasEscapeHtml(value) {
   return (value || '')
@@ -111,35 +107,19 @@ function setHomeAreasCache(items) {
   );
 }
 
-async function fetchAirtableTableRecords(tableName, fields = []) {
-  const endpoint = `https://api.airtable.com/v0/${HOME_AIRTABLE_BASE_ID}/${encodeURIComponent(tableName)}`;
-  const records = [];
-  let offset = '';
+function normalizePayloadRecords(payload) {
+  if (Array.isArray(payload?.records)) return payload.records;
+  if (Array.isArray(payload)) return payload;
+  return [];
+}
 
-  do {
-    const url = new URL(endpoint);
-    url.searchParams.set('pageSize', '100');
-    if (offset) url.searchParams.set('offset', offset);
-    fields.forEach((fieldName) => url.searchParams.append('fields[]', fieldName));
-
-    const response = await fetch(url.toString(), {
-      cache: 'no-store',
-      headers: {
-        Authorization: `Bearer ${HOME_AIRTABLE_API_KEY}`,
-        'Content-Type': 'application/json'
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch ${tableName} (${response.status})`);
-    }
-
-    const payload = await response.json();
-    records.push(...(payload.records || []));
-    offset = payload.offset || '';
-  } while (offset);
-
-  return records;
+async function fetchStaticTableRecords(endpoint) {
+  const response = await fetch(`${endpoint}?ts=${Date.now()}`, { cache: 'no-store' });
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${endpoint} (${response.status})`);
+  }
+  const payload = await response.json();
+  return normalizePayloadRecords(payload);
 }
 
 function pickFeaturedAreas(items) {
@@ -158,7 +138,7 @@ function pickFeaturedAreas(items) {
     .filter((item) => !item.featured)
     .sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name));
 
-  return [...explicitlyFeatured, ...nonFeatured].slice(0, HOME_AREAS_DEFAULT_LIMIT);
+  return [...explicitlyFeatured, ...nonFeatured];
 }
 
 async function fetchAreasFromListings() {
@@ -185,8 +165,7 @@ async function fetchAreasFromListings() {
   });
 
   return [...areasMap.values()]
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .slice(0, HOME_AREAS_DEFAULT_LIMIT);
+    .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function buildHomeAreaCard(item) {
@@ -228,27 +207,48 @@ async function loadHomeAreas() {
   }
 
   let areas = [];
+  let areaQuestions = [];
+
   try {
-    const areaRecords = await fetchAirtableTableRecords(HOME_AREAS_TABLE_NAME);
+    const areaRecords = await fetchStaticTableRecords(HOME_AREAS_ENDPOINT);
     areas = areaRecords
       .map((record) => normalizeAreaRecord(record, 'areas'))
       .filter(Boolean);
   } catch (error) {
-    console.warn('Unable to load Areas table, falling back to Areas Questions:', error);
+    console.warn('Unable to load areas static data:', error);
   }
 
-  if (areas.length === 0) {
-    try {
-      const areaQuestionRecords = await fetchAirtableTableRecords(HOME_AREA_QUESTIONS_TABLE_NAME, [
-        'Location',
-        'Area Description'
-      ]);
-      areas = areaQuestionRecords
-        .map((record) => normalizeAreaRecord(record, 'area_questions'))
-        .filter(Boolean);
-    } catch (error) {
-      console.warn('Unable to load Areas Questions table:', error);
+  try {
+    const areaQuestionRecords = await fetchStaticTableRecords(HOME_AREA_QUESTIONS_ENDPOINT);
+    areaQuestions = areaQuestionRecords
+      .map((record) => normalizeAreaRecord(record, 'area_questions'))
+      .filter(Boolean);
+  } catch (error) {
+    console.warn('Unable to load area-questions static data:', error);
+  }
+
+  // Merge both tables so homepage is not limited by whichever table has fewer rows.
+  const mergedMap = new Map();
+  [...areas, ...areaQuestions].forEach((item) => {
+    if (!item?.name) return;
+    const key = item.name.toLowerCase();
+    if (!mergedMap.has(key)) {
+      mergedMap.set(key, item);
+      return;
     }
+
+    const existing = mergedMap.get(key);
+    const existingHasDescription = Boolean(existing?.description?.trim());
+    const incomingHasDescription = Boolean(item?.description?.trim());
+    if (!existingHasDescription && incomingHasDescription) {
+      mergedMap.set(key, { ...existing, ...item });
+    }
+  });
+
+  const mergedAreas = [...mergedMap.values()];
+
+  if (mergedAreas.length > 0) {
+    areas = mergedAreas;
   }
 
   if (areas.length === 0) {
