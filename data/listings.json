@@ -1,6 +1,136 @@
 {
-  "updatedAt": "2026-04-02T08:07:16.622Z",
+  "updatedAt": "2026-04-02T09:15:17.940Z",
   "records": [
+    {
+      "id": "recOrPIjyMOTXkvg0",
+      "createdTime": "2026-04-02T08:34:42.000Z",
+      "fields": {
+        "Title": "4 BHK + Servant Room for Rent in Belmac, Kalyani Nagar | ₹1.50 Lakh",
+        "Price": 150000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 4.5,
+        "Size (sqft)": 4.5,
+        "Description": "4 BHK + Servant Room for Rent in Belmac, Kalyani Nagar | ₹1.50 Lakh\n\nExperience upscale living in one of Pune’s most sought-after neighborhoods with this spacious 4 BHK apartment with servant room in Belmac, Kalyani Nagar. Ideal for families and corporate tenants, this residence offers generous space, privacy, and a premium address.\n\nThis unfurnished apartment provides the flexibility to design and furnish the space as per your personal style and requirements. The layout includes large bedrooms, a well-planned living and dining area, and a separate servant room, making it perfect for modern urban living.\n\nLocated in the heart of Kalyani Nagar, the property enjoys excellent connectivity to Koregaon Park, Viman Nagar, Pune Airport, and major business hubs like Kharadi. The area is known for its upscale lifestyle, with proximity to top schools, restaurants, cafes, and shopping destinations.\n\nBelmac is a well-maintained residential complex offering a secure and comfortable environment, making it a preferred choice for premium rentals.\n\n⸻\n\nProperty Highlights:\n\t•\t4 BHK spacious apartment\n\t•\tSeparate servant room\n\t•\tUnfurnished – customize as per your taste\n\t•\tLocated in Belmac, Kalyani Nagar\n\t•\tIdeal for families and corporate tenants\n\t•\tPremium and well-connected location\n\n⸻\n\nRental Details:\n\n💰 Rent: ₹1.50 Lakh per month\n\n⸻\n\nWhy This Property Stands Out:\n\t•\tLarge layout with servant quarters\n\t•\tPrime luxury rental location\n\t•\tHigh demand among expats and professionals\n\t•\tClose to airport, IT hubs, and lifestyle zones\n\n⸻\n\nBook Your Site Visit Today\n\n📞 Call / WhatsApp now for immediate viewing",
+        "Short Description": "4 BHK + Servant Room for Rent in Belmac, Kalyani Nagar | ₹1.50 Lakhk",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "24/7 Security",
+          "Lift / Elevator",
+          "Power Backup",
+          "CCTV Surveillance",
+          "Gated Community",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Balcony",
+          "Visitor Parking",
+          "Maintenance Staff",
+          "Intercom Facility",
+          "Tennis Court",
+          "Rainwater Harvesting",
+          "Basketball Court"
+        ],
+        "Price per Sqft": 33333.333333333336,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recKgV261RZa0IZLX",
+      "createdTime": "2026-04-02T08:15:38.000Z",
+      "fields": {
+        "Title": "3 BHK Furnished Apartment for Rent in Victoria Garden, Kalyani Nagar | ₹85,000",
+        "Image": [
+          {
+            "id": "attsoh8QTWLTAdSut",
+            "width": 528,
+            "height": 350,
+            "url": "https://v5.airtableusercontent.com/v3/u/51/51/1775131200000/_pYeklQDcUBMDsdwayi-Jg/N2arsD2IdM-bVxZHPleW94Drc9Mui9cI_enkfkidHsLFPdj28wkUflUuEfrLRuoubNWAsbOxKTziTnzj2nm3PXy-lAYIbL4D7Ou6VUD2zHSdBPxDVY8cEbHP7VoPowV_BWglnHdKXCczvCNLw2qU_ToKHB0sGZNq5Ti4rk9cQ2M/uG75t2tPyvj7hgriWCl18PWWZKL4NlJtgQ8dFWsI_9A",
+            "filename": "2026-04-02 13.50.48.jpg",
+            "size": 165518,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1775131200000/SL_M1en3owa8oTJOA8ep5g/SfYAR4THt7qVMdTlThn80iWl4UW8Ho7g-bxGU8j5IlEeNRG_eLQz9SUa4LjgkW5WjR666JPy8-hHjLjKNCLAvWmTz3otbgXy6UuEr5JfKgKBzlYBoG9WGu4HNst0V8SnD17mXunvAVAVzjWPupGVig/r7gp4dJbfJSxooJQn-lZvr8MfBmaoJmGOcKO58Z2F1U",
+                "width": 54,
+                "height": 36
+              },
+              "large": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1775131200000/xqW_XkGSG0pzt6kaDHO1-g/neVAnUi5cMaTE3477PwIoILjIxa24EDM0oajIHt2TWc9Gw2Q_pWnXJRPXhkoHHk-bwprFW251WoQNwW_VAjk82PtzojuRZEPWBnPN-dF0f7c36x12B460efDenE9BpiZsNYNiiDwbpVfv3txqJBuTw/6c9INg5VYK8YRHTC_uk0n_d9GW1OJMMVFje_2_GB2O4",
+                "width": 528,
+                "height": 350
+              },
+              "full": {
+                "url": "https://v5.airtableusercontent.com/v3/u/51/51/1775131200000/U6lhxJTKUlWQ_4YXv6PQjA/hxxTY445BXU8nNvDtrSfL_hyNSS7CzNWgbU6Uc_3ErZj9_d_V8qSvcT_WziQHYH0Us-HsLofPmkSjuEPMJ2shj2bmNRC-d0lFZpS_UzxjAD-zotnFrFs8ZRO_jpU4ry1wGbmLotAP1EYi4rx5ivU2Q/IOVUQQLbMyxoWzAgMGfzdcjMwz7OPm2US0uLTSkhcAY",
+                "width": 528,
+                "height": 350
+              }
+            }
+          }
+        ],
+        "Price": 85000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 3,
+        "Bathrooms": 3,
+        "Size (sqft)": 1500,
+        "Description": "3 BHK Furnished Apartment for Rent in Victoria Garden, Kalyani Nagar | ₹85,000\n\nLive in one of Pune’s most premium residential neighborhoods with this fully furnished 3 BHK apartment in Victoria Garden, Kalyani Nagar. Designed for comfort and convenience, this home is ideal for families, working professionals, and expats looking for a ready-to-move-in residence.\n\nSpanning 1500 sq ft, the apartment offers a well-planned layout with spacious bedrooms, a comfortable living area, and modern furnishings. The interiors are thoughtfully done to provide a blend of functionality and style, making it a perfect rental option in a prime location.\n\nLocated in Kalyani Nagar, the property enjoys excellent connectivity to key areas such as Koregaon Park, Viman Nagar, and Pune Airport. The neighborhood is known for its premium lifestyle, with easy access to top restaurants, cafes, schools, hospitals, and shopping destinations.\n\nThe apartment also includes 1 covered car parking, ensuring convenience and security for residents.\n\n⸻\n\nProperty Highlights:\n\t•\t3 BHK fully furnished apartment\n\t•\t1500 sq ft spacious layout\n\t•\tLocated in Victoria Garden, Kalyani Nagar\n\t•\tReady-to-move-in condition\n\t•\t1 covered car parking\n\t•\tPremium residential locality with excellent connectivity\n\n⸻\n\nRental Details:\n\n💰 Rent: ₹85,000 (Negotiable)\n\n⸻\n\nWhy This Property is Ideal:\n\t•\tPrime location in Kalyani Nagar\n\t•\tPerfect for families and corporate tenants\n\t•\tClose to IT hubs, airport, and lifestyle destinations\n\t•\tHigh-demand rental area\n\n⸻\n\nSchedule a Site Visit Today\n\n📞 Call / WhatsApp Now to Book Immediately\n",
+        "Short Description": "3 BHK Furnished Apartment for Rent in Victoria Garden, Kalyani Nagar | ₹85,000",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Children’s Play Area",
+          "Clubhouse",
+          "Parking Space",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Balcony",
+          "Piped Gas",
+          "Jogging Track",
+          "Indoor Games Room",
+          "Visitor Parking",
+          "Intercom Facility",
+          "Maintenance Staff"
+        ],
+        "Price per Sqft": 56.666666666666664,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
     {
       "id": "rec7fKDUZC18PwdEA",
       "createdTime": "2026-04-01T14:18:11.000Z",
