@@ -1,12 +1,19 @@
 {
-  "updatedAt": "2026-04-02T17:20:07.625Z",
+  "updatedAt": "2026-04-03T08:48:03.535Z",
   "table": "Area Questions",
   "records": [
     {
       "id": "rec8gumLnhl7dK1nL",
       "createdTime": "2026-04-02T08:14:54.000Z",
       "fields": {
-        "Location": "Others"
+        "Location": "Others",
+        "Area Description": " East Pune is expanding through emerging residential areas such as Lohegaon, Dhanori, and Vishrantwadi. These locations offer a combination of affordability, improving infrastructure, and proximity to key employment zones, making them increasingly relevant for both end-users and investors.\n",
+        "Question 1": "Why are Lohegaon, Dhanori, and Vishrantwadi gaining popularity?",
+        "Answer 1": "Affordability compared to premium areas and improving infrastructure are key drivers of demand. Lohegaon benefits from proximity to Pune Airport and Viman Nagar, while Dhanori offers a quieter residential environment with steady development. Vishrantwadi, being more established, provides a mix of housing options and commercial activity. Together, they capture spillover demand from nearby high-value markets. This positions them as practical alternatives with growth potential.",
+        "Question 2": "Who should consider buying in these areas?",
+        "Answer 2": "Early entry into emerging areas with untapped upside is a key draw for investors. First-time homebuyers, working professionals, and families form the core demand base. Proximity to employment hubs and improving connectivity supports daily convenience, while access to schools and essential infrastructure makes these areas suitable for long-term living. The range of housing options spans entry-level to mid-segment developments, keeping the market accessible. Competitive pricing, steady demand, and ongoing infrastructure growth together support long-term appreciation potential.",
+        "Question 3": "How is connectivity and infrastructure across these locations?",
+        "Answer 3": "These areas offer strong connectivity to Pune Airport, Viman Nagar, and key business districts across East Pune. Lohegaon benefits from close proximity to the airport and Viman Nagar, with ongoing infrastructure upgrades improving access and commute efficiency. Dhanori connects seamlessly to Vishrantwadi and Airport Road, supporting convenient daily travel for working professionals. Vishrantwadi, being more established, provides reliable connectivity through existing road networks and active commercial zones. Together, these factors enhance livability, sustain demand, and strengthen long-term real estate potential across the corridor."
       }
     },
     {
@@ -69,7 +76,14 @@
       "id": "recZLI1kWFS59d9Ev",
       "createdTime": "2026-04-02T08:14:45.000Z",
       "fields": {
-        "Location": "Magarpatta"
+        "Location": "Magarpatta",
+        "Area Description": "The Magarpatta–Amanora corridor in Hadapsar stands out as a strong real estate market, combining integrated township living with premium developments and solid infrastructure. Anchored by Magarpatta City and Amanora Park Town, it offers a self-sustained ecosystem with residential, commercial, retail, and IT spaces, enabling a walk-to-work lifestyle. Luxury projects bring high-end living, while well-built, reasonably priced housing ensures broader accessibility. With connectivity to Kharadi, Koregaon Park, Camp, and NIBM, and consistent demand from nearby IT hubs, the area offers steady appreciation and reliable rental potential.\n",
+        "Question 1": "What kind of lifestyle does the Magarpatta–Amanora corridor offer?",
+        "Answer 1": "A self-sustained township environment defines the lifestyle here. Residential, commercial, retail, and IT spaces exist in close proximity, enabling a walk-to-work setup. Daily needs such as malls, schools, and healthcare are accessible within minutes. This integrated planning reduces commute stress and improves day-to-day convenience. The result is a well-rounded urban lifestyle that appeals to both professionals and families.",
+        "Question 2": "How does the area balance luxury and affordability?",
+        "Answer 2": "The corridor includes premium developments like Yoo Pune and high-end Amanora towers. At the same time, it offers well-built township housing at relatively reasonable prices compared to Koregaon Park and Kalyani Nagar. This creates a mix of aspirational and value-driven options within the same area. Buyers can access modern amenities without fully entering ultra-premium price brackets. This balance supports both end-use demand and long-term market depth.",
+        "Question 3": "How strong is rental demand in this corridor?",
+        "Answer 3": "Rental demand is driven by the presence of major IT hubs and business districts nearby. Working professionals form a consistent tenant base across both premium and mid-segment housing. This supports stable occupancy levels and dependable rental income. Demand remains resilient due to the area’s employment connectivity. As a result, the corridor continues to perform as a reliable rental market within Pune."
       }
     },
     {
