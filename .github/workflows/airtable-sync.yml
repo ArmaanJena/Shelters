@@ -1,11 +1,9 @@
 name: Airtable Listings Sync
 
 on:
-  repository_dispatch:
-    types: [airtable_changed]
   workflow_dispatch:
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "0 */5 * * *"
 
 permissions:
   contents: write
