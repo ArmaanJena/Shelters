@@ -91,6 +91,12 @@ jobs:
           fi
           git commit -m "chore: sync Airtable data and queued leads"
           for attempt in 1 2 3; do
+            git fetch origin "$BRANCH"
+            AHEAD_COUNT="$(git rev-list --count "origin/$BRANCH..HEAD")"
+            if [ "${AHEAD_COUNT}" -eq 0 ]; then
+              echo "Nothing to push after rebase; remote already has equivalent changes."
+              exit 0
+            fi
             if git push origin "HEAD:$BRANCH"; then
               exit 0
             fi
