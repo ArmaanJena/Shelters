@@ -20,6 +20,7 @@ const AIRTABLE_FETCH_BASE_BACKOFF_MS = Number.parseInt(
   process.env.AIRTABLE_FETCH_BASE_BACKOFF_MS || '1000',
   10
 );
+const ALLOW_AIRTABLE_API = (process.env.ALLOW_AIRTABLE_API || '').toLowerCase() === 'true';
 
 const OUTPUT_PATH = path.resolve(process.cwd(), 'data', 'listings.json');
 const LISTING_IMAGES_DIR = path.resolve(process.cwd(), 'data', 'listing-images');
@@ -399,6 +400,10 @@ async function writePayloadIfChanged(payload) {
 }
 
 async function main() {
+  if (!ALLOW_AIRTABLE_API) {
+    throw new Error('Airtable API access is disabled. This script is allowed only in the sync job.');
+  }
+
   assertEnv(AIRTABLE_API_KEY, 'AIRTABLE_API_KEY');
   assertEnv(AIRTABLE_BASE_ID, 'AIRTABLE_BASE_ID');
 

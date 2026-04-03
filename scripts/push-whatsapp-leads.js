@@ -7,6 +7,7 @@ const { sanitizeAirtableFields } = require('./input-sanitizer');
 const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY || '';
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || '';
 const AIRTABLE_LEADS_TABLE_NAME = process.env.AIRTABLE_LEADS_TABLE_NAME || 'Leads';
+const ALLOW_AIRTABLE_API = (process.env.ALLOW_AIRTABLE_API || '').toLowerCase() === 'true';
 
 const QUEUE_FILES = [
   {
@@ -120,6 +121,10 @@ async function syncQueue(airtableUrl, config) {
 }
 
 async function run() {
+  if (!ALLOW_AIRTABLE_API) {
+    throw new Error('Airtable API access is disabled. This script is allowed only in the sync job.');
+  }
+
   assertRequired(AIRTABLE_API_KEY, 'AIRTABLE_API_KEY');
   assertRequired(AIRTABLE_BASE_ID, 'AIRTABLE_BASE_ID');
 

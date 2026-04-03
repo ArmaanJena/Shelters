@@ -27,6 +27,7 @@ jobs:
       AIRTABLE_AREAS_TABLE_NAME: ${{ vars.AIRTABLE_AREAS_TABLE_NAME || 'Areas' }}
       AIRTABLE_AREA_QUESTIONS_TABLE_NAME: ${{ vars.AIRTABLE_AREA_QUESTIONS_TABLE_NAME || 'Area Questions' }}
       AIRTABLE_LEADS_TABLE_NAME: ${{ vars.AIRTABLE_LEADS_TABLE_NAME || 'Leads' }}
+      ALLOW_AIRTABLE_API: "true"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
