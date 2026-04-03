@@ -125,7 +125,6 @@
                 <span class="not-found-pill">404 Error</span>
                 <h1 class="section-title not-found-title">This page does not exist</h1>
                 <p class="not-found-copy">The URL may be incorrect, or the page may have been moved. Use one of the options below to continue browsing.</p>
-                <p class="not-found-path">Requested path: <code id="requested-path">/</code></p>
                 <div class="not-found-actions">
                     <a href="/" class="btn btn-primary">Go to Homepage</a>
                     <a href="/listings/" class="btn btn-secondary">View Listings</a>
@@ -158,13 +157,5 @@
     </footer>
 
     <script src="/script.js"></script>
-    <script>
-        (function () {
-            var node = document.getElementById('requested-path');
-            if (!node) return;
-            var path = window.location.pathname + window.location.search + window.location.hash;
-            node.textContent = path || '/';
-        })();
-    </script>
 </body>
 </html>
