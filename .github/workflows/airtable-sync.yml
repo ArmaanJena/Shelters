@@ -76,11 +76,27 @@ jobs:
       - name: Commit and push
         if: steps.detect_change.outputs.changed == 'true'
         run: |
+          BRANCH="${GITHUB_REF_NAME:-main}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin "$BRANCH"
           git add data/listings.json data/areas.json data/area-questions.json data/whatsapp-leads.json data/loan-leads.json data/insurance-leads.json data/listing-images property-share
+          if git diff --cached --quiet; then
+            echo "No sync changes left after rebase."
+            exit 0
+          fi
           git commit -m "chore: sync Airtable data and queued leads"
-          git push
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:$BRANCH"; then
+              exit 0
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "Push failed after 3 attempts."
+              exit 1
+            fi
+            echo "Push rejected (likely non-fast-forward). Rebasing and retrying ($attempt/3)..."
+            git pull --rebase origin "$BRANCH"
+          done
 
       - name: No-op summary
         if: steps.detect_change.outputs.changed != 'true'
