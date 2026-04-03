@@ -35,6 +35,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Rebase on latest main
+        run: |
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          git pull --rebase origin "$BRANCH"
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -79,10 +84,9 @@ jobs:
           BRANCH="${GITHUB_REF_NAME:-main}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin "$BRANCH"
           git add data/listings.json data/areas.json data/area-questions.json data/whatsapp-leads.json data/loan-leads.json data/insurance-leads.json data/listing-images property-share
           if git diff --cached --quiet; then
-            echo "No sync changes left after rebase."
+            echo "No sync changes detected."
             exit 0
           fi
           git commit -m "chore: sync Airtable data and queued leads"
