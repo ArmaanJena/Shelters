@@ -1,6 +1,8 @@
 name: Airtable Listings Sync
 
 on:
+  repository_dispatch:
+    types: [airtable_changed]
   workflow_dispatch:
   schedule:
     - cron: "0 */4 * * *"
@@ -15,6 +17,18 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+      AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID || vars.AIRTABLE_BASE_ID || '' }}
+      AIRTABLE_TABLE_NAME: ${{ vars.AIRTABLE_TABLE_NAME || 'Listings' }}
+      AIRTABLE_VIEW_NAME: ${{ vars.AIRTABLE_VIEW_NAME || '' }}
+      AIRTABLE_MAX_RECORDS: ${{ vars.AIRTABLE_MAX_RECORDS || '0' }}
+      AIRTABLE_FETCH_MAX_RETRIES: ${{ vars.AIRTABLE_FETCH_MAX_RETRIES || '4' }}
+      AIRTABLE_FETCH_TIMEOUT_MS: ${{ vars.AIRTABLE_FETCH_TIMEOUT_MS || '20000' }}
+      AIRTABLE_FETCH_BASE_BACKOFF_MS: ${{ vars.AIRTABLE_FETCH_BASE_BACKOFF_MS || '1000' }}
+      AIRTABLE_AREAS_TABLE_NAME: ${{ vars.AIRTABLE_AREAS_TABLE_NAME || 'Areas' }}
+      AIRTABLE_AREA_QUESTIONS_TABLE_NAME: ${{ vars.AIRTABLE_AREA_QUESTIONS_TABLE_NAME || 'Area Questions' }}
+      AIRTABLE_LEADS_TABLE_NAME: ${{ vars.AIRTABLE_LEADS_TABLE_NAME || 'Leads' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,35 +40,29 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Validate Airtable config
+        run: |
+          missing=0
+          if [ -z "${AIRTABLE_API_KEY}" ]; then
+            echo "::error title=Missing AIRTABLE_API_KEY::Set repository secret AIRTABLE_API_KEY."
+            missing=1
+          fi
+          if [ -z "${AIRTABLE_BASE_ID}" ]; then
+            echo "::error title=Missing AIRTABLE_BASE_ID::Set repository secret AIRTABLE_BASE_ID (recommended) or repository variable AIRTABLE_BASE_ID."
+            missing=1
+          fi
+          if [ "$missing" -ne 0 ]; then
+            exit 1
+          fi
+
       - name: Fetch Airtable data
         run: node scripts/fetch-airtable-data.js
-        env:
-          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
-          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
-          AIRTABLE_TABLE_NAME: ${{ secrets.AIRTABLE_TABLE_NAME }}
-          AIRTABLE_VIEW_NAME: ${{ vars.AIRTABLE_VIEW_NAME || '' }}
-          AIRTABLE_MAX_RECORDS: ${{ vars.AIRTABLE_MAX_RECORDS || '0' }}
-          AIRTABLE_FETCH_MAX_RETRIES: ${{ vars.AIRTABLE_FETCH_MAX_RETRIES || '4' }}
-          AIRTABLE_FETCH_TIMEOUT_MS: ${{ vars.AIRTABLE_FETCH_TIMEOUT_MS || '20000' }}
-          AIRTABLE_FETCH_BASE_BACKOFF_MS: ${{ vars.AIRTABLE_FETCH_BASE_BACKOFF_MS || '1000' }}
 
       - name: Fetch Airtable support data
         run: node scripts/fetch-airtable-support-data.js
-        env:
-          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
-          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
-          AIRTABLE_AREAS_TABLE_NAME: ${{ vars.AIRTABLE_AREAS_TABLE_NAME || 'Areas' }}
-          AIRTABLE_AREA_QUESTIONS_TABLE_NAME: ${{ vars.AIRTABLE_AREA_QUESTIONS_TABLE_NAME || 'Area Questions' }}
-          AIRTABLE_FETCH_MAX_RETRIES: ${{ vars.AIRTABLE_FETCH_MAX_RETRIES || '4' }}
-          AIRTABLE_FETCH_TIMEOUT_MS: ${{ vars.AIRTABLE_FETCH_TIMEOUT_MS || '20000' }}
-          AIRTABLE_FETCH_BASE_BACKOFF_MS: ${{ vars.AIRTABLE_FETCH_BASE_BACKOFF_MS || '1000' }}
 
       - name: Push queued WhatsApp leads to Airtable
         run: node scripts/push-whatsapp-leads.js
-        env:
-          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
-          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
-          AIRTABLE_LEADS_TABLE_NAME: ${{ vars.AIRTABLE_LEADS_TABLE_NAME || 'Leads' }}
 
       - name: Detect JSON change
         id: detect_change

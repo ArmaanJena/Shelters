@@ -14,8 +14,12 @@ No Airtable API token is required in browser code.
 Set these repository secrets in **Settings -> Secrets and variables -> Actions**:
 
 - `AIRTABLE_API_KEY` (required)
-- `AIRTABLE_BASE_ID` (required)
-- `AIRTABLE_TABLE_NAME` (optional, default: `Properties`)
+- `AIRTABLE_BASE_ID` (required, recommended as secret)
+
+Optional repository variables:
+
+- `AIRTABLE_BASE_ID` (fallback if you prefer storing base id as variable)
+- `AIRTABLE_TABLE_NAME` (default: `Listings`)
 - `AIRTABLE_VIEW_NAME` (optional)
 - `AIRTABLE_MAX_RECORDS` (optional)
 
@@ -29,7 +33,7 @@ It runs on:
 
 - `repository_dispatch` with event type `airtable_changed`
 - `workflow_dispatch` (manual run)
-- daily safety schedule (`cron`)
+- 4-hour safety schedule (`cron`)
 
 Near-real-time behavior:
 
