@@ -11,4 +11,8 @@
 /new /new-launches/ 301
 /new-launches.html /new-launches/ 301
 
+/submit-whatsapp-lead /.netlify/functions/submit-whatsapp-lead 200
+/submit-lead /.netlify/functions/submit-lead 200
+/submit-insurance-lead /.netlify/functions/submit-insurance-lead 200
+
 /* /404.html 404
