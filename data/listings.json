@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-02T16:36:28.783Z",
+  "updatedAt": "2026-04-03T04:43:27.254Z",
   "records": [
     {
       "id": "rec0ksnCfOfz6lD6W",
@@ -2065,28 +2065,28 @@
         "Title": "40000 sqft land for sale in Kharadi ",
         "Image": [
           {
-            "id": "attjUUQ0lURqkyM2m",
-            "width": 480,
-            "height": 360,
-            "url": "/data/listing-images/recbJliz9nz25Q6v3/attjUUQ0lURqkyM2m.jpg",
-            "filename": "2026-03-27 16.41.20.jpg",
-            "size": 67656,
+            "id": "atthXn1E4vGJ0FPpy",
+            "width": 446,
+            "height": 448,
+            "url": "/data/listing-images/recbJliz9nz25Q6v3/atthXn1E4vGJ0FPpy.jpg",
+            "filename": "2026-04-03 06.36.32.jpg",
+            "size": 109274,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recbJliz9nz25Q6v3/attjUUQ0lURqkyM2m.jpg",
-                "width": 48,
+                "url": "/data/listing-images/recbJliz9nz25Q6v3/atthXn1E4vGJ0FPpy.jpg",
+                "width": 36,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recbJliz9nz25Q6v3/attjUUQ0lURqkyM2m.jpg",
-                "width": 480,
-                "height": 360
+                "url": "/data/listing-images/recbJliz9nz25Q6v3/atthXn1E4vGJ0FPpy.jpg",
+                "width": 446,
+                "height": 448
               },
               "full": {
-                "url": "/data/listing-images/recbJliz9nz25Q6v3/attjUUQ0lURqkyM2m.jpg",
-                "width": 480,
-                "height": 360
+                "url": "/data/listing-images/recbJliz9nz25Q6v3/atthXn1E4vGJ0FPpy.jpg",
+                "width": 446,
+                "height": 448
               }
             }
           }
@@ -4719,7 +4719,7 @@
             }
           }
         ],
-        "Price": 160000000,
+        "Price": 180000000,
         "Location": "Kharadi",
         "Property Type": "Plot",
         "Offer Type": "Sale",
@@ -4729,7 +4729,7 @@
         "Size (sqft)": 46000,
         "Description": "Strategically located 46,000 sq ft parcel in Upper Kharadi, a hotspot for upcoming residential projects. With proposed R-Zone and strong developer interest in the vicinity, this plot offers high appreciation and development potential. Competitive pricing at ₹16 Cr makes it a standout deal.",
         "Short Description": "46,000 sq ft plot in Upper Kharadi for Sale.",
-        "Price per Sqft": 3478.2608695652175,
+        "Price per Sqft": 3913.0434782608695,
         "Amenities Count": 0,
         "AI: Listing Summary": {
           "state": "error",
