@@ -16,7 +16,8 @@ const pageQueryParams = new URLSearchParams(window.location.search);
 let currentModalRecord = null;
 const isAreasPage = document.body?.dataset?.page === 'areas';
 const isNewLaunchesPage = document.body?.dataset?.page === 'new-launches';
-const DEFAULT_NEW_LAUNCH_LIMIT = Number.parseInt(document.body?.dataset?.newLaunchLimit || '12', 10) || 12;
+const NEW_LISTING_WINDOW_DAYS =
+  Number.parseInt(document.body?.dataset?.newListingWindowDays || '7', 10) || 7;
 const LISTINGS_PER_PAGE = 48;
 let fixedAreaLocation = getInitialAreaFromContext();
 let newLaunchRecordIds = new Set();
@@ -552,7 +553,9 @@ function getOfferTypeValue(fields) {
 
 function computeNewLaunchRecordIds(records) {
   if (!Array.isArray(records) || records.length === 0) return new Set();
-  const launchRecords = records.slice(-DEFAULT_NEW_LAUNCH_LIMIT);
+  const launchRecords = records.filter((record) =>
+    isRecentlyAdded(record?.createdTime, NEW_LISTING_WINDOW_DAYS)
+  );
   return new Set(launchRecords.map((record) => record.id).filter(Boolean));
 }
 
@@ -766,7 +769,7 @@ async function applyFiltersAndRender(input) {
   const effectiveSort = sort === 'default' ? 'newest' : sort;
   const keywordQuery = getKeywordQuery();
 
-  if (isNewLaunchesPage && newLaunchRecordIds.size > 0) {
+  if (isNewLaunchesPage || isNewLaunchFilter) {
     filtered = filtered.filter(record => newLaunchRecordIds.has(record.id));
   }
 
@@ -1467,7 +1470,7 @@ function createPropertyCard(record) {
   const location = fields['Location'] || 'Unknown';
   const price = fields['Price'] ? `₹${fields['Price'].toLocaleString()}` : 'Price on request';
   const listingType = getOfferTypeValue(fields) || 'Property';
-  const showNewBadge = isRecentlyAdded(record.createdTime, 7);
+  const showNewBadge = isRecentlyAdded(record.createdTime, NEW_LISTING_WINDOW_DAYS);
   const shortDescription = fields['Short Description'] || fields['Description'] || '';
   const description = shortDescription ? truncateText(shortDescription, 110) : '';
   const escapedImageUrl = escapeHtml(imageUrl);
