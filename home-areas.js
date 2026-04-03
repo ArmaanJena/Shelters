@@ -4,6 +4,18 @@ const HOME_AREAS_CACHE_TTL = 10 * 60 * 1000;
 const HOME_LISTINGS_ENDPOINT = 'data/listings.json';
 const HOME_AREAS_ENDPOINT = 'data/areas.json';
 const HOME_AREA_QUESTIONS_ENDPOINT = 'data/area-questions.json';
+const HOME_JSON_FETCH_TIMEOUT_MS = 15000;
+const HOME_SLOW_LOAD_NOTICE_MS = 2500;
+
+function classifyHomeFetchFailure(error) {
+  if (error?.name === 'AbortError') {
+    return `Timeout while loading JSON (${HOME_JSON_FETCH_TIMEOUT_MS}ms).`;
+  }
+  if (error instanceof TypeError) {
+    return 'Network failure while loading JSON.';
+  }
+  return (error?.message || 'Unknown JSON fetch failure.').toString();
+}
 
 function homeAreasEscapeHtml(value) {
   return (value || '')
@@ -114,11 +126,25 @@ function normalizePayloadRecords(payload) {
 }
 
 async function fetchStaticTableRecords(endpoint) {
-  const response = await fetch(`${endpoint}?ts=${Date.now()}`, { cache: 'no-store' });
-  if (!response.ok) {
-    throw new Error(`Failed to fetch ${endpoint} (${response.status})`);
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), HOME_JSON_FETCH_TIMEOUT_MS);
+  let payload;
+  try {
+    const response = await fetch(`${endpoint}?ts=${Date.now()}`, {
+      cache: 'no-store',
+      signal: controller.signal
+    });
+    if (!response.ok) {
+      throw new Error(`Invalid response (${response.status}) for ${endpoint}.`);
+    }
+    try {
+      payload = await response.json();
+    } catch (error) {
+      throw new Error(`Invalid JSON payload for ${endpoint}.`);
+    }
+  } finally {
+    window.clearTimeout(timeoutId);
   }
-  const payload = await response.json();
   return normalizePayloadRecords(payload);
 }
 
@@ -142,9 +168,23 @@ function pickFeaturedAreas(items) {
 }
 
 async function fetchAreasFromListings() {
-  const response = await fetch(`${HOME_LISTINGS_ENDPOINT}?ts=${Date.now()}`, { cache: 'no-store' });
-  if (!response.ok) return [];
-  const payload = await response.json();
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), HOME_JSON_FETCH_TIMEOUT_MS);
+  let payload;
+  try {
+    const response = await fetch(`${HOME_LISTINGS_ENDPOINT}?ts=${Date.now()}`, {
+      cache: 'no-store',
+      signal: controller.signal
+    });
+    if (!response.ok) return [];
+    try {
+      payload = await response.json();
+    } catch (error) {
+      throw new Error(`Invalid JSON payload for ${HOME_LISTINGS_ENDPOINT}.`);
+    }
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
   const records = Array.isArray(payload?.records) ? payload.records : Array.isArray(payload) ? payload : [];
   const areasMap = new Map();
 
@@ -201,6 +241,22 @@ function renderHomeAreas(items) {
 }
 
 async function loadHomeAreas() {
+  const grid = document.getElementById(HOME_FEATURED_AREAS_GRID_ID);
+  let slowNoticeTimer = null;
+  if (grid) {
+    slowNoticeTimer = window.setTimeout(() => {
+      if (!grid.querySelector('.collection-card')) {
+        grid.innerHTML = `
+          <a href="./areas/" class="collection-card" aria-label="Explore all areas">
+            <h3>Loading Areas</h3>
+            <p>Area data is taking longer than expected. Please wait or open the areas page.</p>
+            <div class="collection-glow"></div>
+          </a>
+        `;
+      }
+    }, HOME_SLOW_LOAD_NOTICE_MS);
+  }
+
   const cachedItems = getHomeAreasCache();
   if (cachedItems && cachedItems.length > 0) {
     renderHomeAreas(cachedItems);
@@ -215,7 +271,7 @@ async function loadHomeAreas() {
       .map((record) => normalizeAreaRecord(record, 'areas'))
       .filter(Boolean);
   } catch (error) {
-    console.warn('Unable to load areas static data:', error);
+    console.warn('Unable to load areas static data:', classifyHomeFetchFailure(error));
   }
 
   try {
@@ -224,7 +280,7 @@ async function loadHomeAreas() {
       .map((record) => normalizeAreaRecord(record, 'area_questions'))
       .filter(Boolean);
   } catch (error) {
-    console.warn('Unable to load area-questions static data:', error);
+    console.warn('Unable to load area-questions static data:', classifyHomeFetchFailure(error));
   }
 
   // Merge both tables so homepage is not limited by whichever table has fewer rows.
@@ -255,12 +311,13 @@ async function loadHomeAreas() {
     try {
       areas = await fetchAreasFromListings();
     } catch (error) {
-      console.warn('Unable to build areas from listings fallback:', error);
+      console.warn('Unable to build areas from listings fallback:', classifyHomeFetchFailure(error));
     }
   }
 
   const featuredAreas = pickFeaturedAreas(areas);
   renderHomeAreas(featuredAreas);
+  if (slowNoticeTimer) window.clearTimeout(slowNoticeTimer);
   if (featuredAreas.length > 0) setHomeAreasCache(featuredAreas);
 }
 

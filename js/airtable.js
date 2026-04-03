@@ -9,6 +9,8 @@ const AREA_QUESTIONS_CACHE_TTL = 10 * 60 * 1000;
 const LAST_VIEWED_STORAGE_KEY = 'listings_last_viewed_v1';
 const LISTING_IMAGE_REFRESH_CACHE_KEY = 'listings_image_refresh_v1';
 const LISTING_IMAGE_REFRESH_TTL = 6 * 60 * 60 * 1000;
+const JSON_FETCH_TIMEOUT_MS = 15000;
+const SLOW_LOAD_NOTICE_MS = 2500;
 const CARD_IMAGE_FALLBACK =
   'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%23cbd5e1%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23334155%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2232%22%3EImage%20Unavailable%3C/text%3E%3C/svg%3E';
 
@@ -23,6 +25,68 @@ let fixedAreaLocation = getInitialAreaFromContext();
 let newLaunchRecordIds = new Set();
 let areaQuestionsRecords = [];
 let currentListingsPage = 1;
+let listingsSlowLoadTimer = null;
+const DEMO_JSON_FAILURE = pageQueryParams.get('demo') === 'json-failure';
+const DEMO_EMPTY_DATASET = pageQueryParams.get('demo') === 'empty-dataset';
+const DEMO_MISSING_FIELDS = pageQueryParams.get('demo') === 'missing-fields';
+const DEMO_SLOW_LOAD = pageQueryParams.get('demo') === 'slow-load';
+
+function delay(ms) {
+  return new Promise((resolve) => window.setTimeout(resolve, ms));
+}
+
+function classifyFetchFailure(error) {
+  const message = (error?.message || '').toString();
+  if (error?.name === 'AbortError') {
+    return `Timeout while loading JSON (${JSON_FETCH_TIMEOUT_MS}ms).`;
+  }
+  if (error instanceof TypeError) {
+    return 'Network failure while loading JSON.';
+  }
+  if (/invalid response|invalid json|unexpected token|json/i.test(message)) {
+    return `Invalid response: ${message}`;
+  }
+  return message || 'Unknown JSON fetch failure.';
+}
+
+function clearListingsSlowLoadNotice() {
+  if (listingsSlowLoadTimer) {
+    window.clearTimeout(listingsSlowLoadTimer);
+    listingsSlowLoadTimer = null;
+  }
+}
+
+async function fetchJsonWithTimeout(endpoint, label) {
+  if (DEMO_JSON_FAILURE && /listings\.json/i.test(endpoint)) {
+    throw new Error('Simulated JSON failure for fallback validation.');
+  }
+
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), JSON_FETCH_TIMEOUT_MS);
+
+  try {
+    if (DEMO_SLOW_LOAD && /listings\.json/i.test(endpoint)) {
+      await delay(SLOW_LOAD_NOTICE_MS + 1800);
+    }
+
+    const response = await fetch(endpoint, {
+      cache: 'no-store',
+      signal: controller.signal
+    });
+
+    if (!response.ok) {
+      throw new Error(`Invalid response (${response.status}) for ${label}.`);
+    }
+
+    try {
+      return await response.json();
+    } catch (error) {
+      throw new Error(`Invalid JSON payload for ${label}.`);
+    }
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
+}
 
 function getLastViewedMap() {
   const cachedRaw = localStorage.getItem(LAST_VIEWED_STORAGE_KEY);
@@ -169,11 +233,15 @@ function cloneRecordWithImages(record, images) {
 
 async function fetchFreshRecordFromStatic(recordId) {
   if (!recordId) return null;
-  const response = await fetch(`${LISTINGS_STATIC_ENDPOINT}?ts=${Date.now()}`, {
-    cache: 'no-store'
-  });
-  if (!response.ok) return null;
-  const payload = await response.json();
+  let payload;
+  try {
+    payload = await fetchJsonWithTimeout(
+      `${LISTINGS_STATIC_ENDPOINT}?ts=${Date.now()}`,
+      'listings refresh'
+    );
+  } catch (error) {
+    return null;
+  }
   const records = Array.isArray(payload?.records) ? payload.records : Array.isArray(payload) ? payload : [];
   return records.find((item) => item.id === recordId) || null;
 }
@@ -354,14 +422,10 @@ async function fetchAreaQuestionsRecords() {
     return areaQuestionsRecords;
   }
 
-  const response = await fetch(`${AREA_QUESTIONS_STATIC_ENDPOINT}?ts=${Date.now()}`, {
-    cache: 'no-store'
-  });
-  if (!response.ok) {
-    throw new Error(`Failed to fetch static area questions (${response.status})`);
-  }
-
-  const data = await response.json();
+  const data = await fetchJsonWithTimeout(
+    `${AREA_QUESTIONS_STATIC_ENDPOINT}?ts=${Date.now()}`,
+    'area questions'
+  );
   const records = Array.isArray(data?.records) ? data.records : Array.isArray(data) ? data : [];
 
   areaQuestionsRecords = records;
@@ -446,6 +510,21 @@ function escapeHtml(value) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+function toSafeDisplayText(value, fallback = '') {
+  if (value === null || value === undefined) return fallback;
+  const text = value.toString().trim();
+  if (!text || text.toLowerCase() === 'undefined' || text.toLowerCase() === 'null') return fallback;
+  return text;
+}
+
+function formatDisplayPrice(value) {
+  const numeric = Number(value);
+  if (Number.isFinite(numeric) && numeric > 0) {
+    return `₹${numeric.toLocaleString('en-IN')}`;
+  }
+  return 'Price on request';
 }
 
 async function hydrateAreaInsights(location) {
@@ -633,22 +712,33 @@ function applyQueryParamsToFilters() {
 function showLoading() {
   const listingsContainer = getListingsContainer();
   if (!listingsContainer) return;
+  clearListingsSlowLoadNotice();
 
   listingsContainer.innerHTML = `
     <div class="loading" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; min-height: 120px; justify-content: center;">
       <div class="spinner" style="border: 4px solid #e2e8f0; border-top: 4px solid #2563eb; border-radius: 50%; width: 36px; height: 36px; animation: spin 1s linear infinite;"></div>
-      <span>Loading properties...</span>
+      <span id="listings-loading-status">Loading properties...</span>
     </div>
     <style>
       @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
   `;
+
+  listingsSlowLoadTimer = window.setTimeout(() => {
+    const statusNode = document.getElementById('listings-loading-status');
+    if (statusNode) {
+      statusNode.textContent = 'Still loading... JSON response is slower than usual.';
+    }
+  }, SLOW_LOAD_NOTICE_MS);
 }
 
 function showError(message) {
   const listingsContainer = getListingsContainer();
   if (!listingsContainer) return;
-  listingsContainer.innerHTML = `<div class="error">${message}</div>`;
+  clearListingsSlowLoadNotice();
+  listingsContainer.innerHTML = `<div class="error">${
+    message || 'Content temporarily unavailable. Please try again.'
+  }</div>`;
 }
 
 
@@ -681,6 +771,60 @@ function setListingsCache(records) {
   localStorage.setItem(LISTINGS_CACHE_KEY, JSON.stringify({ ts: Date.now(), records }));
 }
 
+function normalizeListingRecord(record, index) {
+  const safeFields =
+    record?.fields && typeof record.fields === 'object' && !Array.isArray(record.fields)
+      ? record.fields
+      : {};
+
+  const safeImages = Array.isArray(safeFields.Image) ? safeFields.Image : [];
+
+  return {
+    id: (record?.id || `listing-${index + 1}`).toString(),
+    createdTime: record?.createdTime || null,
+    fields: {
+      ...safeFields,
+      Title:
+        typeof safeFields.Title === 'string' && safeFields.Title.trim()
+          ? safeFields.Title.trim()
+          : `Untitled Property #${index + 1}`,
+      Location:
+        typeof safeFields.Location === 'string' && safeFields.Location.trim()
+          ? safeFields.Location.trim()
+          : 'Location not specified',
+      Price:
+        safeFields.Price === null || safeFields.Price === undefined || safeFields.Price === ''
+          ? null
+          : safeFields.Price,
+      Image: safeImages
+    }
+  };
+}
+
+function normalizeListingRecords(records) {
+  if (!Array.isArray(records)) return [];
+  const normalized = records
+    .filter((record) => record && typeof record === 'object' && !Array.isArray(record))
+    .map((record, index) => normalizeListingRecord(record, index));
+
+  if (DEMO_MISSING_FIELDS && normalized.length > 0) {
+    const first = normalized[0];
+    normalized[0] = {
+      ...first,
+      fields: {
+        ...(first.fields || {}),
+        Title: '',
+        Location: '',
+        Price: null,
+        Description: null,
+        Image: []
+      }
+    };
+  }
+
+  return normalized;
+}
+
 async function fetchListingsFromStaticJson() {
   const endpoints = [
     LISTINGS_STATIC_ENDPOINT,
@@ -691,21 +835,26 @@ async function fetchListingsFromStaticJson() {
   let lastError = null;
   for (const endpoint of endpoints) {
     try {
-      const response = await fetch(endpoint, { cache: 'no-store' });
-      if (!response.ok) {
-        lastError = new Error(`Static listings not available (${response.status}) at ${endpoint}`);
-        continue;
+      const data = await fetchJsonWithTimeout(endpoint, `listings (${endpoint})`);
+      if (DEMO_EMPTY_DATASET && /listings\.json/i.test(endpoint)) {
+        return [];
       }
-      const data = await response.json();
       if (Array.isArray(data.records)) return data.records;
       if (Array.isArray(data)) return data;
-      return [];
+      throw new Error(`Invalid response structure for listings at ${endpoint}.`);
     } catch (error) {
       lastError = error;
     }
   }
 
   throw lastError || new Error('Unable to load static listings JSON.');
+}
+
+function triggerListingsFallback(message) {
+  allListings = [];
+  newLaunchRecordIds = new Set();
+  showError(message || 'Content temporarily unavailable. Please try again.');
+  updateResultsSummary(0, 1, 1);
 }
 
 async function fetchListings() {
@@ -718,10 +867,11 @@ async function fetchListings() {
       setListingsCache(records);
     }
 
-    allListings = records;
+    allListings = normalizeListingRecords(records);
+    clearListingsSlowLoadNotice();
     newLaunchRecordIds = computeNewLaunchRecordIds(allListings);
     if (allListings.length === 0) {
-      showError('No properties found in listings data.');
+      showError('No properties available at the moment.');
     } else {
       hydrateFilterOptions(allListings);
       applyQueryParamsToFilters();
@@ -729,51 +879,35 @@ async function fetchListings() {
       applyFiltersAndRender();
     }
   } catch (error) {
-    showError('Listings data error: ' + error.message + '<br><br><b>Showing a test property for UI debugging.</b>');
-    // Add a test property so UI can be tested
-    allListings = [{
-      id: 'test1',
-      fields: {
-        Title: 'Test Property',
-        Location: 'Viman Nagar',
-        Type: 'Flat',
-        ListingType: 'Buy',
-        Price: 12345678,
-        Description: 'This is a test property. If you see this, listings.json is not loading.',
-        Image: []
-      }
-    }];
-    newLaunchRecordIds = computeNewLaunchRecordIds(allListings);
-    hydrateFilterOptions(allListings);
-    applyQueryParamsToFilters();
-    applyAreaPageContext(allListings);
-    applyFiltersAndRender();
+    console.error('Listings data error:', classifyFetchFailure(error));
+    triggerListingsFallback('Content temporarily unavailable. Please try again.');
   }
 }
 
 // Filtering and sorting logic
 
 async function applyFiltersAndRender(input) {
-  const requestedPage = typeof input === 'number' && Number.isFinite(input) ? Math.max(1, Math.floor(input)) : 1;
-  let filtered = [...allListings];
+  try {
+    const requestedPage = typeof input === 'number' && Number.isFinite(input) ? Math.max(1, Math.floor(input)) : 1;
+    let filtered = [...allListings];
 
-  // Get filter values
-  const selectedLocation = document.getElementById('filter-location')?.value || '';
-  const location = fixedAreaLocation || selectedLocation;
-  const type = document.getElementById('filter-type')?.value || '';
-  const listingType = document.getElementById('filter-listing-type')?.value || '';
-  const isNewLaunchFilter = listingType === '__new_launch__';
-  const minPrice = parseInt(document.getElementById('filter-min-price')?.value, 10);
-  const maxPrice = parseInt(document.getElementById('filter-max-price')?.value, 10);
-  const sort = document.getElementById('sort-price')?.value || 'newest';
-  const effectiveSort = sort === 'default' ? 'newest' : sort;
-  const keywordQuery = getKeywordQuery();
+    // Get filter values
+    const selectedLocation = document.getElementById('filter-location')?.value || '';
+    const location = fixedAreaLocation || selectedLocation;
+    const type = document.getElementById('filter-type')?.value || '';
+    const listingType = document.getElementById('filter-listing-type')?.value || '';
+    const isNewLaunchFilter = listingType === '__new_launch__';
+    const minPrice = parseInt(document.getElementById('filter-min-price')?.value, 10);
+    const maxPrice = parseInt(document.getElementById('filter-max-price')?.value, 10);
+    const sort = document.getElementById('sort-price')?.value || 'newest';
+    const effectiveSort = sort === 'default' ? 'newest' : sort;
+    const keywordQuery = getKeywordQuery();
 
-  if (isNewLaunchesPage || isNewLaunchFilter) {
-    filtered = filtered.filter(record => newLaunchRecordIds.has(record.id));
-  }
+    if (isNewLaunchesPage || isNewLaunchFilter) {
+      filtered = filtered.filter(record => newLaunchRecordIds.has(record.id));
+    }
 
-  filtered = filtered.filter(record => {
+    filtered = filtered.filter(record => {
     const f = record.fields;
     let pass = true;
     if (location && f['Location'] !== location) pass = false;
@@ -792,34 +926,38 @@ async function applyFiltersAndRender(input) {
       ].filter(Boolean).join(' ').toLowerCase();
       if (!searchableText.includes(keywordQuery)) pass = false;
     }
-    return pass;
-  });
-
-  if (effectiveSort === 'newest') {
-    filtered.sort((a, b) => new Date(b.createdTime || 0) - new Date(a.createdTime || 0));
-  } else if (effectiveSort === 'last-viewed' || effectiveSort === 'recent') {
-    const lastViewedMap = getLastViewedMap();
-    filtered.sort((a, b) => {
-      const aLastViewed = Number(lastViewedMap[a.id]) || 0;
-      const bLastViewed = Number(lastViewedMap[b.id]) || 0;
-      if (bLastViewed !== aLastViewed) return bLastViewed - aLastViewed;
-      return new Date(b.createdTime || 0) - new Date(a.createdTime || 0);
+      return pass;
     });
-  } else if (effectiveSort === 'price-asc') {
-    filtered.sort((a, b) => (Number(a.fields?.['Price']) || 0) - (Number(b.fields?.['Price']) || 0));
-  } else if (effectiveSort === 'price-desc') {
-    filtered.sort((a, b) => (Number(b.fields?.['Price']) || 0) - (Number(a.fields?.['Price']) || 0));
-  }
 
-  await renderPaginatedListings(filtered, requestedPage);
-  updateResultsSummary(filtered.length, currentListingsPage, Math.max(1, Math.ceil(filtered.length / LISTINGS_PER_PAGE)));
+    if (effectiveSort === 'newest') {
+      filtered.sort((a, b) => new Date(b.createdTime || 0) - new Date(a.createdTime || 0));
+    } else if (effectiveSort === 'last-viewed' || effectiveSort === 'recent') {
+      const lastViewedMap = getLastViewedMap();
+      filtered.sort((a, b) => {
+        const aLastViewed = Number(lastViewedMap[a.id]) || 0;
+        const bLastViewed = Number(lastViewedMap[b.id]) || 0;
+        if (bLastViewed !== aLastViewed) return bLastViewed - aLastViewed;
+        return new Date(b.createdTime || 0) - new Date(a.createdTime || 0);
+      });
+    } else if (effectiveSort === 'price-asc') {
+      filtered.sort((a, b) => (Number(a.fields?.['Price']) || 0) - (Number(b.fields?.['Price']) || 0));
+    } else if (effectiveSort === 'price-desc') {
+      filtered.sort((a, b) => (Number(b.fields?.['Price']) || 0) - (Number(a.fields?.['Price']) || 0));
+    }
+
+    await renderPaginatedListings(filtered, requestedPage);
+    updateResultsSummary(filtered.length, currentListingsPage, Math.max(1, Math.ceil(filtered.length / LISTINGS_PER_PAGE)));
+  } catch (error) {
+    console.error('Rendering failure in listings UI:', error);
+    triggerListingsFallback('Content temporarily unavailable. Please try again.');
+  }
 }
 
 function updateResultsSummary(count, page = 1, totalPages = 1) {
   const summary = document.getElementById('results-summary');
   if (summary) {
     if (count === 0) {
-      summary.innerHTML = isNewLaunchesPage ? 'No new listings found' : 'No properties found';
+      summary.innerHTML = 'No properties available at the moment.';
     } else {
       const pageText = totalPages > 1 ? ` (Page ${page} of ${totalPages})` : '';
       if (isNewLaunchesPage) {
@@ -929,16 +1067,28 @@ function renderListings(records) {
   if (!listingsContainer) return;
 
   if (!records || records.length === 0) {
-    listingsContainer.innerHTML = '<div class="no-listings">No properties found.</div>';
+    listingsContainer.innerHTML =
+      '<div class="no-listings">No properties available at the moment.</div>';
     return;
   }
   listingsContainer.innerHTML = '';
   const grid = document.createElement('div');
   grid.className = 'property-grid';
   records.forEach(record => {
-    const card = createPropertyCard(record);
-    grid.appendChild(card);
+    try {
+      const card = createPropertyCard(record);
+      if (card) grid.appendChild(card);
+    } catch (error) {
+      console.error('Skipping malformed listing card payload:', error);
+    }
   });
+
+  if (!grid.childElementCount) {
+    listingsContainer.innerHTML =
+      '<div class="no-listings">No properties available at the moment.</div>';
+    return;
+  }
+
   listingsContainer.appendChild(grid);
 }
 
@@ -1088,7 +1238,7 @@ function getComparableSize(fields) {
 }
 
 function formatCompactPrice(fields) {
-  return fields['Price'] ? `₹${Number(fields['Price']).toLocaleString()}` : 'Price on request';
+  return formatDisplayPrice(fields['Price']);
 }
 
 function isSizeSimilar(baseSize, candidateSize) {
@@ -1137,22 +1287,30 @@ function renderSuggestedMiniCards(records, mode = 'page') {
 
   return records.map(record => {
     const fields = record.fields || {};
-    const title = fields['Title'] || 'Untitled';
-    const location = fields['Location'] || 'Unknown';
-    const type = getPropertyTypeValue(fields) || 'Property';
-    const sizeRaw = fields['Area'] || fields['Size (sqft)'] || '';
+    const title = toSafeDisplayText(fields['Title'], 'Untitled');
+    const location = toSafeDisplayText(fields['Location'], 'Location not specified');
+    const type = toSafeDisplayText(getPropertyTypeValue(fields), 'Property');
+    const sizeRaw = toSafeDisplayText(fields['Area'] || fields['Size (sqft)'], '');
     const sizeText = sizeRaw ? ` | ${sizeRaw}` : '';
     const price = formatCompactPrice(fields);
-    const imageUrl = fields['Image']?.[0]?.thumbnails?.small?.url || fields['Image']?.[0]?.url || 'https://via.placeholder.com/220x140?text=Property';
+    const imageUrl =
+      resolveImageUrl(fields['Image']?.[0]?.thumbnails?.small?.url) ||
+      resolveImageUrl(fields['Image']?.[0]?.url) ||
+      CARD_IMAGE_FALLBACK;
+    const safeTitle = escapeHtml(title);
+    const safeLocation = escapeHtml(location);
+    const safeType = escapeHtml(type);
+    const safePrice = escapeHtml(price);
+    const safeImageUrl = escapeHtml(imageUrl);
 
     if (mode === 'modal') {
       return `
-        <button type="button" class="suggested-mini-card suggested-mini-card-modal" data-record-id="${record.id}" aria-label="Open ${title}">
-          <img src="${imageUrl}" alt="${title}" class="suggested-mini-thumb" loading="lazy" />
+        <button type="button" class="suggested-mini-card suggested-mini-card-modal" data-record-id="${record.id}" aria-label="Open ${safeTitle}">
+          <img src="${safeImageUrl}" alt="${safeTitle}" class="suggested-mini-thumb" loading="lazy" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';" />
           <div class="suggested-mini-body">
-            <p class="suggested-mini-name">${title}</p>
-            <p class="suggested-mini-meta">${location} | ${type}${sizeText}</p>
-            <p class="suggested-mini-price">${price}</p>
+            <p class="suggested-mini-name">${safeTitle}</p>
+            <p class="suggested-mini-meta">${safeLocation} | ${safeType}${sizeText}</p>
+            <p class="suggested-mini-price">${safePrice}</p>
           </div>
         </button>
       `;
@@ -1160,12 +1318,12 @@ function renderSuggestedMiniCards(records, mode = 'page') {
 
     const detailUrl = buildPropertyShareUrl(record.id);
     return `
-      <a href="${detailUrl}" class="suggested-mini-card" aria-label="View ${title}">
-        <img src="${imageUrl}" alt="${title}" class="suggested-mini-thumb" loading="lazy" />
+      <a href="${detailUrl}" class="suggested-mini-card" aria-label="View ${safeTitle}">
+        <img src="${safeImageUrl}" alt="${safeTitle}" class="suggested-mini-thumb" loading="lazy" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';" />
         <div class="suggested-mini-body">
-          <p class="suggested-mini-name">${title}</p>
-          <p class="suggested-mini-meta">${location} | ${type}${sizeText}</p>
-          <p class="suggested-mini-price">${price}</p>
+          <p class="suggested-mini-name">${safeTitle}</p>
+          <p class="suggested-mini-meta">${safeLocation} | ${safeType}${sizeText}</p>
+          <p class="suggested-mini-price">${safePrice}</p>
         </div>
       </a>
     `;
@@ -1348,13 +1506,19 @@ function openPropertyShareSheet(record, shareLink) {
   if (existing) existing.remove();
 
   const fields = record?.fields || {};
-  const title = fields['Title'] || 'Property';
-  const location = fields['Location'] || 'Unknown';
-  const price = fields['Price'] ? `₹${fields['Price'].toLocaleString()}` : 'Price on request';
-  const listingType = getOfferTypeValue(fields) || 'Property';
+  const title = toSafeDisplayText(fields['Title'], 'Property');
+  const location = toSafeDisplayText(fields['Location'], 'Location not specified');
+  const price = formatDisplayPrice(fields['Price']);
+  const listingType = toSafeDisplayText(getOfferTypeValue(fields), 'Property');
   const thumbUrl = fields['Image']?.[0]?.thumbnails?.small?.url || fields['Image']?.[0]?.url || 'https://via.placeholder.com/176x132?text=Property';
   const shareText = buildPropertyShareText({ title, location, price, listingType, url: shareLink });
   const whatsappShareLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+  const safeTitle = escapeHtml(title);
+  const safeLocation = escapeHtml(location);
+  const safeListingType = escapeHtml(listingType);
+  const safePrice = escapeHtml(price);
+  const safeThumbUrl = escapeHtml(resolveImageUrl(thumbUrl) || CARD_IMAGE_FALLBACK);
+  const safeShareLink = escapeHtml(shareLink || '');
 
   const overlay = document.createElement('div');
   overlay.id = 'property-share-sheet-overlay';
@@ -1368,15 +1532,15 @@ function openPropertyShareSheet(record, shareLink) {
       <div class="property-share-sheet-body">
         <p class="property-share-sheet-subtitle">Send a link</p>
         <div class="property-share-sheet-property">
-          <img src="${thumbUrl}" alt="${title}" class="property-share-sheet-thumb" />
+          <img src="${safeThumbUrl}" alt="${safeTitle}" class="property-share-sheet-thumb" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';" />
           <div>
-            <p class="property-share-sheet-name">${title}</p>
-            <p class="property-share-sheet-meta">${location} • ${listingType} • ${price}</p>
+            <p class="property-share-sheet-name">${safeTitle}</p>
+            <p class="property-share-sheet-meta">${safeLocation} • ${safeListingType} • ${safePrice}</p>
           </div>
         </div>
         <p class="property-share-sheet-label">Link to share</p>
         <div class="property-share-sheet-linkrow">
-          <input class="property-share-sheet-link" type="text" readonly value="${shareLink}" />
+          <input class="property-share-sheet-link" type="text" readonly value="${safeShareLink}" />
           <button type="button" class="property-share-sheet-copy">COPY LINK</button>
         </div>
         <div class="property-share-sheet-actions">
@@ -1462,16 +1626,16 @@ function createPropertyCard(record) {
   const fields = record.fields;
   const firstImage = Array.isArray(fields['Image']) ? fields['Image'][0] : null;
   const imageSources = getAttachmentImageSources(firstImage);
-  const imageUrl = imageSources.card || 'https://via.placeholder.com/400x250?text=No+Image';
+  const imageUrl = imageSources.card || CARD_IMAGE_FALLBACK;
   const imageFullUrl = imageSources.full || imageUrl;
   const imageSrcSet =
     imageFullUrl && imageFullUrl !== imageUrl ? `${imageUrl} 1x, ${imageFullUrl} 2x` : '';
-  const title = fields['Title'] || 'Untitled';
-  const location = fields['Location'] || 'Unknown';
-  const price = fields['Price'] ? `₹${fields['Price'].toLocaleString()}` : 'Price on request';
-  const listingType = getOfferTypeValue(fields) || 'Property';
+  const title = toSafeDisplayText(fields['Title'], 'Untitled');
+  const location = toSafeDisplayText(fields['Location'], 'Location not specified');
+  const price = formatDisplayPrice(fields['Price']);
+  const listingType = toSafeDisplayText(getOfferTypeValue(fields), 'Property');
   const showNewBadge = isRecentlyAdded(record.createdTime, NEW_LISTING_WINDOW_DAYS);
-  const shortDescription = fields['Short Description'] || fields['Description'] || '';
+  const shortDescription = toSafeDisplayText(fields['Short Description'] || fields['Description'], '');
   const description = shortDescription ? truncateText(shortDescription, 110) : '';
   const escapedImageUrl = escapeHtml(imageUrl);
   const escapedImageSrcSet = escapeHtml(imageSrcSet);
@@ -1495,7 +1659,7 @@ function createPropertyCard(record) {
     <div class="bento-content" style="padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
       <h3 class="property-title">${escapedTitle}</h3>
       <div class="property-location">${escapedLocation}</div>
-      <div class="property-description">${escapedDescription}</div>
+      ${escapedDescription ? `<div class="property-description">${escapedDescription}</div>` : ''}
       <div class="property-price">${escapedPrice}</div>
     </div>
   `;
@@ -1624,23 +1788,23 @@ function renderModalPropertyDetail(record) {
   const galleryImages = Array.isArray(fields['Image'])
     ? fields['Image'].map((image) => resolveImageUrl(image?.url)).filter(Boolean)
     : [];
-  const imageUrl = galleryImages[0] || 'https://via.placeholder.com/800x400?text=No+Image';
-  const title = fields['Title'] || 'Untitled';
-  const location = fields['Location'] || 'Unknown';
-  const price = fields['Price'] ? `₹${fields['Price'].toLocaleString()}` : 'Price on request';
-  const description = fields['Description'] || '';
-  const type = fields['Property Type'] || fields['Type'] || '';
-  const listingType = fields['Offer Type'] || fields['ListingType'] || '';
-  const area = fields['Area'] || fields['Size (sqft)'] ? `${fields['Area'] || fields['Size (sqft)']}${fields['Size (sqft)'] && !fields['Area'] ? ' sqft' : ''}` : '';
-  const bedrooms = fields['Bedrooms'] || '';
-  const bathrooms = fields['Bathrooms'] || '';
-  const amenities = Array.isArray(fields['Amenities']) ? fields['Amenities'].join(', ') : (fields['Amenities'] || '');
-  const status = fields['Status'] || '';
-  const floor = fields['Floor'] || '';
-  const age = fields['Age'] || '';
-  const facing = fields['Facing'] || '';
-  const parking = fields['Parking'] || '';
-  const furnishing = fields['Furnishing'] || '';
+  const imageUrl = galleryImages[0] || CARD_IMAGE_FALLBACK;
+  const title = toSafeDisplayText(fields['Title'], 'Untitled');
+  const location = toSafeDisplayText(fields['Location'], 'Location not specified');
+  const price = formatDisplayPrice(fields['Price']);
+  const description = toSafeDisplayText(fields['Description'], '');
+  const type = toSafeDisplayText(fields['Property Type'] || fields['Type'], '');
+  const listingType = toSafeDisplayText(fields['Offer Type'] || fields['ListingType'], '');
+  const area = toSafeDisplayText(fields['Area'] || fields['Size (sqft)'] ? `${fields['Area'] || fields['Size (sqft)']}${fields['Size (sqft)'] && !fields['Area'] ? ' sqft' : ''}` : '', '');
+  const bedrooms = toSafeDisplayText(fields['Bedrooms'], '');
+  const bathrooms = toSafeDisplayText(fields['Bathrooms'], '');
+  const amenities = toSafeDisplayText(Array.isArray(fields['Amenities']) ? fields['Amenities'].join(', ') : fields['Amenities'], '');
+  const status = toSafeDisplayText(fields['Status'], '');
+  const floor = toSafeDisplayText(fields['Floor'], '');
+  const age = toSafeDisplayText(fields['Age'], '');
+  const facing = toSafeDisplayText(fields['Facing'], '');
+  const parking = toSafeDisplayText(fields['Parking'], '');
+  const furnishing = toSafeDisplayText(fields['Furnishing'], '');
   const whatsappNumber = '919860826918';
   const enquiryWhatsappMsg = encodeURIComponent(`Hi, I'm interested in the property: ${title} (${location}) for ${price}`);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${enquiryWhatsappMsg}`;
@@ -1693,13 +1857,13 @@ function renderModalPropertyDetail(record) {
 
   const detailCards = details.map(detail => `
     <div class="property-detail-stat-card">
-      <div class="property-detail-stat-label">${detail.label}</div>
-      <div class="property-detail-stat-value">${detail.value}</div>
+      <div class="property-detail-stat-label">${escapeHtml(detail.label)}</div>
+      <div class="property-detail-stat-value">${escapeHtml(detail.value)}</div>
     </div>
   `).join('');
   const galleryThumbsMarkup = galleryImages.map((url, index) => `
     <button type="button" class="modal-gallery-thumb${index === 0 ? ' is-active' : ''}" data-image="${url}" aria-label="View image ${index + 1}">
-      <img src="${url}" alt="${title} image ${index + 1}" loading="lazy" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';" />
+      <img src="${url}" alt="${escapeHtml(title)} image ${index + 1}" loading="lazy" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';" />
     </button>
   `).join('');
   const suggestedRecords = getSuggestedProperties(allListings, record, 3);
@@ -1868,19 +2032,19 @@ function renderModalPropertyDetail(record) {
       }
     </style>
     <div class="property-modal-content" style="background:${theme.modalBg}; border-radius:22px; max-width:960px; min-width:340px; width:100%; box-shadow:${theme.shadow}; overflow-y:auto; overflow-x:hidden; max-height:90vh; border:1px solid ${theme.panelBorder};">
-      <img id="modal-primary-image" src="${imageUrl}" alt="${title}" class="property-detail-image" style="width:100%; max-height:320px; object-fit:cover; display:block; background:${panelBackground};" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';" />
+      <img id="modal-primary-image" src="${imageUrl}" alt="${escapeHtml(title)}" class="property-detail-image" style="width:100%; max-height:320px; object-fit:cover; display:block; background:${panelBackground};" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';" />
       ${galleryImages.length > 1 ? `<div class="modal-gallery-thumbs">${galleryThumbsMarkup}</div>` : ''}
       <div class="property-detail-body" style="display:grid; grid-template-columns: 1.1fr 0.9fr; gap:1.25rem; padding:1.35rem;">
         <div class="property-detail-main" style="position:relative; background:${theme.panelBg}; border:1px solid ${theme.panelBorder}; border-radius:18px; padding:1.35rem; padding-bottom:5.2rem;">
           <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.75rem;">
-            <span style="display:inline-flex; align-items:center; justify-content:center; min-height:32px; padding:0.35rem 0.8rem; border-radius:999px; background:${theme.badgeBg}; color:#fff; font-size:0.85rem; font-weight:700;">${listingType || 'Property'}</span>
-            ${type ? `<span style="display:inline-flex; align-items:center; justify-content:center; min-height:32px; padding:0.35rem 0.8rem; border-radius:999px; background:${theme.typeBadgeBg}; color:${theme.typeBadgeText}; font-size:0.85rem; font-weight:600;">${type}</span>` : ''}
+            <span style="display:inline-flex; align-items:center; justify-content:center; min-height:32px; padding:0.35rem 0.8rem; border-radius:999px; background:${theme.badgeBg}; color:#fff; font-size:0.85rem; font-weight:700;">${escapeHtml(listingType || 'Property')}</span>
+            ${type ? `<span style="display:inline-flex; align-items:center; justify-content:center; min-height:32px; padding:0.35rem 0.8rem; border-radius:999px; background:${theme.typeBadgeBg}; color:${theme.typeBadgeText}; font-size:0.85rem; font-weight:600;">${escapeHtml(type)}</span>` : ''}
           </div>
-          <div class="property-detail-title" style="font-size:2rem; font-weight:700; color:${theme.title}; line-height:1.18; margin-bottom:0.6rem;">${title}</div>
-          <div class="property-detail-location" style="font-size:1.02rem; color:${theme.text}; font-weight:500; margin-bottom:0.6rem;">${location}</div>
-          <div class="property-detail-price" style="font-size:1.55rem; color:${theme.price}; font-weight:700; margin-bottom:0.75rem;">${price}</div>
-          ${status ? `<div style="display:inline-flex; align-items:center; gap:0.55rem; margin-bottom:1rem; padding:0.45rem 0.8rem; border-radius:12px; background:${theme.pillBg}; border:1px solid ${theme.panelBorder};"><span style="font-size:0.76rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:${theme.accent};">Status</span><span style="font-size:0.96rem; font-weight:600; color:${theme.pillText};">${status}</span></div>` : ''}
-          <div class="property-detail-description" style="font-size:1rem; color:${theme.mutedText}; line-height:1.8;">${description}</div>
+          <div class="property-detail-title" style="font-size:2rem; font-weight:700; color:${theme.title}; line-height:1.18; margin-bottom:0.6rem;">${escapeHtml(title)}</div>
+          <div class="property-detail-location" style="font-size:1.02rem; color:${theme.text}; font-weight:500; margin-bottom:0.6rem;">${escapeHtml(location)}</div>
+          <div class="property-detail-price" style="font-size:1.55rem; color:${theme.price}; font-weight:700; margin-bottom:0.75rem;">${escapeHtml(price)}</div>
+          ${status ? `<div style="display:inline-flex; align-items:center; gap:0.55rem; margin-bottom:1rem; padding:0.45rem 0.8rem; border-radius:12px; background:${theme.pillBg}; border:1px solid ${theme.panelBorder};"><span style="font-size:0.76rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:${theme.accent};">Status</span><span style="font-size:0.96rem; font-weight:600; color:${theme.pillText};">${escapeHtml(status)}</span></div>` : ''}
+          ${description ? `<div class="property-detail-description" style="font-size:1rem; color:${theme.mutedText}; line-height:1.8;">${escapeHtml(description)}</div>` : ''}
           <div class="modal-share-fab" data-share-url="${propertyUrl}">
             <button type="button" class="modal-share-main" aria-label="Share property" aria-expanded="false">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M18 16c-1.3 0-2.4.8-2.8 1.9L8.9 14.7c.1-.2.1-.5.1-.7s0-.5-.1-.7l6.2-3.2C15.6 11.2 16.7 12 18 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4c0 .2 0 .5.1.7L7.9 11.9C7.4 10.8 6.3 10 5 10c-2.2 0-4 1.8-4 4s1.8 4 4 4c1.3 0 2.4-.8 2.9-1.9l6.2 3.2c-.1.2-.1.5-.1.7 0 2.2 1.8 4 4 4s4-1.8 4-4-1.8-4-4-4z"/></svg>
@@ -1899,7 +2063,7 @@ function renderModalPropertyDetail(record) {
           ${amenities ? `
             <div class="property-detail-amenities" style="background:${theme.panelBg}; border:1px solid ${theme.panelBorder}; border-radius:18px; padding:1.1rem 1.15rem;">
               <div style="font-size:0.82rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:${theme.accent}; margin-bottom:0.7rem;">Amenities</div>
-              <div style="font-size:0.98rem; line-height:1.8; color:${theme.amenitiesText};">${amenities}</div>
+              <div style="font-size:0.98rem; line-height:1.8; color:${theme.amenitiesText};">${escapeHtml(amenities)}</div>
             </div>
           ` : ''}
         </div>

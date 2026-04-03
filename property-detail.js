@@ -4,6 +4,7 @@ const DETAIL_CACHE_KEY = 'property_detail_records_v4';
 const DETAIL_CACHE_TTL = 10 * 60 * 1000;
 const DETAIL_IMAGE_REFRESH_CACHE_KEY = 'property_detail_image_refresh_v1';
 const DETAIL_IMAGE_REFRESH_TTL = 6 * 60 * 60 * 1000;
+const DETAIL_JSON_FETCH_TIMEOUT_MS = 15000;
 const IMAGE_FALLBACK_DATA_URI =
   'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%23cbd5e1%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23334155%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2232%22%3EImage%20Unavailable%3C/text%3E%3C/svg%3E';
 
@@ -28,6 +29,60 @@ function normalizePayloadRecords(payload) {
 function getRecordIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get('id');
+}
+
+function getListingsPath() {
+  return '/listings/';
+}
+
+function getHomePath() {
+  return '/';
+}
+
+function escapeHtml(value) {
+  return (value || '')
+    .toString()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function toSafeDisplayText(value, fallback = '') {
+  if (value === null || value === undefined) return fallback;
+  const text = value.toString().trim();
+  if (!text || text.toLowerCase() === 'undefined' || text.toLowerCase() === 'null') return fallback;
+  return text;
+}
+
+function formatDisplayPrice(value) {
+  const numeric = Number(value);
+  if (Number.isFinite(numeric) && numeric > 0) {
+    return `₹${numeric.toLocaleString('en-IN')}`;
+  }
+  return 'Price on request';
+}
+
+function renderDeadEndState(container, message, redirectPath) {
+  if (!container) return;
+  const safeMessage = escapeHtml(message || 'This page is unavailable.');
+  const safeRedirectPath = escapeHtml(redirectPath || getListingsPath());
+  container.innerHTML = `
+    <section class="error" style="display:grid;gap:0.9rem;padding:1.25rem;border:1px solid #cbd5e1;border-radius:12px;background:#f8fafc;max-width:720px;">
+      <h2 style="margin:0;font-size:1.15rem;color:#0f172a;">Page unavailable</h2>
+      <p style="margin:0;color:#334155;line-height:1.5;">${safeMessage}</p>
+      <p style="margin:0;color:#475569;line-height:1.5;">Redirecting to listings in 4 seconds.</p>
+      <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+        <a href="${safeRedirectPath}" style="display:inline-block;padding:0.55rem 0.9rem;border-radius:8px;background:#0f766e;color:#fff;text-decoration:none;font-weight:600;">Go to Listings</a>
+        <a href="${getHomePath()}" style="display:inline-block;padding:0.55rem 0.9rem;border-radius:8px;border:1px solid #cbd5e1;color:#0f172a;text-decoration:none;font-weight:600;">Go to Home</a>
+      </div>
+    </section>
+  `;
+
+  window.setTimeout(() => {
+    window.location.replace(redirectPath || getListingsPath());
+  }, 4000);
 }
 
 function getOfferTypeValue(fields) {
@@ -96,6 +151,27 @@ function isLikelyExpiredAirtableImageUrl(url) {
   return Date.now() >= expiryMs - 5 * 60 * 1000;
 }
 
+async function fetchDetailJsonWithTimeout(endpoint, label) {
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), DETAIL_JSON_FETCH_TIMEOUT_MS);
+  try {
+    const response = await fetch(endpoint, {
+      cache: 'no-store',
+      signal: controller.signal
+    });
+    if (!response.ok) {
+      throw new Error(`Invalid response (${response.status}) for ${label}.`);
+    }
+    try {
+      return await response.json();
+    } catch (error) {
+      throw new Error(`Invalid JSON payload for ${label}.`);
+    }
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
+}
+
 function shouldRefreshRecordImages(record) {
   const images = record?.fields?.Image;
   if (!Array.isArray(images) || images.length === 0) return false;
@@ -126,11 +202,15 @@ function cacheRefreshedImages(recordId, images) {
 
 async function fetchFreshRecordFromStatic(recordId) {
   if (!recordId) return null;
-  const response = await fetch(`${PROPERTY_DETAIL_LISTINGS_ENDPOINT}?ts=${Date.now()}`, {
-    cache: 'no-store'
-  });
-  if (!response.ok) return null;
-  const payload = await response.json();
+  let payload;
+  try {
+    payload = await fetchDetailJsonWithTimeout(
+      `${PROPERTY_DETAIL_LISTINGS_ENDPOINT}?ts=${Date.now()}`,
+      'property refresh listings'
+    );
+  } catch (error) {
+    return null;
+  }
   const records = normalizePayloadRecords(payload);
   return records.find((item) => item.id === recordId) || null;
 }
@@ -186,12 +266,10 @@ async function fetchStaticRecords() {
     }
   }
 
-  const response = await fetch(PROPERTY_DETAIL_LISTINGS_ENDPOINT, { cache: 'no-store' });
-  if (!response.ok) {
-    throw new Error(`Failed to fetch listings data (${response.status}).`);
-  }
-
-  const payload = await response.json();
+  const payload = await fetchDetailJsonWithTimeout(
+    PROPERTY_DETAIL_LISTINGS_ENDPOINT,
+    'property detail listings'
+  );
   const records = normalizePayloadRecords(payload);
   if (records.length > 0) {
     localStorage.setItem(DETAIL_CACHE_KEY, JSON.stringify({ ts: Date.now(), records }));
@@ -396,23 +474,28 @@ function renderSuggestedMiniCards(records) {
 
   return records.map((record) => {
     const fields = record.fields || {};
-    const title = fields['Title'] || 'Untitled';
-    const location = fields['Location'] || 'Unknown';
-    const type = getPropertyTypeValue(fields) || 'Property';
-    const sizeRaw = fields['Area'] || fields['Size (sqft)'] || '';
+    const title = toSafeDisplayText(fields['Title'], 'Untitled');
+    const location = toSafeDisplayText(fields['Location'], 'Location not specified');
+    const type = toSafeDisplayText(getPropertyTypeValue(fields), 'Property');
+    const sizeRaw = toSafeDisplayText(fields['Area'] || fields['Size (sqft)'], '');
     const sizeText = sizeRaw ? ` | ${sizeRaw}` : '';
-    const price = fields['Price'] ? `₹${Number(fields['Price']).toLocaleString()}` : 'Price on request';
+    const price = formatDisplayPrice(fields['Price']);
     const imageSources = getAttachmentImageSources(fields['Image']?.[0]);
     const imageUrl = imageSources.card || imageSources.full || IMAGE_FALLBACK_DATA_URI;
     const detailUrl = buildPropertyShareUrl(record.id);
+    const safeTitle = escapeHtml(title);
+    const safeLocation = escapeHtml(location);
+    const safeType = escapeHtml(type);
+    const safePrice = escapeHtml(price);
+    const safeImageUrl = escapeHtml(imageUrl);
 
     return `
-      <a href="${detailUrl}" class="suggested-mini-card" aria-label="View ${title}">
-        <img src="${imageUrl}" alt="${title}" class="suggested-mini-thumb" loading="lazy" onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_DATA_URI}';" />
+      <a href="${detailUrl}" class="suggested-mini-card" aria-label="View ${safeTitle}">
+        <img src="${safeImageUrl}" alt="${safeTitle}" class="suggested-mini-thumb" loading="lazy" onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_DATA_URI}';" />
         <div class="suggested-mini-body">
-          <p class="suggested-mini-name">${title}</p>
-          <p class="suggested-mini-meta">${location} | ${type}${sizeText}</p>
-          <p class="suggested-mini-price">${price}</p>
+          <p class="suggested-mini-name">${safeTitle}</p>
+          <p class="suggested-mini-meta">${safeLocation} | ${safeType}${sizeText}</p>
+          <p class="suggested-mini-price">${safePrice}</p>
         </div>
       </a>
     `;
@@ -608,16 +691,22 @@ function openPropertyShareSheet(record, shareLink) {
   if (existing) existing.remove();
 
   const fields = record?.fields || {};
-  const title = fields['Title'] || 'Property';
-  const location = fields['Location'] || 'Unknown';
-  const price = fields['Price'] ? `₹${fields['Price'].toLocaleString()}` : 'Price on request';
-  const listingType = getOfferTypeValue(fields) || 'Property';
+  const title = toSafeDisplayText(fields['Title'], 'Property');
+  const location = toSafeDisplayText(fields['Location'], 'Location not specified');
+  const price = formatDisplayPrice(fields['Price']);
+  const listingType = toSafeDisplayText(getOfferTypeValue(fields), 'Property');
   const thumbUrl =
     resolveImageUrl(fields['Image']?.[0]?.thumbnails?.small?.url) ||
     resolveImageUrl(fields['Image']?.[0]?.url) ||
     'https://via.placeholder.com/176x132?text=Property';
   const shareText = buildPropertyShareText({ title, location, price, listingType, url: shareLink });
   const whatsappShareLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+  const safeTitle = escapeHtml(title);
+  const safeLocation = escapeHtml(location);
+  const safeListingType = escapeHtml(listingType);
+  const safePrice = escapeHtml(price);
+  const safeThumbUrl = escapeHtml(thumbUrl);
+  const safeShareLink = escapeHtml(shareLink || '');
 
   const overlay = document.createElement('div');
   overlay.id = 'property-share-sheet-overlay';
@@ -631,15 +720,15 @@ function openPropertyShareSheet(record, shareLink) {
       <div class="property-share-sheet-body">
         <p class="property-share-sheet-subtitle">Send a link</p>
         <div class="property-share-sheet-property">
-          <img src="${thumbUrl}" alt="${title}" class="property-share-sheet-thumb" />
+          <img src="${safeThumbUrl}" alt="${safeTitle}" class="property-share-sheet-thumb" onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_DATA_URI}';" />
           <div>
-            <p class="property-share-sheet-name">${title}</p>
-            <p class="property-share-sheet-meta">${location} • ${listingType} • ${price}</p>
+            <p class="property-share-sheet-name">${safeTitle}</p>
+            <p class="property-share-sheet-meta">${safeLocation} • ${safeListingType} • ${safePrice}</p>
           </div>
         </div>
         <p class="property-share-sheet-label">Link to share</p>
         <div class="property-share-sheet-linkrow">
-          <input class="property-share-sheet-link" type="text" readonly value="${shareLink}" />
+          <input class="property-share-sheet-link" type="text" readonly value="${safeShareLink}" />
           <button type="button" class="property-share-sheet-copy">COPY LINK</button>
         </div>
         <div class="property-share-sheet-actions">
@@ -739,15 +828,15 @@ function bindDetailImageGallery() {
 function renderPropertyDetail(record, suggestedRecords = []) {
   const fields = record.fields || {};
   const galleryImages = extractGalleryImages(fields);
-  const imageUrl = galleryImages[0] || 'https://via.placeholder.com/800x400?text=No+Image';
-  const title = fields.Title || 'Untitled';
-  const location = fields.Location || 'Unknown';
-  const price = fields.Price ? `₹${fields.Price.toLocaleString()}` : 'Price on request';
-  const description = fields.Description || '';
+  const imageUrl = galleryImages[0] || IMAGE_FALLBACK_DATA_URI;
+  const title = toSafeDisplayText(fields.Title, 'Untitled');
+  const location = toSafeDisplayText(fields.Location, 'Location not specified');
+  const price = formatDisplayPrice(fields.Price);
+  const description = toSafeDisplayText(fields.Description, '');
   const suggestedMarkup = renderSuggestedMiniCards(suggestedRecords);
   const galleryThumbsMarkup = galleryImages.map((url, index) => `
       <button type="button" class="detail-gallery-thumb${index === 0 ? ' is-active' : ''}" data-image="${url}" aria-label="View image ${index + 1}">
-          <img src="${url}" alt="${title} image ${index + 1}" loading="lazy" />
+          <img src="${url}" alt="${escapeHtml(title)} image ${index + 1}" loading="lazy" onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_DATA_URI}';" />
       </button>
   `).join('');
   const whatsappNumber = '919860826918';
@@ -755,20 +844,25 @@ function renderPropertyDetail(record, suggestedRecords = []) {
     `Hi, I'm interested in the property: ${title} (${location}) for ${price}`
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMsg}`;
+  const safeTitle = escapeHtml(title);
+  const safeLocation = escapeHtml(location);
+  const safePrice = escapeHtml(price);
+  const safeDescription = escapeHtml(description);
+  const safeImageUrl = escapeHtml(imageUrl);
 
   return `
         <div class="property-detail-header">
-            <img id="detail-primary-image" src="${imageUrl}" alt="${title}" class="property-detail-image" />
+            <img id="detail-primary-image" src="${safeImageUrl}" alt="${safeTitle}" class="property-detail-image" onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_DATA_URI}';" />
             ${galleryImages.length > 1 ? `
               <div class="detail-gallery-thumbs">
                 ${galleryThumbsMarkup}
               </div>
             ` : ''}
             <div class="property-detail-info">
-                <div class="property-detail-title">${title}</div>
-                <div class="property-detail-location">${location}</div>
-                <div class="property-detail-price">${price}</div>
-                <div class="property-detail-description">${description}</div>
+                <div class="property-detail-title">${safeTitle}</div>
+                <div class="property-detail-location">${safeLocation}</div>
+                <div class="property-detail-price">${safePrice}</div>
+                ${safeDescription ? `<div class="property-detail-description">${safeDescription}</div>` : ''}
                 <div class="property-detail-actions">
                     <button type="button" class="share-cta" id="share-property-btn" aria-label="Share property">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.392 1.19L8.91 13.84A3.12 3.12 0 0 0 9 13a3.12 3.12 0 0 0-.09-.84l6.71-3.36A3 3 0 1 0 15 7a3.12 3.12 0 0 0 .09.84l-6.71 3.36a3 3 0 1 0 0 3.6l6.7 3.35A3 3 0 1 0 18 16z"/></svg>
@@ -797,7 +891,7 @@ async function initPropertyDetail() {
   if (!container) return;
 
   if (!recordId) {
-    container.innerHTML = '<div class="error">No property ID provided.</div>';
+    renderDeadEndState(container, 'Invalid URL: missing property ID.', getListingsPath());
     return;
   }
 
@@ -818,7 +912,21 @@ async function initPropertyDetail() {
     bindDetailImageGallery();
     bindShareButton(record);
   } catch (error) {
-    container.innerHTML = `<div class="error">${error.message}</div>`;
+    const normalized = (error?.message || '').toLowerCase();
+    if (normalized.includes('not found')) {
+      renderDeadEndState(
+        container,
+        'This property page was deleted or does not exist anymore.',
+        getListingsPath()
+      );
+      return;
+    }
+
+    renderDeadEndState(
+      container,
+      'Unable to load this page right now. Please browse active listings instead.',
+      getListingsPath()
+    );
   }
 }
 

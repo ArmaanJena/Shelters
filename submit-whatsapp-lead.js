@@ -2,6 +2,7 @@
 
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const { sanitizeText, sanitizePhone } = require('./scripts/input-sanitizer');
 
 const QUEUE_FILE_PATH = path.resolve(process.cwd(), 'data', 'whatsapp-leads.json');
 
@@ -30,10 +31,10 @@ exports.handler = async (event) => {
 
   try {
     const payload = JSON.parse(event.body || '{}');
-    const name = (payload.name || '').toString().trim();
-    const phone = (payload.phone || '').toString().trim();
-    const message = (payload.message || '').toString().trim();
-    const leadType = (payload.leadType || '').toString().trim() || 'General Enquiry';
+    const name = sanitizeText(payload.name, { maxLength: 120 });
+    const phone = sanitizePhone(payload.phone);
+    const message = sanitizeText(payload.message, { preserveNewlines: true, maxLength: 2000 });
+    const leadType = sanitizeText(payload.leadType, { maxLength: 120 }) || 'General Enquiry';
 
     if (!name || !phone) {
       return {

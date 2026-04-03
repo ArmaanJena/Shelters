@@ -1,0 +1,14 @@
+/index.html / 301
+/about.html /about/ 301
+/areas.html /areas/ 301
+/listings.html /listings/ 301
+/contact.html /contact/ 301
+/agreements.html /agreements/ 301
+/property-detail.html /property-detail/ 301
+/properties /listings/ 301
+/property /listings/ 301
+/listing /listings/ 301
+/new /new-launches/ 301
+/new-launches.html /new-launches/ 301
+
+/* /404.html 404

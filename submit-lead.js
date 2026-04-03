@@ -2,6 +2,13 @@
 
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const {
+  sanitizeText,
+  sanitizeEmail,
+  sanitizePhone,
+  sanitizeNumber,
+  sanitizeAirtableFields
+} = require('./scripts/input-sanitizer');
 
 const QUEUE_FILE_PATH = path.resolve(process.cwd(), 'data', 'loan-leads.json');
 
@@ -34,28 +41,37 @@ exports.handler = async (event) => {
     const randomPart = Math.random().toString(36).substring(2, 7).toUpperCase();
     const referralId = `SR-${timestamp}-${randomPart}`;
 
+    const sanitizedFields = sanitizeAirtableFields({
+      Name: sanitizeText(leadData.applicantName, { maxLength: 120 }),
+      Phone: sanitizePhone(leadData.applicantPhone),
+      Email: sanitizeEmail(leadData.applicantEmail),
+      'Loan Amount': sanitizeNumber(leadData.loanAmount),
+      'Tenure (Years)': sanitizeNumber(leadData.loanTenure),
+      Application: sanitizeText(leadData.loanType, { maxLength: 120 }),
+      'Applicant Age': sanitizeNumber(leadData.applicantAge),
+      'Credit Score': sanitizeNumber(leadData.creditScore),
+      'Monthly Income': sanitizeNumber(leadData.monthlyIncome),
+      'Existing EMIs': sanitizeNumber(leadData.existingEMIs),
+      'Co-Applicant Name': sanitizeText(leadData.coApplicantName, { maxLength: 120 }) || null,
+      'Co-Applicant Income': sanitizeNumber(leadData.coApplicantIncome),
+      Status: 'New Lead',
+      'Referral ID': referralId,
+      'Submission Date': new Date().toISOString()
+    });
+
+    if (!sanitizedFields.Name || !sanitizedFields.Phone) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Name and Phone are required.' })
+      };
+    }
+
     await appendLeadToQueue({
       referralId,
       leadCategory: 'loan',
       submittedAt: new Date().toISOString(),
       synced: false,
-      fields: {
-        Name: leadData.applicantName || '',
-        Phone: leadData.applicantPhone || '',
-        Email: leadData.applicantEmail || '',
-        'Loan Amount': leadData.loanAmount || null,
-        'Tenure (Years)': leadData.loanTenure || null,
-        Application: leadData.loanType || '',
-        'Applicant Age': leadData.applicantAge || null,
-        'Credit Score': leadData.creditScore || null,
-        'Monthly Income': leadData.monthlyIncome || null,
-        'Existing EMIs': leadData.existingEMIs || null,
-        'Co-Applicant Name': leadData.coApplicantName || null,
-        'Co-Applicant Income': leadData.coApplicantIncome || null,
-        Status: 'New Lead',
-        'Referral ID': referralId,
-        'Submission Date': new Date().toISOString()
-      }
+      fields: sanitizedFields
     });
 
     return {

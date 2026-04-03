@@ -3,10 +3,29 @@ const FEATURED_CACHE_KEY = 'managed_listings_cache_v5';
 const FEATURED_CACHE_TTL = 10 * 60 * 1000;
 const FEATURED_IMAGE_REFRESH_CACHE_KEY = 'featured_image_refresh_v1';
 const FEATURED_IMAGE_REFRESH_TTL = 6 * 60 * 60 * 1000;
+const FEATURED_JSON_FETCH_TIMEOUT_MS = 15000;
+const FEATURED_SLOW_LOAD_NOTICE_MS = 2500;
 const NEW_LISTING_WINDOW_DAYS =
   Number.parseInt(document.body?.dataset?.newListingWindowDays || '7', 10) || 7;
 const CARD_IMAGE_FALLBACK =
   'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%23cbd5e1%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23334155%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2232%22%3EImage%20Unavailable%3C/text%3E%3C/svg%3E';
+
+function escapeHtml(value) {
+  return (value || '')
+    .toString()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function toSafeDisplayText(value, fallback = '') {
+  if (value === null || value === undefined) return fallback;
+  const text = value.toString().trim();
+  if (!text || text.toLowerCase() === 'undefined' || text.toLowerCase() === 'null') return fallback;
+  return text;
+}
 
 function isRecentlyAdded(createdTime, days = 7) {
   const createdAt = new Date(createdTime || 0).getTime();
@@ -195,9 +214,23 @@ function cloneRecordWithImages(record, images) {
 
 async function fetchFreshRecordFromStatic(recordId) {
   if (!recordId) return null;
-  const response = await fetch(`${FEATURED_LISTINGS_ENDPOINT}?ts=${Date.now()}`, { cache: 'no-store' });
-  if (!response.ok) return null;
-  const payload = await response.json();
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), FEATURED_JSON_FETCH_TIMEOUT_MS);
+  let payload;
+  try {
+    const response = await fetch(`${FEATURED_LISTINGS_ENDPOINT}?ts=${Date.now()}`, {
+      cache: 'no-store',
+      signal: controller.signal
+    });
+    if (!response.ok) return null;
+    try {
+      payload = await response.json();
+    } catch (error) {
+      return null;
+    }
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
   const records = normalizePayloadRecords(payload);
   return records.find((item) => item.id === recordId) || null;
 }
@@ -283,12 +316,26 @@ async function fetchManagedListingsFromStatic() {
     }
   }
 
-  const response = await fetch(FEATURED_LISTINGS_ENDPOINT, { cache: 'no-store' });
-  if (!response.ok) {
-    throw new Error(`Failed to fetch managed listings (${response.status})`);
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), FEATURED_JSON_FETCH_TIMEOUT_MS);
+  let payload;
+  try {
+    const response = await fetch(FEATURED_LISTINGS_ENDPOINT, {
+      cache: 'no-store',
+      signal: controller.signal
+    });
+    if (!response.ok) {
+      throw new Error(`Invalid response (${response.status}) for managed listings.`);
+    }
+    try {
+      payload = await response.json();
+    } catch (error) {
+      throw new Error('Invalid JSON payload for managed listings.');
+    }
+  } finally {
+    window.clearTimeout(timeoutId);
   }
 
-  const payload = await response.json();
   const records = await hydrateManagedRecordImages(normalizePayloadRecords(payload));
   if (records.length > 0) {
     localStorage.setItem(FEATURED_CACHE_KEY, JSON.stringify({ ts: Date.now(), records }));
@@ -309,19 +356,17 @@ function normalizeManagedListing(record) {
 
   return {
     id: record.id,
-    title: fields.Title || 'Untitled',
-    location: fields.Location || 'Unknown',
+    title: toSafeDisplayText(fields.Title, 'Untitled'),
+    location: toSafeDisplayText(fields.Location, 'Location not specified'),
     price: Number(fields.Price) || 0,
-    listingType: fields.ListingType || fields['Offer Type'] || 'Property',
+    listingType: toSafeDisplayText(fields.ListingType || fields['Offer Type'], 'Property'),
     description:
-      fields['Short Description'] ||
-      fields.Description ||
-      fields.Type ||
-      fields['Property Type'] ||
-      'Managed property',
+      toSafeDisplayText(
+        fields['Short Description'] || fields.Description || fields.Type || fields['Property Type'],
+        ''
+      ),
     image:
-      imageUrl ||
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80',
+      imageUrl || CARD_IMAGE_FALLBACK,
     imageFull: imageFullUrl,
     managed: managedValue === true || managedValue === 'true',
     isNew: isRecentlyAdded(record.createdTime, NEW_LISTING_WINDOW_DAYS)
@@ -339,15 +384,15 @@ function createManagedListingCard(listing) {
     <div class="bento-card-wrapper">
       <a href="${buildPropertyDetailUrl(listing.id)}" class="bento-card">
         <div class="listing-image-container">
-          <img src="${listing.image}" ${imageSrcSet ? `srcset="${imageSrcSet}" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"` : ''} alt="${listing.title}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';">
-          <div class="bento-badge">${listing.listingType}</div>
+          <img src="${escapeHtml(listing.image)}" ${imageSrcSet ? `srcset="${escapeHtml(imageSrcSet)}" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"` : ''} alt="${escapeHtml(listing.title)}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.onerror=null;this.src='${CARD_IMAGE_FALLBACK}';">
+          <div class="bento-badge">${escapeHtml(listing.listingType)}</div>
           ${listing.isNew ? '<div class="bento-badge bento-badge-new">New</div>' : ''}
         </div>
         <div class="bento-content">
-          <h3 class="bento-title">${listing.title}</h3>
-          <p class="bento-location">📍 ${listing.location}</p>
-          <p class="bento-description">${listing.description}</p>
-          <div class="bento-price">${price}</div>
+          <h3 class="bento-title">${escapeHtml(listing.title)}</h3>
+          <p class="bento-location">📍 ${escapeHtml(listing.location)}</p>
+          ${listing.description ? `<p class="bento-description">${escapeHtml(listing.description)}</p>` : ''}
+          <div class="bento-price">${escapeHtml(price)}</div>
         </div>
       </a>
     </div>
@@ -365,13 +410,19 @@ function buildSlides(listings, itemsPerSlide) {
 document.addEventListener('DOMContentLoaded', async () => {
   const featuredContainer = document.getElementById('featured-listings-grid');
   if (!featuredContainer) return;
+  featuredContainer.innerHTML = '<p>Loading managed properties...</p>';
+  const slowNoticeTimer = window.setTimeout(() => {
+    featuredContainer.innerHTML =
+      '<p>Still loading managed properties... JSON response is slower than usual.</p>';
+  }, FEATURED_SLOW_LOAD_NOTICE_MS);
 
   try {
     const records = await fetchManagedListingsFromStatic();
+    window.clearTimeout(slowNoticeTimer);
     const managedListings = records.map(normalizeManagedListing).filter((listing) => listing.managed);
 
     if (managedListings.length === 0) {
-      featuredContainer.innerHTML = '<p>No managed properties available at the moment.</p>';
+      featuredContainer.innerHTML = '<p>No properties available at the moment.</p>';
       return;
     }
 
@@ -448,7 +499,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     startAutoRotate();
   } catch (error) {
-    console.error('Failed to render managed listings carousel:', error);
-    featuredContainer.innerHTML = '<p>Unable to load managed properties right now.</p>';
+    window.clearTimeout(slowNoticeTimer);
+    console.error('Failed to render managed listings carousel:', classifyFeaturedFetchFailure(error));
+    featuredContainer.innerHTML =
+      '<p>Content temporarily unavailable. Please try again.</p>';
   }
 });
+function classifyFeaturedFetchFailure(error) {
+  if (error?.name === 'AbortError') {
+    return `Timeout while loading JSON (${FEATURED_JSON_FETCH_TIMEOUT_MS}ms).`;
+  }
+  if (error instanceof TypeError) {
+    return 'Network failure while loading JSON.';
+  }
+  return (error?.message || 'Unknown JSON fetch failure.').toString();
+}

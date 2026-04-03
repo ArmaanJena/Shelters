@@ -67,6 +67,9 @@ jobs:
       - name: Push queued WhatsApp leads to Airtable
         run: node scripts/push-whatsapp-leads.js
 
+      - name: Validate JSON schema and structure
+        run: npm run validate:data-json
+
       - name: Detect JSON change
         id: detect_change
         run: |

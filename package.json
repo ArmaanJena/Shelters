@@ -1,6 +1,7 @@
 {
   "scripts": {
     "sync:airtable": "node scripts/fetch-airtable-data.js && node scripts/fetch-airtable-support-data.js",
-    "build": "npm run sync:airtable"
+    "validate:data-json": "node scripts/validate-json-data.js",
+    "build": "npm run sync:airtable && npm run validate:data-json"
   }
 }

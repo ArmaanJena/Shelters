@@ -2,6 +2,7 @@
 
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const { sanitizeAirtableFields } = require('./input-sanitizer');
 
 const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY || '';
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || '';
@@ -15,7 +16,7 @@ const QUEUE_FILES = [
       const formattedMessage = [lead.message || '', `Timestamp: ${lead.submittedAt || ''}`]
         .filter(Boolean)
         .join('\n');
-      return {
+      return sanitizeAirtableFields({
         Name: lead.name || '',
         Phone: lead.phone || '',
         Message: formattedMessage,
@@ -23,18 +24,18 @@ const QUEUE_FILES = [
         'Referral ID': lead.referralId || '',
         'Submission Date': lead.submittedAt || new Date().toISOString(),
         Status: 'New Lead'
-      };
+      });
     }
   },
   {
     label: 'Loan',
     path: path.resolve(process.cwd(), 'data', 'loan-leads.json'),
-    mapToFields: (lead) => lead.fields || {}
+    mapToFields: (lead) => sanitizeAirtableFields(lead.fields || {})
   },
   {
     label: 'Insurance',
     path: path.resolve(process.cwd(), 'data', 'insurance-leads.json'),
-    mapToFields: (lead) => lead.fields || {}
+    mapToFields: (lead) => sanitizeAirtableFields(lead.fields || {})
   }
 ];
 
