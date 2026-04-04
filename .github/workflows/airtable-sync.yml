@@ -30,6 +30,7 @@ jobs:
       AIRTABLE_AREA_QUESTIONS_TABLE_NAME: ${{ vars.AIRTABLE_AREA_QUESTIONS_TABLE_NAME || 'Area Questions' }}
       AIRTABLE_LEADS_TABLE_NAME: ${{ vars.AIRTABLE_LEADS_TABLE_NAME || 'Leads' }}
       AIRTABLE_LEADS_TABLE_ID: ${{ vars.AIRTABLE_LEADS_TABLE_ID || '' }}
+      AIRTABLE_LEADS_SYNC_REQUIRED: ${{ vars.AIRTABLE_LEADS_SYNC_REQUIRED || 'false' }}
       ALLOW_AIRTABLE_API: "true"
     steps:
       - name: Checkout

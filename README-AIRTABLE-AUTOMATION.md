@@ -26,6 +26,7 @@ Optional repository variables:
 - `AIRTABLE_MAX_RECORDS` (optional)
 - `AIRTABLE_LEADS_TABLE_NAME` (default: `Leads`)
 - `AIRTABLE_LEADS_TABLE_ID` (optional, overrides leads table name)
+- `AIRTABLE_LEADS_SYNC_REQUIRED` (optional, default: `false`; when `true`, lead push errors fail the workflow)
 
 ## 2) Workflow Triggers
 
@@ -92,3 +93,4 @@ Required configuration:
 - Frontend endpoint in `data/lead-intake-config.json`
 - Repo secret/variable `LEAD_INTAKE_PULL_URL`
 - Optional secret `LEAD_INTAKE_PULL_TOKEN`
+

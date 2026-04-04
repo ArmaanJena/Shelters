@@ -11,6 +11,8 @@ const AIRTABLE_LEADS_BASE_ID = process.env.AIRTABLE_LEADS_BASE_ID || AIRTABLE_BA
 const AIRTABLE_LEADS_TABLE_NAME = process.env.AIRTABLE_LEADS_TABLE_NAME || 'Leads';
 const AIRTABLE_LEADS_TABLE_ID = process.env.AIRTABLE_LEADS_TABLE_ID || '';
 const ALLOW_AIRTABLE_API = (process.env.ALLOW_AIRTABLE_API || '').toLowerCase() === 'true';
+const AIRTABLE_LEADS_SYNC_REQUIRED =
+  (process.env.AIRTABLE_LEADS_SYNC_REQUIRED || '').trim().toLowerCase() === 'true';
 
 const QUEUE_FILES = [
   {
@@ -155,25 +157,35 @@ async function run() {
     throw new Error('Airtable API access is disabled. This script is allowed only in the sync job.');
   }
 
-  assertRequired(AIRTABLE_LEADS_API_KEY, 'AIRTABLE_LEADS_API_KEY (or AIRTABLE_API_KEY)');
-  assertRequired(AIRTABLE_LEADS_BASE_ID, 'AIRTABLE_LEADS_BASE_ID (or AIRTABLE_BASE_ID)');
+  try {
+    assertRequired(AIRTABLE_LEADS_API_KEY, 'AIRTABLE_LEADS_API_KEY (or AIRTABLE_API_KEY)');
+    assertRequired(AIRTABLE_LEADS_BASE_ID, 'AIRTABLE_LEADS_BASE_ID (or AIRTABLE_BASE_ID)');
 
-  const leadsTableRef = AIRTABLE_LEADS_TABLE_ID.trim() || AIRTABLE_LEADS_TABLE_NAME;
-  const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_LEADS_BASE_ID}/${encodeURIComponent(
-    leadsTableRef
-  )}`;
+    const leadsTableRef = AIRTABLE_LEADS_TABLE_ID.trim() || AIRTABLE_LEADS_TABLE_NAME;
+    const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_LEADS_BASE_ID}/${encodeURIComponent(
+      leadsTableRef
+    )}`;
 
-  await assertAirtableTableAccess(airtableUrl, AIRTABLE_LEADS_API_KEY, leadsTableRef);
+    await assertAirtableTableAccess(airtableUrl, AIRTABLE_LEADS_API_KEY, leadsTableRef);
 
-  let totalSynced = 0;
-  for (const config of QUEUE_FILES) {
-    totalSynced += await syncQueue(airtableUrl, AIRTABLE_LEADS_API_KEY, config);
-  }
+    let totalSynced = 0;
+    for (const config of QUEUE_FILES) {
+      totalSynced += await syncQueue(airtableUrl, AIRTABLE_LEADS_API_KEY, config);
+    }
 
-  if (totalSynced === 0) {
-    console.log('No queued leads to sync.');
-  } else {
-    console.log(`Total synced leads: ${totalSynced}`);
+    if (totalSynced === 0) {
+      console.log('No queued leads to sync.');
+    } else {
+      console.log(`Total synced leads: ${totalSynced}`);
+    }
+  } catch (error) {
+    if (AIRTABLE_LEADS_SYNC_REQUIRED) {
+      throw error;
+    }
+    console.warn(
+      `[optional] Leads push skipped: ${error.message || error}. ` +
+        'Set AIRTABLE_LEADS_SYNC_REQUIRED=true to fail this job on leads push errors.'
+    );
   }
 }
 
