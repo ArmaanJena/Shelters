@@ -6,7 +6,10 @@ const { sanitizeAirtableFields } = require('./input-sanitizer');
 
 const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY || '';
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || '';
+const AIRTABLE_LEADS_API_KEY = process.env.AIRTABLE_LEADS_API_KEY || AIRTABLE_API_KEY;
+const AIRTABLE_LEADS_BASE_ID = process.env.AIRTABLE_LEADS_BASE_ID || AIRTABLE_BASE_ID;
 const AIRTABLE_LEADS_TABLE_NAME = process.env.AIRTABLE_LEADS_TABLE_NAME || 'Leads';
+const AIRTABLE_LEADS_TABLE_ID = process.env.AIRTABLE_LEADS_TABLE_ID || '';
 const ALLOW_AIRTABLE_API = (process.env.ALLOW_AIRTABLE_API || '').toLowerCase() === 'true';
 
 const QUEUE_FILES = [
@@ -70,11 +73,31 @@ function chunk(input, size) {
   return output;
 }
 
-async function pushBatch(airtableUrl, records) {
+async function assertAirtableTableAccess(airtableUrl, apiToken, tableRef) {
+  const probeUrl = new URL(airtableUrl);
+  probeUrl.searchParams.set('maxRecords', '1');
+
+  const response = await fetch(probeUrl.toString(), {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${apiToken}`,
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(
+      `Airtable preflight failed (${response.status}) for base "${AIRTABLE_LEADS_BASE_ID}" and table "${tableRef}": ${body}`
+    );
+  }
+}
+
+async function pushBatch(airtableUrl, apiToken, records) {
   const response = await fetch(airtableUrl, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+      Authorization: `Bearer ${apiToken}`,
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ records })
@@ -82,11 +105,18 @@ async function pushBatch(airtableUrl, records) {
 
   if (!response.ok) {
     const body = await response.text();
+    if (response.status === 403) {
+      throw new Error(
+        `Airtable push failed (403): ${body}\n` +
+          'Ensure the token has records:write access to the leads base/table. ' +
+          'Use AIRTABLE_LEADS_API_KEY for push access, or update AIRTABLE_API_KEY permissions.'
+      );
+    }
     throw new Error(`Airtable push failed (${response.status}): ${body}`);
   }
 }
 
-async function syncQueue(airtableUrl, config) {
+async function syncQueue(airtableUrl, apiToken, config) {
   const queue = await readQueue(config.path);
   const unsyncedLeads = queue.filter((lead) => !lead.synced);
 
@@ -99,7 +129,7 @@ async function syncQueue(airtableUrl, config) {
   const chunks = chunk(unsyncedLeads, batchSize);
   for (const leadsChunk of chunks) {
     const records = leadsChunk.map((lead) => ({ fields: config.mapToFields(lead) }));
-    await pushBatch(airtableUrl, records);
+    await pushBatch(airtableUrl, apiToken, records);
   }
 
   const nowIso = new Date().toISOString();
@@ -125,16 +155,19 @@ async function run() {
     throw new Error('Airtable API access is disabled. This script is allowed only in the sync job.');
   }
 
-  assertRequired(AIRTABLE_API_KEY, 'AIRTABLE_API_KEY');
-  assertRequired(AIRTABLE_BASE_ID, 'AIRTABLE_BASE_ID');
+  assertRequired(AIRTABLE_LEADS_API_KEY, 'AIRTABLE_LEADS_API_KEY (or AIRTABLE_API_KEY)');
+  assertRequired(AIRTABLE_LEADS_BASE_ID, 'AIRTABLE_LEADS_BASE_ID (or AIRTABLE_BASE_ID)');
 
-  const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(
-    AIRTABLE_LEADS_TABLE_NAME
+  const leadsTableRef = AIRTABLE_LEADS_TABLE_ID.trim() || AIRTABLE_LEADS_TABLE_NAME;
+  const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_LEADS_BASE_ID}/${encodeURIComponent(
+    leadsTableRef
   )}`;
+
+  await assertAirtableTableAccess(airtableUrl, AIRTABLE_LEADS_API_KEY, leadsTableRef);
 
   let totalSynced = 0;
   for (const config of QUEUE_FILES) {
-    totalSynced += await syncQueue(airtableUrl, config);
+    totalSynced += await syncQueue(airtableUrl, AIRTABLE_LEADS_API_KEY, config);
   }
 
   if (totalSynced === 0) {

@@ -15,6 +15,8 @@ Set these repository secrets in **Settings -> Secrets and variables -> Actions**
 
 - `AIRTABLE_API_KEY` (required)
 - `AIRTABLE_BASE_ID` (required, recommended as secret)
+- `AIRTABLE_LEADS_API_KEY` (optional but recommended if lead push needs a separate write token)
+- `AIRTABLE_LEADS_BASE_ID` (optional if leads are stored in a different base)
 
 Optional repository variables:
 
@@ -22,6 +24,8 @@ Optional repository variables:
 - `AIRTABLE_TABLE_NAME` (default: `Listings`)
 - `AIRTABLE_VIEW_NAME` (optional)
 - `AIRTABLE_MAX_RECORDS` (optional)
+- `AIRTABLE_LEADS_TABLE_NAME` (default: `Leads`)
+- `AIRTABLE_LEADS_TABLE_ID` (optional, overrides leads table name)
 
 ## 2) Workflow Triggers
 
