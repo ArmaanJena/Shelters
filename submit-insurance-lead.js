@@ -1,33 +1,12 @@
 // netlify/functions/submit-insurance-lead.js
 
-const fs = require('node:fs/promises');
-const path = require('node:path');
 const {
   sanitizeText,
   sanitizeEmail,
   sanitizePhone,
   sanitizeAirtableFields
 } = require('./scripts/input-sanitizer');
-
-const QUEUE_FILE_PATH = path.resolve(process.cwd(), 'data', 'insurance-leads.json');
-
-async function readQueuedLeads() {
-  try {
-    const raw = await fs.readFile(QUEUE_FILE_PATH, 'utf8');
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (error) {
-    if (error.code === 'ENOENT') return [];
-    throw error;
-  }
-}
-
-async function appendLeadToQueue(lead) {
-  await fs.mkdir(path.dirname(QUEUE_FILE_PATH), { recursive: true });
-  const queued = await readQueuedLeads();
-  queued.push(lead);
-  await fs.writeFile(QUEUE_FILE_PATH, `${JSON.stringify(queued, null, 2)}\n`, 'utf8');
-}
+const { appendLeadToQueue } = require('./scripts/lead-queue-store');
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
@@ -61,11 +40,15 @@ exports.handler = async (event) => {
     }
 
     await appendLeadToQueue({
-      referralId,
-      leadCategory: 'insurance',
-      submittedAt: new Date().toISOString(),
-      synced: false,
-      fields: sanitizedFields
+      queueFile: 'data/insurance-leads.json',
+      commitMessage: `chore: queue insurance lead ${referralId}`,
+      lead: {
+        referralId,
+        leadCategory: 'insurance',
+        submittedAt: new Date().toISOString(),
+        synced: false,
+        fields: sanitizedFields
+      }
     });
 
     return {

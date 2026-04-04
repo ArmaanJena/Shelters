@@ -1,28 +1,7 @@
 // netlify/functions/submit-whatsapp-lead.js
 
-const fs = require('node:fs/promises');
-const path = require('node:path');
 const { sanitizeText, sanitizePhone } = require('./scripts/input-sanitizer');
-
-const QUEUE_FILE_PATH = path.resolve(process.cwd(), 'data', 'whatsapp-leads.json');
-
-async function readQueuedLeads() {
-  try {
-    const raw = await fs.readFile(QUEUE_FILE_PATH, 'utf8');
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (error) {
-    if (error.code === 'ENOENT') return [];
-    throw error;
-  }
-}
-
-async function appendLeadToQueue(lead) {
-  await fs.mkdir(path.dirname(QUEUE_FILE_PATH), { recursive: true });
-  const queuedLeads = await readQueuedLeads();
-  queuedLeads.push(lead);
-  await fs.writeFile(QUEUE_FILE_PATH, `${JSON.stringify(queuedLeads, null, 2)}\n`, 'utf8');
-}
+const { appendLeadToQueue } = require('./scripts/lead-queue-store');
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
@@ -48,13 +27,17 @@ exports.handler = async (event) => {
     const referralId = `SW-${Date.now()}-${randomPart}`;
 
     await appendLeadToQueue({
-      referralId,
-      name,
-      phone,
-      message,
-      leadType,
-      submittedAt,
-      synced: false
+      queueFile: 'data/whatsapp-leads.json',
+      commitMessage: `chore: queue WhatsApp lead ${referralId}`,
+      lead: {
+        referralId,
+        name,
+        phone,
+        message,
+        leadType,
+        submittedAt,
+        synced: false
+      }
     });
 
     return {
