@@ -1,0 +1,88 @@
+name: Lead Intake Queue Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */5 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lead-intake-sync
+  cancel-in-progress: true
+
+jobs:
+  intake_sync:
+    runs-on: ubuntu-latest
+    env:
+      LEAD_INTAKE_PULL_URL: ${{ secrets.LEAD_INTAKE_PULL_URL || vars.LEAD_INTAKE_PULL_URL || '' }}
+      LEAD_INTAKE_PULL_TOKEN: ${{ secrets.LEAD_INTAKE_PULL_TOKEN || '' }}
+      LEAD_INTAKE_PULL_TIMEOUT_MS: ${{ vars.LEAD_INTAKE_PULL_TIMEOUT_MS || '20000' }}
+      LEAD_INTAKE_PULL_MAX_RETRIES: ${{ vars.LEAD_INTAKE_PULL_MAX_RETRIES || '3' }}
+      LEAD_INTAKE_PULL_BASE_BACKOFF_MS: ${{ vars.LEAD_INTAKE_PULL_BASE_BACKOFF_MS || '1200' }}
+      LEAD_INTAKE_MAX_STATE_IDS: ${{ vars.LEAD_INTAKE_MAX_STATE_IDS || '5000' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Pull latest branch
+        run: |
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          git pull --rebase origin "$BRANCH"
+
+      - name: Fetch intake and append to lead queues
+        run: node scripts/fetch-lead-intake.js
+
+      - name: Validate JSON schema and structure
+        run: npm run validate:data-json
+
+      - name: Detect lead queue changes
+        id: detect_change
+        run: |
+          if [ -z "$(git status --porcelain -- data/whatsapp-leads.json data/loan-leads.json data/insurance-leads.json data/lead-intake-state.json)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push queue updates
+        if: steps.detect_change.outputs.changed == 'true'
+        run: |
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/whatsapp-leads.json data/loan-leads.json data/insurance-leads.json data/lead-intake-state.json
+          if git diff --cached --quiet; then
+            echo "No lead intake changes detected."
+            exit 0
+          fi
+          git commit -m "chore: sync lead intake queue"
+          for attempt in 1 2 3; do
+            git fetch origin "$BRANCH"
+            AHEAD_COUNT="$(git rev-list --count "origin/$BRANCH..HEAD")"
+            if [ "${AHEAD_COUNT}" -eq 0 ]; then
+              echo "Nothing to push after rebase."
+              exit 0
+            fi
+            if git push origin "HEAD:$BRANCH"; then
+              exit 0
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "Push failed after 3 attempts."
+              exit 1
+            fi
+            echo "Push rejected. Rebasing and retrying ($attempt/3)..."
+            git pull --rebase origin "$BRANCH"
+          done
+
+      - name: No-op summary
+        if: steps.detect_change.outputs.changed != 'true'
+        run: echo "No new lead intake data to persist."

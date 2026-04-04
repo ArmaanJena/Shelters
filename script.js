@@ -2,6 +2,8 @@ const STATIC_LISTINGS_ENDPOINT = 'data/listings.json';
 const HERO_FILTER_CACHE_KEY = 'hero_filter_options_v2';
 const HERO_FILTER_CACHE_TTL = 10 * 60 * 1000;
 const HERO_JSON_FETCH_TIMEOUT_MS = 15000;
+const LEAD_INTAKE_CONFIG_ENDPOINT = '/data/lead-intake-config.json';
+const LEAD_INTAKE_CONFIG_TIMEOUT_MS = 8000;
 const IMAGE_FALLBACK_DATA_URI =
   'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22%23cbd5e1%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23334155%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2232%22%3EImage%20Unavailable%3C/text%3E%3C/svg%3E';
 
@@ -146,8 +148,82 @@ async function hydrateHeroSearchFilters() {
   }
 }
 
-function getWhatsAppLeadEndpointCandidates() {
-  return ['/.netlify/functions/submit-whatsapp-lead', '/submit-whatsapp-lead'];
+let leadIntakeEndpointCachePromise = null;
+
+function normalizeLeadEndpoint(raw) {
+  if (typeof raw !== 'string') return '';
+  const trimmed = raw.trim();
+  if (!trimmed) return '';
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+    return trimmed;
+  }
+  if (trimmed.startsWith('/')) {
+    return trimmed;
+  }
+  return '';
+}
+
+function parseLeadEndpointList(rawValue) {
+  if (!rawValue) return [];
+  if (Array.isArray(rawValue)) {
+    return rawValue.map((value) => normalizeLeadEndpoint(value)).filter(Boolean);
+  }
+  if (typeof rawValue === 'string') {
+    return rawValue
+      .split(',')
+      .map((value) => normalizeLeadEndpoint(value))
+      .filter(Boolean);
+  }
+  return [];
+}
+
+function readLeadEndpointsFromRuntime() {
+  const fromWindow =
+    window.LEAD_INTAKE_ENDPOINTS ||
+    window.LEAD_INTAKE_ENDPOINT ||
+    window.__LEAD_INTAKE_ENDPOINTS__ ||
+    window.__LEAD_INTAKE_ENDPOINT__ ||
+    '';
+  const fromMeta = document
+    .querySelector('meta[name="lead-intake-endpoints"],meta[name="lead-intake-endpoint"]')
+    ?.getAttribute('content');
+  return [...parseLeadEndpointList(fromWindow), ...parseLeadEndpointList(fromMeta)];
+}
+
+async function fetchLeadEndpointsFromConfig() {
+  if (leadIntakeEndpointCachePromise) return leadIntakeEndpointCachePromise;
+
+  leadIntakeEndpointCachePromise = (async () => {
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), LEAD_INTAKE_CONFIG_TIMEOUT_MS);
+    try {
+      const response = await fetch(LEAD_INTAKE_CONFIG_ENDPOINT, {
+        cache: 'no-store',
+        signal: controller.signal
+      });
+      if (!response.ok) return [];
+      const payload = await response.json();
+      const endpoints = parseLeadEndpointList(payload?.endpoints || payload?.endpoint || '');
+      return endpoints;
+    } catch (error) {
+      return [];
+    } finally {
+      window.clearTimeout(timeoutId);
+    }
+  })();
+
+  return leadIntakeEndpointCachePromise;
+}
+
+async function getLeadIntakeEndpointCandidates() {
+  const runtimeEndpoints = readLeadEndpointsFromRuntime();
+  const configEndpoints = await fetchLeadEndpointsFromConfig();
+  const allEndpoints = [...runtimeEndpoints, ...configEndpoints];
+  return [...new Set(allEndpoints)];
+}
+
+function isGoogleAppsScriptEndpoint(endpoint) {
+  return /https:\/\/script\.google(?:usercontent)?\.com\//i.test(endpoint);
 }
 
 function decodeLeadTypeValue(value) {
@@ -194,15 +270,33 @@ function resolveWhatsAppLeadType(anchor, whatsappUrl) {
 }
 
 async function submitWhatsAppLead(payload) {
-  const endpoints = getWhatsAppLeadEndpointCandidates();
+  const endpoints = await getLeadIntakeEndpointCandidates();
+  if (endpoints.length === 0) {
+    console.error(
+      'Lead intake endpoint is not configured. Set data/lead-intake-config.json or window.LEAD_INTAKE_ENDPOINT.'
+    );
+    return false;
+  }
+
+  const intakePayload = {
+    leadCategory: 'whatsapp',
+    submittedAt: new Date().toISOString(),
+    ...payload
+  };
+
   for (const endpoint of endpoints) {
     try {
-      const response = await fetch(endpoint, {
+      const useNoCorsTransport = isGoogleAppsScriptEndpoint(endpoint);
+      const requestOptions = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (response.ok) return true;
+        headers: {
+          'Content-Type': useNoCorsTransport ? 'text/plain;charset=utf-8' : 'application/json'
+        },
+        mode: useNoCorsTransport ? 'no-cors' : 'cors',
+        body: JSON.stringify(intakePayload)
+      };
+      const response = await fetch(endpoint, requestOptions);
+      if (useNoCorsTransport || response.ok) return true;
     } catch (error) {
       // Try next endpoint.
     }

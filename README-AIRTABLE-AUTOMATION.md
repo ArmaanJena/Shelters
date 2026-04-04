@@ -71,3 +71,20 @@ Then confirm:
 - Create a new Airtable token with least privilege.
 - Keep Airtable secrets only in GitHub secrets.
 - Do not commit credentials in client-side JS.
+
+## 6) Lead Intake (Google Apps Script)
+
+Leads are captured from the static website using Google Apps Script intake, then synced into JSON queues before Airtable push.
+
+Files:
+
+- `integrations/google-apps-script/lead-intake.gs`
+- `.github/workflows/lead-intake-sync.yml`
+- `scripts/fetch-lead-intake.js`
+- `data/lead-intake-config.json`
+
+Required configuration:
+
+- Frontend endpoint in `data/lead-intake-config.json`
+- Repo secret/variable `LEAD_INTAKE_PULL_URL`
+- Optional secret `LEAD_INTAKE_PULL_TOKEN`
