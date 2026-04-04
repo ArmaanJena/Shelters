@@ -33,15 +33,26 @@ function unwrapSecretText(value) {
   return trimmed.replace(/^['"]+|['"]+$/g, '').trim();
 }
 
+function normalizeUrlCandidate(value) {
+  const raw = unwrapSecretText(value);
+  if (!raw) return '';
+  const exactUrl = raw.match(/^https?:\/\/\S+$/i);
+  if (exactUrl) return exactUrl[0];
+
+  const embeddedUrl = raw.match(/https?:\/\/[^\s'"]+/i);
+  if (embeddedUrl) return embeddedUrl[0];
+  return raw;
+}
+
 function resolveIntakePullUrl() {
-  const rawUrl = unwrapSecretText(LEAD_INTAKE_PULL_URL);
+  const rawUrl = normalizeUrlCandidate(LEAD_INTAKE_PULL_URL);
   if (!rawUrl) return '';
 
   let parsed;
   try {
     parsed = new URL(rawUrl);
   } catch (error) {
-    throw new Error('LEAD_INTAKE_PULL_URL is not a valid URL.');
+    throw new Error('LEAD_INTAKE_PULL_URL is not a valid URL. Set only the full https URL value in GitHub Secrets.');
   }
 
   const cleanToken = unwrapSecretText(LEAD_INTAKE_PULL_TOKEN);

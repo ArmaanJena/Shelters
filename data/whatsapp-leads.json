@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "referralId": "SW-1775285656108-45ERJ",
+    "name": "Local Test User",
+    "phone": "+919876543210",
+    "message": "Local integration test",
+    "leadType": "Boat Club Road",
+    "submittedAt": "2026-04-04T05:20:00.935Z",
+    "synced": false
+  },
+  {
+    "referralId": "SW-1775285656125-NBUT3",
+    "name": "Deepak Bagam",
+    "phone": "9133167661",
+    "message": "s",
+    "leadType": "General Enquiry",
+    "submittedAt": "2026-04-04T05:22:16.998Z",
+    "synced": false
+  }
+]
