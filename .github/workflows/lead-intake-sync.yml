@@ -38,6 +38,44 @@ jobs:
           BRANCH="${GITHUB_REF_NAME:-main}"
           git pull --rebase origin "$BRANCH"
 
+      - name: Validate intake endpoint auth
+        run: |
+          if [ -z "${LEAD_INTAKE_PULL_URL}" ]; then
+            echo "::error::LEAD_INTAKE_PULL_URL is missing."
+            exit 1
+          fi
+          if [ -z "${LEAD_INTAKE_PULL_TOKEN}" ]; then
+            echo "::error::LEAD_INTAKE_PULL_TOKEN is missing."
+            exit 1
+          fi
+          node - <<'NODE'
+          (async () => {
+            const rawUrl = process.env.LEAD_INTAKE_PULL_URL || '';
+            const token = process.env.LEAD_INTAKE_PULL_TOKEN || '';
+            const parsed = new URL(rawUrl);
+            parsed.searchParams.set('token', token);
+            const response = await fetch(parsed.toString(), {
+              method: 'GET',
+              headers: { Accept: 'application/json' }
+            });
+            let payload = {};
+            try {
+              payload = await response.json();
+            } catch (error) {
+              console.error('Intake preflight returned non-JSON response.');
+              process.exit(1);
+            }
+            if (!response.ok || payload?.ok !== true) {
+              console.error(`Intake preflight failed: status=${response.status}, ok=${payload?.ok}, error=${payload?.error || 'n/a'}`);
+              process.exit(1);
+            }
+            console.log('Intake preflight passed.');
+          })().catch((error) => {
+            console.error(error.message || error);
+            process.exit(1);
+          });
+          NODE
+
       - name: Fetch intake and append to lead queues
         run: node scripts/fetch-lead-intake.js
 
