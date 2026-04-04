@@ -16,7 +16,7 @@ const AIRTABLE_FETCH_BASE_BACKOFF_MS = Number.parseInt(
   process.env.AIRTABLE_FETCH_BASE_BACKOFF_MS || '1000',
   10
 );
-const ALLOW_AIRTABLE_API = (process.env.ALLOW_AIRTABLE_API || '').toLowerCase() === 'true';
+const ALLOW_AIRTABLE_API = resolveAirtableApiAllowance();
 
 const OUTPUTS = [
   {
@@ -33,6 +33,17 @@ function assertEnv(value, name) {
   if (!value || !value.trim()) {
     throw new Error(`Missing required environment variable: ${name}`);
   }
+}
+
+function resolveAirtableApiAllowance() {
+  const explicit = (process.env.ALLOW_AIRTABLE_API || '').trim().toLowerCase();
+  if (explicit === 'true') return true;
+  if (explicit === 'false') return false;
+
+  // Local/manual runs are allowed by default when no explicit flag is provided.
+  // In GitHub Actions we keep explicit opt-in to avoid accidental secret usage.
+  const isGitHubActions = (process.env.GITHUB_ACTIONS || '').trim().toLowerCase() === 'true';
+  return !isGitHubActions;
 }
 
 function sleep(ms) {
@@ -173,7 +184,9 @@ async function writePayloadIfChanged(outputPath, payload) {
 
 async function main() {
   if (!ALLOW_AIRTABLE_API) {
-    throw new Error('Airtable API access is disabled. This script is allowed only in the sync job.');
+    throw new Error(
+      'Airtable API access is disabled. Set ALLOW_AIRTABLE_API=true to run this script in CI.'
+    );
   }
 
   assertEnv(AIRTABLE_API_KEY, 'AIRTABLE_API_KEY');
