@@ -56,7 +56,7 @@ function resolveIntakePullUrl() {
   }
 
   const cleanToken = unwrapSecretText(LEAD_INTAKE_PULL_TOKEN);
-  if (cleanToken && !parsed.searchParams.get('token')) {
+  if (cleanToken) {
     parsed.searchParams.set('token', cleanToken);
   }
   return parsed.toString();
