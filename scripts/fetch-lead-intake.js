@@ -27,6 +27,30 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function unwrapSecretText(value) {
+  if (typeof value !== 'string') return '';
+  const trimmed = value.trim();
+  return trimmed.replace(/^['"]+|['"]+$/g, '').trim();
+}
+
+function resolveIntakePullUrl() {
+  const rawUrl = unwrapSecretText(LEAD_INTAKE_PULL_URL);
+  if (!rawUrl) return '';
+
+  let parsed;
+  try {
+    parsed = new URL(rawUrl);
+  } catch (error) {
+    throw new Error('LEAD_INTAKE_PULL_URL is not a valid URL.');
+  }
+
+  const cleanToken = unwrapSecretText(LEAD_INTAKE_PULL_TOKEN);
+  if (cleanToken && !parsed.searchParams.get('token')) {
+    parsed.searchParams.set('token', cleanToken);
+  }
+  return parsed.toString();
+}
+
 function toIso(value) {
   const date = value ? new Date(value) : new Date();
   if (Number.isNaN(date.getTime())) return new Date().toISOString();
@@ -201,7 +225,8 @@ function createHeaders() {
 }
 
 async function fetchIntakePayload() {
-  if (!LEAD_INTAKE_PULL_URL.trim()) {
+  const intakeUrl = resolveIntakePullUrl();
+  if (!intakeUrl) {
     console.log('LEAD_INTAKE_PULL_URL is not configured. Skipping intake sync.');
     return [];
   }
@@ -211,7 +236,7 @@ async function fetchIntakePayload() {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), LEAD_INTAKE_PULL_TIMEOUT_MS);
     try {
-      const response = await fetch(LEAD_INTAKE_PULL_URL, {
+      const response = await fetch(intakeUrl, {
         method: 'GET',
         headers: createHeaders(),
         signal: controller.signal
