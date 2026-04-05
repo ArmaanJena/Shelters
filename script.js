@@ -435,6 +435,23 @@ function initWhatsAppLeadFlow() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const logo = document.querySelector('.navbar .logo');
+  if (logo) {
+    logo.setAttribute('role', 'link');
+    logo.setAttribute('tabindex', '0');
+    logo.style.cursor = 'pointer';
+    const goHome = () => {
+      window.location.href = '/';
+    };
+    logo.addEventListener('click', goHome);
+    logo.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        goHome();
+      }
+    });
+  }
+
   const searchTabs = document.querySelectorAll('.search-tab-btn');
   const searchContents = document.querySelectorAll('.search-panel .search-form');
 

@@ -209,14 +209,12 @@ async function fetchAreasFromListings() {
 }
 
 function buildHomeAreaCard(item) {
-  const link = `./areas/?area=${encodeURIComponent(item.name)}`;
-  const fallbackDescription = `Explore properties, trends, and neighbourhood insights in ${item.name}.`;
-  const description = (item.description || fallbackDescription).slice(0, 190);
+  const link = `./areas/?area=${encodeURIComponent(toAreaSlug(item.name))}`;
 
   return `
-    <a href="${link}" class="collection-card" aria-label="Explore ${homeAreasEscapeHtml(item.name)} area">
+    <a href="${link}" class="collection-card" aria-label="Open ${homeAreasEscapeHtml(item.name)} listings">
       <h3>${homeAreasEscapeHtml(item.name)}</h3>
-      <p>${homeAreasEscapeHtml(description)}</p>
+      <p>Open ${homeAreasEscapeHtml(item.name)} listings</p>
       <div class="collection-glow"></div>
     </a>
   `;

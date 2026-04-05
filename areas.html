@@ -48,17 +48,19 @@
         .area-location-grid {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.7rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
         }
         .area-location-card {
             display: block;
             text-decoration: none;
             border: 1px solid var(--light-gray, #e2e8f0);
-            border-radius: 12px;
-            padding: 0.75rem 0.8rem;
+            border-radius: 10px;
+            padding: 1.8rem 1.4rem;
             background: #ffffff;
             transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+            min-height: 240px;
+            text-align: center;
         }
         .area-location-card:hover {
             transform: translateY(-2px);
@@ -70,15 +72,16 @@
             background: #fff8f8;
         }
         .area-location-card h3 {
-            margin: 0;
-            font-size: 1.03rem;
+            margin: 0 0 0.7rem;
+            font-size: clamp(1.45rem, 2.4vw, 2.05rem);
             color: #4b1d1f;
-            line-height: 1.3;
+            line-height: 1.2;
         }
         .area-location-card p {
-            margin: 0.32rem 0 0;
-            font-size: 0.86rem;
+            margin: 0;
+            font-size: 0.96rem;
             color: var(--slate-gray, #64748b);
+            line-height: 1.55;
         }
         .area-intro-title {
             font-size: clamp(1.5rem, 2.8vw, 2.2rem);
@@ -187,7 +190,7 @@
             </div>
         </section>
 
-        <section class="property-listings-section">
+        <section id="area-listings-section" class="property-listings-section">
             <div class="container">
                 <h2 id="area-listings-heading" class="section-title">Latest Properties</h2>
                 <div id="property-listings"></div>
@@ -198,7 +201,7 @@
             </div>
         </section>
 
-        <section class="placeholder-section">
+        <section id="area-qa-section" class="placeholder-section">
             <div class="container">
                 <h3 class="section-title">Area Q&A</h3>
                 <div id="area-qa-grid" class="placeholder-grid"></div>

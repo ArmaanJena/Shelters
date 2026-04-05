@@ -512,6 +512,16 @@ function escapeHtml(value) {
     .replace(/'/g, '&#39;');
 }
 
+function getAreaCardDescription(location) {
+  const fallback = `Explore properties, trends, and neighbourhood insights in ${location}.`;
+  const description = (getAreaQuestionsContentForLocation(location).description || fallback)
+    .toString()
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (description.length <= 190) return description;
+  return `${description.slice(0, 187)}...`;
+}
+
 function toSafeDisplayText(value, fallback = '') {
   if (value === null || value === undefined) return fallback;
   const text = value.toString().trim();
@@ -563,15 +573,11 @@ function applyAreaPageContext(records) {
       .filter(Boolean)
   )].sort((a, b) => a.localeCompare(b));
 
-  if (!fixedAreaLocation && availableLocations.length > 0) {
-    fixedAreaLocation = availableLocations[0];
-  }
-
   if (fixedAreaLocation) {
     const matchedLocation = availableLocations.find(
       location => location.toLowerCase() === fixedAreaLocation.toLowerCase()
     );
-    if (matchedLocation) fixedAreaLocation = matchedLocation;
+    fixedAreaLocation = matchedLocation || '';
   }
 
   if (areaLocationGrid) {
@@ -582,9 +588,10 @@ function applyAreaPageContext(records) {
       card.href = `./?area=${encodeURIComponent(toAreaSlug(location))}`;
       card.setAttribute('aria-label', `View properties in ${location}`);
       card.dataset.area = location;
+      const locationDescription = getAreaCardDescription(location);
       card.innerHTML = `
         <h3>${escapeHtml(location)}</h3>
-        <p>Open ${escapeHtml(location)} listings</p>
+        <p>${escapeHtml(locationDescription)}</p>
       `;
       card.addEventListener('click', (event) => {
         event.preventDefault();
@@ -598,15 +605,24 @@ function applyAreaPageContext(records) {
     });
   }
 
-  if (locationFilter && fixedAreaLocation) {
-    locationFilter.value = fixedAreaLocation;
+  if (locationFilter) {
+    locationFilter.value = fixedAreaLocation || '';
     locationFilter.disabled = true;
   }
 
+  const hasAreaSelection = Boolean(fixedAreaLocation);
+  const listingsSection = document.getElementById('area-listings-section');
+  const qaSection = document.getElementById('area-qa-section');
+
+  if (listingsSection) {
+    listingsSection.classList.toggle('area-filter-hidden', !hasAreaSelection);
+  }
+  if (qaSection) {
+    qaSection.classList.toggle('area-filter-hidden', !hasAreaSelection);
+  }
+
   if (heading) {
-    heading.textContent = fixedAreaLocation
-      ? `Flats in ${fixedAreaLocation}, Pune`
-      : 'Flats in Pune';
+    heading.textContent = 'Explore Our Featured Areas';
   }
 
   if (listingsHeading) {
@@ -616,10 +632,18 @@ function applyAreaPageContext(records) {
   }
 
   if (description) {
-    description.textContent = 'Loading area details...';
+    if (hasAreaSelection) {
+      description.textContent = 'Loading area details...';
+      description.classList.remove('area-filter-hidden');
+    } else {
+      description.textContent = '';
+      description.classList.add('area-filter-hidden');
+    }
   }
 
-  hydrateAreaInsights(fixedAreaLocation);
+  if (hasAreaSelection) {
+    hydrateAreaInsights(fixedAreaLocation);
+  }
 }
 
 function getPropertyTypeValue(fields) {
@@ -876,6 +900,11 @@ async function fetchListings() {
       hydrateFilterOptions(allListings);
       applyQueryParamsToFilters();
       applyAreaPageContext(allListings);
+      if (isAreasPage) {
+        fetchAreaQuestionsRecords()
+          .then(() => applyAreaPageContext(allListings))
+          .catch((error) => console.warn('Unable to hydrate area cards with descriptions', error));
+      }
       applyFiltersAndRender();
     }
   } catch (error) {
@@ -888,6 +917,14 @@ async function fetchListings() {
 
 async function applyFiltersAndRender(input) {
   try {
+    if (isAreasPage && !fixedAreaLocation) {
+      const listingsContainer = getListingsContainer();
+      if (listingsContainer) listingsContainer.innerHTML = '';
+      const summary = document.getElementById('results-summary');
+      if (summary) summary.innerHTML = '';
+      return;
+    }
+
     const requestedPage = typeof input === 'number' && Number.isFinite(input) ? Math.max(1, Math.floor(input)) : 1;
     let filtered = [...allListings];
 
