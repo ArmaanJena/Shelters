@@ -1,6 +1,115 @@
 {
-  "updatedAt": "2026-04-06T06:27:52.023Z",
+  "updatedAt": "2026-04-06T10:50:56.475Z",
   "records": [
+    {
+      "id": "rec8R4WdcgwBIy90g",
+      "createdTime": "2026-04-06T07:55:33.000Z",
+      "fields": {
+        "Title": "Iconic Commercial Office Space for Lease in Pune CBD – Bund Garden Address | Premium Corporate Tower -24000 Sqft \n",
+        "Image": [
+          {
+            "id": "attzgdsCznjoinkgY",
+            "width": 3024,
+            "height": 4032,
+            "url": "/data/listing-images/rec8R4WdcgwBIy90g/attzgdsCznjoinkgY.jpg",
+            "filename": "2026-04-06 15.14.19.jpg",
+            "size": 5260933,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec8R4WdcgwBIy90g/attzgdsCznjoinkgY.jpg",
+                "width": 27,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec8R4WdcgwBIy90g/attzgdsCznjoinkgY.jpg",
+                "width": 512,
+                "height": 683
+              },
+              "full": {
+                "url": "/data/listing-images/rec8R4WdcgwBIy90g/attzgdsCznjoinkgY.jpg",
+                "width": 2250,
+                "height": 3000
+              }
+            }
+          },
+          {
+            "id": "attnc3xaUjdXGSGJe",
+            "width": 5841,
+            "height": 3894,
+            "url": "/data/listing-images/rec8R4WdcgwBIy90g/attnc3xaUjdXGSGJe.jpg",
+            "filename": "2026-04-06 15.14.24.jpg",
+            "size": 8826276,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec8R4WdcgwBIy90g/attnc3xaUjdXGSGJe.jpg",
+                "width": 54,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec8R4WdcgwBIy90g/attnc3xaUjdXGSGJe.jpg",
+                "width": 768,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/rec8R4WdcgwBIy90g/attnc3xaUjdXGSGJe.jpg",
+                "width": 3000,
+                "height": 2000
+              }
+            }
+          },
+          {
+            "id": "attkdvq7Eg4n1ZsEo",
+            "width": 5705,
+            "height": 3719,
+            "url": "/data/listing-images/rec8R4WdcgwBIy90g/attkdvq7Eg4n1ZsEo.jpg",
+            "filename": "2026-04-06 15.14.25.jpg",
+            "size": 5884289,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec8R4WdcgwBIy90g/attkdvq7Eg4n1ZsEo.jpg",
+                "width": 55,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec8R4WdcgwBIy90g/attkdvq7Eg4n1ZsEo.jpg",
+                "width": 785,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/rec8R4WdcgwBIy90g/attkdvq7Eg4n1ZsEo.jpg",
+                "width": 3000,
+                "height": 1956
+              }
+            }
+          }
+        ],
+        "Price": 3900000,
+        "Location": "Boat Club Road",
+        "Property Type": "Office",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 24000,
+        "Description": "Premium commercial office space available for lease at Poonawalla Towers, strategically located in Bund Garden — one of Pune’s most prestigious and established Central Business Districts (CBD). This prime location offers unmatched connectivity to Koregaon Park, Kalyani Nagar, Camp, and Pune Railway Station, making it a highly desirable address for corporate offices and financial institutions.\n\nThe property is surrounded by a strong ecosystem of luxury hotels, high-street retail, corporate offices, and premium residential neighbourhoods, ensuring a high-value business environment. The micro-market is home to leading banks, multinational companies, consulting firms, and hospitality brands, making it one of the most sought-after commercial locations in Pune.\n\nWith excellent road connectivity, proximity to Pune Railway Station, and seamless access to the airport, Bund Garden remains a preferred destination for companies looking to establish headquarters or premium office spaces in Pune. The project offers efficient layouts, strong frontage, and ample parking, making it ideal for corporates, BFSI firms, and global enterprises.\n\n",
+        "Short Description": "Iconic Commercial Office Space for Lease in Pune CBD – Bund Garden Address | Premium Corporate Tower-24000 sq ft \n\nPremium large-format office space available in Pune’s most established CBD — Bund Garden. Surrounded by luxury hotels, corporate offices, and high-end residential zones, this is an ideal address for corporates seeking visibility, connectivity, and prestige.",
+        "Price per Sqft": 162.5,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
     {
       "id": "rec9IXRMtB6pbD0LP",
       "createdTime": "2026-04-06T05:53:09.000Z",
