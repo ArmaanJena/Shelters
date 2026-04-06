@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area Listings | Shelters Realty</title>
+    <title>Areas | Shelters Realty</title>
     <meta name="description" content="Discover property listings by area in East Pune with local Q&A insights from Shelters Realty.">
     <meta property="og:title" content="Area Listings | Shelters Realty">
     <meta property="og:description" content="Discover property listings by area in East Pune with local Q&A insights.">
@@ -13,93 +13,195 @@
     <link rel="canonical" href="https://www.sheltersrealty.co.in/areas">
     <link rel="stylesheet" href="/styles.css">
     <style>
-        .area-intro {
-            padding: 2.2rem 0 1rem;
-        }
-        .area-intro-card {
-            background: var(--white, #fff);
-            border: 1px solid var(--light-gray, #e2e8f0);
-            border-radius: 18px;
-            padding: 1.3rem 1.4rem;
-            box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
-        }
-        .area-intro-meta {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.7rem;
-            margin-bottom: 0.65rem;
-        }
-        .area-intro-label {
-            font-size: 0.78rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: var(--slate-gray, #64748b);
-        }
-        .area-intro-badge {
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: var(--dark-navy, #1e293b);
-            background: #f1f5f9;
-            border-radius: 999px;
-            padding: 0.32rem 0.7rem;
-        }
-        .area-location-grid {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1rem;
-        }
-        .area-location-card {
-            display: block;
-            text-decoration: none;
-            border: 1px solid var(--light-gray, #e2e8f0);
-            border-radius: 10px;
-            padding: 1.8rem 1.4rem;
-            background: #ffffff;
-            transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
-            min-height: 240px;
+        /* ── Area Gallery View (no area selected) ── */
+        .areas-hero {
+            padding: 3.5rem 0 2.5rem;
             text-align: center;
         }
-        .area-location-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+        .areas-hero-eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #7f1d1d;
+            background: #fff1f1;
+            border-radius: 999px;
+            padding: 0.28rem 0.85rem;
+            margin-bottom: 1rem;
         }
-        .area-location-card.is-active {
-            border-color: #7f1d1d;
-            box-shadow: 0 10px 22px rgba(127, 29, 29, 0.16);
-            background: #fff8f8;
+        .areas-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--dark-navy, #1e293b);
+            margin: 0 0 0.75rem;
+            line-height: 1.15;
+        }
+        .areas-hero p {
+            color: var(--slate-gray, #64748b);
+            font-size: 1.1rem;
+            margin: 0 auto;
+            max-width: 540px;
+            line-height: 1.7;
+        }
+        /* Card Grid */
+        .area-cards-section {
+            padding: 0.5rem 0 4rem;
+        }
+        .area-location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.4rem;
+        }
+        .area-location-card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            border: 1px solid var(--light-gray, #e2e8f0);
+            border-radius: 16px;
+            padding: 2rem 1.6rem;
+            background: var(--white, #ffffff);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .area-location-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(127,29,29,0.03) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .area-location-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+            border-color: #fca5a5;
+        }
+        .area-location-card:hover::before { opacity: 1; }
+        .area-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7f1d1d, #b91c1c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.1rem;
+            font-size: 1.4rem;
+            flex-shrink: 0;
         }
         .area-location-card h3 {
-            margin: 0 0 0.7rem;
-            font-size: clamp(1.45rem, 2.4vw, 2.05rem);
-            color: #4b1d1f;
-            line-height: 1.2;
+            margin: 0 0 0.55rem;
+            font-size: 1.22rem;
+            font-weight: 700;
+            color: var(--dark-navy, #1e293b);
+            line-height: 1.25;
         }
         .area-location-card p {
-            margin: 0;
-            font-size: 0.96rem;
+            margin: 0 0 1.2rem;
+            font-size: 0.92rem;
             color: var(--slate-gray, #64748b);
-            line-height: 1.55;
+            line-height: 1.6;
+            flex: 1;
         }
-        .area-intro-title {
-            font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-            line-height: 1.2;
-            margin-bottom: 0.6rem;
+        .area-card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #b91c1c;
+        }
+        .area-card-cta svg {
+            transition: transform 0.18s;
+        }
+        .area-location-card:hover .area-card-cta svg {
+            transform: translateX(4px);
+        }
+
+        /* ── Listings View (area selected) ── */
+        .area-listings-header {
+            background: var(--white, #fff);
+            border-bottom: 1px solid var(--light-gray, #e2e8f0);
+            padding: 1rem 0;
+            position: sticky;
+            top: 70px;
+            z-index: 50;
+            box-shadow: 0 2px 12px rgba(15,23,42,0.06);
+        }
+        .area-listings-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .area-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 1rem;
+            border: 1px solid var(--light-gray, #e2e8f0);
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--slate-gray, #64748b);
+            background: transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+            white-space: nowrap;
+        }
+        .area-back-btn:hover {
+            background: #f1f5f9;
             color: var(--dark-navy, #1e293b);
         }
-        .area-intro-description {
+        .area-switcher-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex: 1;
+            min-width: 180px;
+        }
+        .area-switcher-label {
+            font-size: 0.82rem;
+            font-weight: 600;
             color: var(--slate-gray, #64748b);
-            line-height: 1.75;
-            margin: 0;
+            white-space: nowrap;
         }
-        .area-filter-hidden {
-            display: none !important;
+        .area-switcher-select {
+            flex: 1;
+            padding: 0.5rem 0.85rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark-navy, #1e293b);
+            background: #f8fafc;
+            cursor: pointer;
+            max-width: 280px;
+            transition: border-color 0.15s;
+            appearance: auto;
         }
-        .placeholder-section {
-            padding: 2rem 0 3rem;
+        .area-switcher-select:focus {
+            outline: none;
+            border-color: #b91c1c;
         }
+        .area-listing-count-badge {
+            margin-left: auto;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--slate-gray, #64748b);
+            background: #f1f5f9;
+            border-radius: 999px;
+            padding: 0.3rem 0.8rem;
+            white-space: nowrap;
+        }
+
+        /* shared */
+        .area-filter-hidden { display: none !important; }
+        .placeholder-section { padding: 2rem 0 3rem; }
         .property-listings-section .property-grid {
             display: grid;
             gap: 2rem;
@@ -111,9 +213,9 @@
             }
         }
         @media (max-width: 560px) {
-            .property-listings-section .property-grid {
-                grid-template-columns: 1fr;
-            }
+            .property-listings-section .property-grid { grid-template-columns: 1fr; }
+            .area-listings-header-inner { flex-direction: column; align-items: flex-start; }
+            .area-listing-count-badge { margin-left: 0; }
         }
         .placeholder-grid {
             display: grid;
@@ -127,16 +229,25 @@
             border-radius: 14px;
             padding: 1rem 1.05rem;
         }
-        .placeholder-card h4 {
-            margin: 0 0 0.45rem;
-            font-size: 1rem;
-            color: var(--dark-navy, #1e293b);
+        .placeholder-card h4 { margin: 0 0 0.45rem; font-size: 1rem; color: var(--dark-navy, #1e293b); }
+        .placeholder-card p { margin: 0; color: var(--slate-gray, #64748b); line-height: 1.6; font-size: 0.95rem; }
+
+        /* loading skeleton cards */
+        .area-skeleton-card {
+            border: 1px solid var(--light-gray, #e2e8f0);
+            border-radius: 16px;
+            padding: 2rem 1.6rem;
+            background: var(--white, #fff);
         }
-        .placeholder-card p {
-            margin: 0;
-            color: var(--slate-gray, #64748b);
-            line-height: 1.6;
-            font-size: 0.95rem;
+        .skeleton-line {
+            border-radius: 6px;
+            background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.4s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
     </style>
 </head>
@@ -152,7 +263,6 @@
                 <a href="/listings" class="nav-link">Properties</a>
                 <a href="/new-launches/" class="nav-link">New</a>
                 <a href="/areas" class="nav-link active">Areas</a>
-                <a href="/agreements" class="nav-link">Agreements</a>
                 <a href="/about" class="nav-link">About</a>
                 <a href="/contact" class="nav-link">Contact</a>
             </div>
@@ -172,40 +282,89 @@
     </nav>
 
     <main>
-        <section class="area-intro">
-            <div class="container">
-                <div class="area-intro-card">
-                    <div class="area-intro-meta">
-                        <span class="area-intro-label">Area</span>
-                        <div id="area-location-grid" class="area-location-grid" aria-label="Select area location">
-                            <a href="/areas" class="area-location-card">
-                                <h3>Loading areas...</h3>
-                                <p>Please wait</p>
-                            </a>
+        <!-- VIEW 1: Area Gallery (shown when no area is selected) -->
+        <section id="area-gallery-view">
+            <div class="areas-hero">
+                <div class="container">
+                    <span class="areas-hero-eyebrow">East Pune</span>
+                    <h1>Explore Properties by Area</h1>
+                    <p>Choose a neighbourhood to discover listings, pricing trends, and local insights.</p>
+                </div>
+            </div>
+            <div class="area-cards-section">
+                <div class="container">
+                    <div id="area-location-grid" class="area-location-grid" aria-label="Select an area to explore">
+                        <!-- Skeleton cards shown while loading -->
+                        <div class="area-skeleton-card">
+                            <div class="skeleton-line" style="width:48px;height:48px;border-radius:12px;margin-bottom:1.1rem;"></div>
+                            <div class="skeleton-line" style="height:20px;width:60%;margin-bottom:0.6rem;"></div>
+                            <div class="skeleton-line" style="height:14px;width:90%;margin-bottom:0.35rem;"></div>
+                            <div class="skeleton-line" style="height:14px;width:75%;"></div>
+                        </div>
+                        <div class="area-skeleton-card">
+                            <div class="skeleton-line" style="width:48px;height:48px;border-radius:12px;margin-bottom:1.1rem;"></div>
+                            <div class="skeleton-line" style="height:20px;width:55%;margin-bottom:0.6rem;"></div>
+                            <div class="skeleton-line" style="height:14px;width:85%;margin-bottom:0.35rem;"></div>
+                            <div class="skeleton-line" style="height:14px;width:70%;"></div>
+                        </div>
+                        <div class="area-skeleton-card">
+                            <div class="skeleton-line" style="width:48px;height:48px;border-radius:12px;margin-bottom:1.1rem;"></div>
+                            <div class="skeleton-line" style="height:20px;width:65%;margin-bottom:0.6rem;"></div>
+                            <div class="skeleton-line" style="height:14px;width:80%;margin-bottom:0.35rem;"></div>
+                            <div class="skeleton-line" style="height:14px;width:60%;"></div>
                         </div>
                     </div>
-                    <h1 id="area-heading" class="area-intro-title">Flats in Pune</h1>
-                    <p id="area-description" class="area-intro-description">Loading area details...</p>
                 </div>
             </div>
         </section>
 
-        <section id="area-listings-section" class="property-listings-section">
-            <div class="container">
-                <h2 id="area-listings-heading" class="section-title">Latest Properties</h2>
-                <div id="property-listings"></div>
-                <div id="property-modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(30,41,59,0.18); z-index:1000; align-items:center; justify-content:center; overflow-y:auto;">
-                    <button id="modal-close" style="position:absolute; top:18px; right:24px; background:none; border:none; font-size:2.5rem; color:#e11d48; cursor:pointer; z-index:1010; font-weight:900; line-height:1;">&times;</button>
-                    <div id="modal-body"></div>
+        <!-- VIEW 2: Area Listings (shown when an area is selected) -->
+        <section id="area-listings-view" class="area-filter-hidden">
+            <!-- Sticky header with back button + area switcher dropdown -->
+            <div class="area-listings-header">
+                <div class="container">
+                    <div class="area-listings-header-inner">
+                        <button id="area-back-btn" class="area-back-btn" aria-label="Back to all areas">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            All Areas
+                        </button>
+                        <div class="area-switcher-wrap">
+                            <span class="area-switcher-label">Area:</span>
+                            <select id="area-switcher" class="area-switcher-select" aria-label="Switch area">
+                                <!-- options injected by JS -->
+                            </select>
+                        </div>
+                        <span id="area-listing-count-badge" class="area-listing-count-badge"></span>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section id="area-qa-section" class="placeholder-section">
-            <div class="container">
-                <h3 class="section-title">Area Q&A</h3>
-                <div id="area-qa-grid" class="placeholder-grid"></div>
+            <!-- Area description -->
+            <div id="area-description-bar" class="area-filter-hidden">
+                <div class="container" style="padding-top:1.2rem;">
+                    <p id="area-description" style="color:var(--slate-gray,#64748b);line-height:1.7;margin:0;"></p>
+                </div>
             </div>
+
+            <!-- Listings grid -->
+            <section id="area-listings-section" class="property-listings-section">
+                <div class="container">
+                    <h2 id="area-listings-heading" class="section-title" style="margin-top:1.5rem;">Properties</h2>
+                    <div id="property-listings"></div>
+                    <div id="property-modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(30,41,59,0.18); z-index:1000; align-items:center; justify-content:center; overflow-y:auto;">
+                        <button id="modal-close" style="position:absolute; top:18px; right:24px; background:none; border:none; font-size:2.5rem; color:#e11d48; cursor:pointer; z-index:1010; font-weight:900; line-height:1;">&times;</button>
+                        <div id="modal-body"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Area Q&A -->
+            <section id="area-qa-section" class="placeholder-section">
+                <div class="container">
+                    <h3 class="section-title">Area Q&amp;A</h3>
+                    <div id="area-qa-grid" class="placeholder-grid"></div>
+                </div>
+            </section>
         </section>
     </main>
 
@@ -235,6 +394,7 @@
 
     <script src="/script.js"></script>
     <script src="/js/airtable.js"></script>
+    <script src="/js/areas-ui.js"></script>
 </body>
 </html>
 

@@ -947,7 +947,7 @@ async function applyFiltersAndRender(input) {
     filtered = filtered.filter(record => {
     const f = record.fields;
     let pass = true;
-    if (location && f['Location'] !== location) pass = false;
+    if (location && (f['Location'] || '').trim().toLowerCase() !== location.trim().toLowerCase()) pass = false;
     if (type && getPropertyTypeValue(f) !== type) pass = false;
     if (!isNewLaunchFilter && listingType && getOfferTypeValue(f) !== listingType) pass = false;
     const price = Number(f['Price']) || 0;
