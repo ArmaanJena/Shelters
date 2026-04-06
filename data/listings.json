@@ -1,6 +1,172 @@
 {
-  "updatedAt": "2026-04-03T04:43:27.254Z",
+  "updatedAt": "2026-04-06T06:27:52.023Z",
   "records": [
+    {
+      "id": "rec9IXRMtB6pbD0LP",
+      "createdTime": "2026-04-06T05:53:09.000Z",
+      "fields": {
+        "Title": "High-street ground floor retail spaces available in Koregaon park in the East Pune business corridor.",
+        "Image": [
+          {
+            "id": "att5bFsXSKs8beNUL",
+            "width": 1200,
+            "height": 800,
+            "url": "/data/listing-images/rec9IXRMtB6pbD0LP/att5bFsXSKs8beNUL.jpg",
+            "filename": "2026-04-06 11.46.42.jpg",
+            "size": 324360,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec9IXRMtB6pbD0LP/att5bFsXSKs8beNUL.jpg",
+                "width": 54,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec9IXRMtB6pbD0LP/att5bFsXSKs8beNUL.jpg",
+                "width": 768,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/rec9IXRMtB6pbD0LP/att5bFsXSKs8beNUL.jpg",
+                "width": 1200,
+                "height": 800
+              }
+            }
+          },
+          {
+            "id": "attIk5UxW8zrY0CHw",
+            "width": 1024,
+            "height": 1280,
+            "url": "/data/listing-images/rec9IXRMtB6pbD0LP/attIk5UxW8zrY0CHw.jpg",
+            "filename": "2026-04-06 11.46.42.jpg",
+            "size": 653640,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec9IXRMtB6pbD0LP/attIk5UxW8zrY0CHw.jpg",
+                "width": 29,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec9IXRMtB6pbD0LP/attIk5UxW8zrY0CHw.jpg",
+                "width": 512,
+                "height": 640
+              },
+              "full": {
+                "url": "/data/listing-images/rec9IXRMtB6pbD0LP/attIk5UxW8zrY0CHw.jpg",
+                "width": 1024,
+                "height": 1280
+              }
+            }
+          }
+        ],
+        "Price": 2060000,
+        "Location": "Koregaon Park",
+        "Property Type": "Showroom",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 10300,
+        "Description": "\nPremium ground floor retail space available for lease in Koregaon park annexe , one of Pune’s fastest-growing commercial and residential hubs. Strategically positioned in a high-demand business district connecting Kharadi, Koregaon Park , and Hadapsar, this location offers excellent frontage, steady footfall, and seamless accessibility.\n\nThese retail units are ideally suited for banks, NBFCs, financial institutions, premium service outlets, and branded back-office operations looking for a strong presence in a high-income catchment area. The property benefits from proximity to major IT parks, corporate offices, luxury residential developments, and hospitality zones, ensuring consistent customer traffic and business visibility.\n\nThe surrounding micro-market is driven by a mix of working professionals, expatriates, and affluent residential communities, making it a strategic choice for brands looking to establish or expand in East Pune. With wide roads, easy parking access, and strong connectivity to the airport and central business districts, this is a rare opportunity to secure premium retail space in a high-growth commercial corridor.\n\n⸻\n\n🔹 Location Advantage \n\t•\tSeamless connectivity to Kharadi IT hub Kalyani nagar and EON IT Park belt\n\t•\tClose proximity to Koregaon Park  and upscale residential pockets\n\t•\tSurrounded by premium gated communities, corporate offices, and co-working hubs\n\t•\tEasy access to Pune Airport (15–20 mins)\n\t•\tStrong catchment of high-income working professionals and expat population\n\n⸻\n\n🔹 Key Highlights\n\t•\tGround floor retail with excellent road visibility\n\t•\tIdeal for banks, financial institutions & branded outlets\n\t•\tLocated in high-growth East Pune commercial zone\n\t•\tStrong footfall driven by IT + residential catchment\n\t•\tWide frontage for branding and signage\n\t•\tLong-term lease stability (60 months tenure)\n",
+        "Short Description": "High-street ground floor retail spaces available in Upper Koregaon park in the East Pune business corridor. Ideal for banks, financial institutions, premium service brands, and back-office operations seeking strong visibility, accessibility, and a high-income catchment.",
+        "Price per Sqft": 200,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recc1CLU3vahH6X8O",
+      "createdTime": "2026-04-06T05:09:54.000Z",
+      "fields": {
+        "Title": "Large scale commercial offices for lease ideal IT parks, BPOs and large scale enterprises.Wagholi",
+        "Image": [
+          {
+            "id": "attReZ7rdcYyLlVjO",
+            "width": 1080,
+            "height": 1080,
+            "url": "/data/listing-images/recc1CLU3vahH6X8O/attReZ7rdcYyLlVjO.jpg",
+            "filename": "2026-04-06 10.55.58.jpg",
+            "size": 930563,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recc1CLU3vahH6X8O/attReZ7rdcYyLlVjO.jpg",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recc1CLU3vahH6X8O/attReZ7rdcYyLlVjO.jpg",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/recc1CLU3vahH6X8O/attReZ7rdcYyLlVjO.jpg",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          },
+          {
+            "id": "attQC0j2dL0oFjDyj",
+            "width": 1080,
+            "height": 1080,
+            "url": "/data/listing-images/recc1CLU3vahH6X8O/attQC0j2dL0oFjDyj.jpg",
+            "filename": "2026-04-06 10.56.00.jpg",
+            "size": 1053470,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recc1CLU3vahH6X8O/attQC0j2dL0oFjDyj.jpg",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recc1CLU3vahH6X8O/attQC0j2dL0oFjDyj.jpg",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/recc1CLU3vahH6X8O/attQC0j2dL0oFjDyj.jpg",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 2200000,
+        "Location": "Wagholi",
+        "Property Type": "Office",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 22000,
+        "Description": "AP4 Tech Park in Wagholi Pune offers  large-scale commercial office spaces ideal for IT parks, BPOs, and enterprise offices. With expansive floor plates, modern infrastructure, and competitive rentals, this project is designed for high-density corporate occupancy. Located on Pune Nagar Road, it provides seamless connectivity to Viman Nagar, Kharadi IT hub, and Pune Airport, making it a prime leasing opportunity.",
+        "Short Description": "Large scale commercial offices for lease ideal IT parks, BPOs and large scale enterprises.Wagholi",
+        "Price per Sqft": 100,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
     {
       "id": "rec0ksnCfOfz6lD6W",
       "createdTime": "2026-04-02T12:27:49.000Z",
