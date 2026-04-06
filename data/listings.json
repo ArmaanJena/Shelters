@@ -1,6 +1,172 @@
 {
-  "updatedAt": "2026-04-06T10:50:56.475Z",
+  "updatedAt": "2026-04-06T15:40:23.269Z",
   "records": [
+    {
+      "id": "rechDkf6i2uAcJTQR",
+      "createdTime": "2026-04-06T14:39:05.000Z",
+      "fields": {
+        "Title": "Large Corporate Office Space in Kharadi | Opp IT Hub | Premium Floor Plates-3500\n",
+        "Image": [
+          {
+            "id": "attBEAtvZZmuS5HTH",
+            "width": 5705,
+            "height": 3719,
+            "url": "/data/listing-images/rechDkf6i2uAcJTQR/attBEAtvZZmuS5HTH.jpg",
+            "filename": "2026-04-06 20.10.00.jpg",
+            "size": 5884289,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rechDkf6i2uAcJTQR/attBEAtvZZmuS5HTH.jpg",
+                "width": 55,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rechDkf6i2uAcJTQR/attBEAtvZZmuS5HTH.jpg",
+                "width": 785,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/rechDkf6i2uAcJTQR/attBEAtvZZmuS5HTH.jpg",
+                "width": 3000,
+                "height": 1956
+              }
+            }
+          },
+          {
+            "id": "att3kHH37Mx1fndOO",
+            "width": 5841,
+            "height": 3894,
+            "url": "/data/listing-images/rechDkf6i2uAcJTQR/att3kHH37Mx1fndOO.jpg",
+            "filename": "2026-04-06 20.10.02.jpg",
+            "size": 8826276,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rechDkf6i2uAcJTQR/att3kHH37Mx1fndOO.jpg",
+                "width": 54,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rechDkf6i2uAcJTQR/att3kHH37Mx1fndOO.jpg",
+                "width": 768,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/rechDkf6i2uAcJTQR/att3kHH37Mx1fndOO.jpg",
+                "width": 3000,
+                "height": 2000
+              }
+            }
+          }
+        ],
+        "Price": 272000,
+        "Location": "Kharadi",
+        "Property Type": "Office",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 3200,
+        "Description": "Premium large-format office space available for lease in Kharadi, Pune’s most established IT and commercial district. Located directly opposite a major IT park and surrounded by corporate campuses, this property offers a strategic business address with strong connectivity and visibility.\n\nThe location benefits from proximity to leading multinational companies, co-working hubs, premium residential complexes, and hospitality destinations, creating a vibrant and high-demand business ecosystem. With seamless access to Pune Airport, Nagar Road, and Viman Nagar, this office space is ideal for IT companies, corporate back offices, and growing enterprises.\n\nDesigned with efficient layouts and modern infrastructure, this is a strong opportunity for businesses seeking scalable office space in East Pune.\n\n⸻\n\n🔹 Key Highlights\n\t•\tLarge contiguous office space\n\t•\tPrime IT corridor location\n\t•\tStrong corporate ecosystem\n\t•\tHigh rental demand area\n\t•\tIdeal for IT / BFSI / corporates\n",
+        "Short Description": "Spacious office ideal for mid-size corporates and IT companies in Pune’s top commercial hub with excellent connectivity and corporate ecosystem.",
+        "Price per Sqft": 85,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "rec9VHZzfFXEpflOj",
+      "createdTime": "2026-04-06T14:30:45.000Z",
+      "fields": {
+        "Title": "Grade A Office Space in Kharadi | Opp IT Hub | Corporate Address-1350 Sq ft ",
+        "Image": [
+          {
+            "id": "attct0DPJ5ZQNO3XU",
+            "width": 5841,
+            "height": 3894,
+            "url": "/data/listing-images/rec9VHZzfFXEpflOj/attct0DPJ5ZQNO3XU.jpg",
+            "filename": "2026-04-06 20.07.22.jpg",
+            "size": 8826276,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec9VHZzfFXEpflOj/attct0DPJ5ZQNO3XU.jpg",
+                "width": 54,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec9VHZzfFXEpflOj/attct0DPJ5ZQNO3XU.jpg",
+                "width": 768,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/rec9VHZzfFXEpflOj/attct0DPJ5ZQNO3XU.jpg",
+                "width": 3000,
+                "height": 2000
+              }
+            }
+          },
+          {
+            "id": "attSDf3tUILnmvKqu",
+            "width": 1200,
+            "height": 800,
+            "url": "/data/listing-images/rec9VHZzfFXEpflOj/attSDf3tUILnmvKqu.jpg",
+            "filename": "2026-04-06 20.07.56.jpg",
+            "size": 455357,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec9VHZzfFXEpflOj/attSDf3tUILnmvKqu.jpg",
+                "width": 54,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec9VHZzfFXEpflOj/attSDf3tUILnmvKqu.jpg",
+                "width": 768,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/rec9VHZzfFXEpflOj/attSDf3tUILnmvKqu.jpg",
+                "width": 1200,
+                "height": 800
+              }
+            }
+          }
+        ],
+        "Price": 114000,
+        "Location": "Kharadi",
+        "Property Type": "Office",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 1350,
+        "Description": "Compact commercial office space available for lease in Kharadi, Pune’s leading IT and business hub. Strategically located opposite a major IT park and within walking distance of global corporate campuses, this office space is ideal for startups, consulting firms, and growing enterprises.\n\nThe micro-market is driven by a strong ecosystem of multinational companies, co-working spaces, and high-density residential developments, ensuring access to skilled talent and strong business visibility. With excellent connectivity to Nagar Road, Pune Airport, and key areas like Viman Nagar and Kalyani Nagar, this location offers both convenience and prestige.\n\nThis office space is perfect for businesses looking for a cost-effective yet premium address in Pune’s fastest-growing commercial district.\n\n⸻\n\n🔹 Key Highlights\n\t•\tOpp. major IT park (high demand zone)\n\t•\tIdeal for startups / SMEs / consulting firms\n\t•\tWarm shell + furnished options available\n\t•\tExcellent connectivity to airport & city\n\t•\tHigh employee catchment\n",
+        "Short Description": "Spacious office ideal for mid-size corporates and IT companies in Pune’s top commercial hub with excellent connectivity and corporate ecosystem.",
+        "Price per Sqft": 84.44444444444444,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
     {
       "id": "rec8R4WdcgwBIy90g",
       "createdTime": "2026-04-06T07:55:33.000Z",
