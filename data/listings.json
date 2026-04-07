@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-07T10:50:42.176Z",
+  "updatedAt": "2026-04-07T16:07:16.287Z",
   "records": [
     {
       "id": "rechDkf6i2uAcJTQR",
@@ -68,8 +68,14 @@
         "Size (sqft)": 3200,
         "Description": "Premium large-format office space available for lease in Kharadi, Pune’s most established IT and commercial district. Located directly opposite a major IT park and surrounded by corporate campuses, this property offers a strategic business address with strong connectivity and visibility.\n\nThe location benefits from proximity to leading multinational companies, co-working hubs, premium residential complexes, and hospitality destinations, creating a vibrant and high-demand business ecosystem. With seamless access to Pune Airport, Nagar Road, and Viman Nagar, this office space is ideal for IT companies, corporate back offices, and growing enterprises.\n\nDesigned with efficient layouts and modern infrastructure, this is a strong opportunity for businesses seeking scalable office space in East Pune.\n\n⸻\n\n🔹 Key Highlights\n\t•\tLarge contiguous office space\n\t•\tPrime IT corridor location\n\t•\tStrong corporate ecosystem\n\t•\tHigh rental demand area\n\t•\tIdeal for IT / BFSI / corporates\n",
         "Short Description": "Spacious office ideal for mid-size corporates and IT companies in Pune’s top commercial hub with excellent connectivity and corporate ecosystem.",
+        "Amenities": [
+          "24/7 Security",
+          "Lift / Elevator",
+          "Power Backup",
+          "CCTV Surveillance"
+        ],
         "Price per Sqft": 85,
-        "Amenities Count": 0,
+        "Amenities Count": 1,
         "AI: Listing Summary": {
           "state": "error",
           "errorType": "emptyDependency",
@@ -77,10 +83,9 @@
           "isStale": false
         },
         "AI: Amenity Highlights": {
-          "state": "error",
-          "errorType": "emptyDependency",
+          "state": "empty",
           "value": null,
-          "isStale": false
+          "isStale": true
         },
         "Managed ": true
       }
@@ -152,8 +157,13 @@
         "Size (sqft)": 1350,
         "Description": "Compact commercial office space available for lease in Kharadi, Pune’s leading IT and business hub. Strategically located opposite a major IT park and within walking distance of global corporate campuses, this office space is ideal for startups, consulting firms, and growing enterprises.\n\nThe micro-market is driven by a strong ecosystem of multinational companies, co-working spaces, and high-density residential developments, ensuring access to skilled talent and strong business visibility. With excellent connectivity to Nagar Road, Pune Airport, and key areas like Viman Nagar and Kalyani Nagar, this location offers both convenience and prestige.\n\nThis office space is perfect for businesses looking for a cost-effective yet premium address in Pune’s fastest-growing commercial district.\n\n⸻\n\n🔹 Key Highlights\n\t•\tOpp. major IT park (high demand zone)\n\t•\tIdeal for startups / SMEs / consulting firms\n\t•\tWarm shell + furnished options available\n\t•\tExcellent connectivity to airport & city\n\t•\tHigh employee catchment\n",
         "Short Description": "Spacious office ideal for mid-size corporates and IT companies in Pune’s top commercial hub with excellent connectivity and corporate ecosystem.",
+        "Amenities": [
+          "Lift / Elevator",
+          "24/7 Security",
+          "CCTV Surveillance"
+        ],
         "Price per Sqft": 84.44444444444444,
-        "Amenities Count": 0,
+        "Amenities Count": 1,
         "AI: Listing Summary": {
           "state": "error",
           "errorType": "emptyDependency",
@@ -161,10 +171,9 @@
           "isStale": false
         },
         "AI: Amenity Highlights": {
-          "state": "error",
-          "errorType": "emptyDependency",
+          "state": "empty",
           "value": null,
-          "isStale": false
+          "isStale": true
         },
         "Managed ": true
       }
@@ -262,8 +271,13 @@
         "Size (sqft)": 24000,
         "Description": "Premium commercial office space available for lease at Poonawalla Towers, strategically located in Bund Garden — one of Pune’s most prestigious and established Central Business Districts (CBD). This prime location offers unmatched connectivity to Koregaon Park, Kalyani Nagar, Camp, and Pune Railway Station, making it a highly desirable address for corporate offices and financial institutions.\n\nThe property is surrounded by a strong ecosystem of luxury hotels, high-street retail, corporate offices, and premium residential neighbourhoods, ensuring a high-value business environment. The micro-market is home to leading banks, multinational companies, consulting firms, and hospitality brands, making it one of the most sought-after commercial locations in Pune.\n\nWith excellent road connectivity, proximity to Pune Railway Station, and seamless access to the airport, Bund Garden remains a preferred destination for companies looking to establish headquarters or premium office spaces in Pune. The project offers efficient layouts, strong frontage, and ample parking, making it ideal for corporates, BFSI firms, and global enterprises.\n\n",
         "Short Description": "Iconic Commercial Office Space for Lease in Pune CBD – Bund Garden Address | Premium Corporate Tower-24000 sq ft \n\nPremium large-format office space available in Pune’s most established CBD — Bund Garden. Surrounded by luxury hotels, corporate offices, and high-end residential zones, this is an ideal address for corporates seeking visibility, connectivity, and prestige.",
+        "Amenities": [
+          "Power Backup",
+          "24/7 Security",
+          "Parking Space"
+        ],
         "Price per Sqft": 162.5,
-        "Amenities Count": 0,
+        "Amenities Count": 1,
         "AI: Listing Summary": {
           "state": "error",
           "errorType": "emptyDependency",
@@ -271,10 +285,9 @@
           "isStale": false
         },
         "AI: Amenity Highlights": {
-          "state": "error",
-          "errorType": "emptyDependency",
+          "state": "empty",
           "value": null,
-          "isStale": false
+          "isStale": true
         },
         "Managed ": true
       }
@@ -346,8 +359,13 @@
         "Size (sqft)": 10300,
         "Description": "\nPremium ground floor retail space available for lease in Koregaon park annexe , one of Pune’s fastest-growing commercial and residential hubs. Strategically positioned in a high-demand business district connecting Kharadi, Koregaon Park , and Hadapsar, this location offers excellent frontage, steady footfall, and seamless accessibility.\n\nThese retail units are ideally suited for banks, NBFCs, financial institutions, premium service outlets, and branded back-office operations looking for a strong presence in a high-income catchment area. The property benefits from proximity to major IT parks, corporate offices, luxury residential developments, and hospitality zones, ensuring consistent customer traffic and business visibility.\n\nThe surrounding micro-market is driven by a mix of working professionals, expatriates, and affluent residential communities, making it a strategic choice for brands looking to establish or expand in East Pune. With wide roads, easy parking access, and strong connectivity to the airport and central business districts, this is a rare opportunity to secure premium retail space in a high-growth commercial corridor.\n\n⸻\n\n🔹 Location Advantage \n\t•\tSeamless connectivity to Kharadi IT hub Kalyani nagar and EON IT Park belt\n\t•\tClose proximity to Koregaon Park  and upscale residential pockets\n\t•\tSurrounded by premium gated communities, corporate offices, and co-working hubs\n\t•\tEasy access to Pune Airport (15–20 mins)\n\t•\tStrong catchment of high-income working professionals and expat population\n\n⸻\n\n🔹 Key Highlights\n\t•\tGround floor retail with excellent road visibility\n\t•\tIdeal for banks, financial institutions & branded outlets\n\t•\tLocated in high-growth East Pune commercial zone\n\t•\tStrong footfall driven by IT + residential catchment\n\t•\tWide frontage for branding and signage\n\t•\tLong-term lease stability (60 months tenure)\n",
         "Short Description": "High-street ground floor retail spaces available in Upper Koregaon park in the East Pune business corridor. Ideal for banks, financial institutions, premium service brands, and back-office operations seeking strong visibility, accessibility, and a high-income catchment.",
+        "Amenities": [
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator"
+        ],
         "Price per Sqft": 200,
-        "Amenities Count": 0,
+        "Amenities Count": 1,
         "AI: Listing Summary": {
           "state": "error",
           "errorType": "emptyDependency",
@@ -355,10 +373,9 @@
           "isStale": false
         },
         "AI: Amenity Highlights": {
-          "state": "error",
-          "errorType": "emptyDependency",
+          "state": "empty",
           "value": null,
-          "isStale": false
+          "isStale": true
         },
         "Managed ": true
       }
@@ -430,8 +447,14 @@
         "Size (sqft)": 22000,
         "Description": "AP4 Tech Park in Wagholi Pune offers  large-scale commercial office spaces ideal for IT parks, BPOs, and enterprise offices. With expansive floor plates, modern infrastructure, and competitive rentals, this project is designed for high-density corporate occupancy. Located on Pune Nagar Road, it provides seamless connectivity to Viman Nagar, Kharadi IT hub, and Pune Airport, making it a prime leasing opportunity.",
         "Short Description": "Large scale commercial offices for lease ideal IT parks, BPOs and large scale enterprises.Wagholi",
+        "Amenities": [
+          "Visitor Parking",
+          "CCTV Surveillance",
+          "Power Backup",
+          "Lift / Elevator"
+        ],
         "Price per Sqft": 100,
-        "Amenities Count": 0,
+        "Amenities Count": 1,
         "AI: Listing Summary": {
           "state": "error",
           "errorType": "emptyDependency",
@@ -439,10 +462,9 @@
           "isStale": false
         },
         "AI: Amenity Highlights": {
-          "state": "error",
-          "errorType": "emptyDependency",
+          "state": "empty",
           "value": null,
-          "isStale": false
+          "isStale": true
         },
         "Managed ": true
       }
@@ -516,20 +538,26 @@
         "Size (sqft)": 1050,
         "Description": "2 BHK Apartment for Sale in Brahma Sky City, Dhanori | ₹65 Lakhs\n\nDiscover comfortable and affordable living with this 2 BHK apartment in Brahma Sky City, Dhanori, a rapidly developing residential location in Pune. Ideal for first-time homebuyers, families, and investors, this property offers a great balance of value, connectivity, and lifestyle.\n\nLocated in a well-planned gated community, the apartment features a functional layout with ample natural light and ventilation. The design ensures efficient use of space, making it perfect for modern urban living.\n\nBrahma Sky City is known for its secure environment and community living, offering residents access to essential amenities and open spaces. The project caters to both end-users and investors looking for long-term growth.\n\nDhanori has emerged as a preferred residential micro-market due to its proximity to key areas such as Vishrantwadi, Viman Nagar, and Pune Airport. The area offers good connectivity, improving infrastructure, and access to schools, hospitals, and daily conveniences.\n\nWith increasing demand and ongoing development, Dhanori presents strong potential for capital appreciation and rental income, making this property a smart investment choice.\n\n⸻\n\nProperty Highlights:\n\t•\t2 BHK apartment\n\t•\tLocated in Brahma Sky City, Dhanori\n\t•\tWell-planned layout with good ventilation\n\t•\tGated community living\n\t•\tIdeal for families and investors\n\t•\tExcellent connectivity to airport & Viman Nagar\n\n⸻\n\nPrice Details:\n\n💰 ₹65 Lakhs",
         "Short Description": "2 BHK Apartment for Sale in Brahma Sky City, Dhanori | ₹65 Lakhs",
+        "Amenities": [
+          "Gymnasium",
+          "Children’s Play Area",
+          "Clubhouse",
+          "24/7 Security",
+          "Lift / Elevator",
+          "Gated Community"
+        ],
         "Price per Sqft": 6190.476190476191,
         "Bedrooms to Bathrooms Ratio": 1,
-        "Amenities Count": 0,
+        "Amenities Count": 1,
         "AI: Listing Summary": {
-          "state": "error",
-          "errorType": "emptyDependency",
+          "state": "empty",
           "value": null,
-          "isStale": false
+          "isStale": true
         },
         "AI: Amenity Highlights": {
-          "state": "error",
-          "errorType": "emptyDependency",
+          "state": "empty",
           "value": null,
-          "isStale": false
+          "isStale": true
         }
       }
     },
@@ -601,20 +629,44 @@
         "Bathrooms": 5,
         "Size (sqft)": 5700,
         "Description": "Luxury 4.5 BHK Apartment for Sale in Yoo Pune, Magarpatta | 5700 Sq Ft | ₹10.75 Cr\n\nPresenting an exceptional opportunity to own a luxury 4.5 BHK furnished apartment in Yoo Pune, Magarpatta, one of Pune’s most iconic and design-led residential developments. This 5700 sq ft middle-floor residence is crafted for those who appreciate space, sophistication, and world-class living.\n\nDesigned with elegance and functionality, the apartment features expansive living and dining areas, premium interiors, and a dedicated home theatre, offering a perfect blend of comfort and luxury. Large windows and open layouts ensure abundant natural light and ventilation, enhancing the overall living experience.\n\nThis fully furnished home is thoughtfully curated with high-end finishes, making it completely move-in ready for discerning buyers. The apartment also comes with 3 dedicated car parks, ensuring convenience for families with multiple vehicles.\n\nLocated within Magarpatta City, Yoo Pune offers a secure, gated environment with premium amenities, including clubhouse, landscaped gardens, fitness facilities, and more. The project is strategically positioned with excellent connectivity to Hadapsar, Kharadi, and key commercial hubs, making it ideal for both end-users and investors.\n\n⸻\n\nProperty Highlights:\n\t•\t4.5 BHK luxury furnished apartment\n\t•\t5700 sq ft spacious layout\n\t•\tMiddle-floor premium unit\n\t•\tPrivate home theatre\n\t•\t3 dedicated car parks\n\t•\tLocated in Yoo Pune, Magarpatta\n\t•\tPremium amenities & gated community\n\n⸻\n\nPrice Details:\n\n💰 ₹10.75 Cr\n\n⸻\n\nWhy This Property Stands Out:\n\t•\tIconic designer development with luxury positioning\n\t•\tRare large-format apartment in a prime township\n\t•\tIdeal for HNIs and premium homebuyers\n\t•\tStrong long-term appreciation potential\n\n⸻\n\nContact Shelters Realty\n\n📞 Call / WhatsApp for exclusive site visit\n",
+        "Short Description": "Designed with elegance and functionality, the apartment features expansive living and dining areas, premium interiors, and a dedicated home theatre, offering a perfect blend of comfort and luxury.",
+        "Amenities": [
+          "Swimming Pool",
+          "Clubhouse",
+          "Children’s Play Area",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Gymnasium",
+          "Parking Space",
+          "Balcony",
+          "Piped Gas",
+          "Vaastu Compliant",
+          "Jogging Track",
+          "Servant Quarters",
+          "Badminton Court",
+          "Tennis Court",
+          "Amphitheatre",
+          "Rainwater Harvesting",
+          "Solar Water Heater",
+          "Visitor Parking",
+          "Maintenance Staff",
+          "Intercom Facility"
+        ],
         "Price per Sqft": 18859.64912280702,
         "Bedrooms to Bathrooms Ratio": 1,
-        "Amenities Count": 0,
+        "Amenities Count": 1,
         "AI: Listing Summary": {
-          "state": "error",
-          "errorType": "emptyDependency",
+          "state": "empty",
           "value": null,
-          "isStale": false
+          "isStale": true
         },
         "AI: Amenity Highlights": {
-          "state": "error",
-          "errorType": "emptyDependency",
+          "state": "empty",
           "value": null,
-          "isStale": false
+          "isStale": true
         }
       }
     },
@@ -659,8 +711,13 @@
         "Size (sqft)": 459,
         "Description": "Retail Shop for Rent in Fortaleza | 450 Sq Ft | ₹1.50 Lakh\n\nPrime retail opportunity available in Fortaleza, one of Pune’s well-known commercial hubs. This 450 sq ft shop is ideal for brands, boutiques, salons, cafes, or service-based businesses looking for strong visibility and footfall.\n\nStrategically located in a high-demand commercial zone, the space benefits from consistent walk-in traffic and excellent connectivity to key residential and business areas. Its compact yet efficient layout makes it perfect for maximizing retail display and customer experience.\n\nFortaleza is a preferred destination for established and upcoming brands due to its vibrant commercial environment and accessibility. This makes the property a strong choice for businesses aiming to establish or expand their presence in Pune.\n\n⸻\n\nProperty Highlights:\n\t•\t450 sq ft retail space\n\t•\tLocated in Fortaleza commercial complex\n\t•\tIdeal for boutique retail / salon / café / office\n\t•\tHigh visibility and footfall\n\t•\tWell-connected location\n\n⸻\n\nRental Details:\n\n💰 Rent: ₹1.50 Lakh per month\n\n⸻\n\nWhy This Space Works for Your Business:\n\t•\tPremium commercial address\n\t•\tStrong customer catchment\n\t•\tSuitable for multiple business formats\n\t•\tHigh-demand retail location\n\n⸻\n\nSchedule a Site Visit\n\n📞 Call / WhatsApp now for immediate viewing",
         "Short Description": "Retail Shop for Rent in Fortaleza | 450 Sq Ft | ₹1.50 Lakh",
+        "Amenities": [
+          "24/7 Security",
+          "Parking Space",
+          "Power Backup"
+        ],
         "Price per Sqft": 326.797385620915,
-        "Amenities Count": 0,
+        "Amenities Count": 1,
         "AI: Listing Summary": {
           "state": "error",
           "errorType": "emptyDependency",
@@ -668,10 +725,9 @@
           "isStale": false
         },
         "AI: Amenity Highlights": {
-          "state": "error",
-          "errorType": "emptyDependency",
+          "state": "empty",
           "value": null,
-          "isStale": false
+          "isStale": true
         }
       }
     },
