@@ -1,6 +1,627 @@
 {
-  "updatedAt": "2026-04-07T16:07:16.287Z",
+  "updatedAt": "2026-04-08T06:18:12.098Z",
   "records": [
+    {
+      "id": "recedlnrHrpTad2Hd",
+      "createdTime": "2026-04-08T06:06:37.000Z",
+      "fields": {
+        "Title": "23000 LAND PARCEL | INVESTMENT OPPORTUNITY IN WADGAON SHERI ",
+        "Image": [
+          {
+            "id": "att1ybc0tlRhpjgB0",
+            "width": 1080,
+            "height": 1080,
+            "url": "/data/listing-images/recedlnrHrpTad2Hd/att1ybc0tlRhpjgB0.jpg",
+            "filename": "2026-04-08 11.40.49.jpg",
+            "size": 1517285,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recedlnrHrpTad2Hd/att1ybc0tlRhpjgB0.jpg",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recedlnrHrpTad2Hd/att1ybc0tlRhpjgB0.jpg",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/recedlnrHrpTad2Hd/att1ybc0tlRhpjgB0.jpg",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 200000000,
+        "Location": "Others",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Size (sqft)": 23000,
+        "Description": "Large plot for sale in Wadgaon Sheri, Pune, offering a rare opportunity for developers and investors. Strategically located near key commercial hubs like Kharadi, Viman Nagar, and Nagar Road, this land parcel is ideal for residential projects, co-living developments, or commercial use. With strong connectivity, high rental demand, and rapid urban growth, this is a prime investment opportunity in East Pune.",
+        "Short Description": "Large-sized plot ideal for developers and investors looking for scale in a high-growth corridor.",
+        "Price per Sqft": 8695.652173913044,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recrSla48bPrU844B",
+      "createdTime": "2026-04-08T05:57:24.000Z",
+      "fields": {
+        "Title": "WADGAON SHERI ROAD TOUCH | PREMIUM LAND PARCEL-4200 Sq ft FREEHOLD PLOT ",
+        "Image": [
+          {
+            "id": "att4mgc9Mbd6KjYop",
+            "width": 588,
+            "height": 330,
+            "url": "/data/listing-images/recrSla48bPrU844B/att4mgc9Mbd6KjYop.jpg",
+            "filename": "2026-04-08 11.35.10.jpg",
+            "size": 198416,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recrSla48bPrU844B/att4mgc9Mbd6KjYop.jpg",
+                "width": 64,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recrSla48bPrU844B/att4mgc9Mbd6KjYop.jpg",
+                "width": 588,
+                "height": 330
+              },
+              "full": {
+                "url": "/data/listing-images/recrSla48bPrU844B/att4mgc9Mbd6KjYop.jpg",
+                "width": 588,
+                "height": 330
+              }
+            }
+          }
+        ],
+        "Price": 36000000,
+        "Location": "Others",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Size (sqft)": 4200,
+        "Description": "Premium plot for sale in Wadgaon Sheri, Pune, located on a prime road-touch stretch offering excellent accessibility and visibility. This location is one of the fastest-growing residential and commercial corridors in East Pune, with proximity to Kharadi IT Park, Viman Nagar, and Pune Airport. Ideal for residential development, investment, or boutique commercial use, this plot offers strong appreciation potential due to increasing demand and infrastructure growth in the area.",
+        "Short Description": "Prime road-touch plot in Wadgaon Sheri with excellent connectivity and high appreciation potential.",
+        "Price per Sqft": 8571.42857142857,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recuSRJ3jOL0aqDjm",
+      "createdTime": "2026-04-08T05:20:53.000Z",
+      "fields": {
+        "Title": "1 BHK for Sale in Kalyani Nagar | Higher Floor | With Car Park",
+        "Image": [
+          {
+            "id": "attUWzUhLe92DED5F",
+            "width": 1000,
+            "height": 667,
+            "url": "/data/listing-images/recuSRJ3jOL0aqDjm/attUWzUhLe92DED5F.jpg",
+            "filename": "2026-04-08 10.51.06.jpg",
+            "size": 291664,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recuSRJ3jOL0aqDjm/attUWzUhLe92DED5F.jpg",
+                "width": 54,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recuSRJ3jOL0aqDjm/attUWzUhLe92DED5F.jpg",
+                "width": 768,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/recuSRJ3jOL0aqDjm/attUWzUhLe92DED5F.jpg",
+                "width": 1000,
+                "height": 667
+              }
+            }
+          }
+        ],
+        "Price": 7000000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 1,
+        "Bathrooms": 1,
+        "Size (sqft)": 700,
+        "Description": "1 BHK apartment for sale in Kalyani Nagar, Pune, featuring a higher floor location and dedicated car parking. Ideal for end-users and investors, this property offers a premium address with proximity to business districts like Viman Nagar and Kharadi. Known for its upscale residential environment, excellent connectivity, and strong infrastructure, Kalyani Nagar continues to be one of Pune’s top real estate investment destinations.",
+        "Short Description": "Well-located 1 BHK on a higher floor with dedicated parking in one of Pune’s most sought-after residential neighbourhoods.",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Visitor Parking",
+          "Intercom Facility",
+          "Maintenance Staff",
+          "Solar Water Heater"
+        ],
+        "Price per Sqft": 10000,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recAz8H4dYREEjRCo",
+      "createdTime": "2026-04-08T05:14:43.000Z",
+      "fields": {
+        "Title": "1 BHK for Sale in Kalyani Nagar | Fully Furnished | Investment Ready",
+        "Image": [
+          {
+            "id": "attcXHAhQxO8UiOd4",
+            "width": 1000,
+            "height": 1000,
+            "url": "/data/listing-images/recAz8H4dYREEjRCo/attcXHAhQxO8UiOd4.jpg",
+            "filename": "2026-04-08 10.50.18.jpg",
+            "size": 305823,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recAz8H4dYREEjRCo/attcXHAhQxO8UiOd4.jpg",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recAz8H4dYREEjRCo/attcXHAhQxO8UiOd4.jpg",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/recAz8H4dYREEjRCo/attcXHAhQxO8UiOd4.jpg",
+                "width": 1000,
+                "height": 1000
+              }
+            }
+          }
+        ],
+        "Price": 5700000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 1,
+        "Bathrooms": 1,
+        "Size (sqft)": 465,
+        "Description": "1 BHK apartment for sale in Kalyani Nagar, Pune, located in a well-established residential complex with strong rental demand. This fully furnished unit is ideal for investors, working professionals, and first-time buyers. Kalyani Nagar is one of Pune’s most premium residential areas, offering proximity to IT hubs, Pune Airport, and lifestyle destinations. With excellent connectivity and high rental yield potential, this property is a strong investment opportunity.",
+        "Short Description": "Compact fully furnished 1 BHK in a premium gated community in Kalyani Nagar, ideal for investors and rental income buyers.",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Maintenance Staff",
+          "Visitor Parking",
+          "Intercom Facility"
+        ],
+        "Price per Sqft": 12258.064516129032,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recHJMhHvGxMiG1Nt",
+      "createdTime": "2026-04-08T05:01:56.000Z",
+      "fields": {
+        "Title": "1500 Sq ft Commercial Flat for Rent in Koregaon Park | Ideal for Offices & Studios",
+        "Image": [
+          {
+            "id": "attoROWot1V3Czf8l",
+            "width": 588,
+            "height": 393,
+            "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attoROWot1V3Czf8l.jpg",
+            "filename": "2026-04-08 10.32.31.jpg",
+            "size": 69980,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attoROWot1V3Czf8l.jpg",
+                "width": 53,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attoROWot1V3Czf8l.jpg",
+                "width": 588,
+                "height": 393
+              },
+              "full": {
+                "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attoROWot1V3Czf8l.jpg",
+                "width": 588,
+                "height": 393
+              }
+            }
+          },
+          {
+            "id": "attYyf3KMgRLpEWmq",
+            "width": 588,
+            "height": 393,
+            "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attYyf3KMgRLpEWmq.jpg",
+            "filename": "2026-04-08 10.32.32.jpg",
+            "size": 93472,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attYyf3KMgRLpEWmq.jpg",
+                "width": 53,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attYyf3KMgRLpEWmq.jpg",
+                "width": 588,
+                "height": 393
+              },
+              "full": {
+                "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attYyf3KMgRLpEWmq.jpg",
+                "width": 588,
+                "height": 393
+              }
+            }
+          },
+          {
+            "id": "attBdlUFIIkJHEpqF",
+            "width": 588,
+            "height": 393,
+            "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attBdlUFIIkJHEpqF.jpg",
+            "filename": "2026-04-08 10.32.33.jpg",
+            "size": 109993,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attBdlUFIIkJHEpqF.jpg",
+                "width": 53,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attBdlUFIIkJHEpqF.jpg",
+                "width": 588,
+                "height": 393
+              },
+              "full": {
+                "url": "/data/listing-images/recHJMhHvGxMiG1Nt/attBdlUFIIkJHEpqF.jpg",
+                "width": 588,
+                "height": 393
+              }
+            }
+          }
+        ],
+        "Price": 85000,
+        "Location": "Koregaon Park",
+        "Property Type": "Apartment",
+        "Offer Type": "Sale",
+        "Status": "Ready to Move",
+        "Bedrooms": 3,
+        "Bathrooms": 3,
+        "Size (sqft)": 1500,
+        "Description": "Commercial flats available for rent in Koregaon Park, Pune, offering a unique opportunity for businesses seeking a prestigious and well-connected address. These spacious 3 BHK unit is ideal for professional office, a boutique firm, consulting business, clinic, and creative studios.\n\nLocated in one of Pune’s most sought-after neighbourhoods, the property benefits from proximity to Bund Garden, Kalyani Nagar, and Pune Railway Station. The area is known for its blend of residential charm and commercial activity, making it a preferred destination for professionals and businesses alike.\n\nWith excellent accessibility, strong client catchment, and a premium address, this commercial flat provide an ideal setup for businesses looking to establish themselves in Koregaon Park.\n\nApproved for commercial use\n\t•\tIdeal for CA firms, consultancies, clinics, studios, and startups\n\t•\tLocated in Koregaon Park – premium central business-residential hub\n\t•\tExcellent connectivity to Bund Garden, Kalyani Nagar & Camp\n\t•\tStrong surrounding ecosystem of offices, cafes, and residential catchment\n",
+        "Short Description": "Versatile commercial-use apartment available in Koregaon Park, ideal for boutique office, consultancy, studio,and professional setup  in a prime central location.\n",
+        "Price per Sqft": 56.666666666666664,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "rec7AF5sRYk7JK8JC",
+      "createdTime": "2026-04-08T04:42:24.000Z",
+      "fields": {
+        "Title": "Commercial Flats in Koregaon Park | 2 BHK | Ideal for Offices & Studios\n",
+        "Image": [
+          {
+            "id": "att5Nx04T2XQ7OSoN",
+            "width": 588,
+            "height": 393,
+            "url": "/data/listing-images/rec7AF5sRYk7JK8JC/att5Nx04T2XQ7OSoN.jpg",
+            "filename": "2026-04-08 10.21.55.jpg",
+            "size": 109993,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec7AF5sRYk7JK8JC/att5Nx04T2XQ7OSoN.jpg",
+                "width": 53,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec7AF5sRYk7JK8JC/att5Nx04T2XQ7OSoN.jpg",
+                "width": 588,
+                "height": 393
+              },
+              "full": {
+                "url": "/data/listing-images/rec7AF5sRYk7JK8JC/att5Nx04T2XQ7OSoN.jpg",
+                "width": 588,
+                "height": 393
+              }
+            }
+          },
+          {
+            "id": "atteanVBAph36V52G",
+            "width": 588,
+            "height": 393,
+            "url": "/data/listing-images/rec7AF5sRYk7JK8JC/atteanVBAph36V52G.jpg",
+            "filename": "2026-04-08 10.21.56.jpg",
+            "size": 69980,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec7AF5sRYk7JK8JC/atteanVBAph36V52G.jpg",
+                "width": 53,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec7AF5sRYk7JK8JC/atteanVBAph36V52G.jpg",
+                "width": 588,
+                "height": 393
+              },
+              "full": {
+                "url": "/data/listing-images/rec7AF5sRYk7JK8JC/atteanVBAph36V52G.jpg",
+                "width": 588,
+                "height": 393
+              }
+            }
+          },
+          {
+            "id": "attgnROApPKVGjWFE",
+            "width": 588,
+            "height": 393,
+            "url": "/data/listing-images/rec7AF5sRYk7JK8JC/attgnROApPKVGjWFE.jpg",
+            "filename": "2026-04-08 10.21.57.jpg",
+            "size": 93472,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec7AF5sRYk7JK8JC/attgnROApPKVGjWFE.jpg",
+                "width": 53,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec7AF5sRYk7JK8JC/attgnROApPKVGjWFE.jpg",
+                "width": 588,
+                "height": 393
+              },
+              "full": {
+                "url": "/data/listing-images/rec7AF5sRYk7JK8JC/attgnROApPKVGjWFE.jpg",
+                "width": 588,
+                "height": 393
+              }
+            }
+          }
+        ],
+        "Price": 55000,
+        "Location": "Koregaon Park",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 2,
+        "Bathrooms": 2,
+        "Size (sqft)": 1200,
+        "Description": "Commercial flat available for rent in Koregaon Park, Pune, offering a unique opportunity for businesses seeking a prestigious and well-connected address. These spacious 2 BHK unit is ideal for professional office, boutique firm, consulting business, clinic, and creative studios.\n\nLocated in one of Pune’s most sought-after neighbourhoods, the property benefits from proximity to Bund Garden, Kalyani Nagar, and Pune Railway Station. The area is known for its blend of residential charm and commercial activity, making it a preferred destination for professional and business alike.\n\nWith excellent accessibility, strong client catchment, and a premium address, this  commercial flats provide an ideal setup for businesses looking to establish themselves in Koregaon Park.\n\nApproved for commercial use\n\t•\tIdeal for CA firm , consultancy, clinic, studio, and startup.\n\t•\tLocated in Koregaon Park – premium central business-residential hub\n\t•\tExcellent connectivity to Bund Garden, Kalyani Nagar & Camp\n\t•\tStrong surrounding ecosystem of offices, cafes, and residential catchment",
+        "Short Description": "Versatile commercial-use apartment available in Koregaon Park, ideal for boutique office, clinics,consultancy, studio, and professional setups in a prime central location.",
+        "Price per Sqft": 45.833333333333336,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "recIq4nU9v5WfkREu",
+      "createdTime": "2026-04-08T04:33:15.000Z",
+      "fields": {
+        "Title": "Luxury 4BHK in Blossom Boulevard in Koregaon Park | Fully Furnished | Ideal for Expats & Corporate Leasing",
+        "Image": [
+          {
+            "id": "attv9ZiwEqXHA3Cf9",
+            "width": 588,
+            "height": 330,
+            "url": "/data/listing-images/recIq4nU9v5WfkREu/attv9ZiwEqXHA3Cf9.jpg",
+            "filename": "2026-04-08 10.10.46.jpg",
+            "size": 105788,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recIq4nU9v5WfkREu/attv9ZiwEqXHA3Cf9.jpg",
+                "width": 64,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recIq4nU9v5WfkREu/attv9ZiwEqXHA3Cf9.jpg",
+                "width": 588,
+                "height": 330
+              },
+              "full": {
+                "url": "/data/listing-images/recIq4nU9v5WfkREu/attv9ZiwEqXHA3Cf9.jpg",
+                "width": 588,
+                "height": 330
+              }
+            }
+          },
+          {
+            "id": "attX50NC9TcnRiGNm",
+            "width": 588,
+            "height": 330,
+            "url": "/data/listing-images/recIq4nU9v5WfkREu/attX50NC9TcnRiGNm.jpg",
+            "filename": "2026-04-08 10.10.47.jpg",
+            "size": 64407,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recIq4nU9v5WfkREu/attX50NC9TcnRiGNm.jpg",
+                "width": 64,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recIq4nU9v5WfkREu/attX50NC9TcnRiGNm.jpg",
+                "width": 588,
+                "height": 330
+              },
+              "full": {
+                "url": "/data/listing-images/recIq4nU9v5WfkREu/attX50NC9TcnRiGNm.jpg",
+                "width": 588,
+                "height": 330
+              }
+            }
+          },
+          {
+            "id": "attmFVRxViytfNoi9",
+            "width": 498,
+            "height": 624,
+            "url": "/data/listing-images/recIq4nU9v5WfkREu/attmFVRxViytfNoi9.jpg",
+            "filename": "2026-04-08 10.10.49.jpg",
+            "size": 373884,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recIq4nU9v5WfkREu/attmFVRxViytfNoi9.jpg",
+                "width": 29,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recIq4nU9v5WfkREu/attmFVRxViytfNoi9.jpg",
+                "width": 498,
+                "height": 624
+              },
+              "full": {
+                "url": "/data/listing-images/recIq4nU9v5WfkREu/attmFVRxViytfNoi9.jpg",
+                "width": 498,
+                "height": 624
+              }
+            }
+          }
+        ],
+        "Price": 175000,
+        "Location": "Koregaon Park",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 4,
+        "Bathrooms": 5,
+        "Description": "Luxury 4 BHK apartment available for rent in Blossom Boulevard in Koregaon Park, Pune’s most premium residential and lifestyle destination. This fully furnished home offers spacious layouts, high-end interiors, and modern amenities, making it ideal for families, expatriates, and corporate tenants.\n\nSituated in a prime location, the property enjoys excellent connectivity to Kalyani Nagar, Bund Garden, and Pune Airport, while being surrounded by upscale dining, retail, and entertainment options. Koregaon Park is known for its elite residential environment, green surroundings, and vibrant social infrastructure, making it one of the most desirable addresses in Pune\n\nLarge, well-planned apartment with generous living spaces\n\t•\tPremium interiors with high-quality furnishings\n\t•\tFully equipped with modern appliances\n\t•\tIdeal for expat families, senior professionals, or corporate leasing\n\t•\tLocated in one of Pune’s most sought-after residential neighbourhoods",
+        "Short Description": "Elegant fully furnished 4 BHK apartment in Koregaon Park, offering spacious living, premium interiors, and a prime address ideal for families and corporate tenants.\n",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Balcony",
+          "Servant Quarters",
+          "Vaastu Compliant",
+          "Jogging Track",
+          "Indoor Games Room",
+          "Visitor Parking",
+          "Solar Water Heater",
+          "Maintenance Staff",
+          "Intercom Facility"
+        ],
+        "Bedrooms to Bathrooms Ratio": 0.8,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
     {
       "id": "rechDkf6i2uAcJTQR",
       "createdTime": "2026-04-06T14:39:05.000Z",
@@ -1208,7 +1829,7 @@
       "id": "rec7fKDUZC18PwdEA",
       "createdTime": "2026-04-01T14:18:11.000Z",
       "fields": {
-        "Title": "Luxury 3 BHK for Sale in Viman Nagar | Pool View | Fully Furnished | 1650 Sq Ft Carpet",
+        "Title": "Luxury 3 BHK for Sale in Viman Nagar | Pool View | Fully Furnished | 1650 Sq Ft Chargeable",
         "Image": [
           {
             "id": "attn9tFqFECBw14WG",
@@ -1245,7 +1866,7 @@
         "Bedrooms": 3,
         "Bathrooms": 3,
         "Size (sqft)": 1650,
-        "Description": "Luxury 3 BHK for Sale in Viman Nagar | Pool View | Fully Furnished | 1650 Sq Ft Carpet\n\nDiscover premium living in this spacious 3 BHK apartment in Viman Nagar, one of Pune’s most sought-after residential locations. Offering a rare combination of large carpet area, elegant interiors, and serene views, this home is ideal for families and investors alike.\n\n⸻\n\n✨ Key Highlights\n\t•\t📏 1650 sq ft carpet area – exceptionally spacious layout\n\t•\t🌿 Overlooking swimming pool & lush green landscaped amenities\n\t•\t🏡 3 large private terraces – perfect for outdoor living\n\t•\t🚗 3 dedicated car parking spaces\n\t•\t🛋 Fully furnished with premium teakwood furniture & white goods\n\t•\t🏢 Located in a prestigious gated society with top-class amenities\n\n⸻\n\n🌇 Why This Property Stands Out\n\nThis apartment offers a rare blend of space, privacy, and luxury, with expansive interiors and multiple terraces that enhance natural light and ventilation. The pool-facing view and green surroundings create a calm, resort-like living experience right in the heart of the city.\n\n⸻\n\n📍 Location Advantage – Viman Nagar\n\t•\tPrime residential hub close to IT parks, airport & business districts\n\t•\tExcellent connectivity to Kalyani Nagar, Koregaon Park & Yerwada\n\t•\tSurrounded by top schools, malls, restaurants & hospitals\n\n⸻\n\n💰 Price: ₹2.85 Crore",
+        "Description": "Luxury 3 BHK for Sale in Viman Nagar | Pool View | Fully Furnished | 1650 Sq Ft Chargeable\n\nDiscover premium living in this spacious 3 BHK apartment in Viman Nagar, one of Pune’s most sought-after residential locations. Offering a rare combination of large carpet area, elegant interiors, and serene views, this home is ideal for families and investors alike.\n\n⸻\n\n✨ Key Highlights\n\t•\t📏 1650 sq ft chargeable area – exceptionally spacious layout\n\t•\t🌿 Overlooking swimming pool & lush green landscaped amenities\n\t•\t🏡 3 large private terraces – perfect for outdoor living\n\t•\t🚗 3 dedicated car parking spaces\n\t•\t🛋 Fully furnished with premium teakwood furniture & white goods\n\t•\t🏢 Located in a prestigious gated society with top-class amenities\n\n⸻\n\n🌇 Why This Property Stands Out\n\nThis apartment offers a rare blend of space, privacy, and luxury, with expansive interiors and multiple terraces that enhance natural light and ventilation. The pool-facing view and green surroundings create a calm, resort-like living experience right in the heart of the city.\n\n⸻\n\n📍 Location Advantage – Viman Nagar\n\t•\tPrime residential hub close to IT parks, airport & business districts\n\t•\tExcellent connectivity to Kalyani Nagar, Koregaon Park & Yerwada\n\t•\tSurrounded by top schools, malls, restaurants & hospitals\n\n⸻\n\n💰 Price: ₹2.85 Crore",
         "Short Description": "Luxury 3 BHK for Sale in Viman Nagar | Pool View | Fully Furnished | 1650 Sq Ft Carpet",
         "Amenities": [
           "Swimming Pool",
