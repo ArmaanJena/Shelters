@@ -1,6 +1,59 @@
 {
-  "updatedAt": "2026-04-08T06:18:12.098Z",
+  "updatedAt": "2026-04-08T10:51:49.118Z",
   "records": [
+    {
+      "id": "recLGtltLbpPaYYEJ",
+      "createdTime": "2026-04-08T07:41:33.000Z",
+      "fields": {
+        "Title": "125 Acre Township Land | Near Pune Airport | 45m DP Road | FSI 1.85 Potential | ₹12 Cr/Acre | Clear Title\n",
+        "Location": "Wagholi",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Size (sqft)": 5445000,
+        "Description": "Premium 125-acre NA land parcel available for sale in Wagholi–Lonikand corridor, one of Pune’s fastest-growing development zones. \nStrategically located with 45-meter DP road frontage and excellent connectivity to Pune Airport and Nagar Highway, this land is ideally suited for large-scale township, mixed-use, or integrated residential development.\n\nThe property comes with key approvals in place including township sanction and environmental clearance for site development, significantly reducing project lead time. With a current FSI of 0.5 and proposed enhancement up to 1.85, the land offers strong development potential and high revenue scalability.\n\nLocated close to major infrastructure corridors, IT hubs, and upcoming residential clusters, this micro-market is witnessing rapid urban expansion and investor interest. The proximity to Indrayani riverfront further enhances the lifestyle appeal, making it suitable for premium residential or integrated township projects.\n\nThis is a rare opportunity for developers, institutional investors, and land aggregators to acquire a large contiguous parcel in a high-growth corridor with clear title and strong appreciation potential.\n\n⸻\n\n\n\t•\t6 km from Pune International Airport\n\t•\t3 km from Pune–Nagar Highway\n\t•\tLocated in Wagholi growth corridor\n\t•\tClose to Kharadi IT hub\n\t•\tRapidly developing residential and infrastructure zone\n\t•\tNear scenic Indrayani river belt\n\n\t•\tIdeal for township / integrated development\n\t•\tHigh-density residential + mixed-use potential\n\t•\tStrong demand from IT-driven population\n\t•\tExcellent exit / resale potential\n",
+        "Short Description": "Large-scale NA land parcel ideal for township development, strategically located at Wagholi–Lonikand border with strong connectivity, approvals in place, and high future FSI potential.",
+        "Price per Sqft": 0,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
+    {
+      "id": "rec3CFHvtNwNGImOY",
+      "createdTime": "2026-04-08T06:28:00.000Z",
+      "fields": {
+        "Title": "3000 sqft plot in Wadgaon Sheri for sale in  with excellent access and future growth potential.",
+        "Price": 27500000,
+        "Location": "Others",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Size (sqft)": 3400,
+        "Price per Sqft": 8088.235294117647,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
     {
       "id": "recedlnrHrpTad2Hd",
       "createdTime": "2026-04-08T06:06:37.000Z",
