@@ -1297,13 +1297,31 @@ html.dark-mode .featured-carousel-dot.is-active {
 }
 
 #featured-areas-grid .collection-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     min-width: 0;
     width: 100%;
+    overflow: hidden;
 }
 
 #featured-areas-grid .collection-card h3,
 #featured-areas-grid .collection-card p {
     overflow-wrap: anywhere;
+}
+
+#featured-areas-grid .collection-card h3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+#featured-areas-grid .collection-card p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
 }
 
 .collection-card {
