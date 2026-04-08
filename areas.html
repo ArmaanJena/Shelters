@@ -50,7 +50,7 @@
         }
         .area-location-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1.4rem;
         }
         .area-location-card {
@@ -198,6 +198,9 @@
             padding: 0.3rem 0.8rem;
             white-space: nowrap;
         }
+        .area-script-compat {
+            display: none !important;
+        }
 
         /* shared */
         .area-filter-hidden { display: none !important; }
@@ -208,11 +211,15 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
         @media (max-width: 900px) {
+            .area-location-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
             .property-listings-section .property-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
         @media (max-width: 560px) {
+            .area-location-grid { grid-template-columns: 1fr; }
             .property-listings-section .property-grid { grid-template-columns: 1fr; }
             .area-listings-header-inner { flex-direction: column; align-items: flex-start; }
             .area-listing-count-badge { margin-left: 0; }
@@ -337,6 +344,33 @@
                         <span id="area-listing-count-badge" class="area-listing-count-badge"></span>
                     </div>
                 </div>
+            </div>
+
+            <!-- Hidden controls kept for shared listings script compatibility -->
+            <div class="area-script-compat" aria-hidden="true">
+                <input type="text" id="filter-keyword" value="">
+                <select id="filter-type">
+                    <option value="">All Types</option>
+                </select>
+                <select id="filter-listing-type">
+                    <option value="">All</option>
+                </select>
+                <select id="filter-location">
+                    <option value="">All Locations</option>
+                </select>
+                <input type="number" id="filter-min-price" min="0">
+                <input type="number" id="filter-max-price" min="0">
+                <input type="range" id="filter-price-range" min="0" max="100000000" step="100000" value="0">
+                <span id="min-price-label">₹0</span>
+                <span id="max-price-label">₹10 Cr+</span>
+                <select id="sort-price">
+                    <option value="newest" selected>Newest First</option>
+                    <option value="last-viewed">Last Viewed</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                </select>
+                <button type="button" id="reset-filters">Reset</button>
+                <div id="results-summary"></div>
             </div>
 
             <!-- Area description -->

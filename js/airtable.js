@@ -368,6 +368,37 @@ function getAreaFromPath() {
   return normalizeAreaValue(areaSegment);
 }
 
+function getAreasPageBasePath() {
+  const path = window.location.pathname || '/';
+
+  if (/\/areas\.html\/?$/i.test(path)) {
+    return path.replace(/\/+$/, '');
+  }
+
+  if (/\/areas\/?$/i.test(path)) {
+    return path.endsWith('/') ? path : `${path}/`;
+  }
+
+  if (/\.html$/i.test(path)) {
+    return path.replace(/[^/]+$/, 'areas.html');
+  }
+
+  return path.replace(/[^/]*$/, 'areas/');
+}
+
+function buildAreasPageUrl(location) {
+  const url = new URL(window.location.href);
+  url.pathname = getAreasPageBasePath();
+  url.search = '';
+  url.hash = '';
+
+  if (location) {
+    url.searchParams.set('area', toAreaSlug(location));
+  }
+
+  return url.toString();
+}
+
 function getInitialAreaFromContext() {
   const pathArea = getAreaFromPath();
   const queryArea = pageQueryParams.get('location') || pageQueryParams.get('area') || '';
@@ -377,14 +408,7 @@ function getInitialAreaFromContext() {
 
 function updateAreaUrl(location) {
   if (!isAreasPage || !location) return;
-  const slug = toAreaSlug(location);
-  if (!slug) return;
-
-  const url = new URL(window.location.href);
-  url.pathname = url.pathname.replace(/areas(?:\.html)?(?:\/[^/?#]*)?\/?$/i, 'areas/');
-  url.searchParams.set('area', slug);
-  url.searchParams.delete('location');
-  window.history.replaceState({}, '', url.toString());
+  window.history.replaceState({}, '', buildAreasPageUrl(location));
 }
 
 function getAreaQuestionsCache() {

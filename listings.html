@@ -142,19 +142,12 @@
                             <option value="">All</option>
                         </select>
                     </div>
-                    <div class="filter-group compact-group price-group">
-                        <label class="filter-label">Price Range (₹)</label>
-                        <div class="price-range listings-price-range">
-                            <div class="price-display listings-price-display">
-                                <input type="number" id="filter-min-price" class="form-input listings-price-input" placeholder="Min" min="0">
-                                <input type="number" id="filter-max-price" class="form-input listings-price-input" placeholder="Max" min="0">
-                            </div>
-                            <input type="range" id="filter-price-range" class="price-slider listings-price-slider" min="0" max="100000000" step="100000" value="0">
-                            <div class="listings-price-labels">
-                                <span id="min-price-label">₹0</span>
-                                <span id="max-price-label">₹10 Cr+</span>
-                            </div>
-                        </div>
+                    <div class="listings-script-compat" aria-hidden="true">
+                        <input type="number" id="filter-min-price" class="form-input listings-price-input" placeholder="Min" min="0">
+                        <input type="number" id="filter-max-price" class="form-input listings-price-input" placeholder="Max" min="0">
+                        <input type="range" id="filter-price-range" class="price-slider listings-price-slider" min="0" max="100000000" step="100000" value="0">
+                        <span id="min-price-label">₹0</span>
+                        <span id="max-price-label">₹10 Cr+</span>
                     </div>
                     <div class="filter-group compact-group listings-filter-actions">
                         <button type="button" id="reset-filters" class="btn btn-secondary listings-reset-btn">Clear Filters</button>

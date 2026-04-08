@@ -37,6 +37,17 @@ function toAreaSlug(value) {
     .replace(/-+/g, '-');
 }
 
+function getHomeAreasEntryPath() {
+  const path = window.location.pathname || '/';
+  return /\.html$/i.test(path) ? './areas.html' : './areas/';
+}
+
+function buildHomeAreasLink(areaName) {
+  const slug = toAreaSlug(areaName);
+  if (!slug) return getHomeAreasEntryPath();
+  return `${getHomeAreasEntryPath()}?area=${encodeURIComponent(slug)}`;
+}
+
 function normalizeAreaName(fields) {
   const candidates = [
     fields?.['Area Name'],
@@ -209,7 +220,7 @@ async function fetchAreasFromListings() {
 }
 
 function buildHomeAreaCard(item) {
-  const link = `./areas/?area=${encodeURIComponent(toAreaSlug(item.name))}`;
+  const link = buildHomeAreasLink(item.name);
 
   return `
     <a href="${link}" class="collection-card" aria-label="Open ${homeAreasEscapeHtml(item.name)} listings">
@@ -226,7 +237,7 @@ function renderHomeAreas(items) {
 
   if (!Array.isArray(items) || items.length === 0) {
     grid.innerHTML = `
-      <a href="./areas/" class="collection-card" aria-label="Explore all areas">
+      <a href="${getHomeAreasEntryPath()}" class="collection-card" aria-label="Explore all areas">
         <h3>Explore Areas</h3>
         <p>Area information is being updated. Visit the areas page to view available locations.</p>
         <div class="collection-glow"></div>
@@ -245,7 +256,7 @@ async function loadHomeAreas() {
     slowNoticeTimer = window.setTimeout(() => {
       if (!grid.querySelector('.collection-card')) {
         grid.innerHTML = `
-          <a href="./areas/" class="collection-card" aria-label="Explore all areas">
+          <a href="${getHomeAreasEntryPath()}" class="collection-card" aria-label="Explore all areas">
             <h3>Loading Areas</h3>
             <p>Area data is taking longer than expected. Please wait or open the areas page.</p>
             <div class="collection-glow"></div>

@@ -549,6 +549,10 @@ html.dark-mode .toggle-thumb {
     margin-top: 1.6rem;
 }
 
+.listings-script-compat {
+    display: none !important;
+}
+
 .filter-label {
     font-weight: 600;
     color: var(--dark-navy);
@@ -1284,6 +1288,10 @@ html.dark-mode .featured-carousel-dot.is-active {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--space-lg);
+}
+
+#featured-areas-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .collection-card {
