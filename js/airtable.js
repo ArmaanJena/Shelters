@@ -1065,8 +1065,8 @@ function resetListingsFilters() {
     typeFilter.selectedIndex = 0;
   }
   if (listingTypeFilter) {
-    listingTypeFilter.value = isNewLaunchesPage ? '__new_launch__' : '';
-    if (!isNewLaunchesPage) listingTypeFilter.selectedIndex = 0;
+    listingTypeFilter.value = '';
+    listingTypeFilter.selectedIndex = 0;
   }
   if (minInput) minInput.value = '';
   if (maxInput) maxInput.value = '';
