@@ -1030,6 +1030,54 @@ function updateResultsSummary(count, page = 1, totalPages = 1) {
   }
 }
 
+function clearListingsQueryParams() {
+  const url = new URL(window.location.href);
+  ['q', 'location', 'propertyType', 'type', 'offerType', 'listingType'].forEach((key) => {
+    url.searchParams.delete(key);
+  });
+
+  if (!isAreasPage) {
+    url.searchParams.delete('area');
+  }
+
+  window.history.replaceState({}, '', url.toString());
+}
+
+function resetListingsFilters() {
+  const keywordInput = document.getElementById('filter-keyword');
+  const locationFilter = document.getElementById('filter-location');
+  const typeFilter = document.getElementById('filter-type');
+  const listingTypeFilter = document.getElementById('filter-listing-type');
+  const minInput = document.getElementById('filter-min-price');
+  const maxInput = document.getElementById('filter-max-price');
+  const priceSlider = document.getElementById('filter-price-range');
+  const minLabel = document.getElementById('min-price-label');
+  const maxLabel = document.getElementById('max-price-label');
+  const sortFilter = document.getElementById('sort-price');
+
+  if (keywordInput) keywordInput.value = '';
+  if (locationFilter) {
+    locationFilter.value = fixedAreaLocation || '';
+    locationFilter.selectedIndex = fixedAreaLocation ? locationFilter.selectedIndex : 0;
+  }
+  if (typeFilter) {
+    typeFilter.value = '';
+    typeFilter.selectedIndex = 0;
+  }
+  if (listingTypeFilter) {
+    listingTypeFilter.value = isNewLaunchesPage ? '__new_launch__' : '';
+    if (!isNewLaunchesPage) listingTypeFilter.selectedIndex = 0;
+  }
+  if (minInput) minInput.value = '';
+  if (maxInput) maxInput.value = '';
+  if (priceSlider) priceSlider.value = '0';
+  if (minLabel) minLabel.textContent = '₹0';
+  if (maxLabel) maxLabel.textContent = '₹10 Cr+';
+  if (sortFilter) sortFilter.value = 'newest';
+
+  clearListingsQueryParams();
+}
+
 // Event listeners for filters and sort (with debug logging)
 function initListingsPage() {
   console.log('[airtable.js] DOMContentLoaded fired');
@@ -1098,17 +1146,7 @@ function initListingsPage() {
   const resetBtn = document.getElementById('reset-filters');
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
-      const keywordInput = document.getElementById('filter-keyword');
-      const locationFilter = document.getElementById('filter-location');
-      if (locationFilter) locationFilter.value = fixedAreaLocation || '';
-      document.getElementById('filter-type').value = '';
-      document.getElementById('filter-listing-type').value = isNewLaunchesPage ? '__new_launch__' : '';
-      if (keywordInput) keywordInput.value = '';
-      if (minInput) minInput.value = '';
-      if (maxInput) maxInput.value = '';
-      if (priceSlider) priceSlider.value = 0;
-      if (maxLabel) maxLabel.textContent = '₹10 Cr+';
-      document.getElementById('sort-price').value = 'newest';
+      resetListingsFilters();
       applyFiltersAndRender();
     });
     console.log('[airtable.js] Reset filters button event attached');
