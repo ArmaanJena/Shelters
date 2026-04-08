@@ -1294,6 +1294,16 @@ html.dark-mode .featured-carousel-dot.is-active {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+#featured-areas-grid .collection-card {
+    min-width: 0;
+    width: 100%;
+}
+
+#featured-areas-grid .collection-card h3,
+#featured-areas-grid .collection-card p {
+    overflow-wrap: anywhere;
+}
+
 .collection-card {
     background-color: var(--background-light);
     border: 1px solid var(--light-gray);
@@ -2507,6 +2517,10 @@ html.dark-mode .featured-carousel-dot.is-active {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    #featured-areas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .listings-filter-actions {
         min-width: 0;
     }
@@ -2568,6 +2582,10 @@ html.dark-mode .featured-carousel-dot.is-active {
     }
 
     .filter-panel .filter-container {
+        grid-template-columns: 1fr;
+    }
+
+    #featured-areas-grid {
         grid-template-columns: 1fr;
     }
 
