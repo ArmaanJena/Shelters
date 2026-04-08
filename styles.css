@@ -21,7 +21,7 @@
     min-width: 120px;
     max-width: 140px;
     align-items: flex-end;
-    margin-left: 3rem; /* Move Clear Filters button further right */
+    margin-left: 0;
 }
 @media (max-width: 900px) {
     .filter-container {
@@ -37,6 +37,7 @@
     .filter-group.compact-group:last-child {
         align-items: flex-start;
         margin-top: 0.5rem;
+        margin-left: 0;
     }
 }
 /* Filter Bar Layout Improvements */
@@ -542,6 +543,7 @@ html.dark-mode .toggle-thumb {
 .listings-filter-actions {
     align-self: end;
     min-width: 126px;
+    margin-left: 0 !important;
 }
 
 .listings-reset-btn {
@@ -2591,6 +2593,11 @@ html.dark-mode .featured-carousel-dot.is-active {
 
     .listings-reset-btn {
         margin-top: 0;
+    }
+
+    .listings-filter-actions {
+        width: 100%;
+        margin-left: 0 !important;
     }
 
     .featured-carousel {
