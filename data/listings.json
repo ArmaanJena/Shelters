@@ -1,11 +1,39 @@
 {
-  "updatedAt": "2026-04-08T10:51:49.118Z",
+  "updatedAt": "2026-04-09T06:18:01.009Z",
   "records": [
     {
       "id": "recLGtltLbpPaYYEJ",
       "createdTime": "2026-04-08T07:41:33.000Z",
       "fields": {
         "Title": "125 Acre Township Land | Near Pune Airport | 45m DP Road | FSI 1.85 Potential | ₹12 Cr/Acre | Clear Title\n",
+        "Image": [
+          {
+            "id": "attB9ikmOncTuLp7w",
+            "width": 588,
+            "height": 330,
+            "url": "/data/listing-images/recLGtltLbpPaYYEJ/attB9ikmOncTuLp7w.jpg",
+            "filename": "2026-04-09 10.58.09.jpg",
+            "size": 101923,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recLGtltLbpPaYYEJ/attB9ikmOncTuLp7w.jpg",
+                "width": 64,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recLGtltLbpPaYYEJ/attB9ikmOncTuLp7w.jpg",
+                "width": 588,
+                "height": 330
+              },
+              "full": {
+                "url": "/data/listing-images/recLGtltLbpPaYYEJ/attB9ikmOncTuLp7w.jpg",
+                "width": 588,
+                "height": 330
+              }
+            }
+          }
+        ],
         "Location": "Wagholi",
         "Property Type": "Plot",
         "Offer Type": "Sale",
@@ -33,6 +61,34 @@
       "createdTime": "2026-04-08T06:28:00.000Z",
       "fields": {
         "Title": "3000 sqft plot in Wadgaon Sheri for sale in  with excellent access and future growth potential.",
+        "Image": [
+          {
+            "id": "attNM3PPgtiLBzrVF",
+            "width": 467,
+            "height": 350,
+            "url": "/data/listing-images/rec3CFHvtNwNGImOY/attNM3PPgtiLBzrVF.jpg",
+            "filename": "2026-04-09 10.56.51.jpg",
+            "size": 103968,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec3CFHvtNwNGImOY/attNM3PPgtiLBzrVF.jpg",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec3CFHvtNwNGImOY/attNM3PPgtiLBzrVF.jpg",
+                "width": 467,
+                "height": 350
+              },
+              "full": {
+                "url": "/data/listing-images/rec3CFHvtNwNGImOY/attNM3PPgtiLBzrVF.jpg",
+                "width": 467,
+                "height": 350
+              }
+            }
+          }
+        ],
         "Price": 27500000,
         "Location": "Others",
         "Property Type": "Plot",
