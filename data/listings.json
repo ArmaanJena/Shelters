@@ -1,6 +1,62 @@
 {
-  "updatedAt": "2026-04-09T06:18:01.009Z",
+  "updatedAt": "2026-04-11T10:27:55.810Z",
   "records": [
+    {
+      "id": "recUSOMOxQJWgOiCp",
+      "createdTime": "2026-04-11T08:06:41.000Z",
+      "fields": {
+        "Title": "Pre R-Zone Land Opportunity | 1 Acre Plots Near Kharadi | Massive Upside Potential\n",
+        "Image": [
+          {
+            "id": "att5x89VOK3IqE4YQ",
+            "width": 1080,
+            "height": 1080,
+            "url": "/data/listing-images/recUSOMOxQJWgOiCp/att5x89VOK3IqE4YQ.jpg",
+            "filename": "2026-04-11 13.47.02.jpg",
+            "size": 1517285,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recUSOMOxQJWgOiCp/att5x89VOK3IqE4YQ.jpg",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recUSOMOxQJWgOiCp/att5x89VOK3IqE4YQ.jpg",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/recUSOMOxQJWgOiCp/att5x89VOK3IqE4YQ.jpg",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "Price": 180000000,
+        "Location": "Kharadi",
+        "Property Type": "Plot",
+        "Offer Type": "Sale",
+        "Size (sqft)": 43000,
+        "Description": "Premium 1-acre plots available for sale near Kharadi, Pune, located in a high-growth corridor with proposed residential zoning (R-Zone). This presents a rare early-entry investment opportunity where buyers can benefit from significant appreciation once zoning conversion is formalised.\n\nSituated near major IT hubs such as Kharadi and EON IT Park, the location is witnessing rapid infrastructure development and expanding residential demand. The surrounding areas are gradually transitioning into premium residential zones, making this an ideal time to invest before full zoning conversion and price escalation.\n\nThese large-format land parcels are suitable for long-term investors, developers, and buyers looking to capitalise on Pune’s eastward expansion. With proximity to Pune Airport, Nagar Road, and key business districts, this investment offers both strategic location advantage and strong future returns.\n\nEntry at pre R-Zone pricing (lower acquisition cost)\n\t•\tPotential upside post zoning = 2x–4x appreciation (market dependent)\n\t•\tIdeal for land banking / long-term holding\n\t•\tIncreasing demand due to IT expansion & infrastructure growth",
+        "Short Description": "Rare pre R-zone investment opportunity offering 1-acre land parcels near Kharadi with strong future appreciation potential driven by zoning conversion and infrastructure growth.",
+        "Price per Sqft": 4186.046511627907,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
     {
       "id": "recLGtltLbpPaYYEJ",
       "createdTime": "2026-04-08T07:41:33.000Z",
