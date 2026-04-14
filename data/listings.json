@@ -1,6 +1,89 @@
 {
-  "updatedAt": "2026-04-11T10:27:55.810Z",
+  "updatedAt": "2026-04-14T16:03:02.544Z",
   "records": [
+    {
+      "id": "recMRGbThNnlkgVdZ",
+      "createdTime": "2026-04-14T10:57:58.000Z",
+      "fields": {
+        "Title": "Pre-Leased Showroom in Viman nagar  | 1650 sq.ft | High Footfall | Strong Rental Yield\n",
+        "Image": [
+          {
+            "id": "attRGpYt357hPzwUm",
+            "width": 516,
+            "height": 387,
+            "url": "/data/listing-images/recMRGbThNnlkgVdZ/attRGpYt357hPzwUm.jpg",
+            "filename": "2026-04-14 16.42.48.jpg",
+            "size": 127367,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recMRGbThNnlkgVdZ/attRGpYt357hPzwUm.jpg",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recMRGbThNnlkgVdZ/attRGpYt357hPzwUm.jpg",
+                "width": 516,
+                "height": 387
+              },
+              "full": {
+                "url": "/data/listing-images/recMRGbThNnlkgVdZ/attRGpYt357hPzwUm.jpg",
+                "width": 516,
+                "height": 387
+              }
+            }
+          },
+          {
+            "id": "attQqiqhUAMjzo7Vd",
+            "width": 516,
+            "height": 387,
+            "url": "/data/listing-images/recMRGbThNnlkgVdZ/attQqiqhUAMjzo7Vd.jpg",
+            "filename": "2026-04-14 16.42.49.jpg",
+            "size": 125157,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recMRGbThNnlkgVdZ/attQqiqhUAMjzo7Vd.jpg",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recMRGbThNnlkgVdZ/attQqiqhUAMjzo7Vd.jpg",
+                "width": 516,
+                "height": 387
+              },
+              "full": {
+                "url": "/data/listing-images/recMRGbThNnlkgVdZ/attQqiqhUAMjzo7Vd.jpg",
+                "width": 516,
+                "height": 387
+              }
+            }
+          }
+        ],
+        "Price": 42500000,
+        "Location": "Viman Nagar",
+        "Property Type": "Showroom",
+        "Offer Type": "Pre-Leased",
+        "Status": "Ready to Move",
+        "Size (sqft)": 1650,
+        "Description": "Pre-leased showroom available for sale in a prime commercial location, offering a strong investment opportunity with immediate rental income. Spread across 1650 sq.ft, this retail space is strategically located in a high footfall zone surrounded by IT parks, corporate offices, and dense commercial activity.\n\nThe property benefits from excellent visibility, accessibility, and a steady customer base driven by working professionals and nearby residential catchment. With strong rental demand and limited supply of quality retail spaces, this asset is ideal for investors seeking long-term capital appreciation along with consistent cash flow.\n\nIts strategic positioning in a rapidly growing commercial corridor ensures sustained demand, making it a valuable addition to any real estate investment portfolio.\n\n",
+        "Short Description": "Prime pre-leased showroom in a high-demand commercial zone, offering steady rental income and strong appreciation potential.\n",
+        "Price per Sqft": 25757.575757575756,
+        "Amenities Count": 0,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        }
+      }
+    },
     {
       "id": "recUSOMOxQJWgOiCp",
       "createdTime": "2026-04-11T08:06:41.000Z",
