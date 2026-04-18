@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-18T10:49:28.174Z",
+  "updatedAt": "2026-04-18T20:44:24.325Z",
   "records": [
     {
       "id": "recc09r4NoaKWNeWi",
@@ -545,7 +545,7 @@
       "id": "rec49qCSiaOQ8Zu2J",
       "createdTime": "2026-04-18T04:12:11.000Z",
       "fields": {
-        "Title": "36-Key Hospitality Asset/ Independent building| Banquet Hall | Near IT Parks | ₹7.5L Monthly Rental",
+        "Title": "36 Rooms Hospitality Asset/ Independent building| Banquet Hall | Near IT Parks | ₹7.5L Monthly Rental",
         "Image": [
           {
             "id": "attx9wJkxHVAvoypZ",
@@ -601,7 +601,8 @@
           "state": "empty",
           "value": null,
           "isStale": true
-        }
+        },
+        "Managed ": true
       }
     },
     {
