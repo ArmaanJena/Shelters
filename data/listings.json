@@ -1,6 +1,687 @@
 {
-  "updatedAt": "2026-04-16T20:56:00.848Z",
+  "updatedAt": "2026-04-18T10:49:28.174Z",
   "records": [
+    {
+      "id": "recc09r4NoaKWNeWi",
+      "createdTime": "2026-04-18T05:11:22.000Z",
+      "fields": {
+        "Title": "3 BHK Apartment for Rent in Ganga Carnation in Koregaon Park Annexe | Spacious Living",
+        "Image": [
+          {
+            "id": "atttXNzVKMEoWG0vl",
+            "width": 780,
+            "height": 624,
+            "url": "/data/listing-images/recc09r4NoaKWNeWi/atttXNzVKMEoWG0vl.jpg",
+            "filename": "2026-04-18 10.45.44.jpg",
+            "size": 371068,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recc09r4NoaKWNeWi/atttXNzVKMEoWG0vl.jpg",
+                "width": 45,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recc09r4NoaKWNeWi/atttXNzVKMEoWG0vl.jpg",
+                "width": 640,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/recc09r4NoaKWNeWi/atttXNzVKMEoWG0vl.jpg",
+                "width": 780,
+                "height": 624
+              }
+            }
+          },
+          {
+            "id": "attQRyCQI8VX4yGel",
+            "width": 780,
+            "height": 624,
+            "url": "/data/listing-images/recc09r4NoaKWNeWi/attQRyCQI8VX4yGel.jpg",
+            "filename": "2026-04-18 10.45.44.jpg",
+            "size": 351680,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recc09r4NoaKWNeWi/attQRyCQI8VX4yGel.jpg",
+                "width": 45,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recc09r4NoaKWNeWi/attQRyCQI8VX4yGel.jpg",
+                "width": 640,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/recc09r4NoaKWNeWi/attQRyCQI8VX4yGel.jpg",
+                "width": 780,
+                "height": 624
+              }
+            }
+          }
+        ],
+        "Price": 55000,
+        "Location": "Koregaon Park",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 3,
+        "Bathrooms": 3,
+        "Size (sqft)": 1500,
+        "Description": "3 BHK apartment for rent in Ganga Carnations in Koregaon Park Annexe, Pune, offering a spacious layout in a prime residential location. With proximity to Kharadi, Kalyani Nagar, and major business hubs, this property is ideal for families and professionals seeking a well-connected home.",
+        "Short Description": "3 BHK apartment for rent in Koregaon Park Annexe, Pune, offering a spacious layout in a prime residential location. With proximity to Kharadi, Kalyani Nagar, and major business hubs, this property is ideal for families and professionals seeking a well-connected home.",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Balcony",
+          "Visitor Parking",
+          "Intercom Facility",
+          "Maintenance Staff",
+          "Jogging Track"
+        ],
+        "Price per Sqft": 36.666666666666664,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "rec4BACXWdCRb3Evq",
+      "createdTime": "2026-04-18T05:05:29.000Z",
+      "fields": {
+        "Title": "1 BHK in Eden Garden,Fully Furnished Apartment for Rent in Viman Nagar | Luxury Interiors",
+        "Image": [
+          {
+            "id": "att7zXojXjGiuZmQe",
+            "width": 252,
+            "height": 194,
+            "url": "/data/listing-images/rec4BACXWdCRb3Evq/att7zXojXjGiuZmQe.jpg",
+            "filename": "2026-04-18 10.40.29.jpg",
+            "size": 47196,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec4BACXWdCRb3Evq/att7zXojXjGiuZmQe.jpg",
+                "width": 47,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec4BACXWdCRb3Evq/att7zXojXjGiuZmQe.jpg",
+                "width": 252,
+                "height": 194
+              },
+              "full": {
+                "url": "/data/listing-images/rec4BACXWdCRb3Evq/att7zXojXjGiuZmQe.jpg",
+                "width": 252,
+                "height": 194
+              }
+            }
+          }
+        ],
+        "Price": 42000,
+        "Location": "Viman Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bathrooms": 1,
+        "Size (sqft)": 650,
+        "Description": "1 BHK fully furnished apartment for rent in Viman Nagar, Pune, featuring luxury interiors and excellent connectivity to Pune Airport, Kharadi IT Park, and business districts. Ideal for working professionals and frequent travellers.",
+        "Short Description": "Premium 1 BHK with luxury furnishing in a prime location close to Pune Airport and IT hubs.",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Balcony",
+          "Visitor Parking",
+          "Intercom Facility",
+          "Maintenance Staff",
+          "Jogging Track",
+          "Vaastu Compliant"
+        ],
+        "Price per Sqft": 64.61538461538461,
+        "Bedrooms to Bathrooms Ratio": 0,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recyGChNcFhG37A3f",
+      "createdTime": "2026-04-18T04:56:45.000Z",
+      "fields": {
+        "Title": "2 BHK Apartment for Rent in Siddharth Estates Kalyani Nagar | Unfurnished | Possession May 2026",
+        "Image": [
+          {
+            "id": "att8mRm8SpKMGBPxE",
+            "width": 218,
+            "height": 168,
+            "url": "/data/listing-images/recyGChNcFhG37A3f/att8mRm8SpKMGBPxE.jpg",
+            "filename": "2026-04-18 10.34.57.jpg",
+            "size": 37104,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recyGChNcFhG37A3f/att8mRm8SpKMGBPxE.jpg",
+                "width": 47,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recyGChNcFhG37A3f/att8mRm8SpKMGBPxE.jpg",
+                "width": 218,
+                "height": 168
+              },
+              "full": {
+                "url": "/data/listing-images/recyGChNcFhG37A3f/att8mRm8SpKMGBPxE.jpg",
+                "width": 218,
+                "height": 168
+              }
+            }
+          }
+        ],
+        "Price": 45000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 2,
+        "Bathrooms": 2,
+        "Size (sqft)": 1200,
+        "Description": "2 BHK apartment for rent in Kalyani Nagar, Pune, offering a practical layout and excellent location advantage. Suitable for tenants who prefer to furnish their own space while enjoying connectivity to major commercial and residential hubs.",
+        "Short Description": "Functional 2 BHK apartment available for rent, ideal for tenants looking for a long-term stay.",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Visitor Parking",
+          "Intercom Facility",
+          "Maintenance Staff"
+        ],
+        "Price per Sqft": 37.5,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recZy1VcIjGkHmXV9",
+      "createdTime": "2026-04-18T04:49:10.000Z",
+      "fields": {
+        "Title": "2 BHK Furnished Apartment for Rent in Kalpataru Regency 2,Kalyani Nagar | Premium society in a Premium  Location",
+        "Image": [
+          {
+            "id": "atto4ClSpajJQo3Wb",
+            "width": 237,
+            "height": 183,
+            "url": "/data/listing-images/recZy1VcIjGkHmXV9/atto4ClSpajJQo3Wb.jpg",
+            "filename": "2026-04-18 10.25.21.jpg",
+            "size": 44231,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/atto4ClSpajJQo3Wb.jpg",
+                "width": 47,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/atto4ClSpajJQo3Wb.jpg",
+                "width": 237,
+                "height": 183
+              },
+              "full": {
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/atto4ClSpajJQo3Wb.jpg",
+                "width": 237,
+                "height": 183
+              }
+            }
+          },
+          {
+            "id": "att266HLN3DsDQJ4m",
+            "width": 231,
+            "height": 179,
+            "url": "/data/listing-images/recZy1VcIjGkHmXV9/att266HLN3DsDQJ4m.jpg",
+            "filename": "2026-04-18 10.25.22.jpg",
+            "size": 42307,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/att266HLN3DsDQJ4m.jpg",
+                "width": 46,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/att266HLN3DsDQJ4m.jpg",
+                "width": 231,
+                "height": 179
+              },
+              "full": {
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/att266HLN3DsDQJ4m.jpg",
+                "width": 231,
+                "height": 179
+              }
+            }
+          }
+        ],
+        "Price": 65000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 2,
+        "Bathrooms": 2,
+        "Size (sqft)": 1300,
+        "Description": "2 BHK furnished apartment for rent in Kalyani Nagar, Pune, located in a well-established residential area with proximity to IT hubs, schools, and shopping destinations. Ideal for professionals and families seeking convenience and comfort.",
+        "Short Description": "Comfortable furnished 2 BHK in a prime residential complex, ideal for small families and working professionals.",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "24/7 Security",
+          "Parking Space",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Balcony",
+          "Servant Quarters",
+          "Maintenance Staff",
+          "Visitor Parking",
+          "Intercom Facility"
+        ],
+        "Price per Sqft": 50,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recmr3MHb5NQUFchM",
+      "createdTime": "2026-04-18T04:43:41.000Z",
+      "fields": {
+        "Title": "3 BHK Apartment for Rent in Kalyani Nagar | Budget-Friendly | Possession May 2026",
+        "Image": [
+          {
+            "id": "att8iiGC5RpEY9Ka7",
+            "width": 516,
+            "height": 387,
+            "url": "/data/listing-images/recmr3MHb5NQUFchM/att8iiGC5RpEY9Ka7.jpg",
+            "filename": "2026-04-18 10.18.01.jpg",
+            "size": 155460,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recmr3MHb5NQUFchM/att8iiGC5RpEY9Ka7.jpg",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recmr3MHb5NQUFchM/att8iiGC5RpEY9Ka7.jpg",
+                "width": 516,
+                "height": 387
+              },
+              "full": {
+                "url": "/data/listing-images/recmr3MHb5NQUFchM/att8iiGC5RpEY9Ka7.jpg",
+                "width": 516,
+                "height": 387
+              }
+            }
+          }
+        ],
+        "Price": 45000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 3,
+        "Bathrooms": 2,
+        "Size (sqft)": 1500,
+        "Description": "3 BHK apartment for rent in Kalyani Nagar, Pune, offering a budget-friendly option in a premium locality. Ideal for tenants looking to customise interiors, this property provides excellent connectivity to Koregaon Park, Viman Nagar, and business districts.",
+        "Short Description": "Affordable 3 BHK apartment with functional layout in a well-connected residential area.",
+        "Amenities": [
+          "Children’s Play Area",
+          "Clubhouse",
+          "Parking Space",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Visitor Parking",
+          "Intercom Facility",
+          "Maintenance Staff",
+          "Balcony"
+        ],
+        "Price per Sqft": 30,
+        "Bedrooms to Bathrooms Ratio": 1.5,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "recAy7zqgCsgpHS5v",
+      "createdTime": "2026-04-18T04:30:17.000Z",
+      "fields": {
+        "Title": "3 BHK Fully Furnished Apartment for Rent in Sky Lounge in Kalyani Nagar | Premium Living",
+        "Image": [
+          {
+            "id": "attAiAIlxIqsj0tkY",
+            "width": 387,
+            "height": 290,
+            "url": "/data/listing-images/recAy7zqgCsgpHS5v/attAiAIlxIqsj0tkY.jpg",
+            "filename": "2026-04-18 10.06.05.jpg",
+            "size": 96203,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recAy7zqgCsgpHS5v/attAiAIlxIqsj0tkY.jpg",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recAy7zqgCsgpHS5v/attAiAIlxIqsj0tkY.jpg",
+                "width": 387,
+                "height": 290
+              },
+              "full": {
+                "url": "/data/listing-images/recAy7zqgCsgpHS5v/attAiAIlxIqsj0tkY.jpg",
+                "width": 387,
+                "height": 290
+              }
+            }
+          },
+          {
+            "id": "attk968uPZqzsMV2B",
+            "width": 200,
+            "height": 150,
+            "url": "/data/listing-images/recAy7zqgCsgpHS5v/attk968uPZqzsMV2B.jpg",
+            "filename": "2026-04-18 10.06.05.jpg",
+            "size": 25080,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recAy7zqgCsgpHS5v/attk968uPZqzsMV2B.jpg",
+                "width": 48,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recAy7zqgCsgpHS5v/attk968uPZqzsMV2B.jpg",
+                "width": 200,
+                "height": 150
+              },
+              "full": {
+                "url": "/data/listing-images/recAy7zqgCsgpHS5v/attk968uPZqzsMV2B.jpg",
+                "width": 200,
+                "height": 150
+              }
+            }
+          }
+        ],
+        "Price": 90000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bedrooms": 3,
+        "Bathrooms": 3,
+        "Size (sqft)": 2000,
+        "Description": "3 BHK fully furnished apartment for rent in Sky Lounge in Kalyani Nagar, Pune, located in one of the city’s most premium residential neighbourhoods. This property offers modern interiors, spacious living, and proximity to IT hubs, Pune Airport, and lifestyle destinations. Ideal for families, expatriates, and senior professionals seeking a high-quality rental home in Pune.",
+        "Short Description": "Spacious fully furnished 3 BHK in a premium gated community in Kalyani Nagar, ideal for families and expat tenants.",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Private Terrace/Garden",
+          "Servant Quarters",
+          "Vaastu Compliant",
+          "Jogging Track",
+          "Visitor Parking",
+          "Intercom Facility",
+          "Maintenance Staff"
+        ],
+        "Price per Sqft": 45,
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "rec49qCSiaOQ8Zu2J",
+      "createdTime": "2026-04-18T04:12:11.000Z",
+      "fields": {
+        "Title": "36-Key Hospitality Asset/ Independent building| Banquet Hall | Near IT Parks | ₹7.5L Monthly Rental",
+        "Image": [
+          {
+            "id": "attx9wJkxHVAvoypZ",
+            "width": 299,
+            "height": 168,
+            "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attx9wJkxHVAvoypZ.jpg",
+            "filename": "2026-04-18 09.52.31.jpg",
+            "size": 25982,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attx9wJkxHVAvoypZ.jpg",
+                "width": 64,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attx9wJkxHVAvoypZ.jpg",
+                "width": 299,
+                "height": 168
+              },
+              "full": {
+                "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attx9wJkxHVAvoypZ.jpg",
+                "width": 299,
+                "height": 168
+              }
+            }
+          }
+        ],
+        "Price": 750000,
+        "Location": "Kharadi",
+        "Property Type": "Individual Buildings",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Size (sqft)": 15000,
+        "Description": "Hospitality asset/ Independent building available for lease in East Pune, strategically located near Panchshil IT Park and surrounded by premium developments, corporate offices, and high-density residential catchment. This property comprises 36 well-sized rooms along with a banquet hall, making it ideal for hotel operations, serviced apartments, or co-living concepts.\n\nWith proximity to leading developers and commercial hubs, the location ensures strong occupancy demand from corporate clients, working professionals, and business travellers. The presence of established IT parks and premium residential communities further enhances the long-term viability of this asset.\n\nThis is a rare opportunity to acquire or lease a ready hospitality property in one of Pune’s fastest-growing business districts, offering stable rental income and scalable revenue potential.\n\n* Less than 1 km from major IT park\n* Surrounded by premium residential & commercial developments\n* Close to Kharadi & Wagholi growth corridor\n* Strong demand from IT professionals & corporates\n\n⸻\n\n🔹 Ideal Use for \n\n* Business hotel\n* Serviced apartments\n* Co-living / student housing\n* Corporate guest house",
+        "Short Description": "Fully built hospitality asset/ Independent building with 36 rooms and banquet facility, located in a high-demand IT corridor with strong rental income potential.",
+        "Amenities": [
+          "Lift / Elevator",
+          "Power Backup",
+          "Parking Space",
+          "24/7 Security",
+          "Visitor Parking"
+        ],
+        "Price per Sqft": 50,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
+    {
+      "id": "reckmhAknQSQlItiC",
+      "createdTime": "2026-04-18T04:12:02.000Z",
+      "fields": {
+        "Title": "3 BHK Fully Furnished Apartment for Rent in Victoria Garden in Kalyani Nagar | Ready to Move",
+        "Image": [
+          {
+            "id": "attfCXq9cb2fA9vkb",
+            "width": 325,
+            "height": 300,
+            "url": "/data/listing-images/reckmhAknQSQlItiC/attfCXq9cb2fA9vkb.jpg",
+            "filename": "2026-04-18 10.12.49.jpg",
+            "size": 82709,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/reckmhAknQSQlItiC/attfCXq9cb2fA9vkb.jpg",
+                "width": 39,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/reckmhAknQSQlItiC/attfCXq9cb2fA9vkb.jpg",
+                "width": 325,
+                "height": 300
+              },
+              "full": {
+                "url": "/data/listing-images/reckmhAknQSQlItiC/attfCXq9cb2fA9vkb.jpg",
+                "width": 325,
+                "height": 300
+              }
+            }
+          }
+        ],
+        "Price": 80000,
+        "Location": "Kalyani Nagar",
+        "Property Type": "Apartment",
+        "Offer Type": "Rent",
+        "Status": "Ready to Move",
+        "Bathrooms": 3,
+        "Size (sqft)": 1800,
+        "Description": "3 BHK furnished apartment for rent in Kalyani Nagar, Pune, offering a comfortable and premium living experience. Located close to business hubs, schools, and retail destinations, this property is ideal for families and professionals looking for a centrally located rental home.",
+        "Short Description": "Well-maintained fully furnished 3 BHK apartment in Victoria Garden, in a prime residential complex with excellent connectivity.",
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "24/7 Security",
+          "Power Backup",
+          "Lift / Elevator",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Balcony",
+          "Visitor Parking",
+          "Intercom Facility",
+          "Maintenance Staff",
+          "Solar Water Heater"
+        ],
+        "Price per Sqft": 44.44444444444444,
+        "Bedrooms to Bathrooms Ratio": 0,
+        "Amenities Count": 1,
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        }
+      }
+    },
     {
       "id": "recMRGbThNnlkgVdZ",
       "createdTime": "2026-04-14T10:57:58.000Z",
