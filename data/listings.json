@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-20T20:56:22.453Z",
+  "updatedAt": "2026-04-21T11:14:48.072Z",
   "records": [
     {
       "id": "recc09r4NoaKWNeWi",
@@ -192,28 +192,28 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "att8mRm8SpKMGBPxE",
-            "width": 218,
-            "height": 168,
-            "url": "/data/listing-images/recyGChNcFhG37A3f/att8mRm8SpKMGBPxE.jpg",
-            "filename": "2026-04-18 10.34.57.jpg",
-            "size": 37104,
+            "id": "attTGneZxEHq3SDUt",
+            "width": 227,
+            "height": 145,
+            "url": "/data/listing-images/recyGChNcFhG37A3f/attTGneZxEHq3SDUt.jpg",
+            "filename": "2026-04-21 10.18.21.jpg",
+            "size": 35662,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recyGChNcFhG37A3f/att8mRm8SpKMGBPxE.jpg",
-                "width": 47,
+                "url": "/data/listing-images/recyGChNcFhG37A3f/attTGneZxEHq3SDUt.jpg",
+                "width": 56,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recyGChNcFhG37A3f/att8mRm8SpKMGBPxE.jpg",
-                "width": 218,
-                "height": 168
+                "url": "/data/listing-images/recyGChNcFhG37A3f/attTGneZxEHq3SDUt.jpg",
+                "width": 227,
+                "height": 145
               },
               "full": {
-                "url": "/data/listing-images/recyGChNcFhG37A3f/att8mRm8SpKMGBPxE.jpg",
-                "width": 218,
-                "height": 168
+                "url": "/data/listing-images/recyGChNcFhG37A3f/attTGneZxEHq3SDUt.jpg",
+                "width": 227,
+                "height": 145
               }
             }
           }
@@ -596,7 +596,7 @@
           "value": null,
           "isStale": true
         },
-        "Description": "Hospitality asset/ Independent building available for lease in East Pune, strategically located near Panchshil IT Park and surrounded by premium developments, corporate offices, and high-density residential catchment. This property comprises 36 well-sized rooms along with a banquet hall, making it ideal for hotel operations, serviced apartments, or co-living concepts.\n\nWith proximity to leading developers and commercial hubs, the location ensures strong occupancy demand from corporate clients, working professionals, and business travellers. The presence of established IT parks and premium residential communities further enhances the long-term viability of this asset.\n\nThis is a rare opportunity to acquire or lease a ready hospitality property in one of Pune’s fastest-growing business districts, offering stable rental income and scalable revenue potential.\n\n* Less than 1 km from major IT park\n* Surrounded by premium residential & commercial developments\n* Close to Kharadi & Wagholi growth corridor\n* Strong demand from IT professionals & corporates\n\n⸻\n\n🔹 Ideal Use for \n\n* Business hotel\n* Serviced apartments\n* Co-living / student housing\n* Corporate guest house",
+        "Description": "Hospitality asset/ Independent building available for lease in East Pune, strategically located near Panchshil IT Park and surrounded by premium developments, corporate offices, and high-density residential catchment. This property comprises 36 well-sized rooms along with a banquet hall, making it ideal for hotel operations, serviced apartments, or co-living concepts.\n\nWith proximity to leading developers and commercial hubs, the location ensures strong occupancy demand from corporate clients, working professionals, and business travellers. The presence of established IT parks and premium residential communities further enhances the long-term viability of this asset.\n\nThis is a rare opportunity to acquire or lease a ready hospitality property in one of Pune’s fastest-growing business areas \n\n* Less than 1 km from major IT park\n* Surrounded by premium residential & commercial developments\n* Close to Kharadi & Wagholi growth corridor\n* Strong demand from IT professionals & corporates\n\n⸻\n\n🔹 Ideal Use for \n\n* Business hotel\n* Serviced apartments\n* Co-living / student housing\n* Corporate guest house",
         "Location": "Kharadi",
         "Price": 750000,
         "Managed ": true,
@@ -3061,28 +3061,28 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "attTYnACTCGsEuinx",
-            "width": 782,
-            "height": 524,
-            "url": "/data/listing-images/rec53AACcQm1jO3SF/attTYnACTCGsEuinx.jpg",
-            "filename": "2026-04-01 10.24.14.jpg",
-            "size": 570491,
+            "id": "atteYLQVwe0otAQPR",
+            "width": 495,
+            "height": 619,
+            "url": "/data/listing-images/rec53AACcQm1jO3SF/atteYLQVwe0otAQPR.jpg",
+            "filename": "2026-04-21 10.28.00.jpg",
+            "size": 223245,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/rec53AACcQm1jO3SF/attTYnACTCGsEuinx.jpg",
-                "width": 54,
+                "url": "/data/listing-images/rec53AACcQm1jO3SF/atteYLQVwe0otAQPR.jpg",
+                "width": 29,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/rec53AACcQm1jO3SF/attTYnACTCGsEuinx.jpg",
-                "width": 764,
-                "height": 512
+                "url": "/data/listing-images/rec53AACcQm1jO3SF/atteYLQVwe0otAQPR.jpg",
+                "width": 495,
+                "height": 619
               },
               "full": {
-                "url": "/data/listing-images/rec53AACcQm1jO3SF/attTYnACTCGsEuinx.jpg",
-                "width": 782,
-                "height": 524
+                "url": "/data/listing-images/rec53AACcQm1jO3SF/atteYLQVwe0otAQPR.jpg",
+                "width": 495,
+                "height": 619
               }
             }
           }
