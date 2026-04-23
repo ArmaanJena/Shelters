@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-21T11:14:48.072Z",
+  "updatedAt": "2026-04-23T20:59:00.669Z",
   "records": [
     {
       "id": "recc09r4NoaKWNeWi",
@@ -113,28 +113,28 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "att7zXojXjGiuZmQe",
-            "width": 252,
-            "height": 194,
-            "url": "/data/listing-images/rec4BACXWdCRb3Evq/att7zXojXjGiuZmQe.jpg",
-            "filename": "2026-04-18 10.40.29.jpg",
-            "size": 47196,
+            "id": "attbvA5kEbriKYp4f",
+            "width": 1408,
+            "height": 1117,
+            "url": "/data/listing-images/rec4BACXWdCRb3Evq/attbvA5kEbriKYp4f.jpg",
+            "filename": "2026-04-23 21.36.31.jpg",
+            "size": 2149702,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/rec4BACXWdCRb3Evq/att7zXojXjGiuZmQe.jpg",
-                "width": 47,
+                "url": "/data/listing-images/rec4BACXWdCRb3Evq/attbvA5kEbriKYp4f.jpg",
+                "width": 45,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/rec4BACXWdCRb3Evq/att7zXojXjGiuZmQe.jpg",
-                "width": 252,
-                "height": 194
+                "url": "/data/listing-images/rec4BACXWdCRb3Evq/attbvA5kEbriKYp4f.jpg",
+                "width": 645,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/rec4BACXWdCRb3Evq/att7zXojXjGiuZmQe.jpg",
-                "width": 252,
-                "height": 194
+                "url": "/data/listing-images/rec4BACXWdCRb3Evq/attbvA5kEbriKYp4f.jpg",
+                "width": 1408,
+                "height": 1117
               }
             }
           }
@@ -266,54 +266,54 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "atto4ClSpajJQo3Wb",
-            "width": 237,
-            "height": 183,
-            "url": "/data/listing-images/recZy1VcIjGkHmXV9/atto4ClSpajJQo3Wb.jpg",
-            "filename": "2026-04-18 10.25.21.jpg",
-            "size": 44231,
+            "id": "attHVHzAv58xZ32TA",
+            "width": 1409,
+            "height": 1116,
+            "url": "/data/listing-images/recZy1VcIjGkHmXV9/attHVHzAv58xZ32TA.jpg",
+            "filename": "2026-04-23 21.37.18.jpg",
+            "size": 2312090,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recZy1VcIjGkHmXV9/atto4ClSpajJQo3Wb.jpg",
-                "width": 47,
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/attHVHzAv58xZ32TA.jpg",
+                "width": 45,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recZy1VcIjGkHmXV9/atto4ClSpajJQo3Wb.jpg",
-                "width": 237,
-                "height": 183
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/attHVHzAv58xZ32TA.jpg",
+                "width": 646,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/recZy1VcIjGkHmXV9/atto4ClSpajJQo3Wb.jpg",
-                "width": 237,
-                "height": 183
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/attHVHzAv58xZ32TA.jpg",
+                "width": 1409,
+                "height": 1116
               }
             }
           },
           {
-            "id": "att266HLN3DsDQJ4m",
-            "width": 231,
-            "height": 179,
-            "url": "/data/listing-images/recZy1VcIjGkHmXV9/att266HLN3DsDQJ4m.jpg",
-            "filename": "2026-04-18 10.25.22.jpg",
-            "size": 42307,
+            "id": "attfYhfgNiQ2bNhyb",
+            "width": 1422,
+            "height": 1106,
+            "url": "/data/listing-images/recZy1VcIjGkHmXV9/attfYhfgNiQ2bNhyb.jpg",
+            "filename": "2026-04-23 21.37.18.jpg",
+            "size": 1891807,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recZy1VcIjGkHmXV9/att266HLN3DsDQJ4m.jpg",
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/attfYhfgNiQ2bNhyb.jpg",
                 "width": 46,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recZy1VcIjGkHmXV9/att266HLN3DsDQJ4m.jpg",
-                "width": 231,
-                "height": 179
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/attfYhfgNiQ2bNhyb.jpg",
+                "width": 658,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/recZy1VcIjGkHmXV9/att266HLN3DsDQJ4m.jpg",
-                "width": 231,
-                "height": 179
+                "url": "/data/listing-images/recZy1VcIjGkHmXV9/attfYhfgNiQ2bNhyb.jpg",
+                "width": 1422,
+                "height": 1106
               }
             }
           }
@@ -550,28 +550,28 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "attx9wJkxHVAvoypZ",
-            "width": 299,
-            "height": 168,
-            "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attx9wJkxHVAvoypZ.jpg",
-            "filename": "2026-04-18 09.52.31.jpg",
-            "size": 25982,
+            "id": "attxnORyWmnktxmVM",
+            "width": 1448,
+            "height": 1086,
+            "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attxnORyWmnktxmVM.jpg",
+            "filename": "2026-04-23 21.35.20.jpg",
+            "size": 1526480,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attx9wJkxHVAvoypZ.jpg",
-                "width": 64,
+                "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attxnORyWmnktxmVM.jpg",
+                "width": 48,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attx9wJkxHVAvoypZ.jpg",
-                "width": 299,
-                "height": 168
+                "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attxnORyWmnktxmVM.jpg",
+                "width": 683,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attx9wJkxHVAvoypZ.jpg",
-                "width": 299,
-                "height": 168
+                "url": "/data/listing-images/rec49qCSiaOQ8Zu2J/attxnORyWmnktxmVM.jpg",
+                "width": 1448,
+                "height": 1086
               }
             }
           }
@@ -614,28 +614,28 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "attfCXq9cb2fA9vkb",
-            "width": 325,
-            "height": 300,
-            "url": "/data/listing-images/reckmhAknQSQlItiC/attfCXq9cb2fA9vkb.jpg",
-            "filename": "2026-04-18 10.12.49.jpg",
-            "size": 82709,
+            "id": "att92bDW6iWTGh4Vm",
+            "width": 1305,
+            "height": 1206,
+            "url": "/data/listing-images/reckmhAknQSQlItiC/att92bDW6iWTGh4Vm.jpg",
+            "filename": "2026-04-23 21.34.38.jpg",
+            "size": 2343887,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/reckmhAknQSQlItiC/attfCXq9cb2fA9vkb.jpg",
+                "url": "/data/listing-images/reckmhAknQSQlItiC/att92bDW6iWTGh4Vm.jpg",
                 "width": 39,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/reckmhAknQSQlItiC/attfCXq9cb2fA9vkb.jpg",
-                "width": 325,
-                "height": 300
+                "url": "/data/listing-images/reckmhAknQSQlItiC/att92bDW6iWTGh4Vm.jpg",
+                "width": 554,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/reckmhAknQSQlItiC/attfCXq9cb2fA9vkb.jpg",
-                "width": 325,
-                "height": 300
+                "url": "/data/listing-images/reckmhAknQSQlItiC/att92bDW6iWTGh4Vm.jpg",
+                "width": 1305,
+                "height": 1206
               }
             }
           }
@@ -2199,9 +2199,9 @@
           "Intercom Facility"
         ],
         "AI: Listing Summary": {
-          "state": "empty",
-          "value": null,
-          "isStale": true
+          "state": "generated",
+          "value": "Experience unparalleled luxury in this expansive 4.5 BHK apartment for sale in Yoo Pune, Magarpatta, offering 5 bedrooms and 5 bathrooms across 5,700 sq ft of elegantly designed space. Ready to move in, this home boasts premium interiors, a dedicated home theatre, and a host of world-class amenities including a swimming pool, clubhouse, gym, and more. Enjoy the perfect blend of comfort and sophistication in a prime location, ideal for discerning buyers seeking an exclusive lifestyle.",
+          "isStale": false
         },
         "Short Description": "Designed with elegance and functionality, the apartment features expansive living and dining areas, premium interiors, and a dedicated home theatre, offering a perfect blend of comfort and luxury.",
         "Size (sqft)": 5700,
@@ -2230,28 +2230,28 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "attJIAH9VlMnmaoUw",
-            "width": 326,
-            "height": 304,
-            "url": "/data/listing-images/recGcRyU9OkzEqlrj/attJIAH9VlMnmaoUw.jpg",
-            "filename": "2026-04-02 17.25.21.jpg",
-            "size": 150965,
+            "id": "atthQkOG1Z2YHKDaY",
+            "width": 1287,
+            "height": 1222,
+            "url": "/data/listing-images/recGcRyU9OkzEqlrj/atthQkOG1Z2YHKDaY.jpg",
+            "filename": "2026-04-23 21.33.38.jpg",
+            "size": 2563649,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recGcRyU9OkzEqlrj/attJIAH9VlMnmaoUw.jpg",
-                "width": 39,
+                "url": "/data/listing-images/recGcRyU9OkzEqlrj/atthQkOG1Z2YHKDaY.jpg",
+                "width": 38,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recGcRyU9OkzEqlrj/attJIAH9VlMnmaoUw.jpg",
-                "width": 326,
-                "height": 304
+                "url": "/data/listing-images/recGcRyU9OkzEqlrj/atthQkOG1Z2YHKDaY.jpg",
+                "width": 539,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/recGcRyU9OkzEqlrj/attJIAH9VlMnmaoUw.jpg",
-                "width": 326,
-                "height": 304
+                "url": "/data/listing-images/recGcRyU9OkzEqlrj/atthQkOG1Z2YHKDaY.jpg",
+                "width": 1287,
+                "height": 1222
               }
             }
           }
@@ -3001,28 +3001,28 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "attUwsSjnQ5QQCDkA",
-            "width": 236,
-            "height": 377,
-            "url": "/data/listing-images/recNT8hFcx1TL7tT7/attUwsSjnQ5QQCDkA.jpg",
-            "filename": "2026-04-01 17.34.38.jpg",
-            "size": 66310,
+            "id": "attUGb8raB89iUsir",
+            "width": 983,
+            "height": 1601,
+            "url": "/data/listing-images/recNT8hFcx1TL7tT7/attUGb8raB89iUsir.jpg",
+            "filename": "2026-04-23 21.32.02.jpg",
+            "size": 1803468,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recNT8hFcx1TL7tT7/attUwsSjnQ5QQCDkA.jpg",
+                "url": "/data/listing-images/recNT8hFcx1TL7tT7/attUGb8raB89iUsir.jpg",
                 "width": 22,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recNT8hFcx1TL7tT7/attUwsSjnQ5QQCDkA.jpg",
-                "width": 236,
-                "height": 377
+                "url": "/data/listing-images/recNT8hFcx1TL7tT7/attUGb8raB89iUsir.jpg",
+                "width": 512,
+                "height": 834
               },
               "full": {
-                "url": "/data/listing-images/recNT8hFcx1TL7tT7/attUwsSjnQ5QQCDkA.jpg",
-                "width": 236,
-                "height": 377
+                "url": "/data/listing-images/recNT8hFcx1TL7tT7/attUGb8raB89iUsir.jpg",
+                "width": 983,
+                "height": 1601
               }
             }
           }
@@ -3260,28 +3260,28 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "attoj0QTbRiI7EZf6",
-            "width": 225,
-            "height": 300,
-            "url": "/data/listing-images/recIv0Ud9vE3U7bWo/attoj0QTbRiI7EZf6.jpg",
-            "filename": "2026-04-01 07.17.30.jpg",
-            "size": 65509,
+            "id": "attIOSMDqaoptoU3E",
+            "width": 1080,
+            "height": 1080,
+            "url": "/data/listing-images/recIv0Ud9vE3U7bWo/attIOSMDqaoptoU3E.jpg",
+            "filename": "2026-04-23 21.39.10.jpg",
+            "size": 1292230,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recIv0Ud9vE3U7bWo/attoj0QTbRiI7EZf6.jpg",
-                "width": 27,
+                "url": "/data/listing-images/recIv0Ud9vE3U7bWo/attIOSMDqaoptoU3E.jpg",
+                "width": 36,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recIv0Ud9vE3U7bWo/attoj0QTbRiI7EZf6.jpg",
-                "width": 225,
-                "height": 300
+                "url": "/data/listing-images/recIv0Ud9vE3U7bWo/attIOSMDqaoptoU3E.jpg",
+                "width": 512,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/recIv0Ud9vE3U7bWo/attoj0QTbRiI7EZf6.jpg",
-                "width": 225,
-                "height": 300
+                "url": "/data/listing-images/recIv0Ud9vE3U7bWo/attIOSMDqaoptoU3E.jpg",
+                "width": 1080,
+                "height": 1080
               }
             }
           }
@@ -4748,28 +4748,28 @@
         "Title": "Clear title plot in the middle of Koregaon park ",
         "Image": [
           {
-            "id": "attZ5u89B3Ph8vNrq",
-            "width": 588,
-            "height": 330,
-            "url": "/data/listing-images/rec9fv4ChaRAEoe9c/attZ5u89B3Ph8vNrq.jpg",
-            "filename": "2026-03-26 13.58.37.jpg",
-            "size": 198416,
+            "id": "atthelRmoiupmNUtl",
+            "width": 1672,
+            "height": 941,
+            "url": "/data/listing-images/rec9fv4ChaRAEoe9c/atthelRmoiupmNUtl.jpg",
+            "filename": "2026-04-23 21.29.53.jpg",
+            "size": 2793045,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/rec9fv4ChaRAEoe9c/attZ5u89B3Ph8vNrq.jpg",
+                "url": "/data/listing-images/rec9fv4ChaRAEoe9c/atthelRmoiupmNUtl.jpg",
                 "width": 64,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/rec9fv4ChaRAEoe9c/attZ5u89B3Ph8vNrq.jpg",
-                "width": 588,
-                "height": 330
+                "url": "/data/listing-images/rec9fv4ChaRAEoe9c/atthelRmoiupmNUtl.jpg",
+                "width": 910,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/rec9fv4ChaRAEoe9c/attZ5u89B3Ph8vNrq.jpg",
-                "width": 588,
-                "height": 330
+                "url": "/data/listing-images/rec9fv4ChaRAEoe9c/atthelRmoiupmNUtl.jpg",
+                "width": 1672,
+                "height": 941
               }
             }
           }
@@ -5164,28 +5164,28 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "attYsvmfqP9f3w0qx",
-            "width": 334,
-            "height": 150,
-            "url": "/data/listing-images/recnoj7dgm2Llvt7k/attYsvmfqP9f3w0qx.jpg",
-            "filename": "2026-03-25 12.50.56.jpg",
-            "size": 47084,
+            "id": "attmitcs9WA7bs5Nu",
+            "width": 1667,
+            "height": 944,
+            "url": "/data/listing-images/recnoj7dgm2Llvt7k/attmitcs9WA7bs5Nu.jpg",
+            "filename": "2026-04-23 21.28.51.jpg",
+            "size": 2721314,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recnoj7dgm2Llvt7k/attYsvmfqP9f3w0qx.jpg",
-                "width": 80,
+                "url": "/data/listing-images/recnoj7dgm2Llvt7k/attmitcs9WA7bs5Nu.jpg",
+                "width": 64,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recnoj7dgm2Llvt7k/attYsvmfqP9f3w0qx.jpg",
-                "width": 334,
-                "height": 150
+                "url": "/data/listing-images/recnoj7dgm2Llvt7k/attmitcs9WA7bs5Nu.jpg",
+                "width": 904,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/recnoj7dgm2Llvt7k/attYsvmfqP9f3w0qx.jpg",
-                "width": 334,
-                "height": 150
+                "url": "/data/listing-images/recnoj7dgm2Llvt7k/attmitcs9WA7bs5Nu.jpg",
+                "width": 1667,
+                "height": 944
               }
             }
           }
@@ -6567,54 +6567,54 @@
             }
           },
           {
-            "id": "attGkjtvG6SsCc2NG",
-            "width": 642,
-            "height": 366,
-            "url": "/data/listing-images/recIO094eDNiHL1i6/attGkjtvG6SsCc2NG.jpg",
-            "filename": "2026-03-25 11.18.54.jpg",
-            "size": 101403,
+            "id": "attjwUAJZFoVFFO6I",
+            "width": 1661,
+            "height": 947,
+            "url": "/data/listing-images/recIO094eDNiHL1i6/attjwUAJZFoVFFO6I.jpg",
+            "filename": "2026-04-23 21.26.34.jpg",
+            "size": 1775381,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recIO094eDNiHL1i6/attGkjtvG6SsCc2NG.jpg",
+                "url": "/data/listing-images/recIO094eDNiHL1i6/attjwUAJZFoVFFO6I.jpg",
                 "width": 63,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recIO094eDNiHL1i6/attGkjtvG6SsCc2NG.jpg",
-                "width": 642,
-                "height": 366
+                "url": "/data/listing-images/recIO094eDNiHL1i6/attjwUAJZFoVFFO6I.jpg",
+                "width": 898,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/recIO094eDNiHL1i6/attGkjtvG6SsCc2NG.jpg",
-                "width": 642,
-                "height": 366
+                "url": "/data/listing-images/recIO094eDNiHL1i6/attjwUAJZFoVFFO6I.jpg",
+                "width": 1661,
+                "height": 947
               }
             }
           },
           {
-            "id": "attA81yd7Vz9NarWl",
-            "width": 554,
-            "height": 554,
-            "url": "/data/listing-images/recIO094eDNiHL1i6/attA81yd7Vz9NarWl.jpg",
-            "filename": "2026-03-25 11.18.55.jpg",
-            "size": 145813,
+            "id": "attJqfHVzeE2mOvTI",
+            "width": 1254,
+            "height": 1254,
+            "url": "/data/listing-images/recIO094eDNiHL1i6/attJqfHVzeE2mOvTI.jpg",
+            "filename": "2026-04-23 21.26.40.jpg",
+            "size": 1884417,
             "type": "image/jpeg",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recIO094eDNiHL1i6/attA81yd7Vz9NarWl.jpg",
+                "url": "/data/listing-images/recIO094eDNiHL1i6/attJqfHVzeE2mOvTI.jpg",
                 "width": 36,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recIO094eDNiHL1i6/attA81yd7Vz9NarWl.jpg",
+                "url": "/data/listing-images/recIO094eDNiHL1i6/attJqfHVzeE2mOvTI.jpg",
                 "width": 512,
                 "height": 512
               },
               "full": {
-                "url": "/data/listing-images/recIO094eDNiHL1i6/attA81yd7Vz9NarWl.jpg",
-                "width": 554,
-                "height": 554
+                "url": "/data/listing-images/recIO094eDNiHL1i6/attJqfHVzeE2mOvTI.jpg",
+                "width": 1254,
+                "height": 1254
               }
             }
           }
