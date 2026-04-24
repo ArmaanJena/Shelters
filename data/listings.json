@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-23T20:59:00.669Z",
+  "updatedAt": "2026-04-24T11:11:59.206Z",
   "records": [
     {
       "id": "recc09r4NoaKWNeWi",
@@ -370,28 +370,28 @@
         "Status": "Ready to Move",
         "Image": [
           {
-            "id": "att8iiGC5RpEY9Ka7",
-            "width": 516,
-            "height": 387,
-            "url": "/data/listing-images/recmr3MHb5NQUFchM/att8iiGC5RpEY9Ka7.jpg",
-            "filename": "2026-04-18 10.18.01.jpg",
-            "size": 155460,
-            "type": "image/jpeg",
+            "id": "attePNkykapiQYRt9",
+            "width": 1448,
+            "height": 1086,
+            "url": "/data/listing-images/recmr3MHb5NQUFchM/attePNkykapiQYRt9.png",
+            "filename": "princeton new.png",
+            "size": 3173609,
+            "type": "image/png",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recmr3MHb5NQUFchM/att8iiGC5RpEY9Ka7.jpg",
+                "url": "/data/listing-images/recmr3MHb5NQUFchM/attePNkykapiQYRt9.png",
                 "width": 48,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recmr3MHb5NQUFchM/att8iiGC5RpEY9Ka7.jpg",
-                "width": 516,
-                "height": 387
+                "url": "/data/listing-images/recmr3MHb5NQUFchM/attePNkykapiQYRt9.png",
+                "width": 683,
+                "height": 512
               },
               "full": {
-                "url": "/data/listing-images/recmr3MHb5NQUFchM/att8iiGC5RpEY9Ka7.jpg",
-                "width": 516,
-                "height": 387
+                "url": "/data/listing-images/recmr3MHb5NQUFchM/attePNkykapiQYRt9.png",
+                "width": 1448,
+                "height": 1086
               }
             }
           }
