@@ -1,131 +1,131 @@
 {
-  "updatedAt": "2026-04-23T20:59:01.652Z",
+  "updatedAt": "2026-04-24T03:30:08.458Z",
   "table": "Area Questions",
   "records": [
     {
       "id": "rec8gumLnhl7dK1nL",
       "createdTime": "2026-04-02T08:14:54.000Z",
       "fields": {
-        "Location": "Others",
-        "Area Description": " East Pune is expanding through emerging residential areas such as Lohegaon, Dhanori, and Vishrantwadi. These locations offer a combination of affordability, improving infrastructure, and proximity to key employment zones, making them increasingly relevant for both end-users and investors.\n",
-        "Question 1": "Why are Lohegaon, Dhanori, and Vishrantwadi gaining popularity?",
         "Answer 1": "Affordability compared to premium areas and improving infrastructure are key drivers of demand. Lohegaon benefits from proximity to Pune Airport and Viman Nagar, while Dhanori offers a quieter residential environment with steady development. Vishrantwadi, being more established, provides a mix of housing options and commercial activity. Together, they capture spillover demand from nearby high-value markets. This positions them as practical alternatives with growth potential.",
-        "Question 2": "Who should consider buying in these areas?",
-        "Answer 2": "Early entry into emerging areas with untapped upside is a key draw for investors. First-time homebuyers, working professionals, and families form the core demand base. Proximity to employment hubs and improving connectivity supports daily convenience, while access to schools and essential infrastructure makes these areas suitable for long-term living. The range of housing options spans entry-level to mid-segment developments, keeping the market accessible. Competitive pricing, steady demand, and ongoing infrastructure growth together support long-term appreciation potential.",
+        "Location": "Others",
         "Question 3": "How is connectivity and infrastructure across these locations?",
-        "Answer 3": "These areas offer strong connectivity to Pune Airport, Viman Nagar, and key business districts across East Pune. Lohegaon benefits from close proximity to the airport and Viman Nagar, with ongoing infrastructure upgrades improving access and commute efficiency. Dhanori connects seamlessly to Vishrantwadi and Airport Road, supporting convenient daily travel for working professionals. Vishrantwadi, being more established, provides reliable connectivity through existing road networks and active commercial zones. Together, these factors enhance livability, sustain demand, and strengthen long-term real estate potential across the corridor."
+        "Question 1": "Why are Lohegaon, Dhanori, and Vishrantwadi gaining popularity?",
+        "Area Description": " East Pune is expanding through emerging residential areas such as Lohegaon, Dhanori, and Vishrantwadi. These locations offer a combination of affordability, improving infrastructure, and proximity to key employment zones, making them increasingly relevant for both end-users and investors.\n",
+        "Answer 2": "Early entry into emerging areas with untapped upside is a key draw for investors. First-time homebuyers, working professionals, and families form the core demand base. Proximity to employment hubs and improving connectivity supports daily convenience, while access to schools and essential infrastructure makes these areas suitable for long-term living. The range of housing options spans entry-level to mid-segment developments, keeping the market accessible. Competitive pricing, steady demand, and ongoing infrastructure growth together support long-term appreciation potential.",
+        "Answer 3": "These areas offer strong connectivity to Pune Airport, Viman Nagar, and key business districts across East Pune. Lohegaon benefits from close proximity to the airport and Viman Nagar, with ongoing infrastructure upgrades improving access and commute efficiency. Dhanori connects seamlessly to Vishrantwadi and Airport Road, supporting convenient daily travel for working professionals. Vishrantwadi, being more established, provides reliable connectivity through existing road networks and active commercial zones. Together, these factors enhance livability, sustain demand, and strengthen long-term real estate potential across the corridor.",
+        "Question 2": "Who should consider buying in these areas?"
       }
     },
     {
       "id": "rec9UWZgh0rGdqeH4",
       "createdTime": "2026-04-02T05:53:44.000Z",
       "fields": {
-        "Location": "Kharadi",
-        "Area Description": "Kharadi is Pune’s leading growth corridor, driven by IT and commercial development, offering diverse housing options and strong investment potential.\n",
-        "Question 1": "Why is Kharadi a high-demand real estate location?",
         "Answer 1": "Kharadi’s status as a major IT and business hub, anchored by EON IT Park and the World Trade Center, attracts a large working population. This drives sustained housing demand and makes it a key residential market in Pune.",
-        "Question 2": "What types of properties are available in Kharadi?",
-        "Answer 2": "The area offers a wide spectrum of housing, ranging from affordable apartments to luxury high-rise developments and gated communities, catering to both first-time buyers and high-end investors.",
+        "Location": "Kharadi",
         "Question 3": "Is Kharadi a good investment destination?",
-        "Answer 3": "Strong rental demand from multinational workforce, ongoing infrastructure development, and upcoming projects contribute to high rental yields and future property value appreciation."
+        "Question 1": "Why is Kharadi a high-demand real estate location?",
+        "Area Description": "Kharadi is Pune’s leading growth corridor, driven by IT and commercial development, offering diverse housing options and strong investment potential.\n",
+        "Answer 2": "The area offers a wide spectrum of housing, ranging from affordable apartments to luxury high-rise developments and gated communities, catering to both first-time buyers and high-end investors.",
+        "Answer 3": "Strong rental demand from multinational workforce, ongoing infrastructure development, and upcoming projects contribute to high rental yields and future property value appreciation.",
+        "Question 2": "What types of properties are available in Kharadi?"
       }
     },
     {
       "id": "recIvf0ciplcC6LKY",
       "createdTime": "2026-04-01T01:59:37.000Z",
       "fields": {
-        "Location": "Koregaon Park",
-        "Area Description": "Koregaon Park is among Pune’s established luxury neighbourhoods, known for greenery, exclusivity, and a cosmopolitan environment. It features premium residences and strong long-term value due to limited supply.\n",
-        "Question 1": "What types of properties and buyers define Koregaon Park?",
         "Answer 1": "The area features luxury apartments, boutique residences, and independent villas, attracting high-net-worth individuals, NRIs, expatriates, and buyers seeking exclusivity, privacy, and a cosmopolitan lifestyle.",
-        "Question 2": "What factors drive real estate demand in Koregaon Park?",
-        "Answer 2": "Its central location, proximity to business districts, airport, and Camp area, along with a well-established lifestyle ecosystem featuring fine dining, cafes, art spaces, and wellness centers, sustain strong demand. Limited supply of premium properties further reinforces its positioning.",
+        "Location": "Koregaon Park",
         "Question 3": "How strong is the rental market in Koregaon Park?",
-        "Answer 3": "Consistent demand from expatriates, corporates, and business professionals supports a strong luxury rental market, making it a reliable option for rental income."
+        "Question 1": "What types of properties and buyers define Koregaon Park?",
+        "Area Description": "Koregaon Park is among Pune’s established luxury neighbourhoods, known for greenery, exclusivity, and a cosmopolitan environment. It features premium residences and strong long-term value due to limited supply.\n",
+        "Answer 2": "Its central location, proximity to business districts, airport, and Camp area, along with a well-established lifestyle ecosystem featuring fine dining, cafes, art spaces, and wellness centers, sustain strong demand. Limited supply of premium properties further reinforces its positioning.",
+        "Answer 3": "Consistent demand from expatriates, corporates, and business professionals supports a strong luxury rental market, making it a reliable option for rental income.",
+        "Question 2": "What factors drive real estate demand in Koregaon Park?"
       }
     },
     {
       "id": "recOVvKugASct1lyq",
       "createdTime": "2026-04-02T05:54:51.000Z",
       "fields": {
-        "Location": "Mundhwa",
-        "Area Description": "Mundhwa is an emerging area benefiting from its location between Kharadi and Koregaon Park Extension, offering a balance of affordability and connectivity.\n",
-        "Question 1": "Why is Mundhwa gaining attention as a real estate location?",
         "Answer 1": "Its strategic position between Koregaon Park Extension and Kharadi, combined with improving infrastructure and better road connectivity, has driven increasing demand and rapid development.",
-        "Question 2": "What types of properties are available in Mundhwa?",
-        "Answer 2": "The area offers a mix of housing options ranging from budget apartments to mid-range and emerging premium residential developments, catering to a wide spectrum of buyers.",
+        "Location": "Mundhwa",
         "Question 3": "Is Mundhwa a good investment choice?",
-        "Answer 3": "Ongoing development, proximity to IT hubs, and rising demand indicate strong potential for future appreciation, making it attractive for both investors and end-users."
+        "Question 1": "Why is Mundhwa gaining attention as a real estate location?",
+        "Area Description": "Mundhwa is an emerging area benefiting from its location between Kharadi and Koregaon Park Extension, offering a balance of affordability and connectivity.\n",
+        "Answer 2": "The area offers a mix of housing options ranging from budget apartments to mid-range and emerging premium residential developments, catering to a wide spectrum of buyers.",
+        "Answer 3": "Ongoing development, proximity to IT hubs, and rising demand indicate strong potential for future appreciation, making it attractive for both investors and end-users.",
+        "Question 2": "What types of properties are available in Mundhwa?"
       }
     },
     {
       "id": "recY8cOemRjV7XQuy",
       "createdTime": "2026-04-01T01:59:16.000Z",
       "fields": {
-        "Location": "Kalyani Nagar",
-        "Area Description": "Kalyani Nagar is a premium, well-planned locality offering upscale residential developments, strong connectivity with its own metro station and proximity to the airport.\n",
-        "Question 1": "What factors drive real estate demand in Kalyani Nagar?",
         "Answer 1": "Kalyani Nagar stands out as one of Pune’s premium residential areas due to its well-planned infrastructure, wide roads, high-end residential developments, and proximity to Koregaon Park, Viman Nagar, and Pune Airport, all of which reinforce both lifestyle quality and real estate value.",
-        "Question 2": "Is Kalyani Nagar suitable for families?",
-        "Answer 2": "The presence of reputed schools, hospitals, parks, and a strong mix of restaurants, cafes, and lifestyle amenities makes it well-suited for families seeking convenience and quality of living.",
+        "Location": "Kalyani Nagar",
         "Question 3": "What is the investment potential of Kalyani Nagar?",
-        "Answer 3": "Steady appreciation, high resale value, and strong rental demand driven by proximity to IT and commercial hubs make it a reliable investment destination for both end-users and investors."
+        "Question 1": "What factors drive real estate demand in Kalyani Nagar?",
+        "Area Description": "Kalyani Nagar is a premium, well-planned locality offering upscale residential developments, strong connectivity with its own metro station and proximity to the airport.\n",
+        "Answer 2": "The presence of reputed schools, hospitals, parks, and a strong mix of restaurants, cafes, and lifestyle amenities makes it well-suited for families seeking convenience and quality of living.",
+        "Answer 3": "Steady appreciation, high resale value, and strong rental demand driven by proximity to IT and commercial hubs make it a reliable investment destination for both end-users and investors.",
+        "Question 2": "Is Kalyani Nagar suitable for families?"
       }
     },
     {
       "id": "recZLI1kWFS59d9Ev",
       "createdTime": "2026-04-02T08:14:45.000Z",
       "fields": {
-        "Location": "Magarpatta",
-        "Area Description": "The Magarpatta–Amanora corridor in Hadapsar stands out as a strong real estate market, combining integrated township living with premium developments and solid infrastructure. Anchored by Magarpatta City and Amanora Park Town, it offers a self-sustained ecosystem with residential, commercial, retail, and IT spaces, enabling a walk-to-work lifestyle. Luxury projects bring high-end living, while well-built, reasonably priced housing ensures broader accessibility. With connectivity to Kharadi, Koregaon Park, Camp, and NIBM, and consistent demand from nearby IT hubs, the area offers steady appreciation and reliable rental potential.\n",
-        "Question 1": "What kind of lifestyle does the Magarpatta–Amanora corridor offer?",
         "Answer 1": "A self-sustained township environment defines the lifestyle here. Residential, commercial, retail, and IT spaces exist in close proximity, enabling a walk-to-work setup. Daily needs such as malls, schools, and healthcare are accessible within minutes. This integrated planning reduces commute stress and improves day-to-day convenience. The result is a well-rounded urban lifestyle that appeals to both professionals and families.",
-        "Question 2": "How does the area balance luxury and affordability?",
-        "Answer 2": "The corridor includes premium developments like Yoo Pune and high-end Amanora towers. At the same time, it offers well-built township housing at relatively reasonable prices compared to Koregaon Park and Kalyani Nagar. This creates a mix of aspirational and value-driven options within the same area. Buyers can access modern amenities without fully entering ultra-premium price brackets. This balance supports both end-use demand and long-term market depth.",
+        "Location": "Magarpatta",
         "Question 3": "How strong is rental demand in this corridor?",
-        "Answer 3": "Rental demand is driven by the presence of major IT hubs and business districts nearby. Working professionals form a consistent tenant base across both premium and mid-segment housing. This supports stable occupancy levels and dependable rental income. Demand remains resilient due to the area’s employment connectivity. As a result, the corridor continues to perform as a reliable rental market within Pune."
+        "Question 1": "What kind of lifestyle does the Magarpatta–Amanora corridor offer?",
+        "Area Description": "The Magarpatta–Amanora corridor in Hadapsar stands out as a strong real estate market, combining integrated township living with premium developments and solid infrastructure. Anchored by Magarpatta City and Amanora Park Town, it offers a self-sustained ecosystem with residential, commercial, retail, and IT spaces, enabling a walk-to-work lifestyle. Luxury projects bring high-end living, while well-built, reasonably priced housing ensures broader accessibility. With connectivity to Kharadi, Koregaon Park, Camp, and NIBM, and consistent demand from nearby IT hubs, the area offers steady appreciation and reliable rental potential.\n",
+        "Answer 2": "The corridor includes premium developments like Yoo Pune and high-end Amanora towers. At the same time, it offers well-built township housing at relatively reasonable prices compared to Koregaon Park and Kalyani Nagar. This creates a mix of aspirational and value-driven options within the same area. Buyers can access modern amenities without fully entering ultra-premium price brackets. This balance supports both end-use demand and long-term market depth.",
+        "Answer 3": "Rental demand is driven by the presence of major IT hubs and business districts nearby. Working professionals form a consistent tenant base across both premium and mid-segment housing. This supports stable occupancy levels and dependable rental income. Demand remains resilient due to the area’s employment connectivity. As a result, the corridor continues to perform as a reliable rental market within Pune.",
+        "Question 2": "How does the area balance luxury and affordability?"
       }
     },
     {
       "id": "recaxlsijYDlENqSx",
       "createdTime": "2026-04-02T05:55:41.000Z",
       "fields": {
-        "Location": "Wagholi",
-        "Area Description": "Wagholi is a developing suburb known for affordability and expanding infrastructure, making it a practical entry point into Pune’s real estate market.\n",
-        "Question 1": "Why is Wagholi considered an affordable housing market?",
         "Answer 1": "Wagholi offers competitively priced residential options compared to other areas in Pune, with a wide range of affordable apartments and gated communities, making it accessible for first-time homebuyers and value-focused investors.",
-        "Question 2": "Is Wagholi a good investment destination?",
-        "Answer 2": "Ongoing infrastructure development, improving connectivity via Nagar Road, and proximity to Kharadi position Wagholi for future growth and long-term appreciation.",
+        "Location": "Wagholi",
         "Question 3": "Who should consider buying in Wagholi and what is available?",
-        "Answer 3": "First-time buyers and budget-conscious investors are the primary segment, with housing options including affordable apartments and planned residential communities supported by growing social infrastructure such as schools, hospitals, and retail spaces."
+        "Question 1": "Why is Wagholi considered an affordable housing market?",
+        "Area Description": "Wagholi is a developing suburb known for affordability and expanding infrastructure, making it a practical entry point into Pune’s real estate market.\n",
+        "Answer 2": "Ongoing infrastructure development, improving connectivity via Nagar Road, and proximity to Kharadi position Wagholi for future growth and long-term appreciation.",
+        "Answer 3": "First-time buyers and budget-conscious investors are the primary segment, with housing options including affordable apartments and planned residential communities supported by growing social infrastructure such as schools, hospitals, and retail spaces.",
+        "Question 2": "Is Wagholi a good investment destination?"
       }
     },
     {
       "id": "recbgLMsd4iSY8NjJ",
       "createdTime": "2026-03-31T09:42:55.000Z",
       "fields": {
-        "Location": "Viman Nagar",
-        "Area Description": "Viman Nagar is a prime residential and commercial hub in Pune, known for its proximity to the airport, strong infrastructure, and access to IT corridors like Kharadi and Yerwada. It offers a mix of premium apartments, gated communities, and lifestyle conveniences including major retail and education hubs.\n",
-        "Question 1": "Why is Viman Nagar a strong investment location?",
         "Answer 1": "Proximity to Pune Airport, IT hubs such as Kharadi, Magarpatta, and Yerwada, and steady demand from professionals and expatriates support consistent rental income and stable property appreciation.",
-        "Question 2": "What property options are available in Viman Nagar?",
-        "Answer 2": "The market is dominated by 2 to 4 BHK apartments in gated communities and high-rise developments, catering to mid and luxury segments.",
+        "Location": "Viman Nagar",
         "Question 3": "What makes Viman Nagar suitable for living?",
-        "Answer 3": "Strong social infrastructure including Symbiosis International University, Phoenix Marketcity, hospitals, schools, cafes, and excellent connectivity via Nagar Road make it suitable for families, professionals, and frequent travelers."
+        "Question 1": "Why is Viman Nagar a strong investment location?",
+        "Area Description": "Viman Nagar is a prime residential and commercial hub in Pune, known for its proximity to the airport, strong infrastructure, and access to IT corridors like Kharadi and Yerwada. It offers a mix of premium apartments, gated communities, and lifestyle conveniences including major retail and education hubs.\n",
+        "Answer 2": "The market is dominated by 2 to 4 BHK apartments in gated communities and high-rise developments, catering to mid and luxury segments.",
+        "Answer 3": "Strong social infrastructure including Symbiosis International University, Phoenix Marketcity, hospitals, schools, cafes, and excellent connectivity via Nagar Road make it suitable for families, professionals, and frequent travelers.",
+        "Question 2": "What property options are available in Viman Nagar?"
       }
     },
     {
       "id": "recouiI9LDNI7WyCa",
       "createdTime": "2026-04-02T05:54:27.000Z",
       "fields": {
-        "Location": "Boat Club Road",
-        "Area Description": "Boat Club Road is an ultra-premium, low-density locality known for luxury residences, exclusivity, and long-term value retention.\n",
-        "Question 1": "What makes Boat Club Road an exclusive residential area?",
         "Answer 1": "Low-density development, spacious properties, lush greenery, and a peaceful environment define the area. Limited supply, along with the presence of affluent residents and high-end real estate, reinforces its exclusivity and premium positioning.",
-        "Question 2": "Who typically buys property on Boat Club Road?",
-        "Answer 2": "High-net-worth individuals, business owners, and luxury buyers seeking privacy, spacious residences, and a serene environment form the primary buyer segment.",
+        "Location": "Boat Club Road",
         "Question 3": "Is Boat Club Road a good investment location?",
-        "Answer 3": "Scarcity of properties, strong long-term value retention, and proximity to Koregaon Park, Camp, the airport, and key business hubs support sustained appreciation and make it a reliable luxury investment market."
+        "Question 1": "What makes Boat Club Road an exclusive residential area?",
+        "Area Description": "Boat Club Road is an ultra-premium, low-density locality known for luxury residences, exclusivity, and long-term value retention.\n",
+        "Answer 2": "High-net-worth individuals, business owners, and luxury buyers seeking privacy, spacious residences, and a serene environment form the primary buyer segment.",
+        "Answer 3": "Scarcity of properties, strong long-term value retention, and proximity to Koregaon Park, Camp, the airport, and key business hubs support sustained appreciation and make it a reliable luxury investment market.",
+        "Question 2": "Who typically buys property on Boat Club Road?"
       }
     }
   ]
