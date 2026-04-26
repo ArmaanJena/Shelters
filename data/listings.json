@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-26T10:52:24.495Z",
+  "updatedAt": "2026-04-26T20:49:05.123Z",
   "records": [
     {
       "id": "recRhrQiOuLTrEbKZ",
@@ -4265,7 +4265,7 @@
           "isStale": false
         },
         "Short Description": "1 acre land parcel in Kharadi",
-        "Size (sqft)": 46000,
+        "Size (sqft)": 40000,
         "AI: Amenity Highlights": {
           "state": "error",
           "errorType": "emptyDependency",
@@ -4274,10 +4274,10 @@
         },
         "Description": "A rare opportunity to acquire a ~1 acre land parcel in the rapidly growing micro-market of Kharadi, Pune, strategically positioned right behind the upcoming Panchshil commercial development and adjoining Panchshil Towers. This prime plot benefits from a highly sought-after location with strong surrounding infrastructure, making it ideal for future appreciation and development.\n\nThe land holds a clear title with single ownership and well-documented registration (2023), ensuring a smooth and secure transaction. With excellent connectivity to key commercial hubs, IT parks, and lifestyle destinations, the property offers immense potential for residential development, plotting, or long-term investment.\n\nSet in one of Pune’s fastest-evolving corridors, this is a high-value asset with strong growth prospects, perfectly suited for serious investors and developers looking to capitalize on Kharadi’s expanding real estate landscape.\n",
         "Location": "Kharadi",
-        "Price": 250000000,
+        "Price": 320000000,
         "Managed ": true,
         "Offer Type": "Sale",
-        "Price per Sqft": 5434.782608695652,
+        "Price per Sqft": 8000,
         "Amenities Count": 0
       }
     },
