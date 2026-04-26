@@ -1,6 +1,119 @@
 {
-  "updatedAt": "2026-04-24T11:11:59.206Z",
+  "updatedAt": "2026-04-26T10:52:24.495Z",
   "records": [
+    {
+      "id": "recRhrQiOuLTrEbKZ",
+      "createdTime": "2026-04-26T03:59:07.000Z",
+      "fields": {
+        "Property Type": "Plot",
+        "Title": "2 Acre Land for Sale in Manjri Kharadi Extension | 80 ft Road Touch | High Growth Investment",
+        "Image": [
+          {
+            "id": "attRFgeEtlQlEdMwP",
+            "width": 1080,
+            "height": 1080,
+            "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attRFgeEtlQlEdMwP.jpg",
+            "filename": "2026-04-26 09.37.39.jpg",
+            "size": 1575620,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attRFgeEtlQlEdMwP.jpg",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attRFgeEtlQlEdMwP.jpg",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attRFgeEtlQlEdMwP.jpg",
+                "width": 1080,
+                "height": 1080
+              }
+            }
+          }
+        ],
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Short Description": "Prime 2-acre land parcel in Manjri–Kharadi Extension with 80 ft road access, located near major township developments, ideal for long-term investment and future appreciation.",
+        "Size (sqft)": 84000,
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Description": "Premium 2-acre land parcel available for sale in Manjri–Kharadi Extension, one of Pune’s fastest-developing real estate corridors. Strategically located near Bougainvillea Road and close to major township developments, this property offers excellent connectivity to Kharadi IT hub, Nagar Road, and key infrastructure routes.\n\nThe land benefits from direct access via an 80 ft wide road, ensuring strong future development potential and ease of access. Surrounded by established and upcoming residential projects, including large township developments, the area is witnessing rapid urban expansion and increasing demand.\n\nWith clear and clean title, this property is ideal for investors, land bankers, and developers looking to capitalise on early-stage growth in East Pune. The proximity to IT parks, premium residential communities, and infrastructure development makes it a strong opportunity for long-term capital appreciation.",
+        "Location": "Others",
+        "Price": 220000000,
+        "Offer Type": "Sale",
+        "Price per Sqft": 2619.0476190476193,
+        "Amenities Count": 0
+      }
+    },
+    {
+      "id": "recFgKYOOqK91KcvF",
+      "createdTime": "2026-04-26T03:44:59.000Z",
+      "fields": {
+        "Property Type": "Showroom",
+        "Title": "Prime Commercial Showroom for Sale in Central Kharadi | 7,000 sq.ft | Restaurant Approved",
+        "Status": "Ready to Move",
+        "Image": [
+          {
+            "id": "attaMujrVyPA7lp3y",
+            "width": 1254,
+            "height": 1254,
+            "url": "/data/listing-images/recFgKYOOqK91KcvF/attaMujrVyPA7lp3y.jpg",
+            "filename": "2026-04-26 09.28.56.jpg",
+            "size": 1925530,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recFgKYOOqK91KcvF/attaMujrVyPA7lp3y.jpg",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recFgKYOOqK91KcvF/attaMujrVyPA7lp3y.jpg",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/recFgKYOOqK91KcvF/attaMujrVyPA7lp3y.jpg",
+                "width": 1254,
+                "height": 1254
+              }
+            }
+          }
+        ],
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Short Description": "High street showroom with Rs.7 lacs monthly rental potential in Kharadi IT belt",
+        "Size (sqft)": 7000,
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Description": "High-visibility commercial showroom in Central Kharadi with restaurant approval, large floor plates, and strong investment potential.\n\nStrategically located just minutes from the World Trade Centre and surrounded by major IT parks and dense residential catchments, this property ensures strong footfall and excellent business potential.\n\nThe asset benefits from 30-meter road frontage, providing maximum visibility and accessibility, making it ideal for restaurants, retail brands, showrooms, and flagship outlets. With restaurant approval already in place, the property offers a plug-and-play opportunity for F&B operators and investors.\n\nPositioned in one of Pune’s fastest-growing commercial corridors, this asset presents a rare investment opportunity with strong rental demand, capital appreciation potential, and long-term value.",
+        "Location": "Kharadi",
+        "Price": 105000000,
+        "Offer Type": "Sale",
+        "Price per Sqft": 15000,
+        "Amenities Count": 0
+      }
+    },
     {
       "id": "recc09r4NoaKWNeWi",
       "createdTime": "2026-04-18T05:11:22.000Z",
