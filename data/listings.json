@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-26T20:49:05.123Z",
+  "updatedAt": "2026-04-27T11:49:51.541Z",
   "records": [
     {
       "id": "recRhrQiOuLTrEbKZ",
@@ -9,28 +9,28 @@
         "Title": "2 Acre Land for Sale in Manjri Kharadi Extension | 80 ft Road Touch | High Growth Investment",
         "Image": [
           {
-            "id": "attRFgeEtlQlEdMwP",
-            "width": 1080,
-            "height": 1080,
-            "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attRFgeEtlQlEdMwP.jpg",
-            "filename": "2026-04-26 09.37.39.jpg",
-            "size": 1575620,
-            "type": "image/jpeg",
+            "id": "attmq1XuaHugaN8fv",
+            "width": 1254,
+            "height": 1254,
+            "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attmq1XuaHugaN8fv.png",
+            "filename": "49A5E747-3990-45D6-ADD2-3ABFD0EFE55A.png",
+            "size": 2788014,
+            "type": "image/png",
             "thumbnails": {
               "small": {
-                "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attRFgeEtlQlEdMwP.jpg",
+                "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attmq1XuaHugaN8fv.png",
                 "width": 36,
                 "height": 36
               },
               "large": {
-                "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attRFgeEtlQlEdMwP.jpg",
+                "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attmq1XuaHugaN8fv.png",
                 "width": 512,
                 "height": 512
               },
               "full": {
-                "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attRFgeEtlQlEdMwP.jpg",
-                "width": 1080,
-                "height": 1080
+                "url": "/data/listing-images/recRhrQiOuLTrEbKZ/attmq1XuaHugaN8fv.png",
+                "width": 1254,
+                "height": 1254
               }
             }
           }
