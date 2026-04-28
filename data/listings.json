@@ -1,6 +1,62 @@
 {
-  "updatedAt": "2026-04-27T11:49:51.541Z",
+  "updatedAt": "2026-04-28T21:12:34.873Z",
   "records": [
+    {
+      "id": "rec2kIGvu9hOzfIO9",
+      "createdTime": "2026-04-28T12:10:29.000Z",
+      "fields": {
+        "Property Type": "Showroom",
+        "Title": "Pre-Leased  Pharmacy Shop for Sale in Wagholi | High Yield Retail Investment",
+        "Image": [
+          {
+            "id": "attyska91IhmewjdY",
+            "width": 1254,
+            "height": 1254,
+            "url": "/data/listing-images/rec2kIGvu9hOzfIO9/attyska91IhmewjdY.jpg",
+            "filename": "2026-04-28 17.59.28.jpg",
+            "size": 1608786,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/rec2kIGvu9hOzfIO9/attyska91IhmewjdY.jpg",
+                "width": 36,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/rec2kIGvu9hOzfIO9/attyska91IhmewjdY.jpg",
+                "width": 512,
+                "height": 512
+              },
+              "full": {
+                "url": "/data/listing-images/rec2kIGvu9hOzfIO9/attyska91IhmewjdY.jpg",
+                "width": 1254,
+                "height": 1254
+              }
+            }
+          }
+        ],
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Short Description": "Pre-leased retail shop in Wagholi with a top corporate tenant, offering stable rental income and strong investment potential.",
+        "Size (sqft)": 900,
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Description": "Pre-leased retail shop available for sale in Wagholi, Pune, leased to s top corporate one of India’s most trusted and established pharmacy chains. Strategically located next to Reliance Smart in a high-footfall area, this property benefits from consistent customer traffic and strong retail visibility.\n\nThe asset offers approximately 600 sq.ft carpet area with 11 ft clear height, along with dedicated car parking, making it suitable for long-term retail operations. With a running lease and steady rental income, this property presents a secure investment opportunity for investors seeking stable returns in a growing micro-market.",
+        "Location": "Wagholi",
+        "Price": 17500000,
+        "Offer Type": "Pre-Leased",
+        "Price per Sqft": 19444.444444444445,
+        "Amenities Count": 0
+      }
+    },
     {
       "id": "recRhrQiOuLTrEbKZ",
       "createdTime": "2026-04-26T03:59:07.000Z",
