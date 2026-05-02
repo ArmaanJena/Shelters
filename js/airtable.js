@@ -1273,8 +1273,8 @@ function renderPaginationControls(totalPages, currentPage) {
       'min-width:2.35rem;height:2.35rem;padding:0 0.7rem;border-radius:10px;border:1px solid #cbd5e1;background:#fff;color:#1e293b;font-weight:600;cursor:pointer;';
 
     if (active) {
-      button.style.background = '#1e40af';
-      button.style.borderColor = '#1e40af';
+      button.style.background = '#9A2A2A';
+      button.style.borderColor = '#9A2A2A';
       button.style.color = '#fff';
       button.setAttribute('aria-current', 'page');
     }
