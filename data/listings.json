@@ -1,6 +1,167 @@
 {
-  "updatedAt": "2026-05-11T21:22:05.657Z",
+  "updatedAt": "2026-05-13T21:39:56.861Z",
   "records": [
+    {
+      "id": "recHGVMVYV1YDc8TJ",
+      "createdTime": "2026-05-12T06:48:46.000Z",
+      "fields": {
+        "Property Type": "Apartment",
+        "Title": "Luxury 2.5 BHK Apartment for Sale in Viman Nagar | Eye-Level Terrace | Premium Furnishing",
+        "Status": "Ready to Move",
+        "Image": [
+          {
+            "id": "attGttsmbrVfzMhr8",
+            "width": 588,
+            "height": 393,
+            "url": "/data/listing-images/recHGVMVYV1YDc8TJ/attGttsmbrVfzMhr8.jpg",
+            "filename": "2026-05-12 12.27.29.jpg",
+            "size": 138412,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recHGVMVYV1YDc8TJ/attGttsmbrVfzMhr8.jpg",
+                "width": 53,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recHGVMVYV1YDc8TJ/attGttsmbrVfzMhr8.jpg",
+                "width": 588,
+                "height": 393
+              },
+              "full": {
+                "url": "/data/listing-images/recHGVMVYV1YDc8TJ/attGttsmbrVfzMhr8.jpg",
+                "width": 588,
+                "height": 393
+              }
+            }
+          },
+          {
+            "id": "attC1vW71x9LFE0Rx",
+            "width": 338,
+            "height": 300,
+            "url": "/data/listing-images/recHGVMVYV1YDc8TJ/attC1vW71x9LFE0Rx.jpg",
+            "filename": "2026-05-12 12.27.29.jpg",
+            "size": 57417,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recHGVMVYV1YDc8TJ/attC1vW71x9LFE0Rx.jpg",
+                "width": 41,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recHGVMVYV1YDc8TJ/attC1vW71x9LFE0Rx.jpg",
+                "width": 338,
+                "height": 300
+              },
+              "full": {
+                "url": "/data/listing-images/recHGVMVYV1YDc8TJ/attC1vW71x9LFE0Rx.jpg",
+                "width": 338,
+                "height": 300
+              }
+            }
+          }
+        ],
+        "Amenities": [
+          "Swimming Pool",
+          "Gymnasium",
+          "Clubhouse",
+          "Children’s Play Area",
+          "Parking Space",
+          "24/7 Security",
+          "Lift / Elevator",
+          "Power Backup",
+          "Gated Community",
+          "CCTV Surveillance",
+          "Modular Kitchen",
+          "Air Conditioned",
+          "Piped Gas",
+          "Balcony",
+          "Private Terrace/Garden",
+          "Solar Water Heater",
+          "Visitor Parking",
+          "Intercom Facility",
+          "Maintenance Staff"
+        ],
+        "AI: Listing Summary": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "Short Description": "Elegant 2.5 BHK apartment in Viman Nagar featuring a spacious eye-level terrace, premium interiors, and 2 car parks in a prime residential community.",
+        "Size (sqft)": 1600,
+        "Amenities Count": 1,
+        "Price per Sqft": 15000,
+        "AI: Amenity Highlights": {
+          "state": "empty",
+          "value": null,
+          "isStale": true
+        },
+        "Bedrooms to Bathrooms Ratio": 1,
+        "Description": "Premium 2.5 BHK apartment available for sale in Viman Nagar, Pune, located in one of the city’s most sought-after residential communities. This beautifully designed home features a spacious balcony with eye-level terrace access, premium furnishing, and modern interiors crafted for comfortable luxury living.\n\nThe apartment offers excellent natural light, contemporary finishes, and thoughtfully planned spaces ideal for families and professionals. With two dedicated car parks and move-in-ready interiors, the property combines convenience with upscale living.\n\nViman Nagar is one of Pune’s prime residential and commercial hubs, offering seamless connectivity to Pune Airport, Kharadi IT Park, Koregaon Park, and premium lifestyle destinations including malls, restaurants, and schools. This makes the property ideal for both end-users and investors seeking strong long-term value.",
+        "Bathrooms": 3,
+        "Location": "Viman Nagar",
+        "Price": 24000000,
+        "Bedrooms": 3,
+        "Offer Type": "Sale"
+      }
+    },
+    {
+      "id": "recyOqIQ8AkO5JTwI",
+      "createdTime": "2026-05-12T06:32:16.000Z",
+      "fields": {
+        "Property Type": "Plot",
+        "Title": "Luxury Bungalow Plot for Sale in Koregaon Park | 11,000 sq.ft Prime Land Parcel",
+        "Image": [
+          {
+            "id": "attO7o8MKK0aVByOG",
+            "width": 588,
+            "height": 330,
+            "url": "/data/listing-images/recyOqIQ8AkO5JTwI/attO7o8MKK0aVByOG.jpg",
+            "filename": "2026-05-12 12.11.22.jpg",
+            "size": 197015,
+            "type": "image/jpeg",
+            "thumbnails": {
+              "small": {
+                "url": "/data/listing-images/recyOqIQ8AkO5JTwI/attO7o8MKK0aVByOG.jpg",
+                "width": 64,
+                "height": 36
+              },
+              "large": {
+                "url": "/data/listing-images/recyOqIQ8AkO5JTwI/attO7o8MKK0aVByOG.jpg",
+                "width": 588,
+                "height": 330
+              },
+              "full": {
+                "url": "/data/listing-images/recyOqIQ8AkO5JTwI/attO7o8MKK0aVByOG.jpg",
+                "width": 588,
+                "height": 330
+              }
+            }
+          }
+        ],
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": "",
+          "isStale": false
+        },
+        "Short Description": "Rare large-format bungalow plot in Koregaon Park, one of Pune’s most prestigious and high-value residential addresses.",
+        "Size (sqft)": 11000,
+        "Amenities Count": 0,
+        "Price per Sqft": 31818.18181818182,
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Description": "Premium bungalow plot available for sale in Koregaon Park, Pune’s most prestigious luxury residential neighbourhood. Spread across approximately 11,000 sq.ft, this rare land parcel offers an exceptional opportunity to build a private luxury residence or boutique redevelopment project in one of the city’s most sought-after locations.\n\nKoregaon Park is known for its tree-lined avenues, premium residences, upscale dining, luxury hospitality, and elite social infrastructure. The location offers seamless connectivity to Kalyani Nagar, Bund Garden, Pune Airport, and major commercial districts while maintaining its exclusivity and premium lifestyle appeal.\n\nLarge land parcels in Koregaon Park are extremely limited, making this a high-value asset with strong long-term appreciation potential. Ideal for HNIs, developers, and end-users seeking a trophy residential address in Pune.",
+        "Location": "Koregaon Park",
+        "Price": 350000000,
+        "Offer Type": "Sale"
+      }
+    },
     {
       "id": "rec2kIGvu9hOzfIO9",
       "createdTime": "2026-04-28T12:10:29.000Z",
