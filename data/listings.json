@@ -1,6 +1,35 @@
 {
-  "updatedAt": "2026-05-13T21:39:56.861Z",
+  "updatedAt": "2026-05-16T11:06:49.905Z",
   "records": [
+    {
+      "id": "recnYAtU3P2WFZHgA",
+      "createdTime": "2026-05-16T07:10:41.000Z",
+      "fields": {
+        "Property Type": "Showroom",
+        "Title": "Pre-Leased Showroom for Sale in Kalyani Nagar | Premium Retail Investment",
+        "Status": "Ready to Move",
+        "AI: Listing Summary": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Short Description": "Pre-leased retail showroom in Kalyani Nagar generating stable rental income, located in one of Pune’s most premium high-footfall commercial zones.",
+        "Size (sqft)": 720,
+        "Amenities Count": 0,
+        "Price per Sqft": 0,
+        "AI: Amenity Highlights": {
+          "state": "error",
+          "errorType": "emptyDependency",
+          "value": null,
+          "isStale": false
+        },
+        "Description": "Pre-leased showroom available for sale in Kalyani Nagar, Pune, one of the city’s most premium residential and commercial micro-markets. Spread across 720 sq.ft through two combined retail units, this property offers stable rental income and strong long-term appreciation potential.\n\nLocated in a high-footfall zone surrounded by premium residential communities, corporate offices, and lifestyle destinations, the asset benefits from excellent visibility and sustained commercial demand. Kalyani Nagar continues to attract strong retail activity due to its affluent catchment and proximity to Viman Nagar, Koregaon Park, and Pune Airport.\n\nThe property generates approximately ₹19.44 lakhs annual rental income, making it an attractive investment for HNIs and investors seeking secure cash flow through branded retail and high-demand commercial assets.",
+        "Location": "Kalyani Nagar",
+        "Price": 0,
+        "Offer Type": "Pre-Leased"
+      }
+    },
     {
       "id": "recHGVMVYV1YDc8TJ",
       "createdTime": "2026-05-12T06:48:46.000Z",
